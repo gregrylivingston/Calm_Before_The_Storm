@@ -1,0 +1,9 @@
+[gd_resource type="Resource" script_class="WeatherState" load_steps=2 format=3 uid="uid://ds4ftlfqjdw7a"]
+
+[ext_resource type="Script" path="res://resource/weather_state/r_weather_state.gd" id="1_lbfjk"]
+
+[resource]
+script = ExtResource("1_lbfjk")
+title = "Universal Flood"
+water_height = 100.0
+cloud_level = -100.0

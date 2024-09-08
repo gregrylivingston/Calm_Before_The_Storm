@@ -1,0 +1,9 @@
+[gd_resource type="Resource" script_class="WeatherState" load_steps=2 format=3 uid="uid://vax8vj672y03"]
+
+[ext_resource type="Script" path="res://resource/weather_state/r_weather_state.gd" id="1_i5774"]
+
+[resource]
+script = ExtResource("1_i5774")
+title = "Major Flood"
+water_height = 3.0
+cloud_level = 0.0

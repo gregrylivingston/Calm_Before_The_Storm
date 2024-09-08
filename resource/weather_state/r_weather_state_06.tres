@@ -1,0 +1,9 @@
+[gd_resource type="Resource" script_class="WeatherState" load_steps=2 format=3 uid="uid://dh1lfr3173hoo"]
+
+[ext_resource type="Script" path="res://resource/weather_state/r_weather_state.gd" id="1_onm0d"]
+
+[resource]
+script = ExtResource("1_onm0d")
+title = "Flash Floods"
+water_height = 0.3
+cloud_level = 0.01

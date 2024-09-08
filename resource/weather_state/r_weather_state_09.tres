@@ -1,0 +1,9 @@
+[gd_resource type="Resource" script_class="WeatherState" load_steps=2 format=3 uid="uid://c2qbr8ni5y5lt"]
+
+[ext_resource type="Script" path="res://resource/weather_state/r_weather_state.gd" id="1_3iw1f"]
+
+[resource]
+script = ExtResource("1_3iw1f")
+title = "Biblical Flood"
+water_height = 10.0
+cloud_level = -10.0

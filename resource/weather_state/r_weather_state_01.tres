@@ -1,0 +1,9 @@
+[gd_resource type="Resource" script_class="WeatherState" load_steps=2 format=3 uid="uid://tlsagnpbj34u"]
+
+[ext_resource type="Script" path="res://resource/weather_state/r_weather_state.gd" id="1_32bj1"]
+
+[resource]
+script = ExtResource("1_32bj1")
+title = "Calm and Clear"
+water_level = -1.0
+cloud_level = 1.0
