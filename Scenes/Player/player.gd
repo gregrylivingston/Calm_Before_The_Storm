@@ -8,6 +8,8 @@ var jump_speed = 11.0
 var mouse_sensitivity = 0.002
 var actionPressed = false
 
+var drowned := false
+
 @onready var raycast := $Camera3D/RayCast3D
 @onready var world := $/root/main/map
 
@@ -15,10 +17,11 @@ func _ready():
 	Input.mouse_mode = Input.MOUSE_MODE_CAPTURED
 
 func get_input():
-	var input = Input.get_vector("strafe_left", "strafe_right", "move_forward", "move_back")
-	var movement_dir = transform.basis * Vector3(input.x, 0, input.y)
-	velocity.x = movement_dir.x * speed
-	velocity.z = movement_dir.z * speed
+	if not drowned:
+		var input = Input.get_vector("strafe_left", "strafe_right", "move_forward", "move_back")
+		var movement_dir = transform.basis * Vector3(input.x, 0, input.y)
+		velocity.x = movement_dir.x * speed
+		velocity.z = movement_dir.z * speed
 
 func _physics_process(delta):
 	doAction()
@@ -37,7 +40,7 @@ func _unhandled_input(event):
 		speed = sprintSpeed
 	if event.is_action_released("sprint"):
 		speed = defaultSpeed
-	if event is InputEventMouseMotion and Input.mouse_mode == Input.MOUSE_MODE_CAPTURED:
+	if event is InputEventMouseMotion and Input.mouse_mode == Input.MOUSE_MODE_CAPTURED && not drowned:
 		rotate_y(-event.relative.x * mouse_sensitivity)
 		%Camera3D.rotate_x(-event.relative.y * mouse_sensitivity)
 		%Camera3D.rotation.x = clampf(%Camera3D.rotation.x, -deg_to_rad(70), deg_to_rad(70))
@@ -59,3 +62,10 @@ func breakBlocks():
 func doAction():
 	if actionPressed:
 		breakBlocks()
+
+func drown() -> void:
+	$Camera3D/UnderwaterView.visible = true
+	$Camera3D/UnderwaterView/Canvas_GameOver.visible = true
+	drowned = true
+	%Gear. visible = false
+	Input.mouse_mode = Input.MOUSE_MODE_VISIBLE

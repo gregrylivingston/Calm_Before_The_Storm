@@ -2,14 +2,4 @@
 water shader - https://godotshaders.com/shader/toon-style-3d-water-shader-no-textures-needed/
 terrain - https://godotengine.org/asset-library/asset/2813
 resource editor - https://godotengine.org/asset-library/asset/1479
-
-Weather State
-
-/ Calm & Clear
-/ Calm, Light Clouds
-/ Light Rain
-/ Heavy Rain
-/ Flash Floods
-/ Major Flood
-/ Century Flood
-/ Biblical Flood
+https://godotshaders.com/shader/underwater-camera-effect/

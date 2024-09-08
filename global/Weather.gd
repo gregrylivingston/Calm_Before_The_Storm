@@ -4,6 +4,18 @@ var weather_state_int := -1
 var weather_state: WeatherState
 var weather_animation_time := 5
 
+var game_time := 0.06
+
+var state_timer_max := 10.0
+var state_timer := 0.0:
+	set(new_state_time):
+		state_timer = new_state_time
+		if state_timer > state_timer_max:
+			state_timer = 0.0
+			increase_weather_state()
+
+
+
 var weather_states: Array[WeatherState] = [
 	load("res://resource/weather_state/r_weather_state_01.tres"),
 	load("res://resource/weather_state/r_weather_state_02.tres"),
@@ -16,6 +28,13 @@ var weather_states: Array[WeatherState] = [
 	load("res://resource/weather_state/r_weather_state_09.tres"),
 	load("res://resource/weather_state/r_weather_state_10.tres")
 ]
+
+
+func start_new_round():
+	game_time = 0.0
+	state_timer = 0.0
+	weather_state_int = -1
+	increase_weather_state()
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
@@ -32,11 +51,9 @@ func increase_weather_state() -> void:
 		new_weather_state.emit(weather_state)
 		print(weather_state.title)
 		
-		await get_tree().create_timer(8).timeout
-		increase_weather_state()
-	
+
 	
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta: float) -> void:
-	pass
+	state_timer = delta + state_timer

@@ -5,5 +5,5 @@
 [resource]
 script = ExtResource("1_yn0ut")
 title = "Light Rain"
-water_height = -1.0
+water_height = 6.0
 cloud_level = 0.2

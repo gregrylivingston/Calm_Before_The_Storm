@@ -7,3 +7,7 @@ func _ready() -> void:
 
 func height_change(newHeight: float) -> void:
 	position.y = newHeight
+
+
+func _on_area_3d_body_entered(body: Node3D) -> void:
+	if body.has_method("drown"):body.drown()

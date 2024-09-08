@@ -1,11 +1,14 @@
 [gd_scene load_steps=5 format=3 uid="uid://nrh54ueqxxix"]
 
-[ext_resource type="PackedScene" path="res://addons/maaacks_menus_template/base/scenes/menus/main_menu/main_menu.tscn" id="1_wysod"]
+[ext_resource type="PackedScene" uid="uid://c6k5nnpbypshi" path="res://addons/maaacks_menus_template/base/scenes/menus/main_menu/main_menu.tscn" id="1_wysod"]
 [ext_resource type="Script" path="res://Maaack/scenes/menus/main_menu/main_menu.gd" id="2_36kw5"]
-[ext_resource type="PackedScene" path="res://Maaack/scenes/menus/options_menu/master_options_menu_with_tabs.tscn" id="3_mk6dg"]
-[ext_resource type="PackedScene" path="res://Maaack/scenes/credits/credits.tscn" id="4_55e2s"]
+[ext_resource type="PackedScene" uid="uid://davgw81hc71p1" path="res://Maaack/scenes/menus/options_menu/master_options_menu_with_tabs.tscn" id="3_mk6dg"]
+[ext_resource type="PackedScene" uid="uid://ijmk66788nji" path="res://Maaack/scenes/credits/credits.tscn" id="4_55e2s"]
 
 [node name="MainMenu" instance=ExtResource("1_wysod")]
 script = ExtResource("2_36kw5")
 options_packed_scene = ExtResource("3_mk6dg")
 credits_packed_scene = ExtResource("4_55e2s")
+
+[node name="BackgroundMusicPlayer" parent="." index="1"]
+bus = &"Master"

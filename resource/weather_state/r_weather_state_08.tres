@@ -5,5 +5,5 @@
 [resource]
 script = ExtResource("1_2woim")
 title = "Massive Flood"
-water_height = 7.0
+water_height = 42.0
 cloud_level = -1.0

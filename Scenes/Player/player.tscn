@@ -1,7 +1,9 @@
-[gd_scene load_steps=8 format=3 uid="uid://dt7qj4rvpib2x"]
+[gd_scene load_steps=12 format=3 uid="uid://dt7qj4rvpib2x"]
 
 [ext_resource type="Script" path="res://Scenes/Player/player.gd" id="1_3uef2"]
 [ext_resource type="PackedScene" uid="uid://mefv6wbqhfdh" path="res://Assets/Models/pickaxe.glb" id="2_2gnp6"]
+[ext_resource type="Shader" path="res://shader/sh_underwater.gdshader" id="3_p7qtg"]
+[ext_resource type="Script" path="res://ui/GameOver/canvas_game_over.gd" id="4_hbng8"]
 
 [sub_resource type="CapsuleShape3D" id="CapsuleShape3D_cet7n"]
 
@@ -10,6 +12,19 @@ albedo_color = Color(0.278431, 1, 1, 1)
 
 [sub_resource type="CapsuleMesh" id="CapsuleMesh_ji1vj"]
 material = SubResource("StandardMaterial3D_v0pce")
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_8dt5m"]
+render_priority = 0
+shader = ExtResource("3_p7qtg")
+shader_parameter/tint = Color(0.443137, 0.458824, 0.8, 1)
+shader_parameter/wave_speed = 3.0
+shader_parameter/wave_freq = 10.0
+shader_parameter/wave_width = 1.0
+shader_parameter/blur = 1.0
+
+[sub_resource type="PlaneMesh" id="PlaneMesh_tqih0"]
+material = SubResource("ShaderMaterial_8dt5m")
+orientation = 2
 
 [sub_resource type="Animation" id="Animation_k48xp"]
 resource_name = "swing"
@@ -46,10 +61,11 @@ mesh = SubResource("CapsuleMesh_ji1vj")
 unique_name_in_owner = true
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.00151587, 0.671016, -0.557144)
 
-[node name="pickaxe" type="Node3D" parent="Camera3D"]
+[node name="Gear" type="Node3D" parent="Camera3D"]
+unique_name_in_owner = true
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.00151587, -0.786331, 0.243112)
 
-[node name="pickaxe" parent="Camera3D/pickaxe" instance=ExtResource("2_2gnp6")]
+[node name="pickaxe" parent="Camera3D/Gear" instance=ExtResource("2_2gnp6")]
 transform = Transform3D(-1.51421e-09, -8.74228e-10, -0.04, -0.02, 0.034641, 0, 0.034641, 0.02, -1.74846e-09, 0.56205, -0.235843, -0.411837)
 
 [node name="RayCast3D" type="RayCast3D" parent="Camera3D"]
@@ -58,8 +74,40 @@ target_position = Vector3(0, 0, -2)
 debug_shape_custom_color = Color(0.701961, 0, 0, 1)
 debug_shape_thickness = 3
 
+[node name="UnderwaterView" type="MeshInstance3D" parent="Camera3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -0.239507)
+visible = false
+mesh = SubResource("PlaneMesh_tqih0")
+
+[node name="Canvas_GameOver" type="CanvasLayer" parent="Camera3D/UnderwaterView"]
+visible = false
+script = ExtResource("4_hbng8")
+
+[node name="VBoxContainer" type="VBoxContainer" parent="Camera3D/UnderwaterView/Canvas_GameOver"]
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -85.5
+offset_top = -68.0
+offset_right = 85.5
+offset_bottom = 68.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Label" type="Label" parent="Camera3D/UnderwaterView/Canvas_GameOver/VBoxContainer"]
+layout_mode = 2
+text = "You Have Drowned"
+horizontal_alignment = 1
+
+[node name="Button_Continue" type="Button" parent="Camera3D/UnderwaterView/Canvas_GameOver/VBoxContainer"]
+layout_mode = 2
+size_flags_vertical = 10
+text = "Continue"
+
 [node name="AnimationPlayer" type="AnimationPlayer" parent="."]
-root_node = NodePath("../Camera3D/pickaxe")
+root_node = NodePath("../Camera3D/Gear")
 libraries = {
 "": SubResource("AnimationLibrary_dm0bs")
 }
@@ -68,3 +116,5 @@ libraries = {
 libraries = {
 "": SubResource("AnimationLibrary_dm0bs")
 }
+
+[connection signal="pressed" from="Camera3D/UnderwaterView/Canvas_GameOver/VBoxContainer/Button_Continue" to="Camera3D/UnderwaterView/Canvas_GameOver" method="_on_button_continue_pressed"]

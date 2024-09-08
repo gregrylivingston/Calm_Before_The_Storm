@@ -1,4 +1,4 @@
-[gd_scene load_steps=5 format=3 uid="uid://vx0neicvbncr"]
+[gd_scene load_steps=6 format=3 uid="uid://vx0neicvbncr"]
 
 [ext_resource type="Shader" path="res://shader/sh_water.gdshader" id="1_aenvn"]
 [ext_resource type="Script" path="res://mesh_instance_water.gd" id="2_k6jud"]
@@ -31,7 +31,18 @@ subdivide_width = 32
 subdivide_depth = 32
 orientation = 1
 
+[sub_resource type="BoxShape3D" id="BoxShape3D_0fn87"]
+size = Vector3(64, 64, 64)
+
 [node name="MeshInstance_Water" type="MeshInstance3D"]
 cast_shadow = 0
 mesh = SubResource("QuadMesh_wmuo0")
 script = ExtResource("2_k6jud")
+
+[node name="Area3D" type="Area3D" parent="."]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Area3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -33, 0)
+shape = SubResource("BoxShape3D_0fn87")
+
+[connection signal="body_entered" from="Area3D" to="." method="_on_area_3d_body_entered"]

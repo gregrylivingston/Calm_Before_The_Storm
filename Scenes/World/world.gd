@@ -4,15 +4,16 @@ var noise = FastNoiseLite.new()
 var nature_noise = FastNoiseLite.new()
 var chunks: Dictionary = {}
 var height_map: Dictionary = {}
-var chunk_size = Vector3(64, 12, 64)
+var chunk_size = Vector3(64, 32, 64)
 var unload_distance := 10
-var load_distance := 2
+var load_distance := 3
 
 @export var chunkScene := preload("res://Scenes/World/basic_chunk.tscn")
 @onready var player := get_tree().get_first_node_in_group("player")
 
 func _ready():
 	setup_noise()
+	Weather.start_new_round()
 
 
 
@@ -23,7 +24,7 @@ func _process(_delta):
 
 func setup_noise():
 	noise.noise_type = FastNoiseLite.TYPE_SIMPLEX
-	noise.frequency = 0.015 #0.03
+	noise.frequency = 0.005 #0.03
 	noise.fractal_octaves = 3
 	noise.fractal_lacunarity = 2.0
 	noise.fractal_gain = 0.5
@@ -97,7 +98,7 @@ func generate_heights(chunk_pos: Vector3) -> Array:
 		for x in range(chunk_size.x + 1):
 			var world_x = x + chunk_pos.x
 			var world_z = z + chunk_pos.z
-			var height = (noise.get_noise_2d(world_x, world_z) + 0.0) * chunk_size.y
+			var height = (noise.get_noise_2d(world_x, world_z) + 1.0) * chunk_size.y
 			if height < 0:
 				height = 0
 			row.append(height)
