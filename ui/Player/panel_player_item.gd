@@ -3,6 +3,7 @@ extends Panel
 
 var resource: PlayerItem
 var inventoryPosition: int
+var previousQuantity: int
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
@@ -11,9 +12,13 @@ func _ready() -> void:
 
 	
 func update_inventory(quant: int) -> void:
-	%LabelQuantity.text = "x" + str(quant)
-
+	if previousQuantity != quant:
+		%Label_ChangeInQuantity.modulate.a = 2.0
+		%Label_ChangeInQuantity.text = str(quant - previousQuantity)
+		%LabelQuantity.text = "x" + str(quant)
+		previousQuantity = quant
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta: float) -> void:
-	pass
+	if %Label_ChangeInQuantity.modulate.a > 0:
+		%Label_ChangeInQuantity.modulate.a -= 0.05

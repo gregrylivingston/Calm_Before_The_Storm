@@ -90,8 +90,7 @@ var queued_buildable_object: Node3D
 var wood_building_num := -1
 @export var wood_buildings: Array[PackedScene]
 func _select_next_wood_building() -> void:
-	if is_instance_valid(queued_buildable_object):
-		queued_buildable_object.queue_free()
+	if is_instance_valid(queued_buildable_object):queued_buildable_object.queue_free()
 	wood_building_num += 1
 	if wood_building_num > wood_buildings.size() - 1: wood_building_num = 0
 	var newBuilding = wood_buildings[wood_building_num].instantiate()
@@ -132,6 +131,7 @@ func select_item_check() -> void:
 	if Input.is_action_just_pressed("6"):select_new_item(5)
 
 func select_new_item(ItemInt: int) -> void:
+	if is_instance_valid(queued_buildable_object):queued_buildable_object.queue_free()
 	selected_item_int = ItemInt
 	for i in %Gear.get_children(): i.queue_free()
 	var newItemResource = player_item_options[ItemInt]
