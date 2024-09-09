@@ -10,7 +10,7 @@ var actionPressed = false
 
 var drowned := false
 
-@onready var raycast := $RayCast3D
+@onready var raycast := %RayCast3D
 @onready var world := $/root/main/map
 
 func _ready():
@@ -47,11 +47,11 @@ func _unhandled_input(event):
 	if event.is_action_pressed("jump") and is_on_floor():
 		velocity.y = jump_speed
 
-func breakBlocks():
+#returns true if able to break earth
+func breakBlocks() -> bool:
 	if raycast.is_colliding():
-		var collider = raycast.get_collider()
-		print(collider)
-		if collider is StaticBody3D:
+		if raycast.get_collider() is StaticBody3D:
+			var collider = raycast.get_collider()
 			var collisionPoint = raycast.get_collision_point()
 			var particleScene := preload("res://Scenes/player/mining_particles.tscn")
 			var particles := particleScene.instantiate()
@@ -59,11 +59,14 @@ func breakBlocks():
 			world.add_child(particles)
 			particles.emitting = true
 			world.dig(collisionPoint, 1)
+			return true
+	return false
 
 		
 func doAction():
 	if actionPressed:
-		breakBlocks()
+		if not breakBlocks():
+			%ObjectSelector.do_action()
 
 func drown() -> void:
 	$Camera3D/UnderwaterView.visible = true

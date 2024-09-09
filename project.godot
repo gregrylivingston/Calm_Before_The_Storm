@@ -43,6 +43,10 @@ window/size/viewport_height=675
 
 enabled=PackedStringArray("res://addons/maaacks_menus_template/plugin.cfg", "res://addons/resources_spreadsheet_view/plugin.cfg")
 
+[global_group]
+
+ActionProgressBar=""
+
 [gui]
 
 theme/custom="res://theme/theme_base.tres"

@@ -1,9 +1,10 @@
-[gd_scene load_steps=5 format=3 uid="uid://csckx1dqx0ycd"]
+[gd_scene load_steps=6 format=3 uid="uid://csckx1dqx0ycd"]
 
 [ext_resource type="Script" path="res://ui/Player/progress_bar_weather_state.gd" id="1_bll7w"]
 [ext_resource type="Theme" uid="uid://dbmay2mk5b3eg" path="res://theme/theme_base.tres" id="1_soa6u"]
 [ext_resource type="Script" path="res://ui/Player/h_box_storm_news_feed.gd" id="3_rxgmm"]
 [ext_resource type="Script" path="res://ui/Player/weather_alert_timer.gd" id="4_dyjoc"]
+[ext_resource type="Script" path="res://ui/Player/action_progress_bar.gd" id="5_nguav"]
 
 [node name="CanvasUI" type="CanvasLayer"]
 
@@ -61,7 +62,7 @@ grow_vertical = 0
 text = "Calm"
 horizontal_alignment = 1
 
-[node name="Control" type="Control" parent="."]
+[node name="Control_TopCenter" type="Control" parent="."]
 layout_mode = 3
 anchors_preset = 5
 anchor_left = 0.5
@@ -72,7 +73,7 @@ offset_right = 20.0
 offset_bottom = 88.0
 grow_horizontal = 2
 
-[node name="Label_WeatherAlert" type="Label" parent="Control"]
+[node name="Label_WeatherAlert" type="Label" parent="Control_TopCenter"]
 visible = false
 layout_mode = 1
 anchors_preset = 5
@@ -89,7 +90,7 @@ text = "Weather Alert"
 horizontal_alignment = 1
 script = ExtResource("3_rxgmm")
 
-[node name="HBox_StormNewsFeed" type="HBoxContainer" parent="Control/Label_WeatherAlert"]
+[node name="HBox_StormNewsFeed" type="HBoxContainer" parent="Control_TopCenter/Label_WeatherAlert"]
 layout_mode = 1
 anchors_preset = 10
 anchor_right = 1.0
@@ -100,17 +101,17 @@ grow_horizontal = 2
 mouse_filter = 2
 theme = ExtResource("1_soa6u")
 
-[node name="VSeparator" type="VSeparator" parent="Control/Label_WeatherAlert/HBox_StormNewsFeed"]
+[node name="VSeparator" type="VSeparator" parent="Control_TopCenter/Label_WeatherAlert/HBox_StormNewsFeed"]
 self_modulate = Color(1, 1, 1, 0)
 custom_minimum_size = Vector2(1000, 0)
 layout_mode = 2
 
-[node name="Label_WeatherInfo" type="Label" parent="Control/Label_WeatherAlert/HBox_StormNewsFeed"]
+[node name="Label_WeatherInfo" type="Label" parent="Control_TopCenter/Label_WeatherAlert/HBox_StormNewsFeed"]
 unique_name_in_owner = true
 layout_mode = 2
 theme_override_font_sizes/font_size = 60
 
-[node name="WeatherAlertTimer" type="VBoxContainer" parent="Control"]
+[node name="WeatherAlertTimer" type="VBoxContainer" parent="Control_TopCenter"]
 layout_mode = 1
 anchors_preset = 5
 anchor_left = 0.5
@@ -122,17 +123,17 @@ grow_horizontal = 2
 theme = ExtResource("1_soa6u")
 script = ExtResource("4_dyjoc")
 
-[node name="Label" type="Label" parent="Control/WeatherAlertTimer"]
+[node name="Label" type="Label" parent="Control_TopCenter/WeatherAlertTimer"]
 layout_mode = 2
 text = "Weather Alert Timer"
 
-[node name="ProgressBar_WeatherAlertTimer" type="ProgressBar" parent="Control/WeatherAlertTimer"]
+[node name="ProgressBar_WeatherAlertTimer" type="ProgressBar" parent="Control_TopCenter/WeatherAlertTimer"]
 unique_name_in_owner = true
 custom_minimum_size = Vector2(0, 20)
 layout_mode = 2
 show_percentage = false
 
-[node name="Label_WeatherStateTimeLeft" type="Label" parent="Control/WeatherAlertTimer/ProgressBar_WeatherAlertTimer"]
+[node name="Label_WeatherStateTimeLeft" type="Label" parent="Control_TopCenter/WeatherAlertTimer/ProgressBar_WeatherAlertTimer"]
 layout_mode = 1
 anchors_preset = 8
 anchor_left = 0.5
@@ -147,3 +148,33 @@ grow_horizontal = 2
 grow_vertical = 2
 text = "0:17"
 horizontal_alignment = 1
+
+[node name="Control_Center" type="Control" parent="."]
+layout_mode = 3
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -20.0
+offset_top = -20.0
+offset_right = 20.0
+offset_bottom = 20.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+
+[node name="ActionProgressBar" type="ProgressBar" parent="Control_Center" groups=["ActionProgressBar"]]
+visible = false
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -35.0
+offset_right = 35.0
+offset_bottom = 9.0
+grow_horizontal = 2
+show_percentage = false
+script = ExtResource("5_nguav")
+
+[connection signal="value_changed" from="Control_Center/ActionProgressBar" to="Control_Center/ActionProgressBar" method="_on_value_changed"]
