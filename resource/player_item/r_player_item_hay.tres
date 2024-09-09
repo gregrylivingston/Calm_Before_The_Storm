@@ -1,6 +1,6 @@
 [gd_resource type="Resource" script_class="PlayerItem" load_steps=3 format=3 uid="uid://7gh6nefpn4aw"]
 
-[ext_resource type="PackedScene" uid="uid://dg7ihn24pstmm" path="res://nature/Farm_FBX/Wheat_4.fbx" id="1_cjcig"]
+[ext_resource type="PackedScene" uid="uid://dg7ihn24pstmm" path="res://mesh/nature/Farm_FBX/Wheat_4.fbx" id="1_cjcig"]
 [ext_resource type="Script" path="res://resource/player_item/r_player_item.gd" id="2_xt8ob"]
 
 [resource]

@@ -1,7 +1,7 @@
 [gd_scene load_steps=12 format=3 uid="uid://cocvq8qqhr5x2"]
 
 [ext_resource type="PackedScene" uid="uid://b5g6hbycf5hj2" path="res://Scenes/Tree/s_tree.tscn" id="1_5ts50"]
-[ext_resource type="PackedScene" uid="uid://qwgluo8e0at1" path="res://nature/Farm_FBX/Apple_4.fbx" id="2_0xcjt"]
+[ext_resource type="PackedScene" uid="uid://qwgluo8e0at1" path="res://mesh/nature/Farm_FBX/Apple_4.fbx" id="2_0xcjt"]
 
 [sub_resource type="ConvexPolygonShape3D" id="ConvexPolygonShape3D_bwna1"]
 points = PackedVector3Array(0.00393351, 0.00111429, 0.0142381, 0.00568571, 0.000238181, 0.0173048, 0.00568571, -0.0002, 0.0173048, 0.00437173, -0.0002, 0.0173048, 0.00393351, 0.00111429, 0.0164285, 0.00568571, 0.00111429, 0.0155529, 0.00568571, -0.0002, 0.01599, 0.00393351, 0.000675976, 0.0142381, 0.00568571, 0.00111429, 0.0168662, 0.00437173, -0.0002, 0.01599, 0.00480961, 0.000675976, 0.0173048, 0.00437173, 0.000675976, 0.0142381, 0.00393351, 0.000238181, 0.0164285)
