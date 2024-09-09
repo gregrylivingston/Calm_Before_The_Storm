@@ -3,7 +3,7 @@ extends CharacterBody3D
 var gravity = ProjectSettings.get_setting("physics/3d/default_gravity")
 var speed = 4.0
 var defaultSpeed = 4.0
-var sprintSpeed = 25.0
+var sprintSpeed = 15.0
 var jump_speed = 11.0
 var mouse_sensitivity = 0.002
 var actionPressed = false
@@ -15,6 +15,7 @@ var drowned := false
 
 func _ready():
 	Input.mouse_mode = Input.MOUSE_MODE_CAPTURED
+	select_new_item(0)
 
 func get_input():
 	if not drowned:
@@ -49,7 +50,7 @@ func _unhandled_input(event):
 		velocity.y = jump_speed
 
 #returns true if able to break earth
-func breakBlocks() -> bool:
+func digEarth() -> bool:
 	if raycast.is_colliding():
 		if raycast.get_collider() is StaticBody3D:
 			var collider = raycast.get_collider()
@@ -66,8 +67,10 @@ func breakBlocks() -> bool:
 		
 func doAction():
 	if actionPressed:
-		if not breakBlocks():
-			%ObjectSelector.do_action()
+		match selected_item_int:
+			0:digEarth()
+			1:%ObjectSelector.chop_tree()
+			2:%ObjectSelector.break_rock()
 
 func drown() -> void:
 	$Camera3D/UnderwaterView.visible = true
@@ -82,17 +85,20 @@ func drown() -> void:
 	
 var is_secondary_use_mode := false
 @export var player_item_options : Array[PlayerItem]
+var selected_item_int := 0
 func select_item_check() -> void:
 	if Input.is_action_just_pressed("1"):select_new_item(0)
 	if Input.is_action_just_pressed("2"):select_new_item(1)
 	if Input.is_action_just_pressed("3"):select_new_item(2)
-	
+	if Input.is_action_just_pressed("4"):select_new_item(3)
+	if Input.is_action_just_pressed("5"):select_new_item(4)
 
 func select_new_item(ItemInt: int) -> void:
+	selected_item_int = ItemInt
 	for i in %Gear.get_children(): i.queue_free()
 	var newItemResource = player_item_options[ItemInt]
 	var newItemScene = newItemResource.scene.instantiate()
 	%Gear.add_child(newItemScene)
 	newItemScene.rotation_degrees.y = -90
 	newItemScene.rotation_degrees.z = 3.7
-	newItemScene.position = Vector3(0.56,-.23,-.8) 
+	newItemScene.position = Vector3(0.56,.23,-.8) 

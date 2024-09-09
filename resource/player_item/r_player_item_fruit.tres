@@ -1,0 +1,10 @@
+[gd_resource type="Resource" script_class="PlayerItem" load_steps=4 format=3 uid="uid://grough0htbca"]
+
+[ext_resource type="Texture2D" uid="uid://c0m11l24tcxvl" path="res://resource/player_item_icon/icon_apple.png" id="1_gjus1"]
+[ext_resource type="PackedScene" uid="uid://bhtnf6ihfkbd1" path="res://Scenes/Player/item/fruit.tscn" id="1_vc562"]
+[ext_resource type="Script" path="res://resource/player_item/r_player_item.gd" id="2_20tiy"]
+
+[resource]
+script = ExtResource("2_20tiy")
+scene = ExtResource("1_vc562")
+icon = ExtResource("1_gjus1")

@@ -1,0 +1,9 @@
+[gd_scene load_steps=2 format=3 uid="uid://bhtnf6ihfkbd1"]
+
+[ext_resource type="PackedScene" uid="uid://35wk3omwvyub" path="res://nature/Farm_FBX/Apple_Crop.fbx" id="1_xcl5d"]
+
+[node name="Fruit" type="Node3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.00338566, 0.00348222, -0.000856638)
+
+[node name="Apple_Crop" parent="." instance=ExtResource("1_xcl5d")]
+transform = Transform3D(4, 0, 0, 0, 4, 0, 0, 0, 4, 0, 0.424396, 0.276711)

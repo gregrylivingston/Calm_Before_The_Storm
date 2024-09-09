@@ -1,11 +1,13 @@
-class_name PlayerItem extends Resource
+extends Panel
 
-@export var scene : PackedScene
-@export var icon: Texture2D
+
+var resource: PlayerItem
+var inventoryPosition: int
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
-	pass # Replace with function body.
+	$Label_InvPosition.text = str(inventoryPosition + 1)
+	$TextureRect.texture = resource.icon
 
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.

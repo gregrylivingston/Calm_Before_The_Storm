@@ -14,7 +14,7 @@ func _process(delta: float) -> void:
 
 
 
-func handle_collision():
+func chop_tree():
 	if health < 0:
 		queue_free()
 	else:

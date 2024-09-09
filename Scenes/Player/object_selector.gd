@@ -15,7 +15,12 @@ func _process(delta: float) -> void:
 func _physics_process(delta: float) -> void:
 	pass
 			
-func do_action():
+func chop_tree():
 	for overlapping_body in get_overlapping_bodies():
-		if overlapping_body.has_method("handle_collision"):
-			overlapping_body.handle_collision()
+		if overlapping_body.has_method("chop_tree"):
+			overlapping_body.chop_tree()
+			
+func break_rock():
+	for overlapping_body in get_overlapping_bodies():
+		if overlapping_body.has_method("break_rock"):
+			overlapping_body.break_rock()
