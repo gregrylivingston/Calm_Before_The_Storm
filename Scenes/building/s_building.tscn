@@ -1,0 +1,6 @@
+[gd_scene load_steps=2 format=3 uid="uid://ijr4dslcai7c"]
+
+[ext_resource type="Script" path="res://Scenes/building/s_building.gd" id="1_nixwd"]
+
+[node name="SBuilding" type="StaticBody3D"]
+script = ExtResource("1_nixwd")

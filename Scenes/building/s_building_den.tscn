@@ -1,0 +1,8 @@
+[gd_scene load_steps=3 format=3 uid="uid://bjb44n5mpbmhk"]
+
+[ext_resource type="PackedScene" uid="uid://ijr4dslcai7c" path="res://Scenes/building/s_building.tscn" id="1_b25mv"]
+[ext_resource type="PackedScene" uid="uid://dfvn6obwpymnp" path="res://mesh/Building_FBX/Barn.fbx" id="2_pnv71"]
+
+[node name="SBuilding" instance=ExtResource("1_b25mv")]
+
+[node name="Barn" parent="." index="0" instance=ExtResource("2_pnv71")]

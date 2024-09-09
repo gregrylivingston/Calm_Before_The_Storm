@@ -5,7 +5,6 @@ resource editor - https://godotengine.org/asset-library/asset/1479
 https://godotshaders.com/shader/underwater-camera-effect/
 raindrops on screen - https://godotshaders.com/shader/rain-drops-on-screen-notexture/
 raindrops shader - https://godotshaders.com/shader/simple-rain-snow-shader/
-godot radial menu - https://github.com/tavurth/godot-radial-menu
 
 
 

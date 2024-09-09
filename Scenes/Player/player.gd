@@ -27,10 +27,12 @@ func get_input():
 
 func _physics_process(delta):
 	doAction()
+	rightClick()
 	select_item_check()
 	velocity.y += -gravity * delta
 	get_input()
 	move_and_slide()
+	move_queued_building()
 
 func _unhandled_input(event):
 	if event.is_action_pressed("action"):
@@ -39,10 +41,6 @@ func _unhandled_input(event):
 	if event.is_action_released("action"):
 		$AnimationPlayer.stop()
 		actionPressed = false
-	if event.is_action_pressed("alt_action"):
-		rightClickPressed = true
-	if event.is_action_released("alt_action"):
-		rightClickPressed = false
 	if event.is_action_pressed("sprint"):
 		speed = sprintSpeed
 	if event.is_action_released("sprint"):
@@ -56,6 +54,7 @@ func _unhandled_input(event):
 
 #returns true if able to break earth
 func digEarth(isDigging: bool = true) -> bool:
+	%RayCast3D.target_position.z = -3
 	if raycast.is_colliding():
 		if raycast.get_collider() is StaticBody3D:
 			var collider = raycast.get_collider()
@@ -72,16 +71,43 @@ func digEarth(isDigging: bool = true) -> bool:
 		
 func doAction():
 	if actionPressed:
-		match selected_item_int:
-			0:digEarth(true)
-			1:%ObjectSelector.chop_tree()
-			2:%ObjectSelector.break_rock()
-	elif rightClickPressed:
+		if is_instance_valid(queued_buildable_object):
+			_place_queued_building()
+		else:
+			match selected_item_int:
+				0:digEarth(true)
+				1:%ObjectSelector.chop_tree()
+				2:%ObjectSelector.break_rock()
+
+func rightClick():
+	if Input.is_action_just_pressed("alt_action"):
 		match selected_item_int:
 			0:digEarth(false)
-			1:pass
-			2:pass
+			1:_select_next_wood_building()
+			2:pass	
+
+var queued_buildable_object: Node3D
+var wood_building_num := -1
+@export var wood_buildings: Array[PackedScene]
+func _select_next_wood_building() -> void:
+	if is_instance_valid(queued_buildable_object):
+		queued_buildable_object.queue_free()
+	wood_building_num += 1
+	if wood_building_num > wood_buildings.size() - 1: wood_building_num = 0
+	var newBuilding = wood_buildings[wood_building_num].instantiate()
+	queued_buildable_object = newBuilding
+	get_parent().add_child(newBuilding)
 	
+	
+func move_queued_building() -> void:
+	if is_instance_valid(queued_buildable_object):
+		%RayCast3D.target_position.z = -50
+		if raycast.is_colliding():
+			if raycast.get_collider() is StaticBody3D:
+				queued_buildable_object.position = raycast.get_collision_point()
+
+func _place_queued_building() -> void:
+	queued_buildable_object = null
 
 func drown() -> void:
 	$Camera3D/UnderwaterView.visible = true

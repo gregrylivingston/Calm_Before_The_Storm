@@ -1,10 +1,13 @@
-[gd_scene load_steps=27 format=3 uid="uid://dt7qj4rvpib2x"]
+[gd_scene load_steps=30 format=3 uid="uid://dt7qj4rvpib2x"]
 
 [ext_resource type="Script" path="res://Scenes/Player/player.gd" id="1_3uef2"]
 [ext_resource type="Script" path="res://resource/player_item/r_player_item.gd" id="2_3y3k3"]
 [ext_resource type="PackedScene" uid="uid://csckx1dqx0ycd" path="res://ui/Player/canvas_ui.tscn" id="2_a8erp"]
+[ext_resource type="PackedScene" uid="uid://cxhk4dhtfnyd2" path="res://Scenes/building/s_building_kennel.tscn" id="2_h7s7r"]
+[ext_resource type="PackedScene" uid="uid://bevpsyqkjk42j" path="res://Scenes/building/s_building_barn.tscn" id="3_is48d"]
 [ext_resource type="Resource" uid="uid://duicd6euu8gog" path="res://resource/player_item/r_player_item_shovel.tres" id="3_o6bft"]
 [ext_resource type="Shader" path="res://shader/sh_underwater.gdshader" id="3_p7qtg"]
+[ext_resource type="PackedScene" uid="uid://bjb44n5mpbmhk" path="res://Scenes/building/s_building_den.tscn" id="4_fw0ig"]
 [ext_resource type="Script" path="res://ui/GameOver/canvas_game_over.gd" id="4_hbng8"]
 [ext_resource type="Resource" uid="uid://chodsjx5dgmd3" path="res://resource/player_item/r_player_item_axe.tres" id="4_kuysq"]
 [ext_resource type="Shader" path="res://shader/sh_raindroplets.gdshader" id="5_k63o8"]
@@ -79,6 +82,7 @@ _data = {
 [node name="player" type="CharacterBody3D" groups=["player"]]
 collision_layer = 5
 script = ExtResource("1_3uef2")
+wood_buildings = Array[PackedScene]([ExtResource("2_h7s7r"), ExtResource("3_is48d"), ExtResource("4_fw0ig")])
 player_item_options = Array[ExtResource("2_3y3k3")]([ExtResource("3_o6bft"), ExtResource("4_kuysq"), ExtResource("5_rhuhf"), ExtResource("6_tk1vk"), ExtResource("7_lwm4m")])
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="."]
