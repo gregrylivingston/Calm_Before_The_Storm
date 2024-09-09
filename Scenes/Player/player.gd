@@ -6,7 +6,8 @@ var defaultSpeed = 4.0
 var sprintSpeed = 15.0
 var jump_speed = 11.0
 var mouse_sensitivity = 0.002
-var actionPressed = false
+var actionPressed := false
+var rightClickPressed := false
 
 var drowned := false
 
@@ -38,6 +39,12 @@ func _unhandled_input(event):
 	if event.is_action_released("action"):
 		$AnimationPlayer.stop()
 		actionPressed = false
+	if event.is_action_pressed("alt_action"):
+		$AnimationPlayer.play("swing")
+		rightClickPressed = true
+	if event.is_action_released("alt_action"):
+		$AnimationPlayer.stop()
+		rightClickPressed = false
 	if event.is_action_pressed("sprint"):
 		speed = sprintSpeed
 	if event.is_action_released("sprint"):
@@ -50,7 +57,7 @@ func _unhandled_input(event):
 		velocity.y = jump_speed
 
 #returns true if able to break earth
-func digEarth() -> bool:
+func digEarth(isDigging: bool = true) -> bool:
 	if raycast.is_colliding():
 		if raycast.get_collider() is StaticBody3D:
 			var collider = raycast.get_collider()
@@ -60,7 +67,7 @@ func digEarth() -> bool:
 			particles.position = collisionPoint
 			world.add_child(particles)
 			particles.emitting = true
-			world.dig(collisionPoint, 1)
+			world.dig(collisionPoint, 0.1, isDigging)
 			return true
 	return false
 
@@ -68,9 +75,15 @@ func digEarth() -> bool:
 func doAction():
 	if actionPressed:
 		match selected_item_int:
-			0:digEarth()
+			0:digEarth(true)
 			1:%ObjectSelector.chop_tree()
 			2:%ObjectSelector.break_rock()
+	elif rightClickPressed:
+		match selected_item_int:
+			0:digEarth(false)
+			1:pass
+			2:pass
+	
 
 func drown() -> void:
 	$Camera3D/UnderwaterView.visible = true

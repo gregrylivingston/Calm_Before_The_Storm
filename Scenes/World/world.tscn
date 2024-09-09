@@ -59,6 +59,8 @@ dof_blur_far_transition = 20.0
 dof_blur_amount = 0.02
 
 [node name="map" type="Node3D"]
+process_physics_priority = 1
+physics_interpolation_mode = 1
 script = ExtResource("1_m56r5")
 
 [node name="WorldEnvironment" type="WorldEnvironment" parent="."]

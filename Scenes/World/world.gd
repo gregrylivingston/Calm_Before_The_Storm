@@ -118,7 +118,20 @@ func generate_points(heights: Array, chunk_pos: Vector3) -> Array:
 			points.append(Vector3(x,     heights[z + 1][x], z + 1) + chunk_pos)
 	return points
 
-func dig(dig_position: Vector3, amount: float):
+var digRequestAmount := 0.0
+var dig_target_position: Vector3
+var isDig: bool
+
+func _physics_process(delta: float) -> void:
+	if digRequestAmount > 0:
+		completeDig(dig_target_position,digRequestAmount,isDig)
+	
+func dig(dig_position: Vector3, amount: float, isDigging: bool = true):
+	dig_target_position = dig_position
+	digRequestAmount += amount
+	isDig = isDigging
+	
+func completeDig(dig_position: Vector3, amount: float, isDigging: bool = true):
 	var chunk_pos = (dig_position / chunk_size).floor() * chunk_size
 	if height_map.has(chunk_pos):
 		var heights = height_map[chunk_pos]
@@ -127,6 +140,15 @@ func dig(dig_position: Vector3, amount: float):
 		var z = int(local_pos.z)
 		var y = int(local_pos.y)
 		if y < heights[z][x]:  # Only dig if the y-coordinate of the dig_position is below the current height
-			heights[z][x] = max(heights[z][x] - amount, -20)
+			if isDigging: heights[z][x] = max(heights[z][x] - amount, -20)
+			else: 
+				var digAmount = amount/4.0
+				heights[z][x] = heights[z][x] + digAmount
+				heights[z][x+1] = heights[z][x+1] + digAmount
+				heights[z][x-1] = heights[z][x-1] + digAmount
+				heights[z+1][x] = heights[z+1][x] + digAmount
+				heights[z-1][x] = heights[z-1][x] + digAmount
+
 			height_map[chunk_pos] = heights  # Save the changes to the height map.
 			generate_chunk(chunk_pos)  # Regenerate the chunk to show the changes.
+	digRequestAmount = 0
