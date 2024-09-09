@@ -44,7 +44,6 @@ sky = SubResource("Sky_avorj")
 ambient_light_source = 3
 tonemap_mode = 1
 fog_enabled = true
-fog_density = 0.0047
 fog_sky_affect = 0.168
 volumetric_fog_enabled = true
 volumetric_fog_density = 0.0131

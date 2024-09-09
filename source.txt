@@ -3,3 +3,6 @@ water shader - https://godotshaders.com/shader/toon-style-3d-water-shader-no-tex
 terrain - https://godotengine.org/asset-library/asset/2813
 resource editor - https://godotengine.org/asset-library/asset/1479
 https://godotshaders.com/shader/underwater-camera-effect/
+
+
+possibly use particle rope -> https://godotshaders.com/shader/particle-rope/

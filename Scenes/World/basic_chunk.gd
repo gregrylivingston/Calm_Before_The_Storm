@@ -24,13 +24,13 @@ func add_nature(heights: Array, nature_noise) -> void:
 
 
 func _deferred_add_nature(heights: Array, nature_noise) -> void:
-	for z in 16:
-		for x in 16:
+	for z in 64:
+		for x in 64:
 			var noiseValue = nature_noise.get_noise_2d(x + chunk_pos.x, z + chunk_pos.z)
-			if noiseValue > 0.5 &&  noiseValue < 0.7 && randf() > 0.7:
+			if noiseValue > 0.5 &&  noiseValue < 0.7 && randf() > 0.9:
 				var newPine = pinetreescene.instantiate()
 				get_parent().add_child(newPine)
-				newPine.position = Vector3(x*4,heights[z][x] ,z*4) + chunk_pos
+				newPine.position = Vector3(x,heights[z][x] ,z) + chunk_pos
 	
 				
 				 

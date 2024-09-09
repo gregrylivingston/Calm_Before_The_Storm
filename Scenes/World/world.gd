@@ -5,7 +5,7 @@ var nature_noise = FastNoiseLite.new()
 var chunks: Dictionary = {}
 var height_map: Dictionary = {}
 var chunk_size = Vector3(64, 32, 64)
-var unload_distance := 10
+var unload_distance := 7
 var load_distance := 3
 
 @export var chunkScene := preload("res://Scenes/World/basic_chunk.tscn")
@@ -24,6 +24,7 @@ func _process(_delta):
 
 func setup_noise():
 	noise.noise_type = FastNoiseLite.TYPE_SIMPLEX
+	noise.seed = randi()
 	noise.frequency = 0.005 #0.03
 	noise.fractal_octaves = 3
 	noise.fractal_lacunarity = 2.0

@@ -1,9 +1,13 @@
-[gd_scene load_steps=12 format=3 uid="uid://dt7qj4rvpib2x"]
+[gd_scene load_steps=18 format=3 uid="uid://dt7qj4rvpib2x"]
 
 [ext_resource type="Script" path="res://Scenes/Player/player.gd" id="1_3uef2"]
 [ext_resource type="PackedScene" uid="uid://mefv6wbqhfdh" path="res://Assets/Models/pickaxe.glb" id="2_2gnp6"]
 [ext_resource type="Shader" path="res://shader/sh_underwater.gdshader" id="3_p7qtg"]
 [ext_resource type="Script" path="res://ui/GameOver/canvas_game_over.gd" id="4_hbng8"]
+[ext_resource type="Shader" path="res://shader/sh_raindroplets.gdshader" id="5_k63o8"]
+[ext_resource type="Script" path="res://shader/panel_raindroplets_on_screen.gd" id="6_0dylw"]
+[ext_resource type="Shader" path="res://shader/sh_rainfall.gdshader" id="6_sfwvs"]
+[ext_resource type="Script" path="res://shader/panel_rain_falling.gd" id="8_pgqh7"]
 
 [sub_resource type="CapsuleShape3D" id="CapsuleShape3D_cet7n"]
 
@@ -12,6 +16,20 @@ albedo_color = Color(0.278431, 1, 1, 1)
 
 [sub_resource type="CapsuleMesh" id="CapsuleMesh_ji1vj"]
 material = SubResource("StandardMaterial3D_v0pce")
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_sftpr"]
+shader = ExtResource("5_k63o8")
+shader_parameter/frequency = 4.0
+shader_parameter/size = 0.002
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_ac3pq"]
+shader = ExtResource("6_sfwvs")
+shader_parameter/count = 0
+shader_parameter/slant = -0.01
+shader_parameter/speed = 50.0
+shader_parameter/blur = 0.0055
+shader_parameter/colour = Color(1, 1, 1, 1)
+shader_parameter/size = Vector2(0.01, 0.3)
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_8dt5m"]
 render_priority = 0
@@ -60,6 +78,29 @@ mesh = SubResource("CapsuleMesh_ji1vj")
 [node name="Camera3D" type="Camera3D" parent="."]
 unique_name_in_owner = true
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.00151587, 0.671016, -0.557144)
+
+[node name="Canvas_RainEffects" type="CanvasLayer" parent="Camera3D"]
+
+[node name="Panel_Raindroplets_On_Screen" type="Panel" parent="Camera3D/Canvas_RainEffects"]
+material = SubResource("ShaderMaterial_sftpr")
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+script = ExtResource("6_0dylw")
+
+[node name="Panel_Rain_Falling" type="Panel" parent="Camera3D/Canvas_RainEffects"]
+material = SubResource("ShaderMaterial_ac3pq")
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -489.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+script = ExtResource("8_pgqh7")
 
 [node name="Gear" type="Node3D" parent="Camera3D"]
 unique_name_in_owner = true
