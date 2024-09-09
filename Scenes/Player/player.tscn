@@ -22,7 +22,7 @@ material = SubResource("StandardMaterial3D_v0pce")
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_sftpr"]
 shader = ExtResource("5_k63o8")
 shader_parameter/frequency = 4.0
-shader_parameter/size = 0.002
+shader_parameter/size = 0.005
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_ac3pq"]
 shader = ExtResource("6_sfwvs")
