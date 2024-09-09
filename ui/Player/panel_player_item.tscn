@@ -1,22 +1,35 @@
-[gd_scene load_steps=4 format=3 uid="uid://doaggerjrhdhf"]
+[gd_scene load_steps=5 format=3 uid="uid://doaggerjrhdhf"]
 
 [ext_resource type="Theme" uid="uid://dbmay2mk5b3eg" path="res://theme/theme_base.tres" id="1_8hl5f"]
 [ext_resource type="Script" path="res://ui/Player/panel_player_item.gd" id="1_mce05"]
-[ext_resource type="Texture2D" uid="uid://suu852d0ilq6" path="res://Assets/Textures/rock.png" id="1_v4bck"]
+[ext_resource type="Texture2D" uid="uid://clnkxwnwpbw2a" path="res://resource/player_item_icon/icon_shovel.png" id="3_beodw"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_ajpju"]
+bg_color = Color(0.905882, 0.435294, 0.317647, 0.188235)
+border_width_left = 4
+border_width_top = 4
+border_width_right = 4
+border_width_bottom = 16
+border_color = Color(0.905882, 0.435294, 0.317647, 1)
+corner_radius_top_right = 10
+corner_radius_bottom_right = 10
+corner_radius_bottom_left = 10
 
 [node name="Panel_Item" type="Panel"]
 custom_minimum_size = Vector2(64, 64)
 size_flags_horizontal = 4
 theme = ExtResource("1_8hl5f")
+theme_override_styles/panel = SubResource("StyleBoxFlat_ajpju")
 script = ExtResource("1_mce05")
 
 [node name="Label_InvPosition" type="Label" parent="."]
 layout_mode = 0
 offset_left = 4.0
 offset_top = 2.0
-offset_right = 13.0
+offset_right = 27.0
 offset_bottom = 23.0
 text = "1"
+horizontal_alignment = 1
 
 [node name="TextureRect" type="TextureRect" parent="."]
 layout_mode = 0
@@ -24,7 +37,7 @@ offset_left = 13.0
 offset_top = 6.0
 offset_right = 56.0
 offset_bottom = 48.0
-texture = ExtResource("1_v4bck")
+texture = ExtResource("3_beodw")
 expand_mode = 1
 stretch_mode = 5
 
@@ -54,7 +67,7 @@ offset_top = -85.0
 offset_bottom = -64.0
 grow_horizontal = 2
 grow_vertical = 0
-theme_override_font_sizes/font_size = 12
+theme_override_font_sizes/font_size = 36
 text = "0"
 horizontal_alignment = 1
 vertical_alignment = 2

@@ -20,7 +20,7 @@ resources_spreadsheet_view/context_menu_on_leftclick=false
 
 [application]
 
-config/name="Calm Before The Storm"
+config/name="Save The Animals"
 run/main_scene="res://Menus/scenes/menus/main_menu/main_menu_with_animations.tscn"
 config/features=PackedStringArray("4.3", "Forward Plus")
 config/icon="res://icon.svg"
@@ -40,6 +40,7 @@ Ui="*res://global/UI.gd"
 
 window/size/viewport_width=1200
 window/size/viewport_height=675
+window/stretch/mode="canvas_items"
 
 [editor_plugins]
 

@@ -1,4 +1,4 @@
-[gd_scene load_steps=11 format=3 uid="uid://csckx1dqx0ycd"]
+[gd_scene load_steps=12 format=3 uid="uid://csckx1dqx0ycd"]
 
 [ext_resource type="Script" path="res://ui/Player/progress_bar_weather_state.gd" id="1_bll7w"]
 [ext_resource type="Theme" uid="uid://dbmay2mk5b3eg" path="res://theme/theme_base.tres" id="1_soa6u"]
@@ -10,6 +10,18 @@
 [ext_resource type="Script" path="res://ui/Player/icon_left_mouse_action.gd" id="7_q3n8y"]
 [ext_resource type="Texture2D" uid="uid://cgos885q5ixlu" path="res://ui/texture/mouse_right_outline.png" id="8_l5dbw"]
 [ext_resource type="Script" path="res://ui/Player/icon_right__mouse_action.gd" id="9_yl8ak"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_e2vg4"]
+bg_color = Color(0.956863, 0.635294, 0.380392, 0.192157)
+border_width_left = 4
+border_width_top = 4
+border_width_right = 4
+border_width_bottom = 4
+border_color = Color(0.956863, 0.635294, 0.380392, 1)
+corner_radius_top_left = 10
+corner_radius_top_right = 10
+corner_radius_bottom_right = 10
+corner_radius_bottom_left = 10
 
 [node name="CanvasUI" type="CanvasLayer"]
 
@@ -29,8 +41,8 @@ custom_minimum_size = Vector2(60, 0)
 layout_mode = 2
 size_flags_horizontal = 0
 size_flags_vertical = 3
+theme_override_styles/background = SubResource("StyleBoxFlat_e2vg4")
 max_value = 11.0
-step = 1.0
 fill_mode = 3
 show_percentage = false
 script = ExtResource("1_bll7w")
@@ -233,6 +245,7 @@ grow_horizontal = 2
 grow_vertical = 2
 
 [node name="TextureRect" type="TextureRect" parent="Control_BottomCenter/HboxInventoryPanel/Icon_Left_Mouse_Action/VBoxContainer"]
+modulate = Color(0.905882, 0.435294, 0.317647, 1)
 layout_mode = 2
 texture = ExtResource("7_g5uy1")
 stretch_mode = 5
@@ -264,6 +277,7 @@ grow_horizontal = 2
 grow_vertical = 2
 
 [node name="TextureRect2" type="TextureRect" parent="Control_BottomCenter/HboxInventoryPanel/Icon_Right__Mouse_Action/VBoxContainer"]
+modulate = Color(0.905882, 0.435294, 0.317647, 1)
 layout_mode = 2
 texture = ExtResource("8_l5dbw")
 stretch_mode = 5

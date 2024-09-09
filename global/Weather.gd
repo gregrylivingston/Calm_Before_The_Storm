@@ -2,11 +2,11 @@ extends Node
 
 var weather_state_int := -1
 var weather_state: WeatherState
-var weather_animation_time := 5
+var weather_animation_time := 20
 
 var game_time := 0.06
 
-var state_timer_max := 20.0
+var state_timer_max := 25.0
 var state_timer := -5.0:
 	set(new_state_time):
 		state_timer = new_state_time

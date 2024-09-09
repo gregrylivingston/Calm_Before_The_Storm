@@ -1,4 +1,4 @@
-[gd_scene load_steps=18 format=3 uid="uid://3tan4jipfcjh"]
+[gd_scene load_steps=19 format=3 uid="uid://3tan4jipfcjh"]
 
 [ext_resource type="PackedScene" uid="uid://nrh54ueqxxix" path="res://Menus/scenes/menus/main_menu/main_menu.tscn" id="1_vbrqt"]
 [ext_resource type="Script" path="res://Menus/scenes/menus/main_menu/main_menu_with_animations.gd" id="2_24nl5"]
@@ -7,7 +7,7 @@
 
 [sub_resource type="Animation" id="1"]
 resource_name = "Intro"
-length = 2.4
+length = 3.4
 tracks/0/type = "method"
 tracks/0/imported = false
 tracks/0/enabled = true
@@ -78,6 +78,18 @@ tracks/5/interp = 1
 tracks/5/loop_wrap = true
 tracks/5/keys = {
 "times": PackedFloat32Array(0, 1.6, 2.4),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 0,
+"values": [Color(1, 1, 1, 0), Color(1, 1, 1, 0), Color(1, 1, 1, 1)]
+}
+tracks/6/type = "value"
+tracks/6/imported = false
+tracks/6/enabled = true
+tracks/6/path = NodePath("MenuContainer/VBoxContainer/HBoxContainer_top:modulate")
+tracks/6/interp = 1
+tracks/6/loop_wrap = true
+tracks/6/keys = {
+"times": PackedFloat32Array(0, 2.73333, 3.36667),
 "transitions": PackedFloat32Array(1, 1, 1),
 "update": 0,
 "values": [Color(1, 1, 1, 0), Color(1, 1, 1, 0), Color(1, 1, 1, 1)]
@@ -309,6 +321,18 @@ tracks/7/keys = {
 "update": 1,
 "values": [true]
 }
+tracks/8/type = "value"
+tracks/8/imported = false
+tracks/8/enabled = true
+tracks/8/path = NodePath("MenuContainer/VBoxContainer/HBoxContainer_top:modulate")
+tracks/8/interp = 1
+tracks/8/loop_wrap = true
+tracks/8/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Color(1, 1, 1, 1)]
+}
 
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_2kqig"]
 _data = {
@@ -349,7 +373,15 @@ states/Start/position = Vector2(82, 123)
 transitions = ["Intro", "OpenMainMenu", SubResource("11"), "OpenMainMenu", "OpenSubMenu", SubResource("14"), "Start", "Intro", SubResource("AnimationNodeStateMachineTransition_j0orr"), "OpenSubMenu", "OpenMainMenu", SubResource("AnimationNodeStateMachineTransition_63dxc")]
 graph_offset = Vector2(-180.277, 49)
 
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_7l3nb"]
+bg_color = Color(0.6, 0.6, 0.6, 0)
+
 [node name="MainMenu" instance=ExtResource("1_vbrqt")]
+anchors_preset = 9
+anchor_right = 0.0
+offset_left = 32.0
+offset_right = 941.0
+grow_horizontal = 1
 theme = ExtResource("2_ari44")
 script = ExtResource("2_24nl5")
 game_scene_path = "res://main.tscn"
@@ -368,10 +400,42 @@ parameters/conditions/intro_done = false
 modulate = Color(1, 1, 1, 0)
 
 [node name="MenuContainer" parent="." index="6"]
-offset_top = 160.0
+anchors_preset = 9
+anchor_right = 0.0
+offset_left = 34.0
+offset_top = 25.0
+offset_right = 963.0
+offset_bottom = -16.0
+grow_horizontal = 1
+theme = ExtResource("2_ari44")
+
+[node name="HBoxContainer_top" type="HBoxContainer" parent="MenuContainer/VBoxContainer" index="0"]
+layout_mode = 2
+
+[node name="OptionsButton2" type="Button" parent="MenuContainer/VBoxContainer/HBoxContainer_top" index="0"]
+unique_name_in_owner = true
+custom_minimum_size = Vector2(64, 20)
+layout_mode = 2
+size_flags_horizontal = 0
+theme_override_font_sizes/font_size = 15
+theme_override_styles/normal = SubResource("StyleBoxFlat_7l3nb")
+text = "Options
+"
+alignment = 0
+
+[node name="CreditsButton2" type="Button" parent="MenuContainer/VBoxContainer/HBoxContainer_top" index="1"]
+unique_name_in_owner = true
+custom_minimum_size = Vector2(64, 20)
+layout_mode = 2
+size_flags_horizontal = 0
+theme_override_font_sizes/font_size = 15
+theme_override_styles/normal = SubResource("StyleBoxFlat_7l3nb")
+text = "Credits"
+alignment = 0
 
 [node name="Title" parent="MenuContainer/VBoxContainer/TitlesMargin/TitlesContainer" index="0"]
 modulate = Color(1, 1, 1, 0)
+size_flags_horizontal = 0
 theme_override_font_sizes/font_size = 102
 text = "Save the Animals"
 
@@ -380,21 +444,66 @@ visible = false
 modulate = Color(1, 1, 1, 0)
 text = "by Gregry"
 
+[node name="HSeparator" type="HSeparator" parent="MenuContainer/VBoxContainer" index="2"]
+self_modulate = Color(1, 1, 1, 0)
+custom_minimum_size = Vector2(0, 100)
+layout_mode = 2
+
 [node name="MenuButtons" parent="MenuContainer/VBoxContainer/MenuMargin" index="0"]
 modulate = Color(1, 1, 1, 0)
+custom_minimum_size = Vector2(1.625, 0)
+size_flags_horizontal = 0
+size_flags_vertical = 4
 lock = true
 
 [node name="PlayButton" parent="MenuContainer/VBoxContainer/MenuMargin/MenuButtons" index="0"]
+custom_minimum_size = Vector2(250, 40)
+size_flags_horizontal = 0
 theme_override_font_sizes/font_size = 30
+text = "  Save the Animals   "
+alignment = 0
 
-[node name="OptionsButton" parent="MenuContainer/VBoxContainer/MenuMargin/MenuButtons" index="1"]
+[node name="PlayButton3" type="Button" parent="MenuContainer/VBoxContainer/MenuMargin/MenuButtons" index="1"]
+unique_name_in_owner = true
+custom_minimum_size = Vector2(175, 40)
+layout_mode = 2
+size_flags_horizontal = 0
 theme_override_font_sizes/font_size = 30
+text = "  Upgrades"
+alignment = 0
 
-[node name="CreditsButton" parent="MenuContainer/VBoxContainer/MenuMargin/MenuButtons" index="2"]
-theme_override_font_sizes/font_size = 30
+[node name="PlayButton2" type="Button" parent="MenuContainer/VBoxContainer/MenuMargin/MenuButtons" index="2"]
+unique_name_in_owner = true
+custom_minimum_size = Vector2(100, 25)
+layout_mode = 2
+size_flags_horizontal = 0
+theme_override_font_sizes/font_size = 20
+text = "  Tutorial"
+alignment = 0
 
-[node name="ExitButton" parent="MenuContainer/VBoxContainer/MenuMargin/MenuButtons" index="3"]
+[node name="OptionsButton" parent="MenuContainer/VBoxContainer/MenuMargin/MenuButtons" index="3"]
+visible = false
+size_flags_horizontal = 0
 theme_override_font_sizes/font_size = 30
+alignment = 0
+
+[node name="CreditsButton" parent="MenuContainer/VBoxContainer/MenuMargin/MenuButtons" index="4"]
+visible = false
+size_flags_horizontal = 0
+theme_override_font_sizes/font_size = 30
+alignment = 0
+
+[node name="ExitButton" parent="MenuContainer/VBoxContainer/MenuMargin/MenuButtons" index="5"]
+custom_minimum_size = Vector2(100, 25)
+size_flags_horizontal = 0
+theme_override_font_sizes/font_size = 20
+text = "  Exit"
+alignment = 0
 
 [node name="backgroundmap" parent="." index="10" instance=ExtResource("3_cjjc3")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.0273995, 0, 0)
+
+[connection signal="pressed" from="MenuContainer/VBoxContainer/HBoxContainer_top/OptionsButton2" to="." method="_on_options_button_pressed"]
+[connection signal="pressed" from="MenuContainer/VBoxContainer/HBoxContainer_top/CreditsButton2" to="." method="_on_credits_button_pressed"]
+[connection signal="pressed" from="MenuContainer/VBoxContainer/MenuMargin/MenuButtons/PlayButton3" to="." method="_on_play_button_pressed"]
+[connection signal="pressed" from="MenuContainer/VBoxContainer/MenuMargin/MenuButtons/PlayButton2" to="." method="_on_play_button_pressed"]

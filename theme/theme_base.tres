@@ -1,6 +1,14 @@
-[gd_resource type="Theme" load_steps=2 format=3 uid="uid://dbmay2mk5b3eg"]
+[gd_resource type="Theme" load_steps=5 format=3 uid="uid://dbmay2mk5b3eg"]
 
+[ext_resource type="StyleBox" uid="uid://bcnu5qfk30vns" path="res://theme/panel_standard.tres" id="1_jw17a"]
 [ext_resource type="FontFile" uid="uid://dyhx5x3l2fik5" path="res://theme/font/Chewy-Regular.ttf" id="1_up0jm"]
+[ext_resource type="StyleBox" uid="uid://bncmn0nlduaw5" path="res://theme/panel_flat.tres" id="2_tjtke"]
+[ext_resource type="StyleBox" uid="uid://jbse60t4d2hn" path="res://theme/panel_flat_red.tres" id="3_xik8c"]
 
 [resource]
 default_font = ExtResource("1_up0jm")
+Button/colors/font_color = Color(1, 1, 1, 1)
+Button/styles/normal = ExtResource("1_jw17a")
+Panel/styles/panel = ExtResource("3_xik8c")
+ProgressBar/styles/background = ExtResource("2_tjtke")
+ProgressBar/styles/fill = ExtResource("3_xik8c")
