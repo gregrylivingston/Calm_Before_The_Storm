@@ -1,0 +1,9 @@
+[gd_scene load_steps=2 format=3 uid="uid://brxe33qtw5h35"]
+
+[ext_resource type="PackedScene" uid="uid://dt0w715dqgnvk" path="res://mesh/nature/Farm_FBX/Wheat_Crop.fbx" id="1_lm04r"]
+
+[node name="Hay" type="Node3D"]
+transform = Transform3D(1, 0, 0, 0, 0.23224, -0.972658, 0, 0.972658, 0.23224, -0.00338566, 0.220459, -0.22083)
+
+[node name="Wheat_Crop" parent="." instance=ExtResource("1_lm04r")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.424396, 0.276711)

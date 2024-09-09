@@ -1,8 +1,10 @@
-[gd_resource type="Resource" script_class="PlayerItem" load_steps=3 format=3 uid="uid://k1f5jqcog0cj"]
+[gd_resource type="Resource" script_class="PlayerItem" load_steps=4 format=3 uid="uid://k1f5jqcog0cj"]
 
-[ext_resource type="PackedScene" uid="uid://yfe7wv528aq4" path="res://mesh/tool/OBJ/Shovel_Diamond.gltf" id="1_xymhq"]
+[ext_resource type="Texture2D" uid="uid://c1fp4x7anenty" path="res://resource/player_item_icon/icon_meat.png" id="1_eabjx"]
+[ext_resource type="PackedScene" uid="uid://drrp5g7h3ovh0" path="res://Scenes/Player/item/meat.tscn" id="1_g5tab"]
 [ext_resource type="Script" path="res://resource/player_item/r_player_item.gd" id="2_my1ss"]
 
 [resource]
 script = ExtResource("2_my1ss")
-scene = ExtResource("1_xymhq")
+scene = ExtResource("1_g5tab")
+icon = ExtResource("1_eabjx")

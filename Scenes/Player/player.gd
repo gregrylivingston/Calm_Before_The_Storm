@@ -54,7 +54,7 @@ func _unhandled_input(event):
 
 #returns true if able to break earth
 func digEarth(isDigging: bool = true) -> bool:
-	%RayCast3D.target_position.z = -3
+	%RayCast3D.target_position.z = -5
 	if raycast.is_colliding():
 		if raycast.get_collider() is StaticBody3D:
 			var collider = raycast.get_collider()
@@ -101,7 +101,7 @@ func _select_next_wood_building() -> void:
 	
 func move_queued_building() -> void:
 	if is_instance_valid(queued_buildable_object):
-		%RayCast3D.target_position.z = -50
+		%RayCast3D.target_position.z = -25
 		if raycast.is_colliding():
 			if raycast.get_collider() is StaticBody3D:
 				queued_buildable_object.position = raycast.get_collision_point()
@@ -129,6 +129,7 @@ func select_item_check() -> void:
 	if Input.is_action_just_pressed("3"):select_new_item(2)
 	if Input.is_action_just_pressed("4"):select_new_item(3)
 	if Input.is_action_just_pressed("5"):select_new_item(4)
+	if Input.is_action_just_pressed("6"):select_new_item(5)
 
 func select_new_item(ItemInt: int) -> void:
 	selected_item_int = ItemInt

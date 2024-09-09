@@ -1,0 +1,9 @@
+[gd_scene load_steps=2 format=3 uid="uid://drrp5g7h3ovh0"]
+
+[ext_resource type="PackedScene" uid="uid://bhqmsl784knsd" path="res://mesh/nature/Steak.fbx" id="1_hhrxl"]
+
+[node name="Meat" type="Node3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.00338566, 0.00348222, -0.000856638)
+
+[node name="Steak" parent="." instance=ExtResource("1_hhrxl")]
+transform = Transform3D(0.5, 0, 0, 0, -2.18557e-08, -0.5, 0, 0.5, -2.18557e-08, 0, 0.424396, 0.276711)
