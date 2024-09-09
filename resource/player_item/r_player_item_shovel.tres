@@ -8,3 +8,5 @@
 script = ExtResource("1_ih6qb")
 scene = ExtResource("1_p6agv")
 icon = ExtResource("1_qa6sy")
+left_action_string = "Dig"
+right_action_string = "Unload Dirt"

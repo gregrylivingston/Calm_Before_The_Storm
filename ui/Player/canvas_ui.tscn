@@ -1,4 +1,4 @@
-[gd_scene load_steps=9 format=3 uid="uid://csckx1dqx0ycd"]
+[gd_scene load_steps=11 format=3 uid="uid://csckx1dqx0ycd"]
 
 [ext_resource type="Script" path="res://ui/Player/progress_bar_weather_state.gd" id="1_bll7w"]
 [ext_resource type="Theme" uid="uid://dbmay2mk5b3eg" path="res://theme/theme_base.tres" id="1_soa6u"]
@@ -7,7 +7,9 @@
 [ext_resource type="Script" path="res://ui/Player/action_progress_bar.gd" id="5_nguav"]
 [ext_resource type="Script" path="res://ui/Player/hbox_inventory_panel.gd" id="6_tu37j"]
 [ext_resource type="Texture2D" uid="uid://b32kjjorkg1qr" path="res://ui/texture/mouse_left_outline.png" id="7_g5uy1"]
+[ext_resource type="Script" path="res://ui/Player/icon_left_mouse_action.gd" id="7_q3n8y"]
 [ext_resource type="Texture2D" uid="uid://cgos885q5ixlu" path="res://ui/texture/mouse_right_outline.png" id="8_l5dbw"]
+[ext_resource type="Script" path="res://ui/Player/icon_right__mouse_action.gd" id="9_yl8ak"]
 
 [node name="CanvasUI" type="CanvasLayer"]
 
@@ -210,12 +212,13 @@ grow_horizontal = 2
 grow_vertical = 2
 script = ExtResource("6_tu37j")
 
-[node name="VSeparator" type="VSeparator" parent="Control_BottomCenter/HboxInventoryPanel"]
+[node name="Icon_Left_Mouse_Action" type="VSeparator" parent="Control_BottomCenter/HboxInventoryPanel"]
 self_modulate = Color(1, 1, 1, 0)
 custom_minimum_size = Vector2(150, 0)
 layout_mode = 2
+script = ExtResource("7_q3n8y")
 
-[node name="VBoxContainer" type="VBoxContainer" parent="Control_BottomCenter/HboxInventoryPanel/VSeparator"]
+[node name="VBoxContainer" type="VBoxContainer" parent="Control_BottomCenter/HboxInventoryPanel/Icon_Left_Mouse_Action"]
 layout_mode = 1
 anchors_preset = 8
 anchor_left = 0.5
@@ -229,22 +232,24 @@ offset_bottom = 64.0
 grow_horizontal = 2
 grow_vertical = 2
 
-[node name="TextureRect" type="TextureRect" parent="Control_BottomCenter/HboxInventoryPanel/VSeparator/VBoxContainer"]
+[node name="TextureRect" type="TextureRect" parent="Control_BottomCenter/HboxInventoryPanel/Icon_Left_Mouse_Action/VBoxContainer"]
 layout_mode = 2
 texture = ExtResource("7_g5uy1")
 stretch_mode = 5
 
-[node name="Label" type="Label" parent="Control_BottomCenter/HboxInventoryPanel/VSeparator/VBoxContainer"]
+[node name="Label" type="Label" parent="Control_BottomCenter/HboxInventoryPanel/Icon_Left_Mouse_Action/VBoxContainer"]
+unique_name_in_owner = true
 layout_mode = 2
 text = "Dig"
 horizontal_alignment = 1
 
-[node name="VSeparator2" type="VSeparator" parent="Control_BottomCenter/HboxInventoryPanel"]
+[node name="Icon_Right__Mouse_Action" type="VSeparator" parent="Control_BottomCenter/HboxInventoryPanel"]
 self_modulate = Color(1, 1, 1, 0)
 custom_minimum_size = Vector2(150, 0)
 layout_mode = 2
+script = ExtResource("9_yl8ak")
 
-[node name="VBoxContainer" type="VBoxContainer" parent="Control_BottomCenter/HboxInventoryPanel/VSeparator2"]
+[node name="VBoxContainer" type="VBoxContainer" parent="Control_BottomCenter/HboxInventoryPanel/Icon_Right__Mouse_Action"]
 layout_mode = 1
 anchors_preset = 8
 anchor_left = 0.5
@@ -258,12 +263,13 @@ offset_bottom = 64.0
 grow_horizontal = 2
 grow_vertical = 2
 
-[node name="TextureRect2" type="TextureRect" parent="Control_BottomCenter/HboxInventoryPanel/VSeparator2/VBoxContainer"]
+[node name="TextureRect2" type="TextureRect" parent="Control_BottomCenter/HboxInventoryPanel/Icon_Right__Mouse_Action/VBoxContainer"]
 layout_mode = 2
 texture = ExtResource("8_l5dbw")
 stretch_mode = 5
 
-[node name="Label2" type="Label" parent="Control_BottomCenter/HboxInventoryPanel/VSeparator2/VBoxContainer"]
+[node name="Label2" type="Label" parent="Control_BottomCenter/HboxInventoryPanel/Icon_Right__Mouse_Action/VBoxContainer"]
+unique_name_in_owner = true
 layout_mode = 2
 text = "Buildings"
 horizontal_alignment = 1

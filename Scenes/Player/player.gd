@@ -123,18 +123,27 @@ var is_secondary_use_mode := false
 @export var player_item_options : Array[PlayerItem]
 var selected_item_int := 0
 func select_item_check() -> void:
-	if Input.is_action_just_pressed("1"):select_new_item(0)
-	if Input.is_action_just_pressed("2"):select_new_item(1)
-	if Input.is_action_just_pressed("3"):select_new_item(2)
-	if Input.is_action_just_pressed("4"):select_new_item(3)
-	if Input.is_action_just_pressed("5"):select_new_item(4)
-	if Input.is_action_just_pressed("6"):select_new_item(5)
+	if Input.is_action_just_pressed("1"):
+		select_new_item(0)
+	if Input.is_action_just_pressed("2"):
+		select_new_item(1)
+	if Input.is_action_just_pressed("3"):
+		select_new_item(2)
+	if Input.is_action_just_pressed("4"):
+		select_new_item(3)
+	if Input.is_action_just_pressed("5"):
+		select_new_item(4)
+	if Input.is_action_just_pressed("6"):
+		select_new_item(5)
 
 func select_new_item(ItemInt: int) -> void:
 	if is_instance_valid(queued_buildable_object):queued_buildable_object.queue_free()
 	selected_item_int = ItemInt
 	for i in %Gear.get_children(): i.queue_free()
 	var newItemResource = player_item_options[ItemInt]
+	
+	Ui.set_left_mouse_action_text(newItemResource.left_action_string)
+	Ui.set_right_mouse_action_text(newItemResource.right_action_string)
 	var newItemScene = newItemResource.scene.instantiate()
 	%Gear.add_child(newItemScene)
 	newItemScene.rotation_degrees.y = -90

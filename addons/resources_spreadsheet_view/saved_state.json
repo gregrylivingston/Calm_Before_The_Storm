@@ -1,12 +1,17 @@
 {
   "hidden_columns": {
+    "res://resource/player_item/": {
+      "resource_local_to_scene": true,
+      "resource_name": true
+    },
     "res://resource/weather_state/": {
       "resource_local_to_scene": true,
       "resource_name": true
     }
   },
   "recent_paths": [
-    "res://resource/weather_state/"
+    "res://resource/weather_state/",
+    "res://resource/player_item/"
   ],
   "table_functions": {
     "filter": [
