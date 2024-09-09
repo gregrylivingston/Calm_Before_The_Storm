@@ -94,22 +94,24 @@ var queued_buildable_object: Node3D = null
 
 
 func grab_animal(type: String) -> void:
-	match type:
-		"fruit":
-			Inventory.fruit -= 1
-			if Inventory.fruit < 1:reset_active_item()
-		"hay":
-			Inventory.hay -= 1
-			if Inventory.hay < 1:reset_active_item()
-		"meat":
-			Inventory.meat -= 1
-			if Inventory.meat < 1:reset_active_item()
-	Inventory.update_inventory.emit()
+
 		
 	if Input.is_action_just_pressed("alt_action"):
-		queued_buildable_object = %ObjectSelector.grab_animal()
-		Ui.set_left_mouse_action_text("Release")
-		Ui.set_right_mouse_action_text("")
+		queued_buildable_object = %ObjectSelector.grab_animal(type)
+		if is_instance_valid(queued_buildable_object):
+			match type:
+				"fruit":
+					Inventory.fruit -= 1
+					if Inventory.fruit < 1:reset_active_item()
+				"hay":
+					Inventory.hay -= 1
+					if Inventory.hay < 1:reset_active_item()
+				"meat":
+					Inventory.meat -= 1
+					if Inventory.meat < 1:reset_active_item()
+			Inventory.update_inventory.emit()
+			Ui.set_left_mouse_action_text("Release")
+			Ui.set_right_mouse_action_text("")
 
 func reset_active_item() -> void:
 	selected_item_int = 1
