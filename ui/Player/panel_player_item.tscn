@@ -5,6 +5,7 @@
 
 [node name="Panel_Item" type="Panel"]
 custom_minimum_size = Vector2(64, 64)
+size_flags_horizontal = 4
 script = ExtResource("1_mce05")
 
 [node name="Label_InvPosition" type="Label" parent="."]

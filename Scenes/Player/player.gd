@@ -40,10 +40,8 @@ func _unhandled_input(event):
 		$AnimationPlayer.stop()
 		actionPressed = false
 	if event.is_action_pressed("alt_action"):
-		$AnimationPlayer.play("swing")
 		rightClickPressed = true
 	if event.is_action_released("alt_action"):
-		$AnimationPlayer.stop()
 		rightClickPressed = false
 	if event.is_action_pressed("sprint"):
 		speed = sprintSpeed

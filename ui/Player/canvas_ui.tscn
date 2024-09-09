@@ -1,4 +1,4 @@
-[gd_scene load_steps=7 format=3 uid="uid://csckx1dqx0ycd"]
+[gd_scene load_steps=10 format=3 uid="uid://csckx1dqx0ycd"]
 
 [ext_resource type="Script" path="res://ui/Player/progress_bar_weather_state.gd" id="1_bll7w"]
 [ext_resource type="Theme" uid="uid://dbmay2mk5b3eg" path="res://theme/theme_base.tres" id="1_soa6u"]
@@ -6,6 +6,9 @@
 [ext_resource type="Script" path="res://ui/Player/weather_alert_timer.gd" id="4_dyjoc"]
 [ext_resource type="Script" path="res://ui/Player/action_progress_bar.gd" id="5_nguav"]
 [ext_resource type="Script" path="res://ui/Player/hbox_inventory_panel.gd" id="6_tu37j"]
+[ext_resource type="Script" path="res://addons/radial_menu/RadialMenu.gd" id="7_pj2uh"]
+[ext_resource type="Texture2D" uid="uid://c0m11l24tcxvl" path="res://resource/player_item_icon/icon_apple.png" id="8_345to"]
+[ext_resource type="Texture2D" uid="uid://cn1kn84ff5fg1" path="res://resource/player_item_icon/icon_pickaxe.png" id="9_hxrtb"]
 
 [node name="CanvasUI" type="CanvasLayer"]
 
@@ -200,12 +203,49 @@ anchor_left = 0.5
 anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
-offset_left = -259.0
-offset_top = -32.0
-offset_right = 260.0
-offset_bottom = 20.0
+offset_left = -52.0
+offset_top = -26.0
+offset_right = 50.0
+offset_bottom = 26.0
 grow_horizontal = 2
 grow_vertical = 2
 script = ExtResource("6_tu37j")
+
+[node name="RadialMenu" type="Container" parent="."]
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -213.0
+offset_top = -213.0
+offset_right = 213.0
+offset_bottom = 213.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("7_pj2uh")
+width_min = 0.2
+
+[node name="TextureButton" type="TextureButton" parent="RadialMenu"]
+layout_mode = 2
+focus_mode = 0
+texture_normal = ExtResource("8_345to")
+ignore_texture_size = true
+stretch_mode = 0
+
+[node name="TextureButton2" type="TextureButton" parent="RadialMenu"]
+layout_mode = 2
+focus_mode = 0
+texture_normal = ExtResource("9_hxrtb")
+
+[node name="TextureButton3" type="TextureButton" parent="RadialMenu"]
+layout_mode = 2
+focus_mode = 0
+texture_normal = ExtResource("9_hxrtb")
+
+[node name="TextureButton4" type="TextureButton" parent="RadialMenu"]
+layout_mode = 2
+focus_mode = 0
+texture_normal = ExtResource("9_hxrtb")
 
 [connection signal="value_changed" from="Control_Center/ActionProgressBar" to="Control_Center/ActionProgressBar" method="_on_value_changed"]
