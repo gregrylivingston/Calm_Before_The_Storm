@@ -7,7 +7,7 @@ var weather_animation_time := 5
 var game_time := 0.06
 
 var state_timer_max := 10.0
-var state_timer := 0.0:
+var state_timer := -5.0:
 	set(new_state_time):
 		state_timer = new_state_time
 		if state_timer > state_timer_max:
@@ -34,11 +34,10 @@ func start_new_round():
 	game_time = 0.0
 	state_timer = 0.0
 	weather_state_int = -1
-	increase_weather_state()
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
-	increase_weather_state()
+	pass
 	
 signal new_weather_state
 	

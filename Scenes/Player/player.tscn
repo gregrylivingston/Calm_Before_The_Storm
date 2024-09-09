@@ -1,13 +1,15 @@
-[gd_scene load_steps=18 format=3 uid="uid://dt7qj4rvpib2x"]
+[gd_scene load_steps=20 format=3 uid="uid://dt7qj4rvpib2x"]
 
 [ext_resource type="Script" path="res://Scenes/Player/player.gd" id="1_3uef2"]
 [ext_resource type="PackedScene" uid="uid://mefv6wbqhfdh" path="res://Assets/Models/pickaxe.glb" id="2_2gnp6"]
+[ext_resource type="PackedScene" uid="uid://csckx1dqx0ycd" path="res://ui/Player/canvas_ui.tscn" id="2_a8erp"]
 [ext_resource type="Shader" path="res://shader/sh_underwater.gdshader" id="3_p7qtg"]
 [ext_resource type="Script" path="res://ui/GameOver/canvas_game_over.gd" id="4_hbng8"]
 [ext_resource type="Shader" path="res://shader/sh_raindroplets.gdshader" id="5_k63o8"]
 [ext_resource type="Script" path="res://shader/panel_raindroplets_on_screen.gd" id="6_0dylw"]
 [ext_resource type="Shader" path="res://shader/sh_rainfall.gdshader" id="6_sfwvs"]
 [ext_resource type="Script" path="res://shader/panel_rain_falling.gd" id="8_pgqh7"]
+[ext_resource type="Theme" uid="uid://dbmay2mk5b3eg" path="res://theme/theme_base.tres" id="9_b3dlc"]
 
 [sub_resource type="CapsuleShape3D" id="CapsuleShape3D_cet7n"]
 
@@ -102,6 +104,8 @@ grow_vertical = 2
 mouse_filter = 2
 script = ExtResource("8_pgqh7")
 
+[node name="CanvasUI" parent="Camera3D" instance=ExtResource("2_a8erp")]
+
 [node name="Gear" type="Node3D" parent="Camera3D"]
 unique_name_in_owner = true
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.00151587, -0.786331, 0.243112)
@@ -136,6 +140,7 @@ offset_right = 85.5
 offset_bottom = 68.0
 grow_horizontal = 2
 grow_vertical = 2
+theme = ExtResource("9_b3dlc")
 
 [node name="Label" type="Label" parent="Camera3D/UnderwaterView/Canvas_GameOver/VBoxContainer"]
 layout_mode = 2

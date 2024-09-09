@@ -70,3 +70,4 @@ func drown() -> void:
 	%Gear. visible = false
 	Input.mouse_mode = Input.MOUSE_MODE_VISIBLE
 	$Camera3D/Canvas_RainEffects.visible = false
+	$Camera3D/CanvasUI.visible = false

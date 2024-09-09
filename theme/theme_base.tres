@@ -1,0 +1,6 @@
+[gd_resource type="Theme" load_steps=2 format=3 uid="uid://dbmay2mk5b3eg"]
+
+[ext_resource type="FontFile" uid="uid://dyhx5x3l2fik5" path="res://theme/font/Chewy-Regular.ttf" id="1_up0jm"]
+
+[resource]
+default_font = ExtResource("1_up0jm")

@@ -1,0 +1,110 @@
+[gd_scene load_steps=4 format=3 uid="uid://csckx1dqx0ycd"]
+
+[ext_resource type="Script" path="res://ui/Player/progress_bar_weather_state.gd" id="1_bll7w"]
+[ext_resource type="Theme" uid="uid://dbmay2mk5b3eg" path="res://theme/theme_base.tres" id="1_soa6u"]
+[ext_resource type="Script" path="res://ui/Player/h_box_storm_news_feed.gd" id="3_rxgmm"]
+
+[node name="CanvasUI" type="CanvasLayer"]
+
+[node name="VBoxContainer" type="VBoxContainer" parent="."]
+anchors_preset = 9
+anchor_bottom = 1.0
+offset_left = 61.0
+offset_top = 133.0
+offset_right = 124.0
+offset_bottom = -57.0
+grow_vertical = 2
+mouse_filter = 2
+theme = ExtResource("1_soa6u")
+
+[node name="ProgressBar_WeatherState" type="ProgressBar" parent="VBoxContainer"]
+custom_minimum_size = Vector2(60, 0)
+layout_mode = 2
+size_flags_horizontal = 0
+size_flags_vertical = 3
+max_value = 11.0
+step = 1.0
+value = 1.0
+fill_mode = 3
+show_percentage = false
+script = ExtResource("1_bll7w")
+
+[node name="Label" type="Label" parent="VBoxContainer/ProgressBar_WeatherState"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -20.0
+offset_top = -10.5
+offset_right = 20.0
+offset_bottom = 10.5
+grow_horizontal = 2
+grow_vertical = 2
+text = "Storm"
+horizontal_alignment = 1
+
+[node name="Label2" type="Label" parent="VBoxContainer/ProgressBar_WeatherState"]
+layout_mode = 1
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -20.0
+offset_top = -47.0
+offset_right = 20.0
+offset_bottom = -26.0
+grow_horizontal = 2
+grow_vertical = 0
+text = "Calm"
+horizontal_alignment = 1
+
+[node name="Control" type="Control" parent="."]
+layout_mode = 3
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -20.0
+offset_top = 48.0
+offset_right = 20.0
+offset_bottom = 88.0
+grow_horizontal = 2
+
+[node name="Label_WeatherAlert" type="Label" parent="Control"]
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -202.0
+offset_top = -8.0
+offset_right = 202.0
+offset_bottom = 75.0
+grow_horizontal = 2
+theme = ExtResource("1_soa6u")
+theme_override_font_sizes/font_size = 60
+text = "Weather Alert"
+horizontal_alignment = 1
+script = ExtResource("3_rxgmm")
+
+[node name="HBox_StormNewsFeed" type="HBoxContainer" parent="Control/Label_WeatherAlert"]
+layout_mode = 1
+anchors_preset = 10
+anchor_right = 1.0
+offset_top = -18.0
+offset_right = 1306.0
+offset_bottom = 97.0
+grow_horizontal = 2
+mouse_filter = 2
+theme = ExtResource("1_soa6u")
+
+[node name="VSeparator" type="VSeparator" parent="Control/Label_WeatherAlert/HBox_StormNewsFeed"]
+self_modulate = Color(1, 1, 1, 0)
+custom_minimum_size = Vector2(1000, 0)
+layout_mode = 2
+
+[node name="Label_WeatherInfo" type="Label" parent="Control/Label_WeatherAlert/HBox_StormNewsFeed"]
+unique_name_in_owner = true
+layout_mode = 2
+theme_override_font_sizes/font_size = 60
