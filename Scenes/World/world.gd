@@ -140,14 +140,18 @@ func completeDig(dig_position: Vector3, amount: float, isDigging: bool = true):
 		var z = int(local_pos.z)
 		var y = int(local_pos.y)
 		if y < heights[z][x]:  # Only dig if the y-coordinate of the dig_position is below the current height
-			if isDigging: heights[z][x] = max(heights[z][x] - amount, -20)
-			else: 
-				var digAmount = amount/4.0
+			if isDigging: 
+				heights[z][x] = max(heights[z][x] - amount/10.0, -20)
+				Inventory.dirt += amount 
+			elif Inventory.dirt > amount: 
+				Inventory.dirt -= amount
+				var digAmount = amount/40.0
 				heights[z][x] = heights[z][x] + digAmount
 				heights[z][x+1] = heights[z][x+1] + digAmount
 				heights[z][x-1] = heights[z][x-1] + digAmount
 				heights[z+1][x] = heights[z+1][x] + digAmount
 				heights[z-1][x] = heights[z-1][x] + digAmount
+			Inventory.update_inventory.emit()
 
 			height_map[chunk_pos] = heights  # Save the changes to the height map.
 			generate_chunk(chunk_pos)  # Regenerate the chunk to show the changes.

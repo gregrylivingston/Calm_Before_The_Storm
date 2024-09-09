@@ -29,11 +29,12 @@ var weather_states: Array[WeatherState] = [
 	load("res://resource/weather_state/r_weather_state_10.tres")
 ]
 
-
+signal new_round
 func start_new_round():
 	game_time = 0.0
 	state_timer = 0.0
 	weather_state_int = -1
+	new_round.emit()
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:

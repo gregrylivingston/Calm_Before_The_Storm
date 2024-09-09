@@ -1,8 +1,8 @@
 [gd_scene load_steps=5 format=3 uid="uid://bkv5ygrx6yaus"]
 
-[ext_resource type="PackedScene" path="res://Maaack/scenes/credits/credits.tscn" id="1_uqmxj"]
-[ext_resource type="Script" path="res://Maaack/scenes/end_credits/end_credits.gd" id="2_jg26f"]
-[ext_resource type="PackedScene" path="res://addons/maaacks_menus_template/base/scenes/music_players/background_music_player.tscn" id="3_h6wdv"]
+[ext_resource type="PackedScene" uid="uid://ijmk66788nji" path="res://Menus/scenes/credits/credits.tscn" id="1_uqmxj"]
+[ext_resource type="Script" path="res://Menus/scenes/end_credits/end_credits.gd" id="2_jg26f"]
+[ext_resource type="PackedScene" uid="uid://bkcsjsk2ciff" path="res://addons/maaacks_menus_template/base/scenes/music_players/background_music_player.tscn" id="3_h6wdv"]
 [ext_resource type="Script" path="res://addons/maaacks_menus_template/base/scripts/capture_focus.gd" id="4_aqa4l"]
 
 [node name="EndCredits" instance=ExtResource("1_uqmxj")]

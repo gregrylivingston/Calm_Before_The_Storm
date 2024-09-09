@@ -64,7 +64,7 @@ func digEarth(isDigging: bool = true) -> bool:
 			particles.position = collisionPoint
 			world.add_child(particles)
 			particles.emitting = true
-			world.dig(collisionPoint, 0.1, isDigging)
+			world.dig(collisionPoint, 1, isDigging)
 			return true
 	return false
 
@@ -80,11 +80,11 @@ func doAction():
 				2:%ObjectSelector.break_rock()
 
 func rightClick():
-	if Input.is_action_just_pressed("alt_action"):
-		match selected_item_int:
-			0:digEarth(false)
-			1:_select_next_wood_building()
-			2:pass	
+	match selected_item_int:
+		0:if Input.is_action_pressed("alt_action"):digEarth(false)
+		1:if Input.is_action_just_pressed("alt_action"):_select_next_wood_building()
+		2:pass
+	
 
 var queued_buildable_object: Node3D
 var wood_building_num := -1
