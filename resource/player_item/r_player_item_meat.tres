@@ -8,5 +8,5 @@
 script = ExtResource("2_my1ss")
 scene = ExtResource("1_g5tab")
 icon = ExtResource("1_eabjx")
-left_action_string = "Grab"
-right_action_string = ""
+left_action_string = ""
+right_action_string = "Grab"

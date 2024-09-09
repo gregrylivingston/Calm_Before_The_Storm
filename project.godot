@@ -131,6 +131,7 @@ alt_action={
 3d_physics/layer_1="Soil"
 3d_physics/layer_2="Trees"
 3d_physics/layer_3="Water"
+3d_physics/layer_4="Animals"
 
 [maaacks_menus_template]
 

@@ -1,0 +1,8 @@
+[gd_scene load_steps=2 format=3 uid="uid://c61negdp6ovfa"]
+
+[ext_resource type="Script" path="res://Scenes/Animal/s_animal.gd" id="1_elt5w"]
+
+[node name="SAnimal" type="CharacterBody3D"]
+collision_layer = 9
+collision_mask = 9
+script = ExtResource("1_elt5w")

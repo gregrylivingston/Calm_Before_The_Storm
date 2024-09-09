@@ -34,7 +34,6 @@ Eats Foliage & Fruit
 Llama
 Deer
 Stag
-veg animals
 Pig
 
 Eats Meat

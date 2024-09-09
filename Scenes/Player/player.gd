@@ -79,17 +79,47 @@ func doAction():
 				1:%ObjectSelector.chop_tree()
 				2:%ObjectSelector.break_rock()
 
+
 func rightClick():
 	match selected_item_int:
 		0:if Input.is_action_pressed("alt_action"):digEarth(false)
 		1:if Input.is_action_just_pressed("alt_action"):_select_next_wood_building()
 		2:pass
+		3:grab_animal("fruit")
+		4:grab_animal("hay")
+		5:grab_animal("meat")
 	
 
-var queued_buildable_object: Node3D
+var queued_buildable_object: Node3D = null
+
+
+func grab_animal(type: String) -> void:
+	match type:
+		"fruit":
+			Inventory.fruit -= 1
+			if Inventory.fruit < 1:reset_active_item()
+		"hay":
+			Inventory.hay -= 1
+			if Inventory.hay < 1:reset_active_item()
+		"meat":
+			Inventory.meat -= 1
+			if Inventory.meat < 1:reset_active_item()
+	Inventory.update_inventory.emit()
+		
+	if Input.is_action_just_pressed("alt_action"):
+		queued_buildable_object = %ObjectSelector.grab_animal()
+		Ui.set_left_mouse_action_text("Release")
+		Ui.set_right_mouse_action_text("")
+
+func reset_active_item() -> void:
+	selected_item_int = 1
+	select_item_check()
+
+
 var wood_building_num := -1
 @export var wood_buildings: Array[PackedScene]
 func _select_next_wood_building() -> void:
+	Ui.set_left_mouse_action_text("Place Building")
 	if is_instance_valid(queued_buildable_object):queued_buildable_object.queue_free()
 	wood_building_num += 1
 	if wood_building_num > wood_buildings.size() - 1: wood_building_num = 0
@@ -107,6 +137,7 @@ func move_queued_building() -> void:
 
 func _place_queued_building() -> void:
 	queued_buildable_object = null
+	select_item_check()
 
 func drown() -> void:
 	$Camera3D/UnderwaterView.visible = true
@@ -130,11 +161,11 @@ func select_item_check() -> void:
 	if Input.is_action_just_pressed("3"):
 		select_new_item(2)
 	if Input.is_action_just_pressed("4"):
-		select_new_item(3)
+		if Inventory.fruit > 0: select_new_item(3)
 	if Input.is_action_just_pressed("5"):
-		select_new_item(4)
+		if Inventory.hay > 0: select_new_item(4)
 	if Input.is_action_just_pressed("6"):
-		select_new_item(5)
+		if Inventory.meat > 0: select_new_item(5)
 
 func select_new_item(ItemInt: int) -> void:
 	if is_instance_valid(queued_buildable_object):queued_buildable_object.queue_free()
