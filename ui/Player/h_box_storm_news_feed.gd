@@ -14,6 +14,7 @@ func _process(delta: float) -> void:
 
 
 func _new_weather_state(newState:WeatherState) -> void:
+	$"../WeatherAlertTimer".visible = false
 	%Label_WeatherInfo.text  = newState.title + "."
 	if Weather.weather_state_int > 4:
 		%Label_WeatherInfo.text += "  Flooding imminent.  Seek higher ground."
@@ -34,3 +35,5 @@ func _new_weather_state(newState:WeatherState) -> void:
 	visible = true
 	await  get_tree().create_timer(1).timeout
 	get_tree().create_tween().tween_property(self,"position",Vector2(-3000 , position.y), 5)
+	await  get_tree().create_timer(5).timeout
+	$"../WeatherAlertTimer".visible = true

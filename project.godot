@@ -36,12 +36,16 @@ ProjectUISoundController="*res://addons/maaacks_menus_template/base/scenes/autol
 
 [display]
 
-window/size/viewport_width=1600
-window/size/viewport_height=900
+window/size/viewport_width=1200
+window/size/viewport_height=675
 
 [editor_plugins]
 
 enabled=PackedStringArray("res://addons/maaacks_menus_template/plugin.cfg", "res://addons/resources_spreadsheet_view/plugin.cfg")
+
+[gui]
+
+theme/custom="res://theme/theme_base.tres"
 
 [input]
 

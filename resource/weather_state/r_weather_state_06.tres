@@ -1,5 +1,6 @@
-[gd_resource type="Resource" script_class="WeatherState" load_steps=2 format=3 uid="uid://dh1lfr3173hoo"]
+[gd_resource type="Resource" script_class="WeatherState" load_steps=3 format=3 uid="uid://dh1lfr3173hoo"]
 
+[ext_resource type="AudioStream" uid="uid://drkltebi7trck" path="res://sound/fx/rain/light-rain.mp3" id="1_dyrti"]
 [ext_resource type="Script" path="res://resource/weather_state/r_weather_state.gd" id="1_onm0d"]
 
 [resource]
@@ -7,3 +8,4 @@ script = ExtResource("1_onm0d")
 title = "Flash Floods"
 water_height = 12.0
 cloud_level = 0.01
+rain_sound = ExtResource("1_dyrti")

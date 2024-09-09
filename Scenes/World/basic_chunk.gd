@@ -17,7 +17,13 @@ func _process(delta: float) -> void:
 	pass
 	
 	
-var pinetreescene = load("res://animal/FBX2/Cow.fbx")
+var pinetreescene = load("res://Scenes/Tree/s_tree_appletree.tscn")
+
+
+@export var low_elevation_plants : Array[PackedScene]
+@export var medium_elevation_plants : Array[PackedScene]
+@export var high_elevation_plants : Array[PackedScene]
+
 
 func add_nature(heights: Array, nature_noise) -> void:
 	call_deferred("_deferred_add_nature",heights,nature_noise)
@@ -26,11 +32,20 @@ func add_nature(heights: Array, nature_noise) -> void:
 func _deferred_add_nature(heights: Array, nature_noise) -> void:
 	for z in 64:
 		for x in 64:
+			var height = heights[z][x]
+			var nature_list: Array[PackedScene]
+			if height < 25: nature_list = low_elevation_plants
+			elif height < 45: nature_list = medium_elevation_plants
+			else: nature_list = high_elevation_plants
+			
 			var noiseValue = nature_noise.get_noise_2d(x + chunk_pos.x, z + chunk_pos.z)
-			if noiseValue > 0.5 &&  noiseValue < 0.7 && randf() > 0.9:
-				var newPine = pinetreescene.instantiate()
-				get_parent().add_child(newPine)
-				newPine.position = Vector3(x,heights[z][x] ,z) + chunk_pos
+			var noiseInt: int = int(noiseValue * nature_list.size())
+			## normalize noise value to the size of the nature list array....
+			
+			if randf() < 0.02:
+				var newScene = nature_list[noiseInt].instantiate()
+				get_parent().add_child(newScene)
+				newScene.position = Vector3(x,height ,z) + chunk_pos + Vector3(randf_range(-1,1),0,randf_range(-1,1))
 	
 				
 				 

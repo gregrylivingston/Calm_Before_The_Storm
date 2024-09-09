@@ -1,9 +1,11 @@
-[gd_resource type="Resource" script_class="WeatherState" load_steps=2 format=3 uid="uid://b0jjiwf7pxgw7"]
+[gd_resource type="Resource" script_class="WeatherState" load_steps=3 format=3 uid="uid://b0jjiwf7pxgw7"]
 
 [ext_resource type="Script" path="res://resource/weather_state/r_weather_state.gd" id="1_2woim"]
+[ext_resource type="AudioStream" uid="uid://r6ixi4q4fgj4" path="res://sound/fx/rain/medium-rain.mp3" id="1_d4g07"]
 
 [resource]
 script = ExtResource("1_2woim")
 title = "Massive Flood"
 water_height = 42.0
 cloud_level = -1.0
+rain_sound = ExtResource("1_d4g07")

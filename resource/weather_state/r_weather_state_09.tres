@@ -1,9 +1,11 @@
-[gd_resource type="Resource" script_class="WeatherState" load_steps=2 format=3 uid="uid://c2qbr8ni5y5lt"]
+[gd_resource type="Resource" script_class="WeatherState" load_steps=3 format=3 uid="uid://c2qbr8ni5y5lt"]
 
 [ext_resource type="Script" path="res://resource/weather_state/r_weather_state.gd" id="1_3iw1f"]
+[ext_resource type="AudioStream" uid="uid://r6ixi4q4fgj4" path="res://sound/fx/rain/medium-rain.mp3" id="1_sar6d"]
 
 [resource]
 script = ExtResource("1_3iw1f")
 title = "Biblical Flood"
 water_height = 52.0
 cloud_level = -10.0
+rain_sound = ExtResource("1_sar6d")

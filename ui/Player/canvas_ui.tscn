@@ -1,8 +1,9 @@
-[gd_scene load_steps=4 format=3 uid="uid://csckx1dqx0ycd"]
+[gd_scene load_steps=5 format=3 uid="uid://csckx1dqx0ycd"]
 
 [ext_resource type="Script" path="res://ui/Player/progress_bar_weather_state.gd" id="1_bll7w"]
 [ext_resource type="Theme" uid="uid://dbmay2mk5b3eg" path="res://theme/theme_base.tres" id="1_soa6u"]
 [ext_resource type="Script" path="res://ui/Player/h_box_storm_news_feed.gd" id="3_rxgmm"]
+[ext_resource type="Script" path="res://ui/Player/weather_alert_timer.gd" id="4_dyjoc"]
 
 [node name="CanvasUI" type="CanvasLayer"]
 
@@ -24,7 +25,6 @@ size_flags_horizontal = 0
 size_flags_vertical = 3
 max_value = 11.0
 step = 1.0
-value = 1.0
 fill_mode = 3
 show_percentage = false
 script = ExtResource("1_bll7w")
@@ -73,6 +73,7 @@ offset_bottom = 88.0
 grow_horizontal = 2
 
 [node name="Label_WeatherAlert" type="Label" parent="Control"]
+visible = false
 layout_mode = 1
 anchors_preset = 5
 anchor_left = 0.5
@@ -108,3 +109,41 @@ layout_mode = 2
 unique_name_in_owner = true
 layout_mode = 2
 theme_override_font_sizes/font_size = 60
+
+[node name="WeatherAlertTimer" type="VBoxContainer" parent="Control"]
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -60.0
+offset_right = 62.0
+offset_bottom = 40.0
+grow_horizontal = 2
+theme = ExtResource("1_soa6u")
+script = ExtResource("4_dyjoc")
+
+[node name="Label" type="Label" parent="Control/WeatherAlertTimer"]
+layout_mode = 2
+text = "Weather Alert Timer"
+
+[node name="ProgressBar_WeatherAlertTimer" type="ProgressBar" parent="Control/WeatherAlertTimer"]
+unique_name_in_owner = true
+custom_minimum_size = Vector2(0, 20)
+layout_mode = 2
+show_percentage = false
+
+[node name="Label_WeatherStateTimeLeft" type="Label" parent="Control/WeatherAlertTimer/ProgressBar_WeatherAlertTimer"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -20.0
+offset_top = -10.5
+offset_right = 20.0
+offset_bottom = 10.5
+grow_horizontal = 2
+grow_vertical = 2
+text = "0:17"
+horizontal_alignment = 1

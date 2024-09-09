@@ -113,12 +113,6 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.00151587, -0.786331, 0.243
 [node name="pickaxe" parent="Camera3D/Gear" instance=ExtResource("2_2gnp6")]
 transform = Transform3D(-1.51421e-09, -8.74228e-10, -0.04, -0.02, 0.034641, 0, 0.034641, 0.02, -1.74846e-09, 0.56205, -0.235843, -0.411837)
 
-[node name="RayCast3D" type="RayCast3D" parent="Camera3D"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.00441504, 0.00311828, -0.118981)
-target_position = Vector3(0, 0, -2)
-debug_shape_custom_color = Color(0.701961, 0, 0, 1)
-debug_shape_thickness = 3
-
 [node name="UnderwaterView" type="MeshInstance3D" parent="Camera3D"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -0.239507)
 visible = false
@@ -162,5 +156,11 @@ libraries = {
 libraries = {
 "": SubResource("AnimationLibrary_dm0bs")
 }
+
+[node name="RayCast3D" type="RayCast3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.00593091, 0.674134, 0.018393)
+target_position = Vector3(0, 0, -3)
+debug_shape_custom_color = Color(0.701961, 0, 0, 1)
+debug_shape_thickness = 3
 
 [connection signal="pressed" from="Camera3D/UnderwaterView/Canvas_GameOver/VBoxContainer/Button_Continue" to="Camera3D/UnderwaterView/Canvas_GameOver" method="_on_button_continue_pressed"]

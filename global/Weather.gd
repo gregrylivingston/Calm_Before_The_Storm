@@ -43,15 +43,9 @@ signal new_weather_state
 	
 func increase_weather_state() -> void:
 	weather_state_int += 1
-	print(weather_state_int)
-
 	if weather_states.size() > weather_state_int:
 		weather_state = weather_states[weather_state_int]
 		new_weather_state.emit(weather_state)
-		print(weather_state.title)
-		
-
-	
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta: float) -> void:

@@ -10,7 +10,7 @@ var actionPressed = false
 
 var drowned := false
 
-@onready var raycast := $Camera3D/RayCast3D
+@onready var raycast := $RayCast3D
 @onready var world := $/root/main/map
 
 func _ready():
@@ -50,6 +50,7 @@ func _unhandled_input(event):
 func breakBlocks():
 	if raycast.is_colliding():
 		var collider = raycast.get_collider()
+		print(collider)
 		if collider is StaticBody3D:
 			var collisionPoint = raycast.get_collision_point()
 			var particleScene := preload("res://Scenes/player/mining_particles.tscn")
@@ -58,6 +59,7 @@ func breakBlocks():
 			world.add_child(particles)
 			particles.emitting = true
 			world.dig(collisionPoint, 1)
+
 		
 func doAction():
 	if actionPressed:
@@ -71,3 +73,5 @@ func drown() -> void:
 	Input.mouse_mode = Input.MOUSE_MODE_VISIBLE
 	$Camera3D/Canvas_RainEffects.visible = false
 	$Camera3D/CanvasUI.visible = false
+	velocity.x = 0
+	velocity.z = 0
