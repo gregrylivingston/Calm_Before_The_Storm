@@ -1,4 +1,4 @@
-[gd_scene load_steps=13 format=3 uid="uid://c0imxc6ykf153"]
+[gd_scene load_steps=15 format=3 uid="uid://c0imxc6ykf153"]
 
 [ext_resource type="Shader" path="res://Scenes/World/world.gdshader" id="1_a0kbf"]
 [ext_resource type="Texture2D" uid="uid://cr5i84s3mi8hk" path="res://Assets/Textures/grass.jpg" id="2_u5yfk"]
@@ -10,7 +10,9 @@
 [ext_resource type="PackedScene" uid="uid://ys3bygieu1gv" path="res://Scenes/Tree/s_tree_orangetree.tscn" id="7_nwwtx"]
 [ext_resource type="PackedScene" uid="uid://bnglg7swmuk1y" path="res://Scenes/Animal/s_animal_veg_stag.tscn" id="7_qhwua"]
 [ext_resource type="PackedScene" uid="uid://xfgl0n5pcfkj" path="res://Scenes/Animal/s_animal_veg_deer.tscn" id="9_07c48"]
+[ext_resource type="PackedScene" uid="uid://ccg18rjngx8f4" path="res://Scenes/Animal/s_animal_carn_husky.tscn" id="11_iup5c"]
 [ext_resource type="PackedScene" uid="uid://cr4gepi3vbfnu" path="res://Scenes/Animal/s_animal_veg_llama.tscn" id="11_qwcc3"]
+[ext_resource type="PackedScene" uid="uid://fbkndcrgehsy" path="res://Scenes/Animal/s_animal_carn_wolf.tscn" id="13_uymq6"]
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_fd6ho"]
 render_priority = 0
@@ -28,4 +30,4 @@ material_override = SubResource("ShaderMaterial_fd6ho")
 script = ExtResource("4_r13se")
 low_elevation_plants = Array[PackedScene]([ExtResource("5_h8ix3"), ExtResource("5_wcwl4"), ExtResource("7_qhwua"), ExtResource("7_nwwtx"), ExtResource("9_07c48"), ExtResource("6_eu6dq")])
 medium_elevation_plants = Array[PackedScene]([ExtResource("5_h8ix3"), ExtResource("5_wcwl4"), ExtResource("7_qhwua"), ExtResource("7_nwwtx"), ExtResource("9_07c48"), ExtResource("6_eu6dq")])
-high_elevation_plants = Array[PackedScene]([ExtResource("5_wcwl4"), ExtResource("11_qwcc3"), ExtResource("7_nwwtx")])
+high_elevation_plants = Array[PackedScene]([ExtResource("11_iup5c"), ExtResource("5_wcwl4"), ExtResource("11_qwcc3"), ExtResource("7_nwwtx"), ExtResource("13_uymq6")])

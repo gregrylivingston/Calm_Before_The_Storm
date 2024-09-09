@@ -1,0 +1,7 @@
+[gd_scene load_steps=3 format=3 uid="uid://dun7e40alhqw5"]
+
+[ext_resource type="PackedScene" uid="uid://c61negdp6ovfa" path="res://Scenes/Animal/s_animal.tscn" id="1_lciad"]
+[ext_resource type="Script" path="res://Scenes/Animal/s_animal_carn.gd" id="2_o7xvn"]
+
+[node name="SAnimal" instance=ExtResource("1_lciad")]
+script = ExtResource("2_o7xvn")
