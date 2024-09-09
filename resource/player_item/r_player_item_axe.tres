@@ -1,0 +1,8 @@
+[gd_resource type="Resource" script_class="PlayerItem" load_steps=3 format=3 uid="uid://chodsjx5dgmd3"]
+
+[ext_resource type="PackedScene" uid="uid://doxqjkt1x5am6" path="res://mesh/tool/OBJ/Axe_Wood.gltf" id="1_x4yqh"]
+[ext_resource type="Script" path="res://resource/player_item/r_player_item.gd" id="2_kiep2"]
+
+[resource]
+script = ExtResource("2_kiep2")
+scene = ExtResource("1_x4yqh")

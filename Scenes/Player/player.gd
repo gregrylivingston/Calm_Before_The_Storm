@@ -25,6 +25,7 @@ func get_input():
 
 func _physics_process(delta):
 	doAction()
+	select_item_check()
 	velocity.y += -gravity * delta
 	get_input()
 	move_and_slide()
@@ -78,3 +79,20 @@ func drown() -> void:
 	$Camera3D/CanvasUI.visible = false
 	velocity.x = 0
 	velocity.z = 0
+	
+var is_secondary_use_mode := false
+@export var player_item_options : Array[PlayerItem]
+func select_item_check() -> void:
+	if Input.is_action_just_pressed("1"):select_new_item(0)
+	if Input.is_action_just_pressed("2"):select_new_item(1)
+	if Input.is_action_just_pressed("3"):select_new_item(2)
+	
+
+func select_new_item(ItemInt: int) -> void:
+	for i in %Gear.get_children(): i.queue_free()
+	var newItemResource = player_item_options[ItemInt]
+	var newItemScene = newItemResource.scene.instantiate()
+	%Gear.add_child(newItemScene)
+	newItemScene.rotation_degrees.y = -90
+	newItemScene.rotation_degrees.z = 3.7
+	newItemScene.position = Vector3(0.56,-.23,-.8) 

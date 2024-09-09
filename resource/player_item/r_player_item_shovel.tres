@@ -1,0 +1,8 @@
+[gd_resource type="Resource" script_class="PlayerItem" load_steps=3 format=3 uid="uid://duicd6euu8gog"]
+
+[ext_resource type="Script" path="res://resource/player_item/r_player_item.gd" id="1_ih6qb"]
+[ext_resource type="PackedScene" uid="uid://yfe7wv528aq4" path="res://mesh/tool/OBJ/Shovel_Diamond.gltf" id="1_p6agv"]
+
+[resource]
+script = ExtResource("1_ih6qb")
+scene = ExtResource("1_p6agv")

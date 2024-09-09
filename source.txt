@@ -20,16 +20,6 @@ possibly use particle rope -> https://godotshaders.com/shader/particle-rope/
 
 
 
-
-
-
-
-
-
-
-
-
-
 Eats Grass
 Bull
 Cow
@@ -53,3 +43,14 @@ Husky
 Shiba Inu
 Wolf
 Pug
+
+Tools 
+		
+
+		
+Resources 	--> Fruit, Meat, Hay (attract animals)
+			
+			Harvest v Build (z to toggle?) or hit the keybinding again to toggle.
+			1 - Dirt - Shovel (harvest dirt)
+			2 - Wood - Axe (harvest wood)
+			3 - Stone - Pickaxe (harvest stone)

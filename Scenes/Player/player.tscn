@@ -1,15 +1,20 @@
-[gd_scene load_steps=22 format=3 uid="uid://dt7qj4rvpib2x"]
+[gd_scene load_steps=27 format=3 uid="uid://dt7qj4rvpib2x"]
 
 [ext_resource type="Script" path="res://Scenes/Player/player.gd" id="1_3uef2"]
 [ext_resource type="PackedScene" uid="uid://mefv6wbqhfdh" path="res://Assets/Models/pickaxe.glb" id="2_2gnp6"]
+[ext_resource type="Script" path="res://resource/player_item/r_player_item.gd" id="2_3y3k3"]
 [ext_resource type="PackedScene" uid="uid://csckx1dqx0ycd" path="res://ui/Player/canvas_ui.tscn" id="2_a8erp"]
+[ext_resource type="Resource" uid="uid://duicd6euu8gog" path="res://resource/player_item/r_player_item_shovel.tres" id="3_o6bft"]
 [ext_resource type="Shader" path="res://shader/sh_underwater.gdshader" id="3_p7qtg"]
 [ext_resource type="Script" path="res://ui/GameOver/canvas_game_over.gd" id="4_hbng8"]
+[ext_resource type="Resource" uid="uid://chodsjx5dgmd3" path="res://resource/player_item/r_player_item_axe.tres" id="4_kuysq"]
 [ext_resource type="Shader" path="res://shader/sh_raindroplets.gdshader" id="5_k63o8"]
+[ext_resource type="Resource" uid="uid://5f1dwixey4cs" path="res://resource/player_item/r_player_item_pickaxe.tres" id="5_rhuhf"]
 [ext_resource type="Script" path="res://shader/panel_raindroplets_on_screen.gd" id="6_0dylw"]
 [ext_resource type="Shader" path="res://shader/sh_rainfall.gdshader" id="6_sfwvs"]
 [ext_resource type="Script" path="res://shader/panel_rain_falling.gd" id="8_pgqh7"]
 [ext_resource type="Theme" uid="uid://dbmay2mk5b3eg" path="res://theme/theme_base.tres" id="9_b3dlc"]
+[ext_resource type="PackedScene" uid="uid://yfe7wv528aq4" path="res://mesh/tool/OBJ/Shovel_Diamond.gltf" id="11_1ewlp"]
 [ext_resource type="Script" path="res://Scenes/Player/object_selector.gd" id="11_i7gf1"]
 
 [sub_resource type="CapsuleShape3D" id="CapsuleShape3D_cet7n"]
@@ -56,14 +61,14 @@ loop_mode = 1
 tracks/0/type = "value"
 tracks/0/imported = false
 tracks/0/enabled = true
-tracks/0/path = NodePath("pickaxe:rotation")
+tracks/0/path = NodePath(".:rotation")
 tracks/0/interp = 1
 tracks/0/loop_wrap = true
 tracks/0/keys = {
 "times": PackedFloat32Array(0, 0.1, 0.4),
 "transitions": PackedFloat32Array(1, 1, 1),
 "update": 0,
-"values": [Vector3(0, -1.5708, -0.523599), Vector3(0, -1.5708, 0.523599), Vector3(0, -1.5708, -0.523599)]
+"values": [Vector3(-0.523599, 0, 0), Vector3(0.523599, 0, 0), Vector3(-0.523599, 0, 0)]
 }
 
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_dm0bs"]
@@ -73,6 +78,7 @@ _data = {
 
 [node name="player" type="CharacterBody3D" groups=["player"]]
 script = ExtResource("1_3uef2")
+player_item_options = Array[ExtResource("2_3y3k3")]([ExtResource("3_o6bft"), ExtResource("5_rhuhf"), ExtResource("4_kuysq")])
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="."]
 shape = SubResource("CapsuleShape3D_cet7n")
@@ -111,10 +117,13 @@ script = ExtResource("8_pgqh7")
 
 [node name="Gear" type="Node3D" parent="Camera3D"]
 unique_name_in_owner = true
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.00151587, -0.786331, 0.243112)
+transform = Transform3D(1, 0, 0, 0, 0.941965, -0.33571, 0, 0.33571, 0.941965, -0.00151587, -0.786331, 0.243112)
 
 [node name="pickaxe" parent="Camera3D/Gear" instance=ExtResource("2_2gnp6")]
-transform = Transform3D(-1.51421e-09, -8.74228e-10, -0.04, -0.02, 0.034641, 0, 0.034641, 0.02, -1.74846e-09, 0.56205, -0.235843, -0.411837)
+transform = Transform3D(-1.44493e-07, 9.42481e-09, -0.04, 0.00260355, 0.0399152, 0, 0.0399152, -0.00260355, -1.448e-07, 0.56205, -0.237141, -0.41548)
+
+[node name="Shovel_Diamond2" parent="Camera3D/Gear" instance=ExtResource("11_1ewlp")]
+transform = Transform3D(-0.0505929, 0, -0.998719, 0, 1, 0, 0.998719, 0, -0.0505929, 0, 0, 0)
 
 [node name="UnderwaterView" type="MeshInstance3D" parent="Camera3D"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -0.239507)
@@ -168,11 +177,6 @@ shape = SubResource("BoxShape3D_tmenv")
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="."]
 root_node = NodePath("../Camera3D/Gear")
-libraries = {
-"": SubResource("AnimationLibrary_dm0bs")
-}
-
-[node name="AnimationPlayer" type="AnimationPlayer" parent="AnimationPlayer"]
 libraries = {
 "": SubResource("AnimationLibrary_dm0bs")
 }

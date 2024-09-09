@@ -1,0 +1,8 @@
+[gd_resource type="Resource" script_class="PlayerItem" load_steps=3 format=3 uid="uid://5f1dwixey4cs"]
+
+[ext_resource type="PackedScene" uid="uid://dbw63dw5jolix" path="res://mesh/tool/OBJ/Pickaxe_Diamond.gltf" id="1_ufcx4"]
+[ext_resource type="Script" path="res://resource/player_item/r_player_item.gd" id="2_h4kjs"]
+
+[resource]
+script = ExtResource("2_h4kjs")
+scene = ExtResource("1_ufcx4")
