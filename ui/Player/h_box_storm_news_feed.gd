@@ -34,6 +34,6 @@ func _new_weather_state(newState:WeatherState) -> void:
 	await  get_tree().create_timer(.25).timeout
 	visible = true
 	await  get_tree().create_timer(1).timeout
-	get_tree().create_tween().tween_property(self,"position",Vector2(-$HBox_StormNewsFeed.size.x * 2 , position.y), 5)
+	get_tree().create_tween().tween_property(self,"position",Vector2(-$HBox_StormNewsFeed.size.x * 4 , position.y), 12)
 	await  get_tree().create_timer(5).timeout
 	$"../WeatherAlertTimer".visible = true

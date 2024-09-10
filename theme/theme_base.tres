@@ -1,13 +1,26 @@
-[gd_resource type="Theme" load_steps=5 format=3 uid="uid://dbmay2mk5b3eg"]
+[gd_resource type="Theme" load_steps=6 format=3 uid="uid://dbmay2mk5b3eg"]
 
 [ext_resource type="StyleBox" uid="uid://bcnu5qfk30vns" path="res://theme/panel_standard.tres" id="1_jw17a"]
 [ext_resource type="FontFile" uid="uid://dyhx5x3l2fik5" path="res://theme/font/Chewy-Regular.ttf" id="1_up0jm"]
 [ext_resource type="StyleBox" uid="uid://bncmn0nlduaw5" path="res://theme/panel_flat.tres" id="2_tjtke"]
 [ext_resource type="StyleBox" uid="uid://jbse60t4d2hn" path="res://theme/panel_flat_red.tres" id="3_xik8c"]
 
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_1igp8"]
+bg_color = Color(0.956863, 0.635294, 0.380392, 1)
+border_width_left = 4
+border_width_top = 4
+border_width_right = 4
+border_width_bottom = 4
+border_color = Color(0.956863, 0.635294, 0.380392, 1)
+corner_radius_top_left = 10
+corner_radius_top_right = 10
+corner_radius_bottom_right = 10
+corner_radius_bottom_left = 10
+
 [resource]
 default_font = ExtResource("1_up0jm")
 Button/colors/font_color = Color(1, 1, 1, 1)
+Button/styles/hover = SubResource("StyleBoxFlat_1igp8")
 Button/styles/normal = ExtResource("1_jw17a")
 Panel/styles/panel = ExtResource("3_xik8c")
 ProgressBar/styles/background = ExtResource("2_tjtke")
