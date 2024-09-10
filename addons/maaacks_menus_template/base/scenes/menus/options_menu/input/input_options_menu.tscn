@@ -1,10 +1,11 @@
-[gd_scene load_steps=6 format=3 uid="uid://dp3rgqaehb3xu"]
+[gd_scene load_steps=7 format=3 uid="uid://dp3rgqaehb3xu"]
 
 [ext_resource type="Script" path="res://addons/maaacks_menus_template/base/scenes/menus/options_menu/input/input_options_menu.gd" id="1"]
 [ext_resource type="Texture2D" uid="uid://c1eqf1cse1hch" path="res://addons/maaacks_menus_template/base/assets/images/addition_symbol.png" id="2_dw35t"]
 [ext_resource type="Script" path="res://addons/maaacks_menus_template/base/scripts/capture_focus.gd" id="2_wft4x"]
 [ext_resource type="Texture2D" uid="uid://bteq3ica74h30" path="res://addons/maaacks_menus_template/base/assets/images/subtraction_symbol.png" id="3_lngdd"]
 [ext_resource type="Script" path="res://addons/maaacks_menus_template/base/scenes/menus/options_menu/input/key_assignment_dialog.gd" id="3_wsh2h"]
+[ext_resource type="Theme" uid="uid://dbmay2mk5b3eg" path="res://theme/theme_base.tres" id="4_al8an"]
 
 [node name="Controls" type="MarginContainer"]
 anchors_preset = 15
@@ -22,6 +23,7 @@ remove_button_texture = ExtResource("3_lngdd")
 custom_minimum_size = Vector2(400, 280)
 layout_mode = 2
 size_flags_horizontal = 4
+theme = ExtResource("4_al8an")
 theme_override_constants/separation = 8
 script = ExtResource("2_wft4x")
 search_depth = 2

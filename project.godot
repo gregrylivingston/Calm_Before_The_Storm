@@ -50,6 +50,9 @@ enabled=PackedStringArray("res://addons/maaacks_menus_template/plugin.cfg", "res
 [global_group]
 
 ActionProgressBar=""
+Barn=""
+Den=""
+Kennel=""
 
 [gui]
 

@@ -129,15 +129,27 @@ func _select_next_wood_building() -> void:
 	queued_buildable_object = newBuilding
 	get_parent().add_child(newBuilding)
 	
-	
+#this also handles movement for animals
 func move_queued_building() -> void:
 	if is_instance_valid(queued_buildable_object):
 		%RayCast3D.target_position.z = -25
 		if raycast.is_colliding():
-			if raycast.get_collider() is StaticBody3D:
+			var collider = raycast.get_collider()
+			if collider is StaticBody3D:
 				queued_buildable_object.position = raycast.get_collision_point()
+				
+				if collider.has_method("is_building") && queued_buildable_object.has_method("is_animal"):
+					_place_queued_animal(collider , queued_buildable_object)
+
+func _place_queued_animal(building: StaticBody3D, animal: Animal3D) -> void:
+	if building.add_animal(animal):
+		queued_buildable_object = null
+		select_item_check()
+	
 
 func _place_queued_building() -> void:
+	if queued_buildable_object.has_method("place_building"):
+		queued_buildable_object.place_building()
 	queued_buildable_object = null
 	select_item_check()
 

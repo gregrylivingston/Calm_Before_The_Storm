@@ -96,15 +96,14 @@ offset_bottom = 88.0
 grow_horizontal = 2
 
 [node name="Label_WeatherAlert" type="Label" parent="Control_TopCenter"]
-visible = false
 layout_mode = 1
 anchors_preset = 5
 anchor_left = 0.5
 anchor_right = 0.5
 offset_left = -202.0
-offset_top = -8.0
+offset_top = -32.0
 offset_right = 202.0
-offset_bottom = 75.0
+offset_bottom = 51.0
 grow_horizontal = 2
 theme = ExtResource("1_soa6u")
 theme_override_font_sizes/font_size = 60

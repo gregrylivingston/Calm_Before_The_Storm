@@ -1,4 +1,4 @@
-extends CharacterBody3D
+class_name Animal3D extends CharacterBody3D
 
 
 const SPEED = 5.0
@@ -52,3 +52,11 @@ func grabbed():
 	set_collision_layer_value(4,0)
 	set_collision_mask_value(4,0)
 	set_collision_mask_value(1,0)
+	
+func place_building() -> void:
+	set_collision_layer_value(1,1)
+	set_collision_layer_value(4,1)
+	set_collision_mask_value(4,1)
+	set_collision_mask_value(1,1)	
+
+	
