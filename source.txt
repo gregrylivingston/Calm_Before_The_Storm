@@ -1,13 +1,3 @@
-3d models of animals - https://quaternius.com/
-water shader - https://godotshaders.com/shader/toon-style-3d-water-shader-no-textures-needed/
-terrain - https://godotengine.org/asset-library/asset/2813
-resource editor - https://godotengine.org/asset-library/asset/1479
-https://godotshaders.com/shader/underwater-camera-effect/
-raindrops on screen - https://godotshaders.com/shader/rain-drops-on-screen-notexture/
-raindrops shader - https://godotshaders.com/shader/simple-rain-snow-shader/
-mouse icons - https://kenney.nl/assets/input-prompts
-
-
 sfx
 
 light rain - https://pixabay.com/sound-effects/light-rain-109591/
@@ -17,6 +7,10 @@ heavy rain - https://pixabay.com/sound-effects/rain-110508/
 
 possibly use particle rope -> https://godotshaders.com/shader/particle-rope/
 
+
+other tools - 
+audacity
+photopea
 
 
 
@@ -42,14 +36,3 @@ Husky
 Shiba Inu
 Wolf
 Pug
-
-Tools 
-		
-
-		
-Resources 	--> Fruit, Meat, Hay (attract animals)
-			
-			Harvest v Build (z to toggle?) or hit the keybinding again to toggle.
-			1 - Dirt - Shovel (harvest dirt)
-			2 - Wood - Axe (harvest wood)
-			3 - Stone - Pickaxe (harvest stone)

@@ -1,18 +1,36 @@
 # Attribution
-## Collaborators
+## Created By
 
-### Role
-Person 1  
-Person 2  
-[Person w/ Link]()  
+### Gregry Livingston
+livingsgb@gmail.com
+[On Itch](https://gregry.itch.io/)  
 
 
 ## Sourced / Unaffiliated
-### Asset Type
-#### Use Case
-Author: [Name]()  
-Source: [Domain : webpage.html]()  
-License: [License]()
+
+### Simple 3d models
+Author: [Quaternius](https://quaternius.com/)  
+License: [CC0 license](https://creativecommons.org/publicdomain/zero/1.0/)
+
+### Water surface shader adapted from
+Author: [Megalithium](https://godotshaders.com/shader/toon-style-3d-water-shader-no-textures-needed/)  
+License: [CC0 license](https://creativecommons.org/publicdomain/zero/1.0/)
+
+### Underwater Camera Shader
+Author: [Hylocereus](https://godotshaders.com/shader/underwater-camera-effect/)  
+License: [CC0 license](https://creativecommons.org/publicdomain/zero/1.0/)
+
+### Raindrops On Screen Shader
+Author: [RayL019](https://godotshaders.com/shader/rain-drops-on-screen-notexture/)  
+License: [CC0 license](https://creativecommons.org/publicdomain/zero/1.0/)
+
+### Falling Raindrops Shader
+Author: [mo32167](https://godotshaders.com/shader/simple-rain-snow-shader/)  
+License: [CC0 license](https://creativecommons.org/publicdomain/zero/1.0/)
+
+### UI Icons
+Author: [Kenney](https://kenney.nl/assets/input-prompts)  
+License: [CC0 license](https://creativecommons.org/publicdomain/zero/1.0/)
 
 
 ## Tools
@@ -30,3 +48,11 @@ License: [GNU General Public License version 2](https://opensource.org/licenses/
 Author: [Marek Belski](https://github.com/Maaack/Godot-Menus-Template/graphs/contributors)  
 Source: [github: Godot-Menus-Template](https://github.com/Maaack/Godot-Menus-Template)  
 License: [MIT License](LICENSE.txt)  
+
+### Detructible Terrain Addon for Godot
+Author: [50kush](https://godotengine.org/asset-library/asset/2813)  
+License: [MIT License]()
+
+### Edit Resources as Table 2 Addon for Godot
+Author: [don-tnowe](https://godotengine.org/asset-library/asset/1479)  
+License: [MIT License]()
