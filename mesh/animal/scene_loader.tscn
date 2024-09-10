@@ -4,4 +4,4 @@
 
 [node name="SceneLoader" type="Node"]
 script = ExtResource("1_l0dhx")
-loading_screen_path = "res://Maaack/scenes/loading_screen/loading_screen.tscn"
+loading_screen_path = "res://Menus/scenes/loading_screen/loading_screen.tscn"

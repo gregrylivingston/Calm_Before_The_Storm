@@ -59,8 +59,8 @@ func digEarth(isDigging: bool = true) -> bool:
 		if raycast.get_collider() is StaticBody3D:
 			var collider = raycast.get_collider()
 			var collisionPoint = raycast.get_collision_point()
-			var particleScene := preload("res://Scenes/player/mining_particles.tscn")
-			var particles := particleScene.instantiate()
+			var particleScene = preload("res://Scenes/Player/mining_particles.tscn")
+			var particles = particleScene.instantiate()
 			particles.position = collisionPoint
 			world.add_child(particles)
 			particles.emitting = true
