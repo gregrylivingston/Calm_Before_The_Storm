@@ -1,4 +1,4 @@
-[gd_scene load_steps=17 format=3 uid="uid://csckx1dqx0ycd"]
+[gd_scene load_steps=19 format=3 uid="uid://csckx1dqx0ycd"]
 
 [ext_resource type="Script" path="res://ui/Player/progress_bar_weather_state.gd" id="1_bll7w"]
 [ext_resource type="Theme" uid="uid://dbmay2mk5b3eg" path="res://theme/theme_base.tres" id="1_soa6u"]
@@ -14,6 +14,8 @@
 [ext_resource type="Script" path="res://ui/Player/blackout_panel.gd" id="11_xo5xq"]
 [ext_resource type="Script" path="res://ui/Player/control_alert.gd" id="13_ex4d2"]
 [ext_resource type="PackedScene" uid="uid://dfa5w5xshjt3h" path="res://ui/Player/control_instructions.tscn" id="13_j7xyf"]
+[ext_resource type="Script" path="res://ui/Player/pause_menu.gd" id="15_4kfjy"]
+[ext_resource type="StyleBox" uid="uid://ywcampnpqpk1" path="res://theme/panel_transparent.tres" id="15_vqocm"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_e2vg4"]
 bg_color = Color(0.945098, 0.941176, 0.188235, 0.188235)
@@ -346,4 +348,69 @@ vertical_alignment = 1
 modulate = Color(1, 1, 1, 0)
 mouse_filter = 2
 
+[node name="PauseMenu" type="Panel" parent="."]
+process_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_styles/panel = ExtResource("15_vqocm")
+script = ExtResource("15_4kfjy")
+
+[node name="TitlesContainer" type="VBoxContainer" parent="PauseMenu"]
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -333.5
+offset_top = 48.0
+offset_right = 333.5
+offset_bottom = 207.0
+grow_horizontal = 2
+theme_override_constants/separation = -25
+
+[node name="Title" type="Label" parent="PauseMenu/TitlesContainer"]
+layout_mode = 2
+size_flags_horizontal = 4
+theme_override_font_sizes/font_size = 102
+text = "Save the Animals"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="SubTitle" type="Label" parent="PauseMenu/TitlesContainer"]
+layout_mode = 2
+size_flags_horizontal = 4
+theme_override_font_sizes/font_size = 40
+text = "Calm Before the Storm"
+vertical_alignment = 1
+
+[node name="HSeparator" type="HSeparator" parent="PauseMenu/TitlesContainer"]
+self_modulate = Color(1, 1, 1, 0)
+custom_minimum_size = Vector2(0, 200)
+layout_mode = 2
+
+[node name="ContinueButton" type="Button" parent="PauseMenu/TitlesContainer"]
+unique_name_in_owner = true
+custom_minimum_size = Vector2(175, 40)
+layout_mode = 2
+size_flags_horizontal = 4
+theme_override_font_sizes/font_size = 30
+text = "Continue"
+
+[node name="HSeparator2" type="HSeparator" parent="PauseMenu/TitlesContainer"]
+self_modulate = Color(1, 1, 1, 0)
+custom_minimum_size = Vector2(0, 75)
+layout_mode = 2
+
+[node name="MainMenuButton" type="Button" parent="PauseMenu/TitlesContainer"]
+unique_name_in_owner = true
+custom_minimum_size = Vector2(175, 40)
+layout_mode = 2
+size_flags_horizontal = 4
+theme_override_font_sizes/font_size = 30
+text = "Main Menu"
+
 [connection signal="value_changed" from="Control_Center/ActionProgressBar" to="Control_Center/ActionProgressBar" method="_on_value_changed"]
+[connection signal="pressed" from="PauseMenu/TitlesContainer/ContinueButton" to="PauseMenu" method="_on_continue_button_pressed"]
+[connection signal="pressed" from="PauseMenu/TitlesContainer/MainMenuButton" to="PauseMenu" method="_on_main_menu_button_pressed"]
