@@ -121,6 +121,7 @@ func _select_next_wood_building() -> void:
 	if wood_building_num > wood_buildings.size() - 1: wood_building_num = 0
 	var newBuilding = wood_buildings[wood_building_num].instantiate()
 	queued_buildable_object = newBuilding
+	get_tree().get_first_node_in_group("Instruction").send_instruction(newBuilding.instructions)
 	get_parent().add_child(newBuilding)
 	
 #this also handles movement for animals
@@ -151,9 +152,14 @@ func _place_queued_animal(building: StaticBody3D, animal: Animal3D) -> void:
 
 func _place_queued_building() -> void:
 	if queued_buildable_object.has_method("place_building"):
-		queued_buildable_object.place_building()
-		Player.farm_building_updates.emit()
-	queued_buildable_object = null
+		if queued_buildable_object.wood_cost <= Inventory.wood:
+			queued_buildable_object.place_building()
+			Inventory.wood -= queued_buildable_object.wood_cost
+			Inventory.update_inventory.emit()
+			Player.farm_building_updates.emit()
+			queued_buildable_object = null
+		else:
+			get_tree().get_first_node_in_group("Alert").send_alert("Not Enough Wood.")
 	select_item_check()
 
 func drown() -> void:

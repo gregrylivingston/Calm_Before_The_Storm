@@ -1,0 +1,45 @@
+[gd_scene load_steps=2 format=3 uid="uid://dfa5w5xshjt3h"]
+
+[ext_resource type="Script" path="res://ui/Player/control_instructions.gd" id="1_3dd1x"]
+
+[node name="Control_Instructions" type="Control" groups=["Instruction"]]
+layout_mode = 3
+anchors_preset = 3
+anchor_left = 1.0
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -88.0
+offset_top = -152.0
+offset_right = -48.0
+offset_bottom = -112.0
+grow_horizontal = 0
+grow_vertical = 0
+script = ExtResource("1_3dd1x")
+
+[node name="Panel" type="Panel" parent="."]
+layout_mode = 1
+anchors_preset = 3
+anchor_left = 1.0
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -241.0
+offset_top = -104.0
+grow_horizontal = 0
+grow_vertical = 0
+
+[node name="Label" type="Label" parent="Panel"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 12.0
+offset_top = 8.0
+offset_right = -9.0
+offset_bottom = -4.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_font_sizes/font_size = 24
+text = "asdfjklsdjfl kasjdf lkjalksdfla sdfgadfgasdfgafsdga f"
+autowrap_mode = 2

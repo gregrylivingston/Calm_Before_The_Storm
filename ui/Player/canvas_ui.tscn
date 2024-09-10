@@ -1,4 +1,4 @@
-[gd_scene load_steps=15 format=3 uid="uid://csckx1dqx0ycd"]
+[gd_scene load_steps=17 format=3 uid="uid://csckx1dqx0ycd"]
 
 [ext_resource type="Script" path="res://ui/Player/progress_bar_weather_state.gd" id="1_bll7w"]
 [ext_resource type="Theme" uid="uid://dbmay2mk5b3eg" path="res://theme/theme_base.tres" id="1_soa6u"]
@@ -12,6 +12,8 @@
 [ext_resource type="Script" path="res://ui/Player/icon_right__mouse_action.gd" id="9_yl8ak"]
 [ext_resource type="PackedScene" uid="uid://b2k34x1xpceq3" path="res://ui/Player/v_box_right_panel.tscn" id="11_rfqlh"]
 [ext_resource type="Script" path="res://ui/Player/blackout_panel.gd" id="11_xo5xq"]
+[ext_resource type="Script" path="res://ui/Player/control_alert.gd" id="13_ex4d2"]
+[ext_resource type="PackedScene" uid="uid://dfa5w5xshjt3h" path="res://ui/Player/control_instructions.tscn" id="13_j7xyf"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_e2vg4"]
 bg_color = Color(0.945098, 0.941176, 0.188235, 0.188235)
@@ -304,5 +306,44 @@ grow_vertical = 2
 mouse_filter = 2
 theme_override_styles/panel = SubResource("StyleBoxFlat_eth0m")
 script = ExtResource("11_xo5xq")
+
+[node name="Control_Alert" type="Control" parent="." groups=["Alert"]]
+modulate = Color(1, 1, 1, 0)
+layout_mode = 3
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -20.0
+offset_top = 52.0
+offset_right = 20.0
+offset_bottom = 92.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+script = ExtResource("13_ex4d2")
+
+[node name="Label" type="Label" parent="Control_Alert"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -165.0
+offset_top = -34.0
+offset_right = 161.0
+offset_bottom = 41.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_font_sizes/font_size = 40
+text = "Kennels don't take Llamas"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Control_Instructions" parent="." instance=ExtResource("13_j7xyf")]
+modulate = Color(1, 1, 1, 0)
+mouse_filter = 2
 
 [connection signal="value_changed" from="Control_Center/ActionProgressBar" to="Control_Center/ActionProgressBar" method="_on_value_changed"]

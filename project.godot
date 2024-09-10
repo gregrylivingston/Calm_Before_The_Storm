@@ -53,6 +53,8 @@ ActionProgressBar=""
 Barn=""
 Den=""
 Kennel=""
+Alert=""
+Instruction=""
 
 [gui]
 

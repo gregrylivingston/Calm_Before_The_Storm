@@ -3,7 +3,10 @@ class_name Building3D extends StaticBody3D
 @export var max_slots := 4
 @export var used_slots := 0
 
+@export var wood_cost := 0
+
 @export var placement_position: Array[Node3D]
+@export var instructions: String
 
 
 # Called when the node enters the scene tree for the first time.
