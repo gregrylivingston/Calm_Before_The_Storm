@@ -8,4 +8,4 @@ func _ready() -> void:
 func new_weather_state_rewards(weatherState: WeatherState) -> void:
 	var rewardAmount = $Panel_SafeAnimals.weather_state_rewards()
 	Inventory.stars += rewardAmount
-	$HBoxContainer/Label.text = str(Inventory.stars) + " "
+	$Panel_Stars/Label.text = str(Inventory.stars) + " "

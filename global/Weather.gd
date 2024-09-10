@@ -2,7 +2,7 @@ extends Node
 
 var weather_state_int := -1
 var weather_state: WeatherState
-var weather_animation_time := 20
+var weather_animation_time := 15
 
 var game_time := 0.06
 
@@ -34,7 +34,7 @@ func start_new_round():
 	game_time = 0.0
 	state_timer = 0.0
 	weather_state_int = -1
-	state_timer_max = 30.0 + Player.data.upgrade.Weather_Alert_Delay * 3
+	state_timer_max = 20.0 + Player.data.upgrade.Weather_Alert_Delay * 2
 
 	new_round.emit()
 

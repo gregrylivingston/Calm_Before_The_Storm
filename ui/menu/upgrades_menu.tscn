@@ -1,6 +1,8 @@
-[gd_scene load_steps=2 format=3 uid="uid://bb4w34s3e3lul"]
+[gd_scene load_steps=4 format=3 uid="uid://bb4w34s3e3lul"]
 
+[ext_resource type="Script" path="res://ui/menu/upgrades_menu.gd" id="1_0l5oh"]
 [ext_resource type="Script" path="res://ui/menu/upgrades_list.gd" id="1_2hfrc"]
+[ext_resource type="PackedScene" uid="uid://dhec1bvcalqur" path="res://ui/Player/panel_stars.tscn" id="2_r37xw"]
 
 [node name="UpgradesMenu" type="Control"]
 layout_mode = 3
@@ -9,6 +11,7 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
+script = ExtResource("1_0l5oh")
 
 [node name="Panel" type="Panel" parent="."]
 self_modulate = Color(1, 1, 1, 0.313726)
@@ -74,3 +77,12 @@ layout_mode = 2
 size_flags_horizontal = 3
 theme_override_constants/separation = 10
 script = ExtResource("1_2hfrc")
+
+[node name="Panel_Stars" parent="." instance=ExtResource("2_r37xw")]
+layout_mode = 0
+offset_left = 1089.0
+offset_top = 71.0
+offset_right = 1186.0
+offset_bottom = 136.0
+
+[editable path="Panel_Stars"]

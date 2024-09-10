@@ -13,4 +13,8 @@ var upgrade = {
 	"Meat_Gathered":1,			#added
 }
 
-var stars := 0
+var stars := 25
+
+
+func add_upgrade(title: String) -> void:
+	upgrade[title] += 1

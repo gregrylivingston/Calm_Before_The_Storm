@@ -48,3 +48,5 @@ expand_icon = true
 modulate = Color(1, 1, 1, 0)
 custom_minimum_size = Vector2(25, 0)
 layout_mode = 2
+
+[connection signal="pressed" from="Button_Upgrade" to="." method="upgrade"]
