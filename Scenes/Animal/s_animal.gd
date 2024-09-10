@@ -4,6 +4,8 @@ class_name Animal3D extends CharacterBody3D
 const SPEED = 5.0
 const JUMP_VELOCITY = 4.5
 
+enum Types { Fruit, Hay, Meat}
+@export var type: Types
 
 func _physics_process(delta: float) -> void:
 	if false:
@@ -36,6 +38,7 @@ func _physics_process(delta: float) -> void:
 
 func is_animal() -> bool:return true
 
+#this is what happens if you attack / kill the animal...
 func chop_tree():
 	if health < 0:
 		Inventory.meat += meat_to_award * Player.data.upgrade.Meat_Gathered

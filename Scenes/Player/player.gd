@@ -85,28 +85,26 @@ func rightClick():
 		0:if Input.is_action_pressed("alt_action"):digEarth(false)
 		1:if Input.is_action_just_pressed("alt_action"):_select_next_wood_building()
 		2:pass
-		3:grab_animal("fruit")
-		4:grab_animal("hay")
-		5:grab_animal("meat")
+		3:grab_animal(Animal3D.Types.Fruit)
+		4:grab_animal(Animal3D.Types.Hay)
+		5:grab_animal(Animal3D.Types.Meat)
 	
 
 var queued_buildable_object: Node3D = null
 
 
-func grab_animal(type: String) -> void:
-
-		
+func grab_animal(type: Animal3D.Types) -> void:
 	if Input.is_action_just_pressed("alt_action"):
 		queued_buildable_object = %ObjectSelector.grab_animal(type)
 		if is_instance_valid(queued_buildable_object):
 			match type:
-				"fruit":
+				Animal3D.Types.Fruit:
 					Inventory.fruit -= 1
 					if Inventory.fruit < 1:reset_active_item()
-				"hay":
+				Animal3D.Types.Hay:
 					Inventory.hay -= 1
 					if Inventory.hay < 1:reset_active_item()
-				"meat":
+				Animal3D.Types.Meat:
 					Inventory.meat -= 1
 					if Inventory.meat < 1:reset_active_item()
 			Inventory.update_inventory.emit()
