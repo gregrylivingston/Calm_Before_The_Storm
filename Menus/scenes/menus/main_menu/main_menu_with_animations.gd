@@ -24,6 +24,7 @@ func _open_sub_menu(menu):
 func _close_sub_menu():
 	super._close_sub_menu()
 	animation_state_machine.travel("OpenMainMenu")
+	%UpgradesContainer.visible = false
 
 func _input(event):
 	if _is_in_intro() and _event_skips_intro(event):
@@ -33,3 +34,7 @@ func _input(event):
 func _ready():
 	super._ready()
 	animation_state_machine = $MenuAnimationTree.get("parameters/playback")
+
+func showUpgradeMenu():
+	%UpgradesContainer.visible = true
+	animation_state_machine.travel("OpenSubMenu")

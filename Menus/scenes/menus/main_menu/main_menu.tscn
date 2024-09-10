@@ -9,6 +9,3 @@
 script = ExtResource("2_36kw5")
 options_packed_scene = ExtResource("3_mk6dg")
 credits_packed_scene = ExtResource("4_55e2s")
-
-[node name="BackgroundMusicPlayer" parent="." index="1"]
-bus = &"Master"
