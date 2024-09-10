@@ -32,18 +32,18 @@ func _physics_process(delta: float) -> void:
 @export var health := 100
 @export var max_health := 100
 
-@export var meat_to_award := 10
+@export var meat_to_award := 1
 
 func is_animal() -> bool:return true
 
 func chop_tree():
 	if health < 0:
-		Inventory.meat += meat_to_award
+		Inventory.meat += meat_to_award * Player.data.upgrade.Meat_Gathered
 		Inventory.update_inventory.emit()
 		queue_free()
 	else:
 		var progress_bar = get_tree().get_first_node_in_group("ActionProgressBar")
-		health -= 1
+		health -= 1 * Player.data.upgrade.Chop_Strength
 		progress_bar.value = health
 		progress_bar.max_value = max_health
 		

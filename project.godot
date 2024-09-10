@@ -35,6 +35,7 @@ ProjectMusicController="*res://addons/maaacks_menus_template/base/scenes/autoloa
 ProjectUISoundController="*res://addons/maaacks_menus_template/base/scenes/autoloads/project_ui_sound_controller.tscn"
 Inventory="*res://global/Inventory.gd"
 Ui="*res://global/UI.gd"
+Player="*res://global/Player.gd"
 
 [display]
 

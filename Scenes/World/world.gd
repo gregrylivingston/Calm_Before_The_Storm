@@ -128,7 +128,7 @@ func _physics_process(delta: float) -> void:
 	
 func dig(dig_position: Vector3, amount: float, isDigging: bool = true):
 	dig_target_position = dig_position
-	digRequestAmount += amount
+	digRequestAmount += amount * Player.data.upgrade.Dig_Strength
 	isDig = isDigging
 	
 func completeDig(dig_position: Vector3, amount: float, isDigging: bool = true):
@@ -142,7 +142,7 @@ func completeDig(dig_position: Vector3, amount: float, isDigging: bool = true):
 		if y < heights[z][x]:  # Only dig if the y-coordinate of the dig_position is below the current height
 			if isDigging: 
 				heights[z][x] = max(heights[z][x] - amount/10.0, -20)
-				Inventory.dirt += amount 
+				Inventory.dirt += amount * Player.data.upgrade.Dirt_Gathered
 			elif Inventory.dirt > amount: 
 				Inventory.dirt -= amount
 				var digAmount = amount/40.0

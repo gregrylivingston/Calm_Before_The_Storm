@@ -6,7 +6,7 @@ var weather_animation_time := 20
 
 var game_time := 0.06
 
-var state_timer_max := 25.0
+var state_timer_max :float
 var state_timer := -5.0:
 	set(new_state_time):
 		state_timer = new_state_time
@@ -34,6 +34,8 @@ func start_new_round():
 	game_time = 0.0
 	state_timer = 0.0
 	weather_state_int = -1
+	state_timer_max = 30.0 + Player.data.upgrade.Weather_Alert_Delay * 3
+
 	new_round.emit()
 
 # Called when the node enters the scene tree for the first time.
