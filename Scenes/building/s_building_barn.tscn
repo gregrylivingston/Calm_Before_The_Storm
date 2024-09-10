@@ -9,7 +9,7 @@ points = PackedVector3Array(0.0281485, 0.00367851, 0.0451688, -0.0276856, -0.030
 [node name="SBuilding" groups=["Barn"] instance=ExtResource("1_urvw1")]
 type = 1
 wood_cost = 15
-instructions = "Barns require 15 wood and hold 4 fruit eaters."
+instructions = "Barns require 15 wood and hold 4 hay eaters."
 title = "Barn"
 
 [node name="OpenBarn" parent="." index="0" instance=ExtResource("2_ebwgj")]

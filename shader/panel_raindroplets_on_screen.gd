@@ -3,7 +3,11 @@ extends Panel
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
 	Weather.new_weather_state.connect(update_weather_state)
-
+	Weather.new_round.connect(reset)
+	
+func reset():
+	previous_value = 4
+	update_raindrop_amount(4)
 
 var previous_value := 4.0
 func update_weather_state(new_weather_state: WeatherState) -> void:

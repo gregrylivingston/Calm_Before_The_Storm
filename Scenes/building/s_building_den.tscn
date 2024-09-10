@@ -8,7 +8,7 @@ points = PackedVector3Array(0.0015473, 0.0385216, 0.0591756, -0.0377994, -0.0397
 
 [node name="SBuilding" groups=["Den"] instance=ExtResource("1_b25mv")]
 wood_cost = 20
-instructions = "Dens cost 20 wood and hold 6 hay eaters."
+instructions = "Dens cost 20 wood and hold 6 fruit eaters."
 title = "Den"
 
 [node name="Barn" parent="." index="0" instance=ExtResource("2_pnv71")]

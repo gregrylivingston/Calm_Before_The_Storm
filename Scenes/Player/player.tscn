@@ -88,7 +88,7 @@ wood_buildings = Array[PackedScene]([ExtResource("2_h7s7r"), ExtResource("3_is48
 player_item_options = Array[ExtResource("2_3y3k3")]([ExtResource("3_o6bft"), ExtResource("4_kuysq"), ExtResource("5_rhuhf"), ExtResource("6_tk1vk"), ExtResource("7_lwm4m"), ExtResource("11_ybfx4")])
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="."]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -0.168354)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -0.00156459)
 shape = SubResource("CapsuleShape3D_cet7n")
 
 [node name="bodyMesh" type="MeshInstance3D" parent="."]

@@ -6,6 +6,6 @@
 [resource]
 script = ExtResource("1_onm0d")
 title = "Flash Floods"
-water_height = 12.0
+water_height = 14.0
 cloud_level = 0.01
 rain_sound = ExtResource("1_dyrti")

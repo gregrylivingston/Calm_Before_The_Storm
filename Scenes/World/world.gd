@@ -13,9 +13,10 @@ var load_distance := 2
 
 func _ready():
 	setup_noise()
+	call_deferred("start_round")
+
+func start_round():
 	Weather.start_new_round()
-
-
 
 
 func _process(_delta):
@@ -133,7 +134,10 @@ func dig(dig_position: Vector3, amount: float, isDigging: bool = true):
 	
 func completeDig(dig_position: Vector3, amount: float, isDigging: bool = true):
 	var chunk_pos = (dig_position / chunk_size).floor() * chunk_size
+	chunk_pos.y = 0
 	if height_map.has(chunk_pos):
+		print(Weather.state_timer)
+
 		var heights = height_map[chunk_pos]
 		var local_pos = (dig_position - chunk_pos)
 		var x = int(local_pos.x)
