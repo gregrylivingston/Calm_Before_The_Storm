@@ -1,4 +1,4 @@
-[gd_scene load_steps=14 format=3 uid="uid://csckx1dqx0ycd"]
+[gd_scene load_steps=15 format=3 uid="uid://csckx1dqx0ycd"]
 
 [ext_resource type="Script" path="res://ui/Player/progress_bar_weather_state.gd" id="1_bll7w"]
 [ext_resource type="Theme" uid="uid://dbmay2mk5b3eg" path="res://theme/theme_base.tres" id="1_soa6u"]
@@ -11,14 +11,15 @@
 [ext_resource type="Texture2D" uid="uid://cgos885q5ixlu" path="res://ui/texture/mouse_right_outline.png" id="8_l5dbw"]
 [ext_resource type="Script" path="res://ui/Player/icon_right__mouse_action.gd" id="9_yl8ak"]
 [ext_resource type="Script" path="res://ui/Player/blackout_panel.gd" id="11_xo5xq"]
+[ext_resource type="Texture2D" uid="uid://bqfrdf4prxo2s" path="res://resource/player_item_icon/icon_star.png" id="12_eydr2"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_e2vg4"]
-bg_color = Color(0.956863, 0.635294, 0.380392, 0.192157)
+bg_color = Color(0.945098, 0.941176, 0.188235, 0.188235)
 border_width_left = 4
 border_width_top = 4
 border_width_right = 4
 border_width_bottom = 4
-border_color = Color(0.956863, 0.635294, 0.380392, 1)
+border_color = Color(0.945098, 0.945098, 0.188235, 1)
 corner_radius_top_left = 10
 corner_radius_top_right = 10
 corner_radius_bottom_right = 10
@@ -186,14 +187,14 @@ grow_vertical = 2
 mouse_filter = 2
 
 [node name="ActionProgressBar" type="ProgressBar" parent="Control_Center" groups=["ActionProgressBar"]]
-visible = false
 layout_mode = 1
 anchors_preset = 5
 anchor_left = 0.5
 anchor_right = 0.5
 offset_left = -35.0
+offset_top = -4.0
 offset_right = 35.0
-offset_bottom = 9.0
+offset_bottom = 10.0
 grow_horizontal = 2
 show_percentage = false
 script = ExtResource("5_nguav")
@@ -249,7 +250,7 @@ grow_horizontal = 2
 grow_vertical = 2
 
 [node name="TextureRect" type="TextureRect" parent="Control_BottomCenter/HboxInventoryPanel/Icon_Left_Mouse_Action/VBoxContainer"]
-modulate = Color(0.905882, 0.435294, 0.317647, 1)
+modulate = Color(0.956863, 0.952941, 0.196078, 1)
 layout_mode = 2
 texture = ExtResource("7_g5uy1")
 stretch_mode = 5
@@ -281,7 +282,7 @@ grow_horizontal = 2
 grow_vertical = 2
 
 [node name="TextureRect2" type="TextureRect" parent="Control_BottomCenter/HboxInventoryPanel/Icon_Right__Mouse_Action/VBoxContainer"]
-modulate = Color(0.905882, 0.435294, 0.317647, 1)
+modulate = Color(0.945098, 0.945098, 0.188235, 1)
 layout_mode = 2
 texture = ExtResource("8_l5dbw")
 stretch_mode = 5
@@ -292,7 +293,99 @@ layout_mode = 2
 text = "Buildings"
 horizontal_alignment = 1
 
+[node name="VBoxContainer2" type="VBoxContainer" parent="."]
+anchors_preset = 11
+anchor_left = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -222.0
+offset_top = 100.0
+offset_right = -48.0
+offset_bottom = -102.0
+grow_horizontal = 0
+grow_vertical = 2
+theme = ExtResource("1_soa6u")
+
+[node name="HBoxContainer" type="HBoxContainer" parent="VBoxContainer2"]
+layout_mode = 2
+
+[node name="Label" type="Label" parent="VBoxContainer2/HBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 10
+theme_override_font_sizes/font_size = 50
+text = "0 "
+
+[node name="TextureRect" type="TextureRect" parent="VBoxContainer2/HBoxContainer"]
+custom_minimum_size = Vector2(50, 50)
+layout_mode = 2
+size_flags_horizontal = 8
+texture = ExtResource("12_eydr2")
+expand_mode = 1
+stretch_mode = 5
+
+[node name="Panel" type="Panel" parent="VBoxContainer2"]
+custom_minimum_size = Vector2(0, 130)
+layout_mode = 2
+
+[node name="Label" type="Label" parent="VBoxContainer2/Panel"]
+layout_mode = 2
+offset_left = 7.0
+offset_top = 6.0
+offset_right = 166.0
+offset_bottom = 48.0
+theme_override_font_sizes/font_size = 32
+text = "Safe Animals"
+
+[node name="VBoxContainer" type="VBoxContainer" parent="VBoxContainer2/Panel"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 13.0
+offset_top = 49.0
+offset_right = -20.0
+offset_bottom = -2.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="HBoxContainer" type="HBoxContainer" parent="VBoxContainer2/Panel/VBoxContainer"]
+layout_mode = 2
+
+[node name="Label" type="Label" parent="VBoxContainer2/Panel/VBoxContainer/HBoxContainer"]
+layout_mode = 2
+text = "In Kennels"
+
+[node name="Label2" type="Label" parent="VBoxContainer2/Panel/VBoxContainer/HBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 10
+text = "0 / 0"
+
+[node name="HBoxContainer2" type="HBoxContainer" parent="VBoxContainer2/Panel/VBoxContainer"]
+layout_mode = 2
+
+[node name="Label" type="Label" parent="VBoxContainer2/Panel/VBoxContainer/HBoxContainer2"]
+layout_mode = 2
+text = "In Barns"
+
+[node name="Label2" type="Label" parent="VBoxContainer2/Panel/VBoxContainer/HBoxContainer2"]
+layout_mode = 2
+size_flags_horizontal = 10
+text = "0 / 0"
+
+[node name="HBoxContainer3" type="HBoxContainer" parent="VBoxContainer2/Panel/VBoxContainer"]
+layout_mode = 2
+
+[node name="Label" type="Label" parent="VBoxContainer2/Panel/VBoxContainer/HBoxContainer3"]
+layout_mode = 2
+text = "In Dens"
+
+[node name="Label2" type="Label" parent="VBoxContainer2/Panel/VBoxContainer/HBoxContainer3"]
+layout_mode = 2
+size_flags_horizontal = 10
+text = "0 / 0"
+
 [node name="BlackoutPanel" type="Panel" parent="."]
+visible = false
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0

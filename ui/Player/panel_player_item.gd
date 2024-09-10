@@ -14,7 +14,11 @@ func _ready() -> void:
 func update_inventory(quant: int) -> void:
 	if previousQuantity != quant:
 		%Label_ChangeInQuantity.modulate.a = 4.0
-		%Label_ChangeInQuantity.text = str(quant - previousQuantity)
+		if quant - previousQuantity > 0:
+			%Label_ChangeInQuantity.text = "+" + str(quant - previousQuantity)
+		else:
+			%Label_ChangeInQuantity.text = str(quant - previousQuantity)
+
 		%LabelQuantity.text = "x" + str(quant)
 		previousQuantity = quant
 
