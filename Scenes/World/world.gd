@@ -132,12 +132,11 @@ func dig(dig_position: Vector3, amount: float, isDigging: bool = true):
 	digRequestAmount += amount * Player.data.upgrade.Dig_Strength
 	isDig = isDigging
 	
+var digQualityDivisor := 20.0
 func completeDig(dig_position: Vector3, amount: float, isDigging: bool = true):
 	var chunk_pos = (dig_position / chunk_size).floor() * chunk_size
 	chunk_pos.y = 0
 	if height_map.has(chunk_pos):
-		print(Weather.state_timer)
-
 		var heights = height_map[chunk_pos]
 		var local_pos = (dig_position - chunk_pos)
 		var x = int(local_pos.x)
@@ -145,16 +144,20 @@ func completeDig(dig_position: Vector3, amount: float, isDigging: bool = true):
 		var y = int(local_pos.y)
 		if y < heights[z][x]:  # Only dig if the y-coordinate of the dig_position is below the current height
 			if isDigging: 
-				heights[z][x] = max(heights[z][x] - amount/10.0, -20)
+				heights[z][x] = max(heights[z][x] - amount/digQualityDivisor, -20)
 				Inventory.dirt += amount * Player.data.upgrade.Dirt_Gathered
 			elif Inventory.dirt > amount: 
 				Inventory.dirt -= amount
-				var digAmount = amount/40.0
-				heights[z][x] = heights[z][x] + digAmount
-				heights[z][x+1] = heights[z][x+1] + digAmount
-				heights[z][x-1] = heights[z][x-1] + digAmount
-				heights[z+1][x] = heights[z+1][x] + digAmount
-				heights[z-1][x] = heights[z-1][x] + digAmount
+				var digAmount = amount / ( 15 * digQualityDivisor )
+				heights[z][x] =  heights[z][x] + digAmount * 3 
+				heights[z][x+1] = heights[z][x+1] + digAmount * 2
+				heights[z][x-1] = heights[z][x-1] + digAmount * 2
+				heights[z+1][x] = heights[z+1][x] + digAmount * 2
+				heights[z-1][x] = heights[z-1][x] + digAmount * 2
+				heights[z+1][x+1] = heights[z+1][x+1] + digAmount
+				heights[z-1][x-1] = heights[z-1][x-1] + digAmount
+				heights[z+1][x-1] = heights[z+1][x-1] + digAmount
+				heights[z-1][x+1] = heights[z-1][x+1] + digAmount
 			Inventory.update_inventory.emit()
 
 			height_map[chunk_pos] = heights  # Save the changes to the height map.
