@@ -26,6 +26,7 @@ points = PackedVector3Array(-0.00221598, -0.00225588, 0.0117943, 0.00483078, -0.
 
 [node name="SAnimal" instance=ExtResource("1_fx825")]
 transform = Transform3D(0.5, 0, 0, 0, 0.5, 0, 0, 0, 0.5, 0, 0, 0)
+title = "Wolves"
 
 [node name="Wolf" parent="." index="0" instance=ExtResource("2_cakhl")]
 

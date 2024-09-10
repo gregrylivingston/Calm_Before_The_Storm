@@ -6,6 +6,7 @@ const JUMP_VELOCITY = 4.5
 
 enum Types { Fruit, Hay, Meat}
 @export var type: Types
+@export var title: String
 
 func _physics_process(delta: float) -> void:
 	if false:

@@ -134,10 +134,19 @@ func move_queued_building() -> void:
 				queued_buildable_object.position = raycast.get_collision_point()
 				
 				if collider.has_method("is_building") && queued_buildable_object.has_method("is_animal"):
-					_place_queued_animal(collider , queued_buildable_object)
+					_attempt_to_place_queued_animal(collider , queued_buildable_object)
+
+func _attempt_to_place_queued_animal( building: StaticBody3D, animal: Animal3D) -> void:
+	if building.type == animal.type:
+		if building.add_animal(animal): ## this function returns false if building is full
+			_place_queued_animal(building, animal)
+		else:
+			get_tree().get_first_node_in_group("Alert").send_alert("This " + building.title + " is full.")
+	else:
+		get_tree().get_first_node_in_group("Alert").send_alert(building.title + "s don't take " + animal.title)
+
 
 func _place_queued_animal(building: StaticBody3D, animal: Animal3D) -> void:
-	if building.add_animal(animal):
 		queued_buildable_object = null
 		match animal.type:
 			Animal3D.Types.Fruit:
@@ -151,7 +160,9 @@ func _place_queued_animal(building: StaticBody3D, animal: Animal3D) -> void:
 	
 
 func _place_queued_building() -> void:
-	if queued_buildable_object.has_method("place_building"):
+	if queued_buildable_object.has_method("is_animal"):
+		queued_buildable_object = null
+	elif queued_buildable_object.has_method("is_building"):
 		if queued_buildable_object.wood_cost <= Inventory.wood:
 			queued_buildable_object.place_building()
 			Inventory.wood -= queued_buildable_object.wood_cost
@@ -160,6 +171,8 @@ func _place_queued_building() -> void:
 			queued_buildable_object = null
 		else:
 			get_tree().get_first_node_in_group("Alert").send_alert("Not Enough Wood.")
+
+
 	select_item_check()
 
 func drown() -> void:
