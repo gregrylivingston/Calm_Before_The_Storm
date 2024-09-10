@@ -1,10 +1,11 @@
-[gd_scene load_steps=20 format=3 uid="uid://3tan4jipfcjh"]
+[gd_scene load_steps=21 format=3 uid="uid://3tan4jipfcjh"]
 
 [ext_resource type="PackedScene" uid="uid://nrh54ueqxxix" path="res://Menus/scenes/menus/main_menu/main_menu.tscn" id="1_vbrqt"]
 [ext_resource type="Script" path="res://Menus/scenes/menus/main_menu/main_menu_with_animations.gd" id="2_24nl5"]
 [ext_resource type="Theme" uid="uid://dbmay2mk5b3eg" path="res://theme/theme_base.tres" id="2_ari44"]
 [ext_resource type="PackedScene" uid="uid://bdbkm48ptx2c4" path="res://background_map.tscn" id="3_cjjc3"]
 [ext_resource type="PackedScene" uid="uid://bb4w34s3e3lul" path="res://ui/menu/upgrades_menu.tscn" id="4_ngrjf"]
+[ext_resource type="PackedScene" uid="uid://dem220dayub7a" path="res://ui/Player/help_menu.tscn" id="5_qhroc"]
 
 [sub_resource type="Animation" id="1"]
 resource_name = "Intro"
@@ -475,7 +476,6 @@ custom_minimum_size = Vector2(100, 25)
 layout_mode = 2
 size_flags_horizontal = 0
 theme_override_font_sizes/font_size = 20
-disabled = true
 text = "  Help"
 alignment = 0
 
@@ -512,9 +512,24 @@ mouse_filter = 2
 [node name="UpgradesMenu" parent="UpgradesContainer" index="0" instance=ExtResource("4_ngrjf")]
 layout_mode = 2
 
-[node name="backgroundmap" parent="." index="11" instance=ExtResource("3_cjjc3")]
+[node name="HelpContainer" type="MarginContainer" parent="." index="9"]
+unique_name_in_owner = true
+visible = false
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+
+[node name="HelpMenu" parent="HelpContainer" index="0" instance=ExtResource("5_qhroc")]
+layout_mode = 2
+
+[node name="backgroundmap" parent="." index="12" instance=ExtResource("3_cjjc3")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.0273995, 0, 0)
 
 [connection signal="pressed" from="MenuContainer/VBoxContainer/HBoxContainer_top/OptionsButton2" to="." method="_on_options_button_pressed"]
 [connection signal="pressed" from="MenuContainer/VBoxContainer/HBoxContainer_top/CreditsButton2" to="." method="_on_credits_button_pressed"]
 [connection signal="pressed" from="MenuContainer/VBoxContainer/MenuMargin/MenuButtons/UpgradesButton" to="." method="showUpgradeMenu"]
+[connection signal="pressed" from="MenuContainer/VBoxContainer/MenuMargin/MenuButtons/HelpButton" to="." method="_on_help_button_pressed"]

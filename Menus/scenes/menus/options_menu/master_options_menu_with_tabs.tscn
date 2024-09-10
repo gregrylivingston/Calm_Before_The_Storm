@@ -1,13 +1,24 @@
-[gd_scene load_steps=5 format=3 uid="uid://davgw81hc71p1"]
+[gd_scene load_steps=6 format=3 uid="uid://davgw81hc71p1"]
 
 [ext_resource type="PackedScene" uid="uid://bgrsi2wtjqnnx" path="res://Menus/scenes/menus/options_menu/master_options_menu.tscn" id="1_7rucr"]
 [ext_resource type="PackedScene" uid="uid://ddey3ntfe4w16" path="res://Menus/scenes/menus/options_menu/input/input_options_menu_with_mouse_sensitivity.tscn" id="2_4fvxj"]
+[ext_resource type="Theme" uid="uid://dbmay2mk5b3eg" path="res://theme/theme_base.tres" id="2_6rt25"]
 [ext_resource type="PackedScene" uid="uid://b63f6nfhoiykw" path="res://Menus/scenes/menus/options_menu/audio/audio_options_menu.tscn" id="3_tobso"]
 [ext_resource type="PackedScene" uid="uid://bjxyejm72noe8" path="res://Menus/scenes/menus/options_menu/video/video_options_menu_with_extras.tscn" id="4_jk8e0"]
 
 [node name="MasterOptionsMenu" instance=ExtResource("1_7rucr")]
+theme = ExtResource("2_6rt25")
 
-[node name="TabContainer" parent="." index="0"]
+[node name="Panel" type="Panel" parent="." index="0"]
+self_modulate = Color(1, 1, 1, 0.333333)
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="TabContainer" parent="." index="1"]
 current_tab = 0
 
 [node name="Controls" parent="TabContainer" index="1" instance=ExtResource("2_4fvxj")]

@@ -1,9 +1,10 @@
-[gd_resource type="Theme" load_steps=6 format=3 uid="uid://dbmay2mk5b3eg"]
+[gd_resource type="Theme" load_steps=9 format=3 uid="uid://dbmay2mk5b3eg"]
 
 [ext_resource type="StyleBox" uid="uid://bcnu5qfk30vns" path="res://theme/panel_standard.tres" id="1_jw17a"]
 [ext_resource type="FontFile" uid="uid://dyhx5x3l2fik5" path="res://theme/font/Chewy-Regular.ttf" id="1_up0jm"]
 [ext_resource type="StyleBox" uid="uid://bncmn0nlduaw5" path="res://theme/panel_flat.tres" id="2_tjtke"]
 [ext_resource type="StyleBox" uid="uid://jbse60t4d2hn" path="res://theme/panel_flat_red.tres" id="3_xik8c"]
+[ext_resource type="StyleBox" uid="uid://ywcampnpqpk1" path="res://theme/panel_transparent.tres" id="4_l5lbe"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_1igp8"]
 bg_color = Color(0.956863, 0.635294, 0.380392, 1)
@@ -17,6 +18,12 @@ corner_radius_top_right = 10
 corner_radius_bottom_right = 10
 corner_radius_bottom_left = 10
 
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_qbdxb"]
+bg_color = Color(0.6, 0.6, 0.6, 0)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_ghugi"]
+bg_color = Color(0.6, 0.6, 0.6, 0)
+
 [resource]
 default_font = ExtResource("1_up0jm")
 Button/colors/font_color = Color(1, 1, 1, 1)
@@ -25,4 +32,10 @@ Button/styles/normal = ExtResource("1_jw17a")
 Panel/styles/panel = ExtResource("3_xik8c")
 ProgressBar/styles/background = ExtResource("2_tjtke")
 ProgressBar/styles/fill = ExtResource("3_xik8c")
+TabBar/styles/tab_unselected = ExtResource("2_tjtke")
+TabContainer/font_sizes/font_size = 24
+TabContainer/styles/panel = SubResource("StyleBoxFlat_qbdxb")
+TabContainer/styles/tab_selected = ExtResource("1_jw17a")
+TabContainer/styles/tab_unselected = ExtResource("4_l5lbe")
+TabContainer/styles/tabbar_background = SubResource("StyleBoxFlat_ghugi")
 Tree/styles/panel = ExtResource("2_tjtke")

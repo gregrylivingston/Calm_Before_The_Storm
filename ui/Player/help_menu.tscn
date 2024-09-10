@@ -1,0 +1,186 @@
+[gd_scene load_steps=9 format=3 uid="uid://dem220dayub7a"]
+
+[ext_resource type="Script" path="res://ui/Player/help_menu.gd" id="1_iu46f"]
+[ext_resource type="Texture2D" uid="uid://c0m11l24tcxvl" path="res://resource/player_item_icon/icon_apple.png" id="2_jbwkg"]
+[ext_resource type="Texture2D" uid="uid://dexu3jx3j06yx" path="res://resource/construction/icon_building_den.png" id="3_7dbrn"]
+[ext_resource type="Texture2D" uid="uid://b3ly2tealjgc3" path="res://resource/player_item_icon/icon_pig.png" id="3_tkf27"]
+[ext_resource type="Texture2D" uid="uid://bj3pyy11tly22" path="res://resource/player_item_icon/icon_axe.png" id="4_wypxn"]
+[ext_resource type="Texture2D" uid="uid://c7baewnmphi8g" path="res://resource/player_item_icon/icon_tree.png" id="5_bre4i"]
+[ext_resource type="Texture2D" uid="uid://bqfrdf4prxo2s" path="res://resource/player_item_icon/icon_star.png" id="5_r03b1"]
+[ext_resource type="Texture2D" uid="uid://bd57f5x4dkpo2" path="res://resource/texture/t_arrow.png" id="8_c5d5g"]
+
+[node name="HelpMenu" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_iu46f")
+
+[node name="Panel" type="Panel" parent="."]
+self_modulate = Color(1, 1, 1, 0.333333)
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="TabContainer" type="TabContainer" parent="Panel"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 65.0
+offset_top = 59.0
+offset_right = -113.0
+offset_bottom = -102.0
+grow_horizontal = 2
+grow_vertical = 2
+current_tab = 1
+
+[node name="Controls" type="Panel" parent="Panel/TabContainer"]
+visible = false
+layout_mode = 2
+metadata/_tab_index = 0
+
+[node name="Gameplay - Basics" type="Panel" parent="Panel/TabContainer"]
+layout_mode = 2
+metadata/_tab_index = 1
+
+[node name="VBoxContainer" type="VBoxContainer" parent="Panel/TabContainer/Gameplay - Basics"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 110.0
+offset_top = 54.0
+offset_right = -38.0
+offset_bottom = -44.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="HBoxContainer" type="HBoxContainer" parent="Panel/TabContainer/Gameplay - Basics/VBoxContainer"]
+layout_mode = 2
+
+[node name="VBoxContainer" type="VBoxContainer" parent="Panel/TabContainer/Gameplay - Basics/VBoxContainer/HBoxContainer"]
+layout_mode = 2
+theme_override_constants/separation = 40
+
+[node name="Label" type="Label" parent="Panel/TabContainer/Gameplay - Basics/VBoxContainer/HBoxContainer/VBoxContainer"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 50
+text = "To Do:"
+
+[node name="Label2" type="Label" parent="Panel/TabContainer/Gameplay - Basics/VBoxContainer/HBoxContainer/VBoxContainer"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 42
+text = "1. Chop trees."
+
+[node name="Label3" type="Label" parent="Panel/TabContainer/Gameplay - Basics/VBoxContainer/HBoxContainer/VBoxContainer"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 42
+text = "2. Build shelters."
+
+[node name="Label4" type="Label" parent="Panel/TabContainer/Gameplay - Basics/VBoxContainer/HBoxContainer/VBoxContainer"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 42
+text = "3. Place animals 
+        in shelters."
+
+[node name="TextureRect" type="TextureRect" parent="Panel/TabContainer/Gameplay - Basics"]
+layout_mode = 0
+offset_left = 541.0
+offset_top = 187.0
+offset_right = 636.0
+offset_bottom = 278.0
+texture = ExtResource("2_jbwkg")
+expand_mode = 1
+stretch_mode = 5
+
+[node name="TextureRect6" type="TextureRect" parent="Panel/TabContainer/Gameplay - Basics"]
+layout_mode = 0
+offset_left = 530.0
+offset_top = 362.0
+offset_right = 691.0
+offset_bottom = 516.0
+texture = ExtResource("3_tkf27")
+expand_mode = 1
+stretch_mode = 5
+
+[node name="TextureRect2" type="TextureRect" parent="Panel/TabContainer/Gameplay - Basics"]
+layout_mode = 0
+offset_left = 762.0
+offset_top = 278.0
+offset_right = 918.0
+offset_bottom = 384.0
+texture = ExtResource("3_7dbrn")
+expand_mode = 1
+stretch_mode = 5
+
+[node name="TextureRect3" type="TextureRect" parent="Panel/TabContainer/Gameplay - Basics"]
+layout_mode = 0
+offset_left = 486.0
+offset_top = 15.0
+offset_right = 632.0
+offset_bottom = 165.0
+texture = ExtResource("4_wypxn")
+expand_mode = 1
+stretch_mode = 5
+
+[node name="TextureRect5" type="TextureRect" parent="Panel/TabContainer/Gameplay - Basics"]
+layout_mode = 0
+offset_left = 839.0
+offset_top = -2.0
+offset_right = 1025.0
+offset_bottom = 189.0
+texture = ExtResource("5_bre4i")
+expand_mode = 1
+stretch_mode = 5
+
+[node name="TextureRect4" type="TextureRect" parent="Panel/TabContainer/Gameplay - Basics"]
+layout_mode = 0
+offset_left = 970.0
+offset_top = 411.0
+offset_right = 1076.0
+offset_bottom = 499.0
+texture = ExtResource("5_r03b1")
+expand_mode = 1
+stretch_mode = 5
+
+[node name="TArrow" type="Sprite2D" parent="Panel/TabContainer/Gameplay - Basics"]
+position = Vector2(742, 67)
+rotation = 1.57348
+scale = Vector2(0.475154, 1.72814)
+texture = ExtResource("8_c5d5g")
+
+[node name="TArrow2" type="Sprite2D" parent="Panel/TabContainer/Gameplay - Basics"]
+position = Vector2(780, 161)
+rotation = 4.30297
+scale = Vector2(0.475154, 1.8268)
+texture = ExtResource("8_c5d5g")
+
+[node name="TArrow4" type="Sprite2D" parent="Panel/TabContainer/Gameplay - Basics"]
+position = Vector2(600, 331)
+rotation = 3.06717
+scale = Vector2(0.475154, 0.821894)
+texture = ExtResource("8_c5d5g")
+
+[node name="TArrow3" type="Sprite2D" parent="Panel/TabContainer/Gameplay - Basics"]
+position = Vector2(904, 220)
+rotation = 3.7686
+scale = Vector2(0.475154, 1)
+texture = ExtResource("8_c5d5g")
+
+[node name="TArrow5" type="Sprite2D" parent="Panel/TabContainer/Gameplay - Basics"]
+position = Vector2(722.167, 405.666)
+rotation = 1.08762
+scale = Vector2(0.475154, 0.577087)
+texture = ExtResource("8_c5d5g")
+
+[node name="TArrow6" type="Sprite2D" parent="Panel/TabContainer/Gameplay - Basics"]
+position = Vector2(958, 400)
+rotation = 2.33717
+scale = Vector2(0.475154, 0.577087)
+texture = ExtResource("8_c5d5g")

@@ -25,6 +25,7 @@ func _close_sub_menu():
 	super._close_sub_menu()
 	animation_state_machine.travel("OpenMainMenu")
 	%UpgradesContainer.visible = false
+	%HelpContainer.visible = false
 
 func _input(event):
 	if _is_in_intro() and _event_skips_intro(event):
@@ -37,4 +38,8 @@ func _ready():
 
 func showUpgradeMenu():
 	%UpgradesContainer.visible = true
+	animation_state_machine.travel("OpenSubMenu")
+	
+func _on_help_button_pressed() -> void:
+	%HelpContainer.visible = true
 	animation_state_machine.travel("OpenSubMenu")
