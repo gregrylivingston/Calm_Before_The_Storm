@@ -158,12 +158,14 @@ func _place_queued_building() -> void:
 
 func drown() -> void:
 	$Camera3D/UnderwaterView.visible = true
-	$Camera3D/UnderwaterView/Canvas_GameOver.visible = true
-	drowned = true
-	%Gear. visible = false
-	Input.mouse_mode = Input.MOUSE_MODE_VISIBLE
-	$Camera3D/Canvas_RainEffects.visible = false
-	$Camera3D/CanvasUI.visible = false
+	$Camera3D/UnderwaterView/Canvas_GameOver.endGame()
+	if not drowned:
+		drowned = true
+		Player.data.stars += Inventory.stars
+		%Gear. visible = false
+		Input.mouse_mode = Input.MOUSE_MODE_VISIBLE
+		$Camera3D/Canvas_RainEffects.visible = false
+		$Camera3D/CanvasUI.visible = false
 	velocity.x = 0
 	velocity.z = 0
 	

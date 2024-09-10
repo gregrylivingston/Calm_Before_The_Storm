@@ -1,4 +1,4 @@
-[gd_scene load_steps=31 format=3 uid="uid://dt7qj4rvpib2x"]
+[gd_scene load_steps=32 format=3 uid="uid://dt7qj4rvpib2x"]
 
 [ext_resource type="Script" path="res://Scenes/Player/player.gd" id="1_3uef2"]
 [ext_resource type="Script" path="res://resource/player_item/r_player_item.gd" id="2_3y3k3"]
@@ -20,6 +20,7 @@
 [ext_resource type="Theme" uid="uid://dbmay2mk5b3eg" path="res://theme/theme_base.tres" id="9_b3dlc"]
 [ext_resource type="Script" path="res://Scenes/Player/object_selector.gd" id="11_i7gf1"]
 [ext_resource type="Resource" uid="uid://k1f5jqcog0cj" path="res://resource/player_item/r_player_item_meat.tres" id="11_ybfx4"]
+[ext_resource type="Texture2D" uid="uid://bqfrdf4prxo2s" path="res://resource/player_item_icon/icon_star.png" id="20_xhabl"]
 
 [sub_resource type="CapsuleShape3D" id="CapsuleShape3D_cet7n"]
 
@@ -132,6 +133,7 @@ visible = false
 mesh = SubResource("PlaneMesh_tqih0")
 
 [node name="Canvas_GameOver" type="CanvasLayer" parent="Camera3D/UnderwaterView"]
+layer = 10
 visible = false
 script = ExtResource("4_hbng8")
 
@@ -151,8 +153,26 @@ theme = ExtResource("9_b3dlc")
 
 [node name="Label" type="Label" parent="Camera3D/UnderwaterView/Canvas_GameOver/VBoxContainer"]
 layout_mode = 2
-text = "You Have Drowned"
+text = "You Have Drowned."
 horizontal_alignment = 1
+
+[node name="HBoxContainer" type="HBoxContainer" parent="Camera3D/UnderwaterView/Canvas_GameOver/VBoxContainer"]
+custom_minimum_size = Vector2(0, 50)
+layout_mode = 2
+size_flags_horizontal = 4
+
+[node name="TextureRect" type="TextureRect" parent="Camera3D/UnderwaterView/Canvas_GameOver/VBoxContainer/HBoxContainer"]
+custom_minimum_size = Vector2(50, 50)
+layout_mode = 2
+texture = ExtResource("20_xhabl")
+expand_mode = 1
+stretch_mode = 5
+
+[node name="Label_stars_Earned" type="Label" parent="Camera3D/UnderwaterView/Canvas_GameOver/VBoxContainer/HBoxContainer"]
+unique_name_in_owner = true
+layout_mode = 2
+theme_override_font_sizes/font_size = 40
+text = "40"
 
 [node name="Button_Continue" type="Button" parent="Camera3D/UnderwaterView/Canvas_GameOver/VBoxContainer"]
 layout_mode = 2

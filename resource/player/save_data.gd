@@ -11,5 +11,6 @@ var upgrade = {
 	"Fruit_Gathered":1,			#added
 	"Hay_Gathered":1,
 	"Meat_Gathered":1,			#added
-
 }
+
+var stars := 0
