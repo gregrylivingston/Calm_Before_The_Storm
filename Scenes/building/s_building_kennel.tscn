@@ -15,9 +15,9 @@ transform = Transform3D(100, 0, 0, 0, -1.19209e-05, 100, 0, -100, -1.19209e-05, 
 shape = SubResource("ConvexPolygonShape3D_5idma")
 
 [node name="Node3D_AnimalPosition" parent="." index="2"]
-transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, 2.05574, 1, -1.14813)
+transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, 1.78385, 0.896127, -1.14813)
 
 [node name="Node3D_AnimalPosition2" parent="." index="3"]
-transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, 2.05574, 1, 1.17954)
+transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, 1.78385, 0.896127, 1.17954)
 
 [editable path="SmallBarn"]

@@ -100,20 +100,16 @@ func grab_animal(type: Animal3D.Types) -> void:
 			match type:
 				Animal3D.Types.Fruit:
 					Inventory.fruit -= 1
-					if Inventory.fruit < 1:reset_active_item()
 				Animal3D.Types.Hay:
 					Inventory.hay -= 1
-					if Inventory.hay < 1:reset_active_item()
 				Animal3D.Types.Meat:
 					Inventory.meat -= 1
-					if Inventory.meat < 1:reset_active_item()
 			Inventory.update_inventory.emit()
 			Ui.set_left_mouse_action_text("Release")
 			Ui.set_right_mouse_action_text("")
 
 func reset_active_item() -> void:
-	selected_item_int = 1
-	select_item_check()
+	select_new_item(1)
 
 
 var wood_building_num := -1
@@ -142,12 +138,21 @@ func move_queued_building() -> void:
 func _place_queued_animal(building: StaticBody3D, animal: Animal3D) -> void:
 	if building.add_animal(animal):
 		queued_buildable_object = null
-		select_item_check()
+		match animal.type:
+			Animal3D.Types.Fruit:
+				if Inventory.fruit < 1: select_new_item(1)
+			Animal3D.Types.Hay:
+				if Inventory.hay < 1: select_new_item(1)
+			Animal3D.Types.Meat:
+				if Inventory.meat < 1: select_new_item(1)
+		Player.farm_building_updates.emit()
+
 	
 
 func _place_queued_building() -> void:
 	if queued_buildable_object.has_method("place_building"):
 		queued_buildable_object.place_building()
+		Player.farm_building_updates.emit()
 	queued_buildable_object = null
 	select_item_check()
 

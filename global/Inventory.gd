@@ -8,6 +8,8 @@ var fruit: int = 0
 var hay: int = 0
 var meat: int = 0
 
+var stars: int = 0
+
 
 
 
@@ -29,3 +31,4 @@ func new_round() -> void:
 	fruit = 0
 	hay = 0
 	meat = 0
+	stars = 0

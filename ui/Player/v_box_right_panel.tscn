@@ -1,0 +1,40 @@
+[gd_scene load_steps=5 format=3 uid="uid://b2k34x1xpceq3"]
+
+[ext_resource type="Theme" uid="uid://dbmay2mk5b3eg" path="res://theme/theme_base.tres" id="1_2vdr5"]
+[ext_resource type="Script" path="res://ui/Player/v_box_right_panel.gd" id="2_eup8r"]
+[ext_resource type="Texture2D" uid="uid://bqfrdf4prxo2s" path="res://resource/player_item_icon/icon_star.png" id="2_oydre"]
+[ext_resource type="PackedScene" uid="uid://byuh7jluiwa7x" path="res://ui/Player/panel_safe_animals.tscn" id="3_dp1r2"]
+
+[node name="VBox_RightPanel" type="VBoxContainer"]
+anchors_preset = 11
+anchor_left = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -222.0
+offset_top = 100.0
+offset_right = -48.0
+offset_bottom = -102.0
+grow_horizontal = 0
+grow_vertical = 2
+theme = ExtResource("1_2vdr5")
+script = ExtResource("2_eup8r")
+
+[node name="HBoxContainer" type="HBoxContainer" parent="."]
+layout_mode = 2
+
+[node name="Label" type="Label" parent="HBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 10
+theme_override_font_sizes/font_size = 50
+text = "0 "
+
+[node name="TextureRect" type="TextureRect" parent="HBoxContainer"]
+custom_minimum_size = Vector2(50, 50)
+layout_mode = 2
+size_flags_horizontal = 8
+texture = ExtResource("2_oydre")
+expand_mode = 1
+stretch_mode = 5
+
+[node name="Panel_SafeAnimals" parent="." instance=ExtResource("3_dp1r2")]
+layout_mode = 2
