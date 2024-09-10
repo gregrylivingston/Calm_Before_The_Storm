@@ -149,3 +149,7 @@ Pause={
 
 disable_plugin_dialogues=true
 copy_path="res://Maaack"
+
+[rendering]
+
+renderer/rendering_method="gl_compatibility"

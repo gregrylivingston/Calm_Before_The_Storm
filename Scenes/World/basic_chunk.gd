@@ -42,12 +42,13 @@ func _deferred_add_nature(heights: Array, nature_noise) -> void:
 			var noiseInt: int = int(noiseValue * nature_list.size())
 			## normalize noise value to the size of the nature list array....
 			
-			if randf() < 0.01:
+			if randf() < 0.005:
 				var newScene = nature_list[noiseInt].instantiate()
 				newScene.position = Vector3(x,height ,z) + chunk_pos + Vector3(randf_range(-1,1),0,randf_range(-1,1))
 				newScene.rotation.y = randf_range(0,3.14)
 				newScene.scale = newScene.scale * randf_range(0.7,1.3)
 				get_parent().add_child(newScene)
+			await get_tree().process_frame
 
 				
 				 
