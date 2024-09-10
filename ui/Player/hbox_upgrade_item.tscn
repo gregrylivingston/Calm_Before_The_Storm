@@ -1,0 +1,50 @@
+[gd_scene load_steps=4 format=3 uid="uid://b54r7nva3h5eq"]
+
+[ext_resource type="Script" path="res://ui/Player/hbox_upgrade_item.gd" id="1_74lir"]
+[ext_resource type="Texture2D" uid="uid://bqfrdf4prxo2s" path="res://resource/player_item_icon/icon_star.png" id="1_m8h2k"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_obx4i"]
+content_margin_left = 25.0
+content_margin_top = 10.0
+content_margin_right = 15.0
+content_margin_bottom = 10.0
+bg_color = Color(0.956863, 0.635294, 0.380392, 1)
+border_width_left = 4
+border_width_top = 4
+border_width_right = 4
+border_width_bottom = 4
+border_color = Color(0.94902, 0.952941, 0.188235, 1)
+corner_radius_top_left = 10
+corner_radius_top_right = 10
+corner_radius_bottom_right = 10
+corner_radius_bottom_left = 10
+
+[node name="Hbox_Upgrade_Items2" type="HBoxContainer"]
+script = ExtResource("1_74lir")
+
+[node name="Label_Name" type="Label" parent="."]
+custom_minimum_size = Vector2(350, 0)
+layout_mode = 2
+theme_override_font_sizes/font_size = 24
+text = "Upgrade"
+
+[node name="Label2_Value" type="Label" parent="."]
+layout_mode = 2
+size_flags_horizontal = 0
+theme_override_font_sizes/font_size = 24
+text = "Current"
+
+[node name="Button_Upgrade" type="Button" parent="."]
+custom_minimum_size = Vector2(150, 50)
+layout_mode = 2
+size_flags_horizontal = 10
+theme_override_font_sizes/font_size = 28
+theme_override_styles/normal = SubResource("StyleBoxFlat_obx4i")
+text = "1"
+icon = ExtResource("1_m8h2k")
+expand_icon = true
+
+[node name="VSeparator" type="VSeparator" parent="."]
+modulate = Color(1, 1, 1, 0)
+custom_minimum_size = Vector2(25, 0)
+layout_mode = 2

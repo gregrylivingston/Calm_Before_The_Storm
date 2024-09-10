@@ -21,18 +21,56 @@ grow_vertical = 2
 
 [node name="VBoxContainer" type="VBoxContainer" parent="Panel"]
 layout_mode = 1
-anchors_preset = 8
+anchors_preset = 13
 anchor_left = 0.5
-anchor_top = 0.5
 anchor_right = 0.5
-anchor_bottom = 0.5
-offset_left = -390.0
-offset_top = -190.0
-offset_right = 354.0
-offset_bottom = 190.0
+anchor_bottom = 1.0
+offset_left = -338.0
+offset_top = 72.0
+offset_right = 338.0
+offset_bottom = -84.0
 grow_horizontal = 2
 grow_vertical = 2
 
-[node name="UpgradesList" type="VBoxContainer" parent="Panel/VBoxContainer"]
+[node name="Hbox_Upgrade_Items" type="HBoxContainer" parent="Panel/VBoxContainer"]
 layout_mode = 2
+
+[node name="Label" type="Label" parent="Panel/VBoxContainer/Hbox_Upgrade_Items"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 32
+text = "Upgrade"
+
+[node name="Label2" type="Label" parent="Panel/VBoxContainer/Hbox_Upgrade_Items"]
+layout_mode = 2
+size_flags_horizontal = 10
+theme_override_font_sizes/font_size = 32
+text = "Upgrades"
+
+[node name="Label3" type="Label" parent="Panel/VBoxContainer/Hbox_Upgrade_Items"]
+custom_minimum_size = Vector2(120, 0)
+layout_mode = 2
+size_flags_horizontal = 10
+theme_override_font_sizes/font_size = 32
+text = "Cost"
+
+[node name="VSeparator" type="VSeparator" parent="Panel/VBoxContainer/Hbox_Upgrade_Items"]
+modulate = Color(1, 1, 1, 0)
+custom_minimum_size = Vector2(25, 0)
+layout_mode = 2
+
+[node name="HSeparator" type="HSeparator" parent="Panel/VBoxContainer"]
+self_modulate = Color(1, 1, 1, 0)
+custom_minimum_size = Vector2(0, 15.215)
+layout_mode = 2
+
+[node name="ScrollContainer" type="ScrollContainer" parent="Panel/VBoxContainer"]
+layout_mode = 2
+size_flags_vertical = 3
+horizontal_scroll_mode = 0
+vertical_scroll_mode = 2
+
+[node name="UpgradesList" type="VBoxContainer" parent="Panel/VBoxContainer/ScrollContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_constants/separation = 10
 script = ExtResource("1_2hfrc")

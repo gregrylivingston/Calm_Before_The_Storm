@@ -1,0 +1,19 @@
+[gd_scene load_steps=2 format=3 uid="uid://dhec1bvcalqur"]
+
+[ext_resource type="Texture2D" uid="uid://bqfrdf4prxo2s" path="res://resource/player_item_icon/icon_star.png" id="1_nif6y"]
+
+[node name="Panel_Stars" type="HBoxContainer"]
+
+[node name="Label" type="Label" parent="."]
+layout_mode = 2
+size_flags_horizontal = 10
+theme_override_font_sizes/font_size = 50
+text = "0 "
+
+[node name="TextureRect" type="TextureRect" parent="."]
+custom_minimum_size = Vector2(50, 50)
+layout_mode = 2
+size_flags_horizontal = 8
+texture = ExtResource("1_nif6y")
+expand_mode = 1
+stretch_mode = 5
