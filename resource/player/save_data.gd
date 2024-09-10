@@ -1,6 +1,6 @@
 class_name SaveData extends Resource
 
-var upgrade = {
+@export var upgrade = {
 	"Weather_Alert_Delay":1,  	#added
 	"Dig_Strength":1,		  	#added
 	"Dirt_Gathered":1,		  	#added
@@ -13,7 +13,7 @@ var upgrade = {
 	"Meat_Gathered":1,			#added
 }
 
-var stars := 25
+@export var stars := 25
 
 
 func add_upgrade(title: String) -> void:

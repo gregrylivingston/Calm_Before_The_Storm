@@ -8,3 +8,7 @@ func _ready() -> void:
 
 func _update_star_count() -> void:
 	$Panel_Stars/Label.text = str(Player.data.stars) + " "
+
+
+func _on_button_clear_pressed() -> void:
+	Player.clear_save_game()

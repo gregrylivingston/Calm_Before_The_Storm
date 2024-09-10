@@ -85,4 +85,14 @@ offset_top = 71.0
 offset_right = 1186.0
 offset_bottom = 136.0
 
+[node name="Button_Clear" type="Button" parent="."]
+layout_mode = 0
+offset_left = 66.0
+offset_top = 68.0
+offset_right = 189.0
+offset_bottom = 106.0
+text = "Clear Save"
+
+[connection signal="pressed" from="Button_Clear" to="." method="_on_button_clear_pressed"]
+
 [editable path="Panel_Stars"]
