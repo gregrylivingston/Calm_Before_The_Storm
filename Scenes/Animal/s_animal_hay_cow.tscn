@@ -1,0 +1,23 @@
+[gd_scene load_steps=6 format=3 uid="uid://c8u01864kfkxd"]
+
+[ext_resource type="PackedScene" uid="uid://bc6ura8rb7yfs" path="res://Scenes/Animal/s_animal_hay.tscn" id="1_5r6bb"]
+[ext_resource type="Script" path="res://resource/animal/r_animal.gd" id="2_el47u"]
+[ext_resource type="PackedScene" uid="uid://csarf2fxp6f8d" path="res://mesh/animal/FBX2/Cow.fbx" id="3_a3ece"]
+
+[sub_resource type="Resource" id="Resource_4kjyo"]
+script = ExtResource("2_el47u")
+title = "Bull"
+group_title = "Bulls"
+type = 1
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_gxy1f"]
+size = Vector3(1.71527, 4.94974, 8.36029)
+
+[node name="SAnimal" instance=ExtResource("1_5r6bb")]
+resource = SubResource("Resource_4kjyo")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="." index="1"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.0120544, 2.10429, 0.872467)
+shape = SubResource("BoxShape3D_gxy1f")
+
+[node name="Cow" parent="." index="2" instance=ExtResource("3_a3ece")]

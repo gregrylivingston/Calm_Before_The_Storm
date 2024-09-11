@@ -1,0 +1,27 @@
+[gd_scene load_steps=6 format=3 uid="uid://byms5upwh73n8"]
+
+[ext_resource type="PackedScene" uid="uid://dun7e40alhqw5" path="res://Scenes/Animal/s_animal_carn.tscn" id="1_wt6ww"]
+[ext_resource type="Script" path="res://resource/animal/r_animal.gd" id="2_et0w8"]
+[ext_resource type="PackedScene" uid="uid://cldkbowufh2f7" path="res://mesh/animal/FBX2/Fox.fbx" id="6_kn8rj"]
+
+[sub_resource type="Resource" id="Resource_4m37i"]
+script = ExtResource("2_et0w8")
+title = "Fox"
+group_title = "Foxes"
+type = 2
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_jagdj"]
+size = Vector3(1, 2.88, 4.10358)
+
+[node name="SAnimal" instance=ExtResource("1_wt6ww")]
+transform = Transform3D(0.5, 0, 0, 0, 0.5, 0, 0, 0, 0.5, 0, 0, 0)
+resource = SubResource("Resource_4m37i")
+meat_to_award = 0
+
+[node name="Fox" parent="." index="0" instance=ExtResource("6_kn8rj")]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="." index="2"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.940002, 0.0889587)
+shape = SubResource("BoxShape3D_jagdj")
+
+[editable path="Fox"]

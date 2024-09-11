@@ -1,4 +1,4 @@
-[gd_scene load_steps=16 format=3 uid="uid://c0imxc6ykf153"]
+[gd_scene load_steps=20 format=3 uid="uid://c0imxc6ykf153"]
 
 [ext_resource type="Shader" path="res://Scenes/World/world.gdshader" id="1_a0kbf"]
 [ext_resource type="Texture2D" uid="uid://cr5i84s3mi8hk" path="res://Assets/Textures/grass.jpg" id="2_u5yfk"]
@@ -13,7 +13,11 @@
 [ext_resource type="PackedScene" uid="uid://xfgl0n5pcfkj" path="res://Scenes/Animal/s_animal_veg_deer.tscn" id="9_07c48"]
 [ext_resource type="PackedScene" uid="uid://ccg18rjngx8f4" path="res://Scenes/Animal/s_animal_carn_husky.tscn" id="11_iup5c"]
 [ext_resource type="PackedScene" uid="uid://cr4gepi3vbfnu" path="res://Scenes/Animal/s_animal_veg_llama.tscn" id="11_qwcc3"]
+[ext_resource type="PackedScene" uid="uid://d02fnig20pfa8" path="res://Scenes/Animal/s_animal_hay_bull.tscn" id="12_qhb6q"]
 [ext_resource type="PackedScene" uid="uid://fbkndcrgehsy" path="res://Scenes/Animal/s_animal_carn_wolf.tscn" id="13_uymq6"]
+[ext_resource type="PackedScene" uid="uid://b2y26gx7kku16" path="res://Scenes/Animal/s_animal_carn_shiba.tscn" id="13_vdtdm"]
+[ext_resource type="PackedScene" uid="uid://cmhi3uicic2no" path="res://Scenes/Animal/s_animal_carn_pug.tscn" id="14_ifsof"]
+[ext_resource type="PackedScene" uid="uid://byms5upwh73n8" path="res://Scenes/Animal/s_animal_carn_fox.tscn" id="15_l8274"]
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_fd6ho"]
 render_priority = 0
@@ -30,5 +34,5 @@ shader_parameter/TopTex = ExtResource("2_u5yfk")
 material_override = SubResource("ShaderMaterial_fd6ho")
 script = ExtResource("4_r13se")
 low_elevation_plants = Array[PackedScene]([ExtResource("5_h8ix3"), ExtResource("5_wcwl4"), ExtResource("7_6ndg8"), ExtResource("7_qhwua"), ExtResource("7_nwwtx"), ExtResource("9_07c48"), ExtResource("6_eu6dq"), ExtResource("7_6ndg8")])
-medium_elevation_plants = Array[PackedScene]([ExtResource("5_h8ix3"), ExtResource("5_wcwl4"), ExtResource("7_qhwua"), ExtResource("7_nwwtx"), ExtResource("9_07c48"), ExtResource("6_eu6dq")])
+medium_elevation_plants = Array[PackedScene]([ExtResource("5_h8ix3"), ExtResource("5_wcwl4"), ExtResource("7_qhwua"), ExtResource("7_nwwtx"), ExtResource("9_07c48"), ExtResource("6_eu6dq"), ExtResource("12_qhb6q"), ExtResource("13_vdtdm"), ExtResource("14_ifsof"), ExtResource("15_l8274")])
 high_elevation_plants = Array[PackedScene]([ExtResource("11_iup5c"), ExtResource("5_wcwl4"), ExtResource("11_qwcc3"), ExtResource("7_nwwtx"), ExtResource("13_uymq6")])

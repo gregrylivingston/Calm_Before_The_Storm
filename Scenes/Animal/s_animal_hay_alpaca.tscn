@@ -1,0 +1,23 @@
+[gd_scene load_steps=6 format=3 uid="uid://cnoee7ucnxctt"]
+
+[ext_resource type="PackedScene" uid="uid://bc6ura8rb7yfs" path="res://Scenes/Animal/s_animal_hay.tscn" id="1_hf52v"]
+[ext_resource type="Script" path="res://resource/animal/r_animal.gd" id="2_kdlxn"]
+[ext_resource type="PackedScene" uid="uid://bp1xj6r10w3pc" path="res://mesh/animal/FBX2/Alpaca.fbx" id="3_ehu5b"]
+
+[sub_resource type="Resource" id="Resource_mmjp1"]
+script = ExtResource("2_kdlxn")
+title = "Alpaca"
+group_title = "Alpacas"
+type = 1
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_fuxhp"]
+size = Vector3(1.34233, 4.94974, 3.75204)
+
+[node name="SAnimal" instance=ExtResource("1_hf52v")]
+resource = SubResource("Resource_mmjp1")
+
+[node name="Alpaca" parent="." index="0" instance=ExtResource("3_ehu5b")]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="." index="2"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.0143965, 2.10429, 0.209133)
+shape = SubResource("BoxShape3D_fuxhp")

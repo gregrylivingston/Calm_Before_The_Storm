@@ -1,0 +1,7 @@
+[gd_scene load_steps=2 format=3 uid="uid://bc6ura8rb7yfs"]
+
+[ext_resource type="PackedScene" uid="uid://c61negdp6ovfa" path="res://Scenes/Animal/s_animal.tscn" id="1_vu4jt"]
+
+[node name="SAnimal" instance=ExtResource("1_vu4jt")]
+health = 200
+max_health = 200

@@ -35,28 +35,3 @@ other tools -
 audacity
 photopea
 blender
-
-
-
-Eats Grass
-Bull
-Cow
-Alpaca
-Zebra
-Horse
-Horse_White
-Sheep
-Donkey
-
-Eats Foliage & Fruit
-Llama - in
-Deer - in
-Stag - in
-Pig - in 
-
-Eats Meat
-Fox
-Husky - in
-Shiba Inu
-Wolf - in
-Pug
