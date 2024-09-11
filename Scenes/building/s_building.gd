@@ -36,6 +36,7 @@ func add_animal(animal: Animal3D) -> bool:
 	if used_slots < max_slots:
 		animal.global_position = placement_position[used_slots].global_position
 		animal.rotation = placement_position[used_slots].rotation
+		animal.place_in_building()
 		used_slots += 1
 		return true
 	else: 

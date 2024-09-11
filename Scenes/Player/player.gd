@@ -97,6 +97,7 @@ func grab_animal(type: Animal3D.Types) -> void:
 	if Input.is_action_just_pressed("alt_action"):
 		queued_buildable_object = %ObjectSelector.grab_animal(type)
 		if is_instance_valid(queued_buildable_object):
+			queued_buildable_object.play_basic_sound()
 			match type:
 				Animal3D.Types.Fruit:
 					Inventory.fruit -= 1
@@ -151,6 +152,7 @@ func _attempt_to_place_queued_animal( building: StaticBody3D, animal: Animal3D) 
 
 
 func _place_queued_animal(building: StaticBody3D, animal: Animal3D) -> void:
+		get_tree().get_first_node_in_group("Alert").send_alert("You saved Charlie")
 		queued_buildable_object = null
 		match animal.resource.type:
 			Animal3D.Types.Fruit:

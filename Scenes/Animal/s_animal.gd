@@ -37,12 +37,14 @@ func _physics_process(delta: float) -> void:
 @onready var animationPlayer = get_child(0).get_child(1) as AnimationPlayer
 @export var meat_to_award := 1
 var isDead := false
+var isPlacedInBuilding:= false
 
 func is_animal() -> bool:return true
 
 #this is what happens if you attack / kill the animal...
 func chop_tree():
-	if health < 0 && not isDead:
+	if isPlacedInBuilding: pass
+	elif health < 0 && not isDead:
 		isDead = true
 		if meat_to_award > 0:
 			Inventory.meat += meat_to_award * Player.data.upgrade.Meat_Gathered
@@ -65,14 +67,19 @@ func _destroy_animal() -> void:
 
 func play_basic_sound() -> void:
 	$AudioStreamPlayer3D.stream = resource.sound_basic
-	$AudioStreamPlayer3D.play()
+	$AudioStreamPlayer3D.play(0)
+	
+func place_in_building() -> void:
+	isPlacedInBuilding = true
+	$AudioStreamPlayer3D.stream = resource.sound_happy
+	$AudioStreamPlayer3D.play(0)
+	
 		
 func grabbed():
 	set_collision_layer_value(1,0)
 	set_collision_layer_value(4,0)
 	set_collision_mask_value(4,0)
 	set_collision_mask_value(1,0)
-	play_basic_sound()
 
 	
 func place_building() -> void:
@@ -80,7 +87,6 @@ func place_building() -> void:
 	set_collision_layer_value(4,1)
 	set_collision_mask_value(4,1)
 	set_collision_mask_value(1,1)
-	$AudioStreamPlayer3D.stream = resource.sound_happy
-	$AudioStreamPlayer3D.play()
+
 
 	
