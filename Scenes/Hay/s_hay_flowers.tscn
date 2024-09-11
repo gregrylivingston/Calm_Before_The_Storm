@@ -1,0 +1,27 @@
+[gd_scene load_steps=5 format=3 uid="uid://b0mfm5o1w6fy2"]
+
+[ext_resource type="PackedScene" uid="uid://7a2xv4y8p35r" path="res://Scenes/Hay/s_hay.tscn" id="1_110d7"]
+[ext_resource type="PackedScene" uid="uid://msaiux1hhi4r" path="res://mesh/nature/Farm_FBX/Flower_4.fbx" id="2_je3ik"]
+[ext_resource type="PackedScene" uid="uid://btnlatg7lp6fv" path="res://mesh/nature/Farm_FBX/Flower_3.fbx" id="3_4g02m"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_knucq"]
+size = Vector3(0.628479, 2.83679, 0.585693)
+
+[node name="SHay" instance=ExtResource("1_110d7")]
+fruit_to_award = 0
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="." index="0"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.0140076, 0.421824, 0.0140381)
+shape = SubResource("BoxShape3D_knucq")
+
+[node name="Flower_4" parent="CollisionShape3D" index="0" instance=ExtResource("2_je3ik")]
+transform = Transform3D(1, 0, 0, 0, 3, 0, 0, 0, 1, 0, -1.09108, 0)
+
+[node name="Flower_5" parent="CollisionShape3D" index="1" instance=ExtResource("2_je3ik")]
+transform = Transform3D(0.775452, 0, 0.631407, 0, 3, 0, -0.631407, 0, 0.775452, 0.0939065, -1.33917, 0.221094)
+
+[node name="Flower_3" parent="CollisionShape3D" index="2" instance=ExtResource("3_4g02m")]
+transform = Transform3D(1, 0, 0, 0, 3, 0, 0, 0, 1, -0.0623295, -1.09108, 0.291051)
+
+[node name="Flower_6" parent="CollisionShape3D" index="3" instance=ExtResource("3_4g02m")]
+transform = Transform3D(1, 0, 0, 0, 3, 0, 0, 0, 1, -0.339704, -1.09108, 0.0537754)

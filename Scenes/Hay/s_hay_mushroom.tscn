@@ -1,0 +1,18 @@
+[gd_scene load_steps=4 format=3 uid="uid://iv2wb711okbq"]
+
+[ext_resource type="PackedScene" uid="uid://7a2xv4y8p35r" path="res://Scenes/Hay/s_hay.tscn" id="1_y7d4x"]
+[ext_resource type="PackedScene" uid="uid://bumh6fbk2gttg" path="res://mesh/nature/Farm_FBX/Mushroom_4.fbx" id="2_7t0eu"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_q8i0f"]
+size = Vector3(0.628479, 0.537078, 0.585693)
+
+[node name="SHay" instance=ExtResource("1_y7d4x")]
+transform = Transform3D(2, 0, 0, 0, 2, 0, 0, 0, 2, -0.000123262, -0.00451058, 0.00145149)
+hay_to_award = 0
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="." index="0"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.0140076, 0.000873744, 0.0140381)
+shape = SubResource("BoxShape3D_q8i0f")
+
+[node name="Mushroom_4" parent="." index="1" instance=ExtResource("2_7t0eu")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.171466, 0)

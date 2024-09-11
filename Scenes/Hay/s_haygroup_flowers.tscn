@@ -1,0 +1,13 @@
+[gd_scene load_steps=2 format=3 uid="uid://d3c1sylnph6vp"]
+
+[ext_resource type="PackedScene" uid="uid://b0mfm5o1w6fy2" path="res://Scenes/Hay/s_hay_flowers.tscn" id="1_vrkaw"]
+
+[node name="wheat" type="Node3D"]
+
+[node name="SHay" parent="." instance=ExtResource("1_vrkaw")]
+
+[node name="SHay2" parent="." instance=ExtResource("1_vrkaw")]
+transform = Transform3D(-0.137323, 0, -0.990526, 0, 1, 0, 0.990526, 0, -0.137323, 1.08056, -0.0727605, 0)
+
+[node name="SHay3" parent="." instance=ExtResource("1_vrkaw")]
+transform = Transform3D(0.775881, 0, 0.630879, 0, 1, 0, -0.630879, 0, 0.775881, 0.523594, -0.243522, 0.78179)

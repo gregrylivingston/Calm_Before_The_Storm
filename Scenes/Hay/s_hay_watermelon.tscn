@@ -1,0 +1,17 @@
+[gd_scene load_steps=4 format=3 uid="uid://clrjk0v8ewffm"]
+
+[ext_resource type="PackedScene" uid="uid://7a2xv4y8p35r" path="res://Scenes/Hay/s_hay.tscn" id="1_s3rm7"]
+[ext_resource type="PackedScene" uid="uid://ca2wxafq5hh25" path="res://mesh/nature/Farm_FBX/Watermelon_4.fbx" id="2_thjmf"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_asbtx"]
+size = Vector3(0.834854, 0.593246, 0.585693)
+
+[node name="SHay" instance=ExtResource("1_s3rm7")]
+transform = Transform3D(2, 0, 0, 0, 2, 0, 0, 0, 2, 0, 0, 0)
+hay_to_award = 0
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="." index="0"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.0614243, 0.144256, -0.00755237)
+shape = SubResource("BoxShape3D_asbtx")
+
+[node name="Watermelon_4" parent="." index="1" instance=ExtResource("2_thjmf")]

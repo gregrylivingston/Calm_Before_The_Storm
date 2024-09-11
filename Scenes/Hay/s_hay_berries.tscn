@@ -1,0 +1,16 @@
+[gd_scene load_steps=4 format=3 uid="uid://dcfxmasvapc07"]
+
+[ext_resource type="PackedScene" uid="uid://7a2xv4y8p35r" path="res://Scenes/Hay/s_hay.tscn" id="1_2npms"]
+[ext_resource type="PackedScene" uid="uid://cddwbaxfv1w7k" path="res://mesh/nature/Farm_FBX/BushBerries_4.fbx" id="2_yehn5"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_v3r80"]
+size = Vector3(1.62196, 1.17477, 1.31647)
+
+[node name="SHay" instance=ExtResource("1_2npms")]
+hay_to_award = 0
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="." index="0"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.0711899, 0.623011, -0.00350955)
+shape = SubResource("BoxShape3D_v3r80")
+
+[node name="BushBerries_4" parent="." index="1" instance=ExtResource("2_yehn5")]

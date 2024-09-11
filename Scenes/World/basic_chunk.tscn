@@ -1,20 +1,22 @@
-[gd_scene load_steps=29 format=3 uid="uid://c0imxc6ykf153"]
+[gd_scene load_steps=37 format=3 uid="uid://c0imxc6ykf153"]
 
 [ext_resource type="Shader" path="res://Scenes/World/world.gdshader" id="1_a0kbf"]
 [ext_resource type="Texture2D" uid="uid://cr5i84s3mi8hk" path="res://Assets/Textures/grass.jpg" id="2_u5yfk"]
 [ext_resource type="Texture2D" uid="uid://suu852d0ilq6" path="res://Assets/Textures/rock.png" id="3_pvmub"]
 [ext_resource type="Script" path="res://Scenes/World/basic_chunk.gd" id="4_r13se"]
 [ext_resource type="PackedScene" uid="uid://cpq37fkufko0y" path="res://Scenes/Animal/s_animal_veg_pig.tscn" id="5_h8ix3"]
+[ext_resource type="PackedScene" uid="uid://bvdk4lem8nwa1" path="res://Scenes/Hay/s_hay_lettuce.tscn" id="5_v6hqi"]
 [ext_resource type="PackedScene" uid="uid://cocvq8qqhr5x2" path="res://Scenes/Tree/s_tree_appletree.tscn" id="5_wcwl4"]
 [ext_resource type="PackedScene" uid="uid://og4alm12p6su" path="res://Scenes/Tree/s_tree_palmtree.tscn" id="6_eu6dq"]
 [ext_resource type="PackedScene" uid="uid://bvqkcrlxsgxnr" path="res://Scenes/Hay/s_hay_wheat.tscn" id="7_6ndg8"]
-[ext_resource type="PackedScene" uid="uid://cf5eods5p58gw" path="res://Scenes/Hay/s_wheats.tscn" id="7_kkwyj"]
+[ext_resource type="PackedScene" uid="uid://cf5eods5p58gw" path="res://Scenes/Hay/s_haygroup_wheats.tscn" id="7_kkwyj"]
 [ext_resource type="PackedScene" uid="uid://ys3bygieu1gv" path="res://Scenes/Tree/s_tree_orangetree.tscn" id="7_nwwtx"]
 [ext_resource type="PackedScene" uid="uid://bnglg7swmuk1y" path="res://Scenes/Animal/s_animal_veg_stag.tscn" id="7_qhwua"]
 [ext_resource type="PackedScene" uid="uid://xfgl0n5pcfkj" path="res://Scenes/Animal/s_animal_veg_deer.tscn" id="9_07c48"]
 [ext_resource type="PackedScene" uid="uid://ccg18rjngx8f4" path="res://Scenes/Animal/s_animal_carn_husky.tscn" id="11_iup5c"]
 [ext_resource type="PackedScene" uid="uid://cr4gepi3vbfnu" path="res://Scenes/Animal/s_animal_veg_llama.tscn" id="11_qwcc3"]
 [ext_resource type="PackedScene" uid="uid://d02fnig20pfa8" path="res://Scenes/Animal/s_animal_hay_bull.tscn" id="12_qhb6q"]
+[ext_resource type="PackedScene" uid="uid://cralg3c5kxold" path="res://Scenes/Hay/s_hay_tomato.tscn" id="12_vsp60"]
 [ext_resource type="PackedScene" uid="uid://fbkndcrgehsy" path="res://Scenes/Animal/s_animal_carn_wolf.tscn" id="13_uymq6"]
 [ext_resource type="PackedScene" uid="uid://b2y26gx7kku16" path="res://Scenes/Animal/s_animal_carn_shiba.tscn" id="13_vdtdm"]
 [ext_resource type="PackedScene" uid="uid://cmhi3uicic2no" path="res://Scenes/Animal/s_animal_carn_pug.tscn" id="14_ifsof"]
@@ -25,7 +27,13 @@
 [ext_resource type="PackedScene" uid="uid://sst0ov711vo" path="res://Scenes/Tree/s_tree_tree.tscn" id="16_0lcqf"]
 [ext_resource type="PackedScene" uid="uid://ci85du28qk2em" path="res://Scenes/Animal/s_animal_hay_horse.tscn" id="18_gjw1v"]
 [ext_resource type="PackedScene" uid="uid://cnoee7ucnxctt" path="res://Scenes/Animal/s_animal_hay_alpaca.tscn" id="20_kgmj1"]
+[ext_resource type="PackedScene" uid="uid://6a7tamg0w442" path="res://Scenes/Hay/s_hay_pumpkin.tscn" id="20_npclm"]
+[ext_resource type="PackedScene" uid="uid://clrjk0v8ewffm" path="res://Scenes/Hay/s_hay_watermelon.tscn" id="21_mqdhw"]
+[ext_resource type="PackedScene" uid="uid://dcfxmasvapc07" path="res://Scenes/Hay/s_hay_berries.tscn" id="22_0p3sg"]
+[ext_resource type="PackedScene" uid="uid://iv2wb711okbq" path="res://Scenes/Hay/s_hay_mushroom.tscn" id="22_m41s6"]
+[ext_resource type="PackedScene" uid="uid://c0o4msbnelnx7" path="res://Scenes/Hay/s_hay_rice.tscn" id="23_ik3wt"]
 [ext_resource type="PackedScene" uid="uid://barct7wqpy726" path="res://Scenes/Animal/s_animal_hay_donkey.tscn" id="23_qvypd"]
+[ext_resource type="PackedScene" uid="uid://d3c1sylnph6vp" path="res://Scenes/Hay/s_haygroup_flowers.tscn" id="25_pu7f6"]
 [ext_resource type="PackedScene" uid="uid://bpyrsibowwbxt" path="res://Scenes/Animal/s_animal_hay_sheep.tscn" id="26_tmy8r"]
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_fd6ho"]
@@ -42,6 +50,6 @@ shader_parameter/TopTex = ExtResource("2_u5yfk")
 [node name="BasicChunk" type="MeshInstance3D"]
 material_override = SubResource("ShaderMaterial_fd6ho")
 script = ExtResource("4_r13se")
-low_elevation_plants = Array[PackedScene]([ExtResource("5_h8ix3"), ExtResource("5_wcwl4"), ExtResource("7_kkwyj"), ExtResource("7_qhwua"), ExtResource("7_nwwtx"), ExtResource("9_07c48"), ExtResource("6_eu6dq"), ExtResource("7_6ndg8"), ExtResource("13_vdtdm"), ExtResource("14_ifsof"), ExtResource("14_p83g0"), ExtResource("14_mpewb"), ExtResource("16_0lcqf"), ExtResource("15_1ghe7")])
-medium_elevation_plants = Array[PackedScene]([ExtResource("5_h8ix3"), ExtResource("15_l8274"), ExtResource("5_wcwl4"), ExtResource("7_qhwua"), ExtResource("7_nwwtx"), ExtResource("9_07c48"), ExtResource("6_eu6dq"), ExtResource("12_qhb6q"), ExtResource("18_gjw1v")])
-high_elevation_plants = Array[PackedScene]([ExtResource("11_iup5c"), ExtResource("5_wcwl4"), ExtResource("11_qwcc3"), ExtResource("7_nwwtx"), ExtResource("13_uymq6"), ExtResource("20_kgmj1"), ExtResource("23_qvypd"), ExtResource("26_tmy8r")])
+low_elevation_plants = Array[PackedScene]([ExtResource("5_v6hqi"), ExtResource("5_h8ix3"), ExtResource("5_wcwl4"), ExtResource("7_kkwyj"), ExtResource("7_qhwua"), ExtResource("15_1ghe7"), ExtResource("7_nwwtx"), ExtResource("9_07c48"), ExtResource("6_eu6dq"), ExtResource("7_6ndg8"), ExtResource("13_vdtdm"), ExtResource("12_vsp60"), ExtResource("14_ifsof"), ExtResource("14_p83g0"), ExtResource("22_0p3sg"), ExtResource("14_mpewb"), ExtResource("16_0lcqf")])
+medium_elevation_plants = Array[PackedScene]([ExtResource("20_npclm"), ExtResource("5_wcwl4"), ExtResource("5_h8ix3"), ExtResource("6_eu6dq"), ExtResource("15_l8274"), ExtResource("21_mqdhw"), ExtResource("7_qhwua"), ExtResource("7_kkwyj"), ExtResource("22_0p3sg"), ExtResource("9_07c48"), ExtResource("23_ik3wt"), ExtResource("20_npclm"), ExtResource("12_qhb6q"), ExtResource("23_ik3wt"), ExtResource("18_gjw1v")])
+high_elevation_plants = Array[PackedScene]([ExtResource("16_0lcqf"), ExtResource("11_iup5c"), ExtResource("16_0lcqf"), ExtResource("11_qwcc3"), ExtResource("22_0p3sg"), ExtResource("13_uymq6"), ExtResource("25_pu7f6"), ExtResource("20_kgmj1"), ExtResource("22_m41s6"), ExtResource("23_qvypd"), ExtResource("7_kkwyj"), ExtResource("26_tmy8r")])

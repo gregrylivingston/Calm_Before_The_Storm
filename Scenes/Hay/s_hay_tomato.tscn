@@ -1,0 +1,17 @@
+[gd_scene load_steps=4 format=3 uid="uid://cralg3c5kxold"]
+
+[ext_resource type="PackedScene" uid="uid://7a2xv4y8p35r" path="res://Scenes/Hay/s_hay.tscn" id="1_0g8qn"]
+[ext_resource type="PackedScene" uid="uid://bl2cdhaehi2lm" path="res://mesh/nature/Farm_FBX/Tomato_4.fbx" id="2_e78yo"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_knucq"]
+size = Vector3(0.628479, 2.83679, 0.585693)
+
+[node name="SHay" instance=ExtResource("1_0g8qn")]
+hay_to_award = 0
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="." index="0"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.0140076, 0.421824, 0.0140381)
+shape = SubResource("BoxShape3D_knucq")
+
+[node name="Tomato_4" parent="." index="1" instance=ExtResource("2_e78yo")]
+transform = Transform3D(1, 0, 0, 0, 2, 0, 0, 0, 1, 0, -0.956349, 0)
