@@ -7,11 +7,22 @@ const KEY_DELETION_TEXT : String = "Are you sure you want to remove {key} from {
 
 ## Maps the names of input actions to readable names for users.
 @export var action_name_map : Dictionary = {
-	"move_up" : "Up",
-	"move_down" : "Down",
-	"move_left" : "Left",
-	"move_right" : "Right",
-	"interact" : "Interact"
+	"move_forward" : "Forward",
+	"move_back" : "Back",
+	"strafe_left" : "Left",
+	"strafe_right" : "Right",
+	"action" : "Primary Action",
+	"alt_action" : "Secondary Action",
+	"sprint" : "Sprint",
+	"jump" : "Jump" , 
+	"1" : "Axe",
+	"2" : "Shovel",
+	"3" : "Pickaxe",
+	"4" : "Fruit",
+	"5" : "Hay",
+	"6" : "Meat",
+	"pause" : "Pause" , 
+	
 }
 ## Show action names that are not explicitely listed in an action name map.
 @export var show_all_actions : bool = false

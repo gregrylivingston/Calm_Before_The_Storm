@@ -1,7 +1,10 @@
 class_name Building3D extends StaticBody3D
 
+## number of animals the building can hold
 @export var max_slots := 4
+## number of animals in the building
 @export var used_slots := 0
+## animal types accepted by the building
 @export var type: Animal3D.Types
 @export var wood_cost := 0
 
@@ -9,21 +12,11 @@ class_name Building3D extends StaticBody3D
 @export var instructions: String
 @export var title: String
 
-# Called when the node enters the scene tree for the first time.
-func _ready() -> void:
-	pass # Replace with function body.
-
-
-# Called every frame. 'delta' is the elapsed time since the previous frame.
-func _process(delta: float) -> void:
-	pass
-	
 func drown() -> void:
-	remove_from_group(title)
-	set_collision_layer_value(3,false)
+	remove_from_group(title)  #prevents star awards and building-count detection
+	set_collision_layer_value(3,false)  #prevents repeated collisions with water.
 	get_tree().get_first_node_in_group("Alert").send_alert("A " + title + " has drowned.")
 	Player.farm_building_updates.emit()
-
 
 func is_building() -> bool: return true
 

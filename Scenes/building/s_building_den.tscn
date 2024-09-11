@@ -14,7 +14,7 @@ title = "Den"
 [node name="Barn" parent="." index="0" instance=ExtResource("2_pnv71")]
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="." index="1"]
-transform = Transform3D(100, 0, 0, 0, -1.19209e-05, 100, 0, -100, -1.19209e-05, 3, 1, -2.54731)
+transform = Transform3D(100, 0, 0, 0, -1.19209e-05, 100, 0, -100, -1.19209e-05, 0, 0, 0)
 shape = SubResource("ConvexPolygonShape3D_f0l28")
 
 [editable path="Barn"]

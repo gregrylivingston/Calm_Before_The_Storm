@@ -19,8 +19,8 @@ func add_panel_items():
 	_update_inventory()
 		
 func _update_inventory() -> void:
-	get_child(1).update_inventory(Inventory.dirt)
-	get_child(2).update_inventory(Inventory.wood)
+	get_child(1).update_inventory(Inventory.wood)
+	get_child(2).update_inventory(Inventory.dirt)
 	get_child(3).update_inventory(Inventory.stone)
 	get_child(4).update_inventory(Inventory.fruit)
 	get_child(5).update_inventory(Inventory.hay)

@@ -75,15 +75,15 @@ func doAction():
 			_place_queued_building()
 		else:
 			match selected_item_int:
-				0:digEarth(true)
-				1:%ObjectSelector.chop_tree()
+				1:digEarth(true)
+				0:%ObjectSelector.chop_tree()
 				2:%ObjectSelector.break_rock()
 
 
 func rightClick():
 	match selected_item_int:
-		0:if Input.is_action_pressed("alt_action"):digEarth(false)
-		1:if Input.is_action_just_pressed("alt_action"):_select_next_wood_building()
+		1:if Input.is_action_pressed("alt_action"):digEarth(false)
+		0:if Input.is_action_just_pressed("alt_action"):_select_next_wood_building()
 		2:pass
 		3:grab_animal(Animal3D.Types.Fruit)
 		4:grab_animal(Animal3D.Types.Hay)
