@@ -28,6 +28,6 @@ func break_rock():
 func grab_animal(type: Animal3D.Types) -> CharacterBody3D:
 	for overlapping_body in get_overlapping_bodies():
 		if overlapping_body.has_method("is_animal"):
-			if overlapping_body.type == type:
+			if overlapping_body.resource.type == type:
 				return overlapping_body
 	return null

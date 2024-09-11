@@ -48,7 +48,6 @@ points = PackedVector3Array(-0.00212185, 0.0113861, 0.019449, -0.00273937, -0.00
 
 [node name="SAnimal" instance=ExtResource("1_3mx7b")]
 transform = Transform3D(0.5, 0, 0, 0, 0.5, 0, 0, 0, 0.5, 0, 0, 0)
-title = "Huskies"
 resource = SubResource("Resource_h6d72")
 
 [node name="Husky" parent="." index="0" instance=ExtResource("2_yst21")]

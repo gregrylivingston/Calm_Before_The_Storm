@@ -20,6 +20,7 @@ func _process(delta: float) -> void:
 	
 func drown() -> void:
 	remove_from_group(title)
+	set_collision_layer_value(3,false)
 	get_tree().get_first_node_in_group("Alert").send_alert("A " + title + " has drowned.")
 	Player.farm_building_updates.emit()
 

@@ -137,18 +137,18 @@ func move_queued_building() -> void:
 					_attempt_to_place_queued_animal(collider , queued_buildable_object)
 
 func _attempt_to_place_queued_animal( building: StaticBody3D, animal: Animal3D) -> void:
-	if building.type == animal.type:
+	if building.type == animal.resource.type:
 		if building.add_animal(animal): ## this function returns false if building is full
 			_place_queued_animal(building, animal)
 		else:
 			get_tree().get_first_node_in_group("Alert").send_alert("This " + building.title + " is full.")
 	else:
-		get_tree().get_first_node_in_group("Alert").send_alert(building.title + "s don't take " + animal.title)
+		get_tree().get_first_node_in_group("Alert").send_alert(building.title + "s don't take " + animal.resource.title)
 
 
 func _place_queued_animal(building: StaticBody3D, animal: Animal3D) -> void:
 		queued_buildable_object = null
-		match animal.type:
+		match animal.resource.type:
 			Animal3D.Types.Fruit:
 				if Inventory.fruit < 1: select_new_item(1)
 			Animal3D.Types.Hay:
