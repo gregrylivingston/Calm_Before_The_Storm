@@ -89,6 +89,7 @@ func _ready():
 	_setup_options()
 	_setup_credits()
 	_setup_play()
+	Sound.connect_buttons()
 
 func _on_play_button_pressed():
 	play_game()

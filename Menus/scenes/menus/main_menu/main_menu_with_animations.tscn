@@ -406,7 +406,7 @@ theme = ExtResource("2_ari44")
 [node name="HBoxContainer_top" type="HBoxContainer" parent="MenuContainer/VBoxContainer" index="0"]
 layout_mode = 2
 
-[node name="OptionsButton2" type="Button" parent="MenuContainer/VBoxContainer/HBoxContainer_top" index="0"]
+[node name="OptionsButton2" type="Button" parent="MenuContainer/VBoxContainer/HBoxContainer_top" index="0" groups=["Button"]]
 unique_name_in_owner = true
 custom_minimum_size = Vector2(64, 20)
 layout_mode = 2
@@ -418,7 +418,7 @@ text = "Options
 "
 alignment = 0
 
-[node name="CreditsButton2" type="Button" parent="MenuContainer/VBoxContainer/HBoxContainer_top" index="1"]
+[node name="CreditsButton2" type="Button" parent="MenuContainer/VBoxContainer/HBoxContainer_top" index="1" groups=["Button"]]
 unique_name_in_owner = true
 custom_minimum_size = Vector2(64, 20)
 layout_mode = 2
@@ -456,14 +456,14 @@ size_flags_horizontal = 0
 size_flags_vertical = 4
 lock = true
 
-[node name="PlayButton" parent="MenuContainer/VBoxContainer/MenuMargin/MenuButtons" index="0"]
+[node name="PlayButton" parent="MenuContainer/VBoxContainer/MenuMargin/MenuButtons" index="0" groups=["Button"]]
 custom_minimum_size = Vector2(250, 40)
 size_flags_horizontal = 0
 theme_override_font_sizes/font_size = 30
 text = "  Save the Animals   "
 alignment = 0
 
-[node name="UpgradesButton" type="Button" parent="MenuContainer/VBoxContainer/MenuMargin/MenuButtons" index="1"]
+[node name="UpgradesButton" type="Button" parent="MenuContainer/VBoxContainer/MenuMargin/MenuButtons" index="1" groups=["Button"]]
 unique_name_in_owner = true
 custom_minimum_size = Vector2(175, 40)
 layout_mode = 2
@@ -472,7 +472,7 @@ theme_override_font_sizes/font_size = 30
 text = "  Upgrades"
 alignment = 0
 
-[node name="HelpButton" type="Button" parent="MenuContainer/VBoxContainer/MenuMargin/MenuButtons" index="2"]
+[node name="HelpButton" type="Button" parent="MenuContainer/VBoxContainer/MenuMargin/MenuButtons" index="2" groups=["Button"]]
 unique_name_in_owner = true
 custom_minimum_size = Vector2(100, 25)
 layout_mode = 2
@@ -481,19 +481,19 @@ theme_override_font_sizes/font_size = 20
 text = "  Help"
 alignment = 0
 
-[node name="OptionsButton" parent="MenuContainer/VBoxContainer/MenuMargin/MenuButtons" index="3"]
+[node name="OptionsButton" parent="MenuContainer/VBoxContainer/MenuMargin/MenuButtons" index="3" groups=["Button"]]
 visible = false
 size_flags_horizontal = 0
 theme_override_font_sizes/font_size = 30
 alignment = 0
 
-[node name="CreditsButton" parent="MenuContainer/VBoxContainer/MenuMargin/MenuButtons" index="4"]
+[node name="CreditsButton" parent="MenuContainer/VBoxContainer/MenuMargin/MenuButtons" index="4" groups=["Button"]]
 visible = false
 size_flags_horizontal = 0
 theme_override_font_sizes/font_size = 30
 alignment = 0
 
-[node name="ExitButton" parent="MenuContainer/VBoxContainer/MenuMargin/MenuButtons" index="5"]
+[node name="ExitButton" parent="MenuContainer/VBoxContainer/MenuMargin/MenuButtons" index="5" groups=["Button"]]
 custom_minimum_size = Vector2(100, 25)
 size_flags_horizontal = 0
 theme_override_font_sizes/font_size = 20
@@ -528,6 +528,8 @@ mouse_filter = 2
 [node name="HelpMenu" parent="HelpContainer" index="0" instance=ExtResource("5_qhroc")]
 layout_mode = 2
 
+[node name="BackButton" parent="FlowControlContainer/FlowControl" index="0" groups=["Button"]]
+
 [node name="backgroundmap" parent="." index="12" instance=ExtResource("3_cjjc3")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.0273995, 0, 0)
 
@@ -535,12 +537,13 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.0273995, 0, 0)
 stream = ExtResource("7_am03m")
 volume_db = -4.0
 autoplay = true
-bus = &"Environment"
+bus = &"Music"
 
 [node name="AudioStreamPlayer_rain" type="AudioStreamPlayer2D" parent="." index="14"]
 stream = ExtResource("8_7bl2j")
+volume_db = -4.0
 autoplay = true
-bus = &"SFX"
+bus = &"Environment"
 parameters/looping = true
 
 [connection signal="pressed" from="MenuContainer/VBoxContainer/HBoxContainer_top/OptionsButton2" to="." method="_on_options_button_pressed"]

@@ -1,8 +1,9 @@
-[gd_scene load_steps=4 format=3 uid="uid://bb4w34s3e3lul"]
+[gd_scene load_steps=5 format=3 uid="uid://bb4w34s3e3lul"]
 
 [ext_resource type="Script" path="res://ui/menu/upgrades_menu.gd" id="1_0l5oh"]
 [ext_resource type="Script" path="res://ui/menu/upgrades_list.gd" id="1_2hfrc"]
 [ext_resource type="PackedScene" uid="uid://dhec1bvcalqur" path="res://ui/Player/panel_stars.tscn" id="2_r37xw"]
+[ext_resource type="AudioStream" uid="uid://dk1jcxm70obup" path="res://sound/interface/sound_interface_success.mp3" id="4_4hgsn"]
 
 [node name="UpgradesMenu" type="Control"]
 layout_mode = 3
@@ -85,13 +86,16 @@ offset_top = 71.0
 offset_right = 1186.0
 offset_bottom = 136.0
 
-[node name="Button_Clear" type="Button" parent="."]
+[node name="Button_Clear" type="Button" parent="." groups=["Button"]]
 layout_mode = 0
 offset_left = 66.0
 offset_top = 68.0
 offset_right = 189.0
 offset_bottom = 106.0
 text = "Clear Save"
+
+[node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="." groups=["UpgradeSound"]]
+stream = ExtResource("4_4hgsn")
 
 [connection signal="pressed" from="Button_Clear" to="." method="_on_button_clear_pressed"]
 

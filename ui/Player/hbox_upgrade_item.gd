@@ -21,6 +21,7 @@ func _update_values():
 
 func upgrade() -> void:
 	if Player.data.stars >= cost:
+		get_tree().get_first_node_in_group("UpgradeSound").play()
 		Player.data.add_upgrade(title)
 		Player.data.stars -= cost
 		Player.player_stat_upgraded.emit()
