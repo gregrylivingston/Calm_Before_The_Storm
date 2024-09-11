@@ -1,7 +1,20 @@
-[gd_scene load_steps=9 format=3 uid="uid://cpq37fkufko0y"]
+[gd_scene load_steps=14 format=3 uid="uid://cpq37fkufko0y"]
 
 [ext_resource type="PackedScene" uid="uid://t0sgt1dxod5t" path="res://Scenes/Animal/s_animal_veg.tscn" id="1_ngev6"]
+[ext_resource type="Script" path="res://resource/animal/r_animal.gd" id="2_ejr5r"]
 [ext_resource type="PackedScene" uid="uid://b4jic0m1l6xau" path="res://mesh/animal/FBX/Pig.fbx" id="2_vy5oj"]
+[ext_resource type="AudioStream" uid="uid://c8w76cjojy4c0" path="res://sound/fx/animal/animalsounds_pig_basic.mp3" id="3_u3tth"]
+[ext_resource type="AudioStream" uid="uid://da4f8rkvxsp0c" path="res://sound/fx/animal/animalsounds_pig_happy.mp3" id="4_rqop5"]
+[ext_resource type="AudioStream" uid="uid://d4f3ene2o7n4p" path="res://sound/fx/animal/animalsounds_pig_sad.mp3" id="5_8e2gm"]
+
+[sub_resource type="Resource" id="Resource_6afxf"]
+script = ExtResource("2_ejr5r")
+sound_basic = ExtResource("3_u3tth")
+sound_happy = ExtResource("4_rqop5")
+sound_sad = ExtResource("5_8e2gm")
+title = "Pig"
+group_title = "Pigs"
+type = 0
 
 [sub_resource type="ConvexPolygonShape3D" id="ConvexPolygonShape3D_hsw7a"]
 points = PackedVector3Array(0.0137024, 0.0342452, 0.00388583, 0.00904047, 0.0233685, 0.0116535, 0.0137024, 0.0233685, 0.0116535, 0.00904047, 0.0342452, 0.0132087, 0.00904047, 0.0280307, -0.000776984, 0.0137024, 0.0342452, 0.0132087, 0.0137024, 0.0280307, -0.000776984, 0.00904047, 0.0326897, -0.000776984, 0.00904047, 0.0233685, 0.0132087, 0.0137024, 0.0326897, -0.000776984, 0.0137024, 0.0233685, 0.0132087, 0.00904047, 0.0342452, 0.00388583)
@@ -24,6 +37,7 @@ points = PackedVector3Array(-0.014268, 0.0187056, 0.0163173, -0.014268, 0.028033
 [node name="SAnimal" instance=ExtResource("1_ngev6")]
 transform = Transform3D(0.3, 0, 0, 0, 0.3, 0, 0, 0, 0.3, 0, 0, 0)
 title = "Pigs"
+resource = SubResource("Resource_6afxf")
 
 [node name="Pig" parent="." index="0" instance=ExtResource("2_vy5oj")]
 

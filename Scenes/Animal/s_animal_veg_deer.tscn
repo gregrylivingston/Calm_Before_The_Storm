@@ -1,7 +1,20 @@
-[gd_scene load_steps=14 format=3 uid="uid://xfgl0n5pcfkj"]
+[gd_scene load_steps=19 format=3 uid="uid://xfgl0n5pcfkj"]
 
 [ext_resource type="PackedScene" uid="uid://t0sgt1dxod5t" path="res://Scenes/Animal/s_animal_veg.tscn" id="1_1724m"]
+[ext_resource type="Script" path="res://resource/animal/r_animal.gd" id="2_3p13e"]
 [ext_resource type="PackedScene" uid="uid://ce1css4ro2fa7" path="res://mesh/animal/FBX2/Deer.fbx" id="2_qin4q"]
+[ext_resource type="AudioStream" uid="uid://cp5ir37w32lvt" path="res://sound/fx/animal/animalsounds_deer_basic.mp3" id="3_qahob"]
+[ext_resource type="AudioStream" uid="uid://pc85qk53ajax" path="res://sound/fx/animal/animalsounds_deer_happy.mp3" id="4_0uy1k"]
+[ext_resource type="AudioStream" uid="uid://c3odrjkdpedhn" path="res://sound/fx/animal/animalsounds_deer_sad.mp3" id="5_43onl"]
+
+[sub_resource type="Resource" id="Resource_358ig"]
+script = ExtResource("2_3p13e")
+sound_basic = ExtResource("3_qahob")
+sound_happy = ExtResource("4_0uy1k")
+sound_sad = ExtResource("5_43onl")
+title = "Deer"
+group_title = "Deer"
+type = 0
 
 [sub_resource type="ConvexPolygonShape3D" id="ConvexPolygonShape3D_jx6pn"]
 points = PackedVector3Array(0.00422354, 0.0160505, 0.0142166, 0.00282719, 0.00976508, 0.0142166, 0.00422354, 0.00976508, 0.0142166, 0.00212885, 0.0139551, 0.00723333, 0.00143016, 0.0146531, 0.0149144, 0.00492222, 0.0139551, 0.00793264, 0.00212885, 0.0167492, 0.0100275, 0.00492222, 0.0111625, 0.0149144, 0.00422354, 0.0160505, 0.00723333, 0.00143016, 0.0118611, 0.0149144, 0.00492222, 0.0160505, 0.013518, 0.00422354, 0.0132571, 0.00723333, 0.00143016, 0.0160505, 0.013518, 0.00212885, 0.0160505, 0.00723333, 0.00422354, 0.0167492, 0.013518, 0.00143016, 0.0146531, 0.0107261, 0.00492222, 0.0146531, 0.0149144, 0.00212885, 0.0167492, 0.013518, 0.00492222, 0.0160505, 0.0100275, 0.00282719, 0.0132571, 0.00723333, 0.00212885, 0.0104638, 0.0149144, 0.00422354, 0.0167492, 0.0114231, 0.00212885, 0.0153518, 0.0149144, 0.00212885, 0.0104638, 0.0142166, 0.00143016, 0.0160505, 0.0114231, 0.00422354, 0.00976508, 0.0149144, 0.00143016, 0.0118611, 0.0142166, 0.00492222, 0.0153518, 0.00793264)
@@ -39,6 +52,7 @@ points = PackedVector3Array(0.000731062, -0.00490063, 0.0170132, 0.000731062, 0.
 [node name="SAnimal" instance=ExtResource("1_1724m")]
 transform = Transform3D(0.7, 0, 0, 0, 0.7, 0, 0, 0, 0.7, 0, 0, 0)
 title = "Deer"
+resource = SubResource("Resource_358ig")
 
 [node name="Deer" parent="." index="0" instance=ExtResource("2_qin4q")]
 

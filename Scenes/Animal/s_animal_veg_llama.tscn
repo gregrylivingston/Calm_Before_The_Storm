@@ -1,7 +1,20 @@
-[gd_scene load_steps=11 format=3 uid="uid://cr4gepi3vbfnu"]
+[gd_scene load_steps=16 format=3 uid="uid://cr4gepi3vbfnu"]
 
 [ext_resource type="PackedScene" uid="uid://t0sgt1dxod5t" path="res://Scenes/Animal/s_animal_veg.tscn" id="1_5i5dv"]
+[ext_resource type="Script" path="res://resource/animal/r_animal.gd" id="2_7yvgd"]
 [ext_resource type="PackedScene" uid="uid://bspytsgxdot1q" path="res://mesh/animal/FBX/Llama.fbx" id="2_gcwed"]
+[ext_resource type="AudioStream" uid="uid://cewdoh0wovlh2" path="res://sound/fx/animal/animalsounds_llama_basic.mp3" id="3_ea0c6"]
+[ext_resource type="AudioStream" uid="uid://dj7sgre5rlum" path="res://sound/fx/animal/animalsounds_llama_happy.mp3" id="4_dtt3j"]
+[ext_resource type="AudioStream" uid="uid://dptvkkuyyeojr" path="res://sound/fx/animal/animalsounds_llama_sad.mp3" id="5_dr6jg"]
+
+[sub_resource type="Resource" id="Resource_pfr4l"]
+script = ExtResource("2_7yvgd")
+sound_basic = ExtResource("3_ea0c6")
+sound_happy = ExtResource("4_dtt3j")
+sound_sad = ExtResource("5_dr6jg")
+title = "Llama"
+group_title = "Llamas"
+type = 0
 
 [sub_resource type="ConvexPolygonShape3D" id="ConvexPolygonShape3D_ht1kw"]
 points = PackedVector3Array(0.00463435, -0.00243681, 0.0365749, -0.000935714, -0.0135786, 0.0226507, 0.00742143, -0.010792, 0.0189357, 0.000922065, -0.0135786, 0.0412214, -0.000728918, -0.00271251, 0.0212538, -0.000646346, -0.00282259, 0.0378549, 0.00556365, -0.00243681, 0.0217214, 0.00556365, -0.0135786, 0.0310035, -0.000935714, -0.0135786, 0.0412214, 0.00742143, -0.00707957, 0.0282222, 0.00463435, -0.0117202, 0.0375064, 0.00277903, -0.00615145, 0.0189357, 0.00742143, -0.00615145, 0.0189357, 0.00277903, -0.00243681, 0.0384335, 0.00742143, -0.010792, 0.0282222, 0.00463435, -0.0135786, 0.0245071, 0.00370587, -0.0117202, 0.0189357, -0.000935714, -0.00707957, 0.0207943, 0.00649131, -0.00336601, 0.0282222, 0.00277903, -0.0135786, 0.0402899, 0.00463435, -0.00336601, 0.0375064, -0.000935714, -0.0126483, 0.0412214, 0.00556365, -0.0117202, 0.0347185, 0.00556365, -0.00243681, 0.031935, 0.00185055, -0.0135786, 0.0226507, 0.00556365, -0.0135786, 0.0272929, 0.00742143, -0.00615145, 0.0272929, 0.000922065, -0.0126483, 0.0412214, 0.00463435, -0.0117202, 0.0189357, 0.00277903, -0.0126483, 0.0402899, 0.00556365, -0.00615145, 0.0347185, 0.00277903, -0.00800769, 0.0189357)
@@ -30,6 +43,7 @@ points = PackedVector3Array(-0.00836265, 0.0161316, 0.0207929, 0.000798196, 0.01
 [node name="SAnimal" instance=ExtResource("1_5i5dv")]
 transform = Transform3D(0.4, 0, 0, 0, 0.4, 0, 0, 0, 0.4, 0, 0, 0)
 title = "Llamas"
+resource = SubResource("Resource_pfr4l")
 
 [node name="Llama" parent="." index="0" instance=ExtResource("2_gcwed")]
 

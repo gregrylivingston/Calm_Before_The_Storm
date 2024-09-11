@@ -1,7 +1,14 @@
-[gd_scene load_steps=15 format=3 uid="uid://ccg18rjngx8f4"]
+[gd_scene load_steps=17 format=3 uid="uid://ccg18rjngx8f4"]
 
 [ext_resource type="PackedScene" uid="uid://dun7e40alhqw5" path="res://Scenes/Animal/s_animal_carn.tscn" id="1_3mx7b"]
+[ext_resource type="Script" path="res://resource/animal/r_animal.gd" id="2_xqxti"]
 [ext_resource type="PackedScene" uid="uid://c32e5bkvveogo" path="res://mesh/animal/FBX2/Husky.fbx" id="2_yst21"]
+
+[sub_resource type="Resource" id="Resource_h6d72"]
+script = ExtResource("2_xqxti")
+title = "Husky"
+group_title = "Huskies"
+type = 2
 
 [sub_resource type="ConvexPolygonShape3D" id="ConvexPolygonShape3D_7eopu"]
 points = PackedVector3Array(-0.000268564, 0.0157083, 0.0280923, -0.000886266, 0.0113869, 0.0188325, 0.000965631, 0.0113869, 0.0188325, -0.000886266, 0.0120045, 0.0311805, 0.00158333, 0.0132393, 0.0280923, -0.00150397, 0.0150907, 0.0237737, 0.00158333, 0.0150907, 0.0237737, 0.000965631, 0.0120045, 0.0305629, -0.00150397, 0.0113869, 0.0225384, 0.00158333, 0.0113869, 0.0219207, -0.00150397, 0.0144736, 0.02871, 0.000965631, 0.0144736, 0.0299453, 0.000347929, 0.0150907, 0.0225384, -0.00150397, 0.0132393, 0.0206867, 0.000965631, 0.0120045, 0.0188325, -0.000886266, 0.0132393, 0.0311805, 0.000965631, 0.0157083, 0.0243913, 0.00158333, 0.0150907, 0.0268583, 0.000965631, 0.0113869, 0.0243913, -0.000886266, 0.0157083, 0.0243913, -0.00150397, 0.0150907, 0.0280923, -0.00150397, 0.0132393, 0.02871, 0.000965631, 0.0157083, 0.0274759, -0.000886266, 0.0120045, 0.0188325, 0.000347929, 0.0132393, 0.0311805, 0.00158333, 0.0144736, 0.0225384, -0.00150397, 0.0113869, 0.020069, -0.000886266, 0.0144736, 0.0299453, -0.000886266, 0.0144736, 0.0219207, -0.000886266, 0.0113869, 0.0243913, 0.00158333, 0.0126217, 0.0213043, 0.000965631, 0.013856, 0.0305629)
@@ -42,6 +49,7 @@ points = PackedVector3Array(-0.00212185, 0.0113861, 0.019449, -0.00273937, -0.00
 [node name="SAnimal" instance=ExtResource("1_3mx7b")]
 transform = Transform3D(0.5, 0, 0, 0, 0.5, 0, 0, 0, 0.5, 0, 0, 0)
 title = "Huskies"
+resource = SubResource("Resource_h6d72")
 
 [node name="Husky" parent="." index="0" instance=ExtResource("2_yst21")]
 

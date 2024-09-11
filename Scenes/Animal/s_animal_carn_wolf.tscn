@@ -1,7 +1,14 @@
-[gd_scene load_steps=10 format=3 uid="uid://fbkndcrgehsy"]
+[gd_scene load_steps=12 format=3 uid="uid://fbkndcrgehsy"]
 
 [ext_resource type="PackedScene" uid="uid://dun7e40alhqw5" path="res://Scenes/Animal/s_animal_carn.tscn" id="1_fx825"]
 [ext_resource type="PackedScene" uid="uid://b0wwjnkdvvy8e" path="res://mesh/animal/FBX2/Wolf.fbx" id="2_cakhl"]
+[ext_resource type="Script" path="res://resource/animal/r_animal.gd" id="2_wrdsx"]
+
+[sub_resource type="Resource" id="Resource_1s4iv"]
+script = ExtResource("2_wrdsx")
+title = "Wolf"
+group_title = "Wolves"
+type = 2
 
 [sub_resource type="ConvexPolygonShape3D" id="ConvexPolygonShape3D_mog01"]
 points = PackedVector3Array(0.00394931, -0.000492857, 0.0144379, 0.0021881, 0.00567588, 0.0232452, 0.00306767, 0.00831667, 0.0223631, -0.00133571, 0.00919693, 0.0126761, 0.00483026, 0.0109588, 0.010031, -0.00133571, -0.000492857, 0.0126761, -0.00133571, 0.0136024, 0.0214809, -0.00133571, -0.000492857, 0.0223631, 0.0057119, 0.00391259, 0.0188383, 0.00483026, 0.0109588, 0.0170766, 0.00483026, 0.00479286, 0.010031, 0.00130714, 0.0109588, 0.010031, 0.00306767, 0.000388785, 0.0223631, 0.00130714, 0.0136024, 0.0214809, -0.00133571, 0.0136024, 0.0170766, -0.00133571, 0.00126905, 0.0232452, 0.0057119, 0.00303095, 0.0144379, 0.00394931, -0.000492857, 0.0197205, 0.00394931, 0.0118391, 0.010031, 0.00130714, 0.00567588, 0.010031, 0.00483026, 0.00743364, 0.0206001, 0.00306767, -0.000492857, 0.0126761, 0.00306767, 0.00391259, 0.0232452, 0.0057119, 0.00655476, 0.0179587, -0.00133571, 0.00567588, 0.0232452, 0.00130714, 0.0136024, 0.0170766, 0.0057119, 0.00567588, 0.013557, 0.00483026, 0.00919693, 0.0197205, 0.0021881, -0.000492857, 0.0223631, 0.0021881, 0.0118391, 0.010031, -0.00133571, 0.0118391, 0.0144379, 0.00483026, 0.00303095, 0.0206001)
@@ -27,6 +34,8 @@ points = PackedVector3Array(-0.00221598, -0.00225588, 0.0117943, 0.00483078, -0.
 [node name="SAnimal" instance=ExtResource("1_fx825")]
 transform = Transform3D(0.5, 0, 0, 0, 0.5, 0, 0, 0, 0.5, 0, 0, 0)
 title = "Wolves"
+resource = SubResource("Resource_1s4iv")
+meat_to_award = 0
 
 [node name="Wolf" parent="." index="0" instance=ExtResource("2_cakhl")]
 

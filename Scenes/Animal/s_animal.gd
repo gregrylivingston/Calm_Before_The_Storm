@@ -7,6 +7,7 @@ const JUMP_VELOCITY = 4.5
 enum Types { Fruit, Hay, Meat}
 @export var type: Types
 @export var title: String
+@export var resource: AnimalResource
 
 func _physics_process(delta: float) -> void:
 	if false:
@@ -42,8 +43,9 @@ func is_animal() -> bool:return true
 #this is what happens if you attack / kill the animal...
 func chop_tree():
 	if health < 0:
-		Inventory.meat += meat_to_award * Player.data.upgrade.Meat_Gathered
-		Inventory.update_inventory.emit()
+		if meat_to_award > 0:
+			Inventory.meat += meat_to_award * Player.data.upgrade.Meat_Gathered
+			Inventory.update_inventory.emit()
 		queue_free()
 	else:
 		var progress_bar = get_tree().get_first_node_in_group("ActionProgressBar")
