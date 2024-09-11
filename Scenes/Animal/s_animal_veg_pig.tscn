@@ -36,10 +36,34 @@ points = PackedVector3Array(-0.014268, 0.0187056, 0.0163173, -0.014268, 0.028033
 
 [node name="SAnimal" instance=ExtResource("1_ngev6")]
 transform = Transform3D(0.3, 0, 0, 0, 0.3, 0, 0, 0, 0.3, 0, 0, 0)
-title = "Pigs"
 resource = SubResource("Resource_6afxf")
 
 [node name="Pig" parent="." index="0" instance=ExtResource("2_vy5oj")]
+
+[node name="Skeleton3D" parent="Pig/Armature" index="0"]
+bones/1/rotation = Quaternion(0.707107, -7.05258e-07, -7.05258e-07, 0.707107)
+bones/3/position = Vector3(5.37765e-05, 0.0230208, -0.000173542)
+bones/4/rotation = Quaternion(0.00199747, -0.00199767, 0.707104, 0.707104)
+bones/5/rotation = Quaternion(0.707675, -0.700748, -0.0492862, 0.0756222)
+bones/6/rotation = Quaternion(0.191529, -0.0186311, 0.00363637, 0.981303)
+bones/8/rotation = Quaternion(0.00136576, -0.00136629, 0.707105, 0.707105)
+bones/9/rotation = Quaternion(0.682917, -0.696714, 0.138912, -0.170051)
+bones/10/rotation = Quaternion(-0.339174, 0.0182041, 0.00656471, 0.940525)
+bones/12/rotation = Quaternion(0.707103, 0.707103, 0.0021511, -0.0021513)
+bones/13/rotation = Quaternion(-0.0258315, -0.0990824, 0.708919, 0.697818)
+bones/14/rotation = Quaternion(0.191301, 0.0513192, -0.0100162, 0.980138)
+bones/16/rotation = Quaternion(0.707106, 0.707106, 0.00116587, -0.0011664)
+bones/17/rotation = Quaternion(0.145827, 0.163374, 0.681475, 0.698309)
+bones/18/rotation = Quaternion(-0.339222, -0.00893922, -0.00322374, 0.940658)
+bones/20/rotation = Quaternion(0.601381, 0.0128055, 0.00191188, 0.798857)
+bones/22/rotation = Quaternion(0.0091168, 0.754811, 0.655564, -0.0203249)
+bones/23/rotation = Quaternion(0.0656898, -0.0106772, -0.0195517, 0.997591)
+bones/24/rotation = Quaternion(-0.387215, -0.237312, 0.102876, 0.884965)
+bones/26/rotation = Quaternion(3.66013e-06, 0.654869, 0.755742, 3.17143e-06)
+bones/27/rotation = Quaternion(0.107173, 0.00148536, -0.0134673, 0.994148)
+bones/29/rotation = Quaternion(0.707107, -7.89552e-07, -7.89552e-07, 0.707107)
+bones/31/rotation = Quaternion(0.707107, -1.04243e-06, -1.04243e-06, 0.707107)
+bones/33/rotation = Quaternion(0.707107, -1.12673e-06, -1.12673e-06, 0.707107)
 
 [node name="CollisionShape3D6" type="CollisionShape3D" parent="." index="1"]
 transform = Transform3D(100, 0, 0, 0, -1.19209e-05, 100, 0, -100, -1.19209e-05, 0, 0, 0)

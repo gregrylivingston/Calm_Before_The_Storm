@@ -107,6 +107,8 @@ func grab_animal(type: Animal3D.Types) -> void:
 			Inventory.update_inventory.emit()
 			Ui.set_left_mouse_action_text("Release")
 			Ui.set_right_mouse_action_text("")
+		
+			
 
 func reset_active_item() -> void:
 	select_new_item(1)
@@ -142,8 +144,10 @@ func _attempt_to_place_queued_animal( building: StaticBody3D, animal: Animal3D) 
 			_place_queued_animal(building, animal)
 		else:
 			get_tree().get_first_node_in_group("Alert").send_alert("This " + building.title + " is full.")
+			animal.play_basic_sound()
 	else:
-		get_tree().get_first_node_in_group("Alert").send_alert(building.title + "s don't take " + animal.resource.title)
+		animal.play_basic_sound()
+		get_tree().get_first_node_in_group("Alert").send_alert(building.title + "s don't take " + animal.resource.group_title)
 
 
 func _place_queued_animal(building: StaticBody3D, animal: Animal3D) -> void:

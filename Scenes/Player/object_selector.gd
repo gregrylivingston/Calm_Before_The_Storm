@@ -30,4 +30,8 @@ func grab_animal(type: Animal3D.Types) -> CharacterBody3D:
 		if overlapping_body.has_method("is_animal"):
 			if overlapping_body.resource.type == type:
 				return overlapping_body
+			else: 
+				overlapping_body.play_basic_sound()
+				get_tree().get_first_node_in_group("Alert").send_alert(overlapping_body.resource.group_title + " don't eat " + Animal3D.Types.find_key(type) + ".")
+
 	return null
