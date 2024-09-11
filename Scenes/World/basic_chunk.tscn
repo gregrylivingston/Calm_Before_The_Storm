@@ -1,4 +1,4 @@
-[gd_scene load_steps=27 format=3 uid="uid://c0imxc6ykf153"]
+[gd_scene load_steps=29 format=3 uid="uid://c0imxc6ykf153"]
 
 [ext_resource type="Shader" path="res://Scenes/World/world.gdshader" id="1_a0kbf"]
 [ext_resource type="Texture2D" uid="uid://cr5i84s3mi8hk" path="res://Assets/Textures/grass.jpg" id="2_u5yfk"]
@@ -8,6 +8,7 @@
 [ext_resource type="PackedScene" uid="uid://cocvq8qqhr5x2" path="res://Scenes/Tree/s_tree_appletree.tscn" id="5_wcwl4"]
 [ext_resource type="PackedScene" uid="uid://og4alm12p6su" path="res://Scenes/Tree/s_tree_palmtree.tscn" id="6_eu6dq"]
 [ext_resource type="PackedScene" uid="uid://bvqkcrlxsgxnr" path="res://Scenes/Hay/s_hay_wheat.tscn" id="7_6ndg8"]
+[ext_resource type="PackedScene" uid="uid://cf5eods5p58gw" path="res://Scenes/Hay/s_wheats.tscn" id="7_kkwyj"]
 [ext_resource type="PackedScene" uid="uid://ys3bygieu1gv" path="res://Scenes/Tree/s_tree_orangetree.tscn" id="7_nwwtx"]
 [ext_resource type="PackedScene" uid="uid://bnglg7swmuk1y" path="res://Scenes/Animal/s_animal_veg_stag.tscn" id="7_qhwua"]
 [ext_resource type="PackedScene" uid="uid://xfgl0n5pcfkj" path="res://Scenes/Animal/s_animal_veg_deer.tscn" id="9_07c48"]
@@ -25,6 +26,7 @@
 [ext_resource type="PackedScene" uid="uid://ci85du28qk2em" path="res://Scenes/Animal/s_animal_hay_horse.tscn" id="18_gjw1v"]
 [ext_resource type="PackedScene" uid="uid://cnoee7ucnxctt" path="res://Scenes/Animal/s_animal_hay_alpaca.tscn" id="20_kgmj1"]
 [ext_resource type="PackedScene" uid="uid://barct7wqpy726" path="res://Scenes/Animal/s_animal_hay_donkey.tscn" id="23_qvypd"]
+[ext_resource type="PackedScene" uid="uid://bpyrsibowwbxt" path="res://Scenes/Animal/s_animal_hay_sheep.tscn" id="26_tmy8r"]
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_fd6ho"]
 render_priority = 0
@@ -40,6 +42,6 @@ shader_parameter/TopTex = ExtResource("2_u5yfk")
 [node name="BasicChunk" type="MeshInstance3D"]
 material_override = SubResource("ShaderMaterial_fd6ho")
 script = ExtResource("4_r13se")
-low_elevation_plants = Array[PackedScene]([ExtResource("5_h8ix3"), ExtResource("5_wcwl4"), ExtResource("7_6ndg8"), ExtResource("7_qhwua"), ExtResource("7_nwwtx"), ExtResource("9_07c48"), ExtResource("6_eu6dq"), ExtResource("7_6ndg8"), ExtResource("13_vdtdm"), ExtResource("14_ifsof"), ExtResource("14_p83g0"), ExtResource("14_mpewb"), ExtResource("16_0lcqf"), ExtResource("15_1ghe7")])
+low_elevation_plants = Array[PackedScene]([ExtResource("5_h8ix3"), ExtResource("5_wcwl4"), ExtResource("7_kkwyj"), ExtResource("7_qhwua"), ExtResource("7_nwwtx"), ExtResource("9_07c48"), ExtResource("6_eu6dq"), ExtResource("7_6ndg8"), ExtResource("13_vdtdm"), ExtResource("14_ifsof"), ExtResource("14_p83g0"), ExtResource("14_mpewb"), ExtResource("16_0lcqf"), ExtResource("15_1ghe7")])
 medium_elevation_plants = Array[PackedScene]([ExtResource("5_h8ix3"), ExtResource("15_l8274"), ExtResource("5_wcwl4"), ExtResource("7_qhwua"), ExtResource("7_nwwtx"), ExtResource("9_07c48"), ExtResource("6_eu6dq"), ExtResource("12_qhb6q"), ExtResource("18_gjw1v")])
-high_elevation_plants = Array[PackedScene]([ExtResource("11_iup5c"), ExtResource("5_wcwl4"), ExtResource("11_qwcc3"), ExtResource("7_nwwtx"), ExtResource("13_uymq6"), ExtResource("20_kgmj1"), ExtResource("23_qvypd")])
+high_elevation_plants = Array[PackedScene]([ExtResource("11_iup5c"), ExtResource("5_wcwl4"), ExtResource("11_qwcc3"), ExtResource("7_nwwtx"), ExtResource("13_uymq6"), ExtResource("20_kgmj1"), ExtResource("23_qvypd"), ExtResource("26_tmy8r")])

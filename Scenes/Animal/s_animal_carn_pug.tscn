@@ -14,6 +14,7 @@ type = 2
 size = Vector3(1.36768, 2.56744, 3.21198)
 
 [node name="SAnimal" instance=ExtResource("1_kwo66")]
+transform = Transform3D(0.6, 0, 0, 0, 0.6, 0, 0, 0, 0.6, 0, 0, 0)
 resource = SubResource("Resource_un67u")
 meat_to_award = 0
 

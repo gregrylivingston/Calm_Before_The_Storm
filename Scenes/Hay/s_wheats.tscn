@@ -1,0 +1,20 @@
+[gd_scene load_steps=2 format=3 uid="uid://cf5eods5p58gw"]
+
+[ext_resource type="PackedScene" uid="uid://bvqkcrlxsgxnr" path="res://Scenes/Hay/s_hay_wheat.tscn" id="1_upknb"]
+
+[node name="wheat" type="Node3D"]
+
+[node name="SHay" parent="." instance=ExtResource("1_upknb")]
+transform = Transform3D(2, 0, 0, 0, 2, 0, 0, 0, 2, 0, -0.336877, 0)
+
+[node name="SHay2" parent="." instance=ExtResource("1_upknb")]
+transform = Transform3D(1.64182, 0, -1.14211, 0, 2, 0, 1.14211, 0, 1.64182, -2.52899, -0.177757, 0)
+
+[node name="SHay5" parent="." instance=ExtResource("1_upknb")]
+transform = Transform3D(1.64182, 0, -1.14211, 0, 2, 0, 1.14211, 0, 1.64182, -0.711631, 0.486985, 1.90822)
+
+[node name="SHay3" parent="." instance=ExtResource("1_upknb")]
+transform = Transform3D(1.64182, 0, -1.14211, 0, 2, 0, 1.14211, 0, 1.64182, 0.805948, -0.258611, 2.44364)
+
+[node name="SHay4" parent="." instance=ExtResource("1_upknb")]
+transform = Transform3D(1.64182, 0, -1.14211, 0, 2, 0, 1.14211, 0, 1.64182, 1.73754, 0, -0.643135)

@@ -34,7 +34,7 @@ func _die() -> void:
 	$AudioStreamPlayer3D.play()
 	if is_instance_valid(animationPlayer):
 		animationPlayer.current_animation = "AnimalArmature|Death"
-	animationPlayer.play()
+		animationPlayer.play()
 	$AudioStreamPlayer3D.finished.connect(_destroy_animal_scene)
 		
 func _destroy_animal_scene() -> void:
