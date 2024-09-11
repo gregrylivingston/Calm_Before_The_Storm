@@ -6,17 +6,6 @@ extends StaticBody3D
 @export var wood_to_award := 1
 @export var fruit_to_award := 1
 
-# Called when the node enters the scene tree for the first time.
-func _ready() -> void:
-	pass # Replace with function body.
-
-
-# Called every frame. 'delta' is the elapsed time since the previous frame.
-func _process(delta: float) -> void:
-	pass
-
-
-
 func chop_tree():
 	if health < 0:
 		Inventory.wood += wood_to_award * Player.data.upgrade.Wood_Gathered

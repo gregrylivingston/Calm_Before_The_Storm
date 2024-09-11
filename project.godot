@@ -148,6 +148,7 @@ Pause={
 3d_physics/layer_2="Trees"
 3d_physics/layer_3="Water"
 3d_physics/layer_4="Animals"
+3d_physics/layer_5="Player"
 
 [maaacks_menus_template]
 

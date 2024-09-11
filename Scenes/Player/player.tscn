@@ -86,7 +86,7 @@ _data = {
 }
 
 [node name="player" type="CharacterBody3D" groups=["player"]]
-collision_layer = 5
+collision_layer = 21
 script = ExtResource("1_3uef2")
 wood_buildings = Array[PackedScene]([ExtResource("2_h7s7r"), ExtResource("3_is48d"), ExtResource("4_fw0ig")])
 player_item_options = Array[ExtResource("2_3y3k3")]([ExtResource("4_kuysq"), ExtResource("3_o6bft"), ExtResource("5_rhuhf"), ExtResource("6_tk1vk"), ExtResource("7_lwm4m"), ExtResource("11_ybfx4")])

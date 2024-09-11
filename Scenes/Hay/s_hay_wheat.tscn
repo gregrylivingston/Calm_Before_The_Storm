@@ -1,0 +1,33 @@
+[gd_scene load_steps=4 format=3 uid="uid://bvqkcrlxsgxnr"]
+
+[ext_resource type="PackedScene" uid="uid://7a2xv4y8p35r" path="res://Scenes/Hay/s_hay.tscn" id="1_237tx"]
+[ext_resource type="PackedScene" uid="uid://dg7ihn24pstmm" path="res://mesh/nature/Farm_FBX/Wheat_4.fbx" id="2_jd0g1"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_knucq"]
+size = Vector3(0.628479, 0.987061, 0.585693)
+
+[node name="SHay" instance=ExtResource("1_237tx")]
+
+[node name="Wheat_4" parent="." index="0" instance=ExtResource("2_jd0g1")]
+
+[node name="Wheat_5" parent="." index="1" instance=ExtResource("2_jd0g1")]
+transform = Transform3D(-0.075118, 0, -0.997175, 0, 1, 0, 0.997175, 0, -0.075118, -0.0645838, 0, 0.112904)
+
+[node name="Wheat_6" parent="." index="2" instance=ExtResource("2_jd0g1")]
+transform = Transform3D(0.960284, 0, 0.279025, 0, 1, 0, -0.279025, 0, 0.960284, 0.123379, 0, 0.112904)
+
+[node name="Wheat_7" parent="." index="3" instance=ExtResource("2_jd0g1")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.123379, 0, 0.0442789)
+
+[node name="Wheat_8" parent="." index="4" instance=ExtResource("2_jd0g1")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.165712, 0, -0.0453054)
+
+[node name="Wheat_9" parent="." index="5" instance=ExtResource("2_jd0g1")]
+transform = Transform3D(0.600169, 0, 0.799873, 0, 1, 0, -0.799873, 0, 0.600169, 0.0432141, 0, -0.0453054)
+
+[node name="Wheat_10" parent="." index="6" instance=ExtResource("2_jd0g1")]
+transform = Transform3D(0.297805, 0.0660003, 0.952343, -0.12182, 0.992079, -0.0306601, -0.946822, -0.106884, 0.303486, -0.105171, 0, -0.0453054)
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="." index="7"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.0140076, 0.504028, 0.0140381)
+shape = SubResource("BoxShape3D_knucq")

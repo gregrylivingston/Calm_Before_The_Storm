@@ -1,0 +1,10 @@
+[gd_scene load_steps=2 format=3 uid="uid://7a2xv4y8p35r"]
+
+[ext_resource type="Script" path="res://Scenes/Hay/s_hay.gd" id="1_ik50c"]
+
+[node name="SHay" type="Area3D"]
+collision_layer = 0
+collision_mask = 16
+script = ExtResource("1_ik50c")
+
+[connection signal="body_entered" from="." to="." method="_on_body_entered"]
