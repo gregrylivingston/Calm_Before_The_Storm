@@ -12,7 +12,7 @@ dest_files=["res://.godot/imported/light-rain.mp3-ffce5d7633237eea1a9fe2d66a11de
 
 [params]
 
-loop=false
+loop=true
 loop_offset=0
 bpm=0
 beat_count=0

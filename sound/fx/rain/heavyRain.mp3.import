@@ -12,7 +12,7 @@ dest_files=["res://.godot/imported/heavyRain.mp3-a7321742b1e365d4051fe4cf918a042
 
 [params]
 
-loop=false
+loop=true
 loop_offset=0
 bpm=0
 beat_count=0

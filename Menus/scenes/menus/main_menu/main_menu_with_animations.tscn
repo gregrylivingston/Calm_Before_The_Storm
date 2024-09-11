@@ -1,4 +1,4 @@
-[gd_scene load_steps=22 format=3 uid="uid://3tan4jipfcjh"]
+[gd_scene load_steps=23 format=3 uid="uid://3tan4jipfcjh"]
 
 [ext_resource type="PackedScene" uid="uid://nrh54ueqxxix" path="res://Menus/scenes/menus/main_menu/main_menu.tscn" id="1_vbrqt"]
 [ext_resource type="Script" path="res://Menus/scenes/menus/main_menu/main_menu_with_animations.gd" id="2_24nl5"]
@@ -7,6 +7,7 @@
 [ext_resource type="PackedScene" uid="uid://bb4w34s3e3lul" path="res://ui/menu/upgrades_menu.tscn" id="4_ngrjf"]
 [ext_resource type="PackedScene" uid="uid://dem220dayub7a" path="res://ui/Player/help_menu.tscn" id="5_qhroc"]
 [ext_resource type="AudioStream" uid="uid://bvfw85nxpaca3" path="res://sound/music/menu_AlexBouncyMaster.wav" id="7_am03m"]
+[ext_resource type="AudioStream" uid="uid://bufgjwy2e5des" path="res://sound/fx/rain/chirping_birds.mp3" id="8_7bl2j"]
 
 [sub_resource type="Animation" id="1"]
 resource_name = "Intro"
@@ -532,7 +533,15 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.0273995, 0, 0)
 
 [node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="." index="13"]
 stream = ExtResource("7_am03m")
+volume_db = -4.0
 autoplay = true
+bus = &"Environment"
+
+[node name="AudioStreamPlayer_rain" type="AudioStreamPlayer2D" parent="." index="14"]
+stream = ExtResource("8_7bl2j")
+autoplay = true
+bus = &"SFX"
+parameters/looping = true
 
 [connection signal="pressed" from="MenuContainer/VBoxContainer/HBoxContainer_top/OptionsButton2" to="." method="_on_options_button_pressed"]
 [connection signal="pressed" from="MenuContainer/VBoxContainer/HBoxContainer_top/CreditsButton2" to="." method="_on_credits_button_pressed"]

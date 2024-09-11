@@ -12,7 +12,7 @@ dest_files=["res://.godot/imported/medium-rain.mp3-ef8a0d3efd249d44af92c1999352c
 
 [params]
 
-loop=false
+loop=true
 loop_offset=0
 bpm=0
 beat_count=0
