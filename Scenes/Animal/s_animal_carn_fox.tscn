@@ -1,11 +1,15 @@
-[gd_scene load_steps=6 format=3 uid="uid://byms5upwh73n8"]
+[gd_scene load_steps=7 format=3 uid="uid://byms5upwh73n8"]
 
 [ext_resource type="PackedScene" uid="uid://dun7e40alhqw5" path="res://Scenes/Animal/s_animal_carn.tscn" id="1_wt6ww"]
 [ext_resource type="Script" path="res://resource/animal/r_animal.gd" id="2_et0w8"]
+[ext_resource type="AudioStream" uid="uid://w4liip8xnujb" path="res://sound/fx/animal/animals_sounds_fox.mp3" id="3_3q3kp"]
 [ext_resource type="PackedScene" uid="uid://cldkbowufh2f7" path="res://mesh/animal/FBX2/Fox.fbx" id="6_kn8rj"]
 
 [sub_resource type="Resource" id="Resource_4m37i"]
 script = ExtResource("2_et0w8")
+sound_basic = ExtResource("3_3q3kp")
+sound_happy = ExtResource("3_3q3kp")
+sound_sad = ExtResource("3_3q3kp")
 title = "Fox"
 group_title = "Foxes"
 type = 2

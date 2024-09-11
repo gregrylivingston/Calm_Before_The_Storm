@@ -1,11 +1,15 @@
-[gd_scene load_steps=6 format=3 uid="uid://dpkre055gh8qf"]
+[gd_scene load_steps=7 format=3 uid="uid://dpkre055gh8qf"]
 
 [ext_resource type="PackedScene" uid="uid://bc6ura8rb7yfs" path="res://Scenes/Animal/s_animal_hay.tscn" id="1_uxkcj"]
 [ext_resource type="Script" path="res://resource/animal/r_animal.gd" id="2_n81cj"]
+[ext_resource type="AudioStream" uid="uid://e4cj747em7iv" path="res://sound/fx/animal/animal_sounds_alpaca.mp3" id="3_34wlm"]
 [ext_resource type="PackedScene" uid="uid://n76u0v5p3jrk" path="res://mesh/animal/FBX/Zebra.fbx" id="3_usmgh"]
 
 [sub_resource type="Resource" id="Resource_82kmf"]
 script = ExtResource("2_n81cj")
+sound_basic = ExtResource("3_34wlm")
+sound_happy = ExtResource("3_34wlm")
+sound_sad = ExtResource("3_34wlm")
 title = "Zebra"
 group_title = "Zebras"
 type = 1

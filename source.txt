@@ -26,9 +26,14 @@ llama - funny goat sound - Sound Effect from <a href="https://pixabay.com/?utm_s
 husky - Sound Effect from <a href="https://pixabay.com/?utm_source=link-attribution&utm_medium=referral&utm_campaign=music&utm_content=62412">Pixabay</a>
 wolf - Sound Effect by <a href="https://pixabay.com/users/voicebosch-30143949/?utm_source=link-attribution&utm_medium=referral&utm_campaign=music&utm_content=172823">Otto</a> from <a href="https://pixabay.com/sound-effects//?utm_source=link-attribution&utm_medium=referral&utm_campaign=music&utm_content=172823">Pixabay</a>
 
+alpaca - Sound Effect from <a href="https://pixabay.com/?utm_source=link-attribution&utm_medium=referral&utm_campaign=music&utm_content=33368">Pixabay</a>
+horse - Sound Effect by <a href="https://pixabay.com/users/universfield-28281460/?utm_source=link-attribution&utm_medium=referral&utm_campaign=music&utm_content=123780">UNIVERSFIELD</a> from <a href="https://pixabay.com/sound-effects//?utm_source=link-attribution&utm_medium=referral&utm_campaign=music&utm_content=123780">Pixabay</a>
 pug - https://pixabay.com/sound-effects/dog-howling-78278/
-
+cow - Sound Effect by <a href="https://pixabay.com/users/lazychillzone-40482846/?utm_source=link-attribution&utm_medium=referral&utm_campaign=music&utm_content=223546">Lazy Chill Zone</a> from <a href="https://pixabay.com//?utm_source=link-attribution&utm_medium=referral&utm_campaign=music&utm_content=223546">Pixabay</a>
 possibly use particle rope -> https://godotshaders.com/shader/particle-rope/
+fox - Sound Effect from <a href="https://pixabay.com/sound-effects/?utm_source=link-attribution&utm_medium=referral&utm_campaign=music&utm_content=47778">Pixabay</a>
+donkey - Sound Effect from <a href="https://pixabay.com/?utm_source=link-attribution&utm_medium=referral&utm_campaign=music&utm_content=36757">Pixabay</a>
+sheep - Sound Effect by <a href="https://pixabay.com/users/teoglas-43857789/?utm_source=link-attribution&utm_medium=referral&utm_campaign=music&utm_content=223324">Maria Malm</a> from <a href="https://pixabay.com/sound-effects//?utm_source=link-attribution&utm_medium=referral&utm_campaign=music&utm_content=223324">Pixabay</a>
 
 
 other tools - 

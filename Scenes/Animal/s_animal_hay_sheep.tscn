@@ -1,11 +1,15 @@
-[gd_scene load_steps=6 format=3 uid="uid://bpyrsibowwbxt"]
+[gd_scene load_steps=7 format=3 uid="uid://bpyrsibowwbxt"]
 
 [ext_resource type="PackedScene" uid="uid://bc6ura8rb7yfs" path="res://Scenes/Animal/s_animal_hay.tscn" id="1_yv44b"]
 [ext_resource type="Script" path="res://resource/animal/r_animal.gd" id="2_3onv6"]
+[ext_resource type="AudioStream" uid="uid://bcn106nfepxcn" path="res://sound/fx/animal/animal_sounds_sheep.mp3" id="3_edrkn"]
 [ext_resource type="PackedScene" uid="uid://dg1o4cvifvk34" path="res://mesh/animal/FBX/Sheep.fbx" id="3_mgqcj"]
 
 [sub_resource type="Resource" id="Resource_1mrke"]
 script = ExtResource("2_3onv6")
+sound_basic = ExtResource("3_edrkn")
+sound_happy = ExtResource("3_edrkn")
+sound_sad = ExtResource("3_edrkn")
 title = "Sheep"
 group_title = "Sheep"
 type = 1
@@ -14,7 +18,7 @@ type = 1
 size = Vector3(1.71527, 3.43776, 3.90319)
 
 [node name="SAnimal" instance=ExtResource("1_yv44b")]
-transform = Transform3D(0.8, 0, 0, 0, 0.8, 0, 0, 0, 0.8, 0, 0, 0)
+transform = Transform3D(0.6, 0, 0, 0, 0.6, 0, 0, 0, 0.6, 0, 0, 0)
 resource = SubResource("Resource_1mrke")
 
 [node name="Sheep" parent="." index="0" instance=ExtResource("3_mgqcj")]

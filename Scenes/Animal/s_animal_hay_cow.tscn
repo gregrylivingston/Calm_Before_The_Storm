@@ -1,11 +1,15 @@
-[gd_scene load_steps=6 format=3 uid="uid://c8u01864kfkxd"]
+[gd_scene load_steps=7 format=3 uid="uid://c8u01864kfkxd"]
 
 [ext_resource type="PackedScene" uid="uid://bc6ura8rb7yfs" path="res://Scenes/Animal/s_animal_hay.tscn" id="1_5r6bb"]
 [ext_resource type="Script" path="res://resource/animal/r_animal.gd" id="2_el47u"]
 [ext_resource type="PackedScene" uid="uid://csarf2fxp6f8d" path="res://mesh/animal/FBX2/Cow.fbx" id="3_a3ece"]
+[ext_resource type="AudioStream" uid="uid://b2dftkc8277in" path="res://sound/fx/animal/animal_sounds_cow.mp3" id="3_q86oy"]
 
 [sub_resource type="Resource" id="Resource_4kjyo"]
 script = ExtResource("2_el47u")
+sound_basic = ExtResource("3_q86oy")
+sound_happy = ExtResource("3_q86oy")
+sound_sad = ExtResource("3_q86oy")
 title = "Bull"
 group_title = "Bulls"
 type = 1

@@ -1,11 +1,15 @@
-[gd_scene load_steps=6 format=3 uid="uid://cnoee7ucnxctt"]
+[gd_scene load_steps=7 format=3 uid="uid://cnoee7ucnxctt"]
 
 [ext_resource type="PackedScene" uid="uid://bc6ura8rb7yfs" path="res://Scenes/Animal/s_animal_hay.tscn" id="1_hf52v"]
 [ext_resource type="Script" path="res://resource/animal/r_animal.gd" id="2_kdlxn"]
 [ext_resource type="PackedScene" uid="uid://bp1xj6r10w3pc" path="res://mesh/animal/FBX2/Alpaca.fbx" id="3_ehu5b"]
+[ext_resource type="AudioStream" uid="uid://e4cj747em7iv" path="res://sound/fx/animal/animal_sounds_alpaca.mp3" id="3_x1v3j"]
 
 [sub_resource type="Resource" id="Resource_mmjp1"]
 script = ExtResource("2_kdlxn")
+sound_basic = ExtResource("3_x1v3j")
+sound_happy = ExtResource("3_x1v3j")
+sound_sad = ExtResource("3_x1v3j")
 title = "Alpaca"
 group_title = "Alpacas"
 type = 1

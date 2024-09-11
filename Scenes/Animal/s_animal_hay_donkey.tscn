@@ -1,11 +1,15 @@
-[gd_scene load_steps=6 format=3 uid="uid://barct7wqpy726"]
+[gd_scene load_steps=7 format=3 uid="uid://barct7wqpy726"]
 
 [ext_resource type="PackedScene" uid="uid://bc6ura8rb7yfs" path="res://Scenes/Animal/s_animal_hay.tscn" id="1_735yx"]
 [ext_resource type="Script" path="res://resource/animal/r_animal.gd" id="2_217hy"]
+[ext_resource type="AudioStream" uid="uid://b23yx4nsh3utu" path="res://sound/fx/animal/animal_sounds_donkey.mp3" id="3_jxo34"]
 [ext_resource type="PackedScene" uid="uid://b3785dsu7r3bx" path="res://mesh/animal/FBX2/Donkey.fbx" id="3_tw58s"]
 
 [sub_resource type="Resource" id="Resource_6weml"]
 script = ExtResource("2_217hy")
+sound_basic = ExtResource("3_jxo34")
+sound_happy = ExtResource("3_jxo34")
+sound_sad = ExtResource("3_jxo34")
 title = "Donkey"
 group_title = "Donkeys"
 type = 1
@@ -14,6 +18,7 @@ type = 1
 size = Vector3(1.71527, 2.99012, 4.02031)
 
 [node name="SAnimal" instance=ExtResource("1_735yx")]
+transform = Transform3D(0.6, 0, 0, 0, 0.6, 0, 0, 0, 0.6, 0, 0, 0)
 resource = SubResource("Resource_6weml")
 
 [node name="Donkey" parent="." index="0" instance=ExtResource("3_tw58s")]
