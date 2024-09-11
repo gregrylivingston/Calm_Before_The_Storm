@@ -185,6 +185,8 @@ func drown() -> void:
 		Input.mouse_mode = Input.MOUSE_MODE_VISIBLE
 		$Camera3D/Canvas_RainEffects.visible = false
 		$Camera3D/CanvasUI.visible = false
+		$AudioStreamPlayer2D.stream = load("res://sound/music_queue/drowned_Heavy_ConceptB.wav")
+		$AudioStreamPlayer2D.play()
 	velocity.x = 0
 	velocity.z = 0
 	
