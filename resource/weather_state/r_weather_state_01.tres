@@ -1,9 +1,13 @@
-[gd_resource type="Resource" script_class="WeatherState" load_steps=2 format=3 uid="uid://tlsagnpbj34u"]
+[gd_resource type="Resource" script_class="WeatherState" load_steps=4 format=3 uid="uid://tlsagnpbj34u"]
 
 [ext_resource type="Script" path="res://resource/weather_state/r_weather_state.gd" id="1_32bj1"]
+[ext_resource type="AudioStream" uid="uid://bufgjwy2e5des" path="res://sound/fx/rain/chirping_birds.mp3" id="1_nj1sh"]
+[ext_resource type="AudioStream" uid="uid://dgtuyrn7exx31" path="res://sound/music/song_0_025_A_New_Town.mp3" id="2_u3hkd"]
 
 [resource]
 script = ExtResource("1_32bj1")
 title = "Calm and Clear"
-water_level = -1.0
+water_height = -1.0
 cloud_level = 1.0
+rain_sound = ExtResource("1_nj1sh")
+state_sound_track = ExtResource("2_u3hkd")

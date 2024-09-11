@@ -5,4 +5,8 @@ class_name WeatherState extends Resource
 @export var cloud_level: float = -1
 
 
+
 @export var rain_sound: AudioStreamMP3
+
+
+@export var state_sound_track: AudioStream

@@ -8,7 +8,11 @@ livingsgb@gmail.com
 
 ## Sourced / Unaffiliated
 
-### Simple 3d models
+### Music By Cynicmusic
+Author: [Cynicmusic](cynicmusic.com)  
+License: [CC0 license](https://creativecommons.org/publicdomain/zero/1.0/)
+
+### 3d Models by Quaternius
 Author: [Quaternius](https://quaternius.com/)  
 License: [CC0 license](https://creativecommons.org/publicdomain/zero/1.0/)
 
@@ -31,6 +35,8 @@ License: [CC0 license](https://creativecommons.org/publicdomain/zero/1.0/)
 ### UI Icons
 Author: [Kenney](https://kenney.nl/assets/input-prompts)  
 License: [CC0 license](https://creativecommons.org/publicdomain/zero/1.0/)
+
+
 
 
 ## Tools

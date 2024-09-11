@@ -1,4 +1,4 @@
-[gd_scene load_steps=32 format=3 uid="uid://dt7qj4rvpib2x"]
+[gd_scene load_steps=36 format=3 uid="uid://dt7qj4rvpib2x"]
 
 [ext_resource type="Script" path="res://Scenes/Player/player.gd" id="1_3uef2"]
 [ext_resource type="Script" path="res://resource/player_item/r_player_item.gd" id="2_3y3k3"]
@@ -21,6 +21,10 @@
 [ext_resource type="Script" path="res://Scenes/Player/object_selector.gd" id="11_i7gf1"]
 [ext_resource type="Resource" uid="uid://k1f5jqcog0cj" path="res://resource/player_item/r_player_item_meat.tres" id="11_ybfx4"]
 [ext_resource type="Texture2D" uid="uid://bqfrdf4prxo2s" path="res://resource/player_item_icon/icon_star.png" id="20_xhabl"]
+[ext_resource type="Script" path="res://Scenes/Player/Weather_audio_stream_player_2d.gd" id="22_0hdt2"]
+[ext_resource type="AudioStream" uid="uid://coff6xq32k4tw" path="res://sound/music/song_0_TownTheme.mp3" id="22_g8mg5"]
+[ext_resource type="Script" path="res://Scenes/Player/audio_stream_player_rain.gd" id="24_6tn8h"]
+[ext_resource type="AudioStream" uid="uid://bufgjwy2e5des" path="res://sound/fx/rain/chirping_birds.mp3" id="24_ot148"]
 
 [sub_resource type="CapsuleShape3D" id="CapsuleShape3D_cet7n"]
 
@@ -201,5 +205,15 @@ root_node = NodePath("../Camera3D/Gear")
 libraries = {
 "": SubResource("AnimationLibrary_dm0bs")
 }
+
+[node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("22_g8mg5")
+autoplay = true
+script = ExtResource("22_0hdt2")
+
+[node name="AudioStreamPlayer_rain" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("24_ot148")
+autoplay = true
+script = ExtResource("24_6tn8h")
 
 [connection signal="pressed" from="Camera3D/UnderwaterView/Canvas_GameOver/VBoxContainer/Button_Continue" to="Camera3D/UnderwaterView/Canvas_GameOver" method="_on_button_continue_pressed"]

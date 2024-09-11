@@ -8,12 +8,16 @@ medium rain - https://pixabay.com/sound-effects/rain-sound-188158/
 heavy rain - https://pixabay.com/sound-effects/rain-110508/
 
 
+alarm sound adapted from - Sound Effect by <a href="https://pixabay.com/users/universfield-28281460/?utm_source=link-attribution&utm_medium=referral&utm_campaign=music&utm_content=151920">UNIVERSFIELD</a> from <a href="https://pixabay.com/sound-effects//?utm_source=link-attribution&utm_medium=referral&utm_campaign=music&utm_content=151920">Pixabay</a>
+bird sound  =Sound Effect by <a href="https://pixabay.com/users/oxidvideos-37598254/?utm_source=link-attribution&utm_medium=referral&utm_campaign=music&utm_content=217410">Alex</a> from <a href="https://pixabay.com/sound-effects//?utm_source=link-attribution&utm_medium=referral&utm_campaign=music&utm_content=217410">Pixabay</a>
+
 possibly use particle rope -> https://godotshaders.com/shader/particle-rope/
 
 
 other tools - 
 audacity
 photopea
+blender
 
 
 

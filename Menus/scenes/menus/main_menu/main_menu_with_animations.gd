@@ -36,6 +36,7 @@ func _ready():
 	super._ready()
 	animation_state_machine = $MenuAnimationTree.get("parameters/playback")
 
+
 func showUpgradeMenu():
 	%UpgradesContainer.visible = true
 	animation_state_machine.travel("OpenSubMenu")
