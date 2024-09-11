@@ -32,7 +32,8 @@ func _die() -> void:
 		Inventory.update_inventory.emit()
 	$AudioStreamPlayer3D.stream = resource.sound_sad
 	$AudioStreamPlayer3D.play()
-	animationPlayer.current_animation = "AnimalArmature|Death"
+	if is_instance_valid(animationPlayer):
+		animationPlayer.current_animation = "AnimalArmature|Death"
 	animationPlayer.play()
 	$AudioStreamPlayer3D.finished.connect(_destroy_animal_scene)
 		

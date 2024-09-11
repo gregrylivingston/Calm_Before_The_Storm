@@ -10,6 +10,7 @@ radius = 0.117153
 [sub_resource type="SphereShape3D" id="SphereShape3D_607ql"]
 
 [node name="SPlant" instance=ExtResource("1_2oxyq")]
+transform = Transform3D(6, 0, 0, 0, 6, 0, 0, 0, 6, 0, 0, 0)
 fruit_to_award = 0
 
 [node name="Tree" parent="." index="0" instance=ExtResource("2_1sbf4")]

@@ -7,13 +7,10 @@
 [node name="SPlant" parent="." instance=ExtResource("1_sq5ms")]
 
 [node name="SPlant2" parent="." instance=ExtResource("1_sq5ms")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.305016, -0.0874954, 0)
+transform = Transform3D(-4.81921, 0, 3.57424, 0, 6, 0, -3.57424, 0, -4.81921, 0.305016, -0.839755, 1.53573)
 
 [node name="SPlant3" parent="." instance=ExtResource("1_sq5ms")]
-transform = Transform3D(0.6409, 0, 0.767624, 0, 1, 0, -0.767624, 0, 0.6409, -0.369627, -0.0874954, 0.265349)
+transform = Transform3D(-0.722898, 0, -5.95629, 0, 6, 0, 5.95629, 0, -0.722898, -0.369627, -2.58889, -1.55563)
 
 [node name="SPlant4" parent="." instance=ExtResource("1_sq5ms")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.369627, -0.0874954, -0.20544)
-
-[node name="SPlant5" parent="." instance=ExtResource("1_sq5ms")]
-transform = Transform3D(0.926765, 0, 0.375642, 0, 1, 0, -0.375642, 0, 0.926765, 0.0429844, -0.0874954, 0.633423)
+transform = Transform3D(-5.05984, 0, 3.22459, 0, 6, 0, -3.22459, 0, -5.05984, -1.93703, -0.0874954, -0.20544)

@@ -8,14 +8,14 @@ height = 2.84003
 radius = 0.0629217
 
 [node name="SPlant" instance=ExtResource("1_cqoj8")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.0874954, 0)
+transform = Transform3D(6, 0, 0, 0, 6, 0, 0, 0, 6, 0, -0.0874954, 0)
 health = 200
 max_health = 200
 fruit_to_award = 0
 
 [node name="Bamboo_4" parent="." index="0" instance=ExtResource("2_wo1ae")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.216144, 0)
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="." index="1"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.26547, 0)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.04932, 0)
 shape = SubResource("CylinderShape3D_j11cg")
