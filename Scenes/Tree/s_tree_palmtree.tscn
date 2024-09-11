@@ -14,6 +14,9 @@ points = PackedVector3Array(-0.000667056, -0.00118789, 5.81385e-05, 0.000880159,
 
 [node name="SPlant" instance=ExtResource("1_nsas1")]
 transform = Transform3D(6, 0, 0, 0, 6, 0, 0, 0, 6, 0, -0.595337, 0)
+health = 400
+max_health = 400
+fruit_to_award = 0
 
 [node name="PalmTree_4" parent="." index="0" instance=ExtResource("2_sfuv6")]
 

@@ -1,0 +1,21 @@
+[gd_scene load_steps=4 format=3 uid="uid://1vqvlj1m0okj"]
+
+[ext_resource type="PackedScene" uid="uid://b5g6hbycf5hj2" path="res://Scenes/Tree/s_tree.tscn" id="1_cqoj8"]
+[ext_resource type="PackedScene" uid="uid://do5swgfprrfq7" path="res://mesh/nature/Farm_FBX/Bamboo_4.fbx" id="2_wo1ae"]
+
+[sub_resource type="CylinderShape3D" id="CylinderShape3D_j11cg"]
+height = 2.84003
+radius = 0.0629217
+
+[node name="SPlant" instance=ExtResource("1_cqoj8")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.0874954, 0)
+health = 200
+max_health = 200
+fruit_to_award = 0
+
+[node name="Bamboo_4" parent="." index="0" instance=ExtResource("2_wo1ae")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0)
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="." index="1"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.26547, 0)
+shape = SubResource("CylinderShape3D_j11cg")

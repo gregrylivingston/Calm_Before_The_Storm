@@ -1,0 +1,19 @@
+[gd_scene load_steps=2 format=3 uid="uid://x5wvdeiypit7"]
+
+[ext_resource type="PackedScene" uid="uid://1vqvlj1m0okj" path="res://Scenes/Tree/s_tree_bamboo.tscn" id="1_sq5ms"]
+
+[node name="SceneBamboos" type="Node3D"]
+
+[node name="SPlant" parent="." instance=ExtResource("1_sq5ms")]
+
+[node name="SPlant2" parent="." instance=ExtResource("1_sq5ms")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.305016, -0.0874954, 0)
+
+[node name="SPlant3" parent="." instance=ExtResource("1_sq5ms")]
+transform = Transform3D(0.6409, 0, 0.767624, 0, 1, 0, -0.767624, 0, 0.6409, -0.369627, -0.0874954, 0.265349)
+
+[node name="SPlant4" parent="." instance=ExtResource("1_sq5ms")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.369627, -0.0874954, -0.20544)
+
+[node name="SPlant5" parent="." instance=ExtResource("1_sq5ms")]
+transform = Transform3D(0.926765, 0, 0.375642, 0, 1, 0, -0.375642, 0, 0.926765, 0.0429844, -0.0874954, 0.633423)

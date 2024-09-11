@@ -3,13 +3,13 @@
 importer="scene"
 importer_version=1
 type="PackedScene"
-uid="uid://dva271hvxgd7l"
-path="res://.godot/imported/Orange_Crop.fbx-c300c95789a563e078f42d6ed59e0c9e.scn"
+uid="uid://dkioj57121i4d"
+path="res://.godot/imported/Tree.fbx-99a606e033b1de75b8f461e5e0a8badc.scn"
 
 [deps]
 
-source_file="res://mesh/nature/Farm_FBX/Orange_Crop.fbx"
-dest_files=["res://.godot/imported/Orange_Crop.fbx-c300c95789a563e078f42d6ed59e0c9e.scn"]
+source_file="res://mesh/nature/Farm_FBX/Tree.fbx"
+dest_files=["res://.godot/imported/Tree.fbx-99a606e033b1de75b8f461e5e0a8badc.scn"]
 
 [params]
 
