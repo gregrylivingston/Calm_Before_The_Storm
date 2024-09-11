@@ -8,6 +8,7 @@ enum Types { Fruit, Hay, Meat}
 @export var meat_to_award := 1
 var isDead := false
 var isPlacedInBuilding:= false
+var myName : String = NameGenerator.get_random_name()
 
 func is_animal() -> bool:return true
 

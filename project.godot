@@ -37,6 +37,7 @@ Ui="*res://global/UI.gd"
 Player="*res://global/Player.gd"
 SceneLoader="*res://addons/maaacks_menus_template/base/scenes/autoloads/scene_loader.gd"
 Sound="*res://global/Sound.gd"
+NameGenerator="*res://global/NameGenerator.gd"
 
 [display]
 
