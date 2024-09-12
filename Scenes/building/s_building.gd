@@ -19,7 +19,7 @@ func _ready() -> void:
 func drown() -> void:
 	remove_from_group(title)  #prevents star awards and building-count detection
 	set_collision_layer_value(3,false)  #prevents repeated collisions with water.
-	get_tree().get_first_node_in_group("Alert").send_alert("A " + title + " has drowned.")
+	Alert.send_alert("A " + title + " has drowned.")
 	Player.farm_building_updates.emit()
 
 func is_building() -> bool: return true
@@ -36,10 +36,21 @@ func add_animal(animal: Animal3D) -> bool:
 		animal.place_in_building()
 		used_slots += 1
 		$BuildingIndicator.get_child(0).queue_free()
-		if used_slots == max_slots:$BuildingIndicator.visible = false
+		if used_slots == max_slots:_building_is_filled()
 		return true
 	else: 
 		return false
+		
+func _building_is_filled() -> void:
+	$BuildingIndicator.visible = false
+	var timeBonus: int = 8 + 2 * Player.data.upgrade.Full_Building_Bonus
+	Weather.state_timer -= timeBonus
+	Alert.send_time_bonus(timeBonus)
+	call_deferred("_delayed_alert")
+	
+func _delayed_alert() -> void:
+	Alert.send_alert("Building Full, Storm Delayed")
+
 		
 func _physics_process(delta: float) -> void:
 	$BuildingIndicator.rotation.y += 0.01

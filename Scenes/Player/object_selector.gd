@@ -32,6 +32,6 @@ func grab_animal(type: Animal3D.Types) -> CharacterBody3D:
 				return overlapping_body
 			else: 
 				overlapping_body.play_basic_sound()
-				get_tree().get_first_node_in_group("Alert").send_alert(overlapping_body.resource.group_title + " eat " + Animal3D.Types.find_key(overlapping_body.resource.type) + ".")
+				Alert.send_alert(overlapping_body.resource.group_title + " eat " + Animal3D.Types.find_key(overlapping_body.resource.type) + ".")
 
 	return null

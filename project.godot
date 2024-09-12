@@ -38,6 +38,7 @@ Player="*res://global/Player.gd"
 Sound="*res://global/Sound.gd"
 NameGenerator="*res://global/NameGenerator.gd"
 SceneLoader="*res://addons/maaacks_menus_template/base/scenes/autoloads/scene_loader.gd"
+Alert="*res://global/Alert.gd"
 
 [display]
 
@@ -59,6 +60,7 @@ Alert=""
 Instruction=""
 UpgradeSound=""
 Button=""
+UI_TimeBonus=""
 
 [gui]
 

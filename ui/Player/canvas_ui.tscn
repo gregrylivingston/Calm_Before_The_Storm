@@ -1,11 +1,15 @@
-[gd_scene load_steps=19 format=3 uid="uid://csckx1dqx0ycd"]
+[gd_scene load_steps=23 format=3 uid="uid://csckx1dqx0ycd"]
 
 [ext_resource type="Script" path="res://ui/Player/progress_bar_weather_state.gd" id="1_bll7w"]
 [ext_resource type="Theme" uid="uid://dbmay2mk5b3eg" path="res://theme/theme_base.tres" id="1_soa6u"]
 [ext_resource type="Script" path="res://ui/Player/h_box_storm_news_feed.gd" id="3_rxgmm"]
 [ext_resource type="Script" path="res://ui/Player/weather_alert_timer.gd" id="4_dyjoc"]
+[ext_resource type="Script" path="res://ui/Player/hbox_time_bonus.gd" id="5_11p1v"]
+[ext_resource type="Texture2D" uid="uid://bqfrdf4prxo2s" path="res://resource/player_item_icon/icon_star.png" id="5_cxnti"]
 [ext_resource type="Script" path="res://ui/Player/action_progress_bar.gd" id="5_nguav"]
 [ext_resource type="Script" path="res://ui/Player/hbox_inventory_panel.gd" id="6_tu37j"]
+[ext_resource type="Texture2D" uid="uid://c77knnexioj4w" path="res://resource/texture/t_icon_time.png" id="6_yuctw"]
+[ext_resource type="AudioStream" uid="uid://dk1jcxm70obup" path="res://sound/interface/sound_interface_success.mp3" id="7_egspg"]
 [ext_resource type="Texture2D" uid="uid://b32kjjorkg1qr" path="res://ui/texture/mouse_left_outline.png" id="7_g5uy1"]
 [ext_resource type="Script" path="res://ui/Player/icon_left_mouse_action.gd" id="7_q3n8y"]
 [ext_resource type="Texture2D" uid="uid://cgos885q5ixlu" path="res://ui/texture/mouse_right_outline.png" id="8_l5dbw"]
@@ -175,6 +179,35 @@ grow_vertical = 2
 text = "0:17"
 horizontal_alignment = 1
 
+[node name="Hbox_TimeBonus" type="HBoxContainer" parent="Control_TopCenter" groups=["UI_TimeBonus"]]
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -33.0
+offset_top = 56.0
+offset_right = 33.0
+offset_bottom = 88.0
+grow_horizontal = 2
+size_flags_horizontal = 4
+mouse_filter = 2
+script = ExtResource("5_11p1v")
+
+[node name="Label" type="Label" parent="Control_TopCenter/Hbox_TimeBonus"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 50
+text = "+ 17"
+
+[node name="TextureRect" type="TextureRect" parent="Control_TopCenter/Hbox_TimeBonus"]
+custom_minimum_size = Vector2(26, 26)
+layout_mode = 2
+texture = ExtResource("6_yuctw")
+expand_mode = 1
+stretch_mode = 5
+
+[node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="Control_TopCenter/Hbox_TimeBonus"]
+stream = ExtResource("7_egspg")
+
 [node name="Control_Center" type="Control" parent="."]
 layout_mode = 3
 anchors_preset = 8
@@ -299,6 +332,22 @@ horizontal_alignment = 1
 
 [node name="VBox_RightPanel" parent="." instance=ExtResource("11_rfqlh")]
 
+[node name="HBox_StarBonus" type="HBoxContainer" parent="VBox_RightPanel"]
+layout_mode = 2
+size_flags_horizontal = 4
+
+[node name="Label" type="Label" parent="VBox_RightPanel/HBox_StarBonus"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 24
+text = "+ 17"
+
+[node name="TextureRect" type="TextureRect" parent="VBox_RightPanel/HBox_StarBonus"]
+custom_minimum_size = Vector2(32, 32)
+layout_mode = 2
+texture = ExtResource("5_cxnti")
+expand_mode = 1
+stretch_mode = 5
+
 [node name="BlackoutPanel" type="Panel" parent="."]
 visible = false
 anchors_preset = 15
@@ -351,6 +400,7 @@ mouse_filter = 2
 
 [node name="PauseMenu" type="Panel" parent="."]
 process_mode = 3
+visible = false
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0

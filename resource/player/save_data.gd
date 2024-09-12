@@ -6,11 +6,12 @@ class_name SaveData extends Resource
 	"Dirt_Gathered":1,		  	#added
 	"Chop_Strength":1,	      	#added
 	"Wood_Gathered":1,		  	#added
-	"Pick_Strength":1,			
-	"Stone_Gathered":1,
+	"Pick_Strength":1,			#added
+	"Stone_Gathered":1,			#added
 	"Fruit_Gathered":1,			#added
-	"Hay_Gathered":1,
+	"Hay_Gathered":1,			#added
 	"Meat_Gathered":1,			#added
+	"Full_Building_Bonus":1,
 }
 
 @export var stars := 25

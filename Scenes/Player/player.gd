@@ -34,6 +34,7 @@ func _physics_process(delta):
 	move_and_slide()
 	move_queued_building()
 	draw_grabbed_animal_connection()
+	draw_grabbed_building_connection()
 
 func _unhandled_input(event):
 	if event.is_action_pressed("action"):
@@ -99,7 +100,7 @@ func grab_animal(type: Animal3D.Types) -> void:
 		queued_buildable_object = %ObjectSelector.grab_animal(type)
 		if is_instance_valid(queued_buildable_object):
 			queued_buildable_object.grabbed()
-			get_tree().get_first_node_in_group("Alert").send_alert("You grabbed " + queued_buildable_object.myName + " the " + queued_buildable_object.resource.title)
+			Alert.send_alert("You grabbed " + queued_buildable_object.myName + " the " + queued_buildable_object.resource.title)
 			match type:
 				Animal3D.Types.Fruit:
 					Inventory.fruit -= 1
@@ -126,7 +127,7 @@ func _select_next_wood_building() -> void:
 	if wood_building_num > wood_buildings.size() - 1: wood_building_num = 0
 	var newBuilding = wood_buildings[wood_building_num].instantiate()
 	queued_buildable_object = newBuilding
-	get_tree().get_first_node_in_group("Instruction").send_instruction(newBuilding.instructions)
+	Alert.send_instruction(newBuilding.instructions)
 	get_parent().add_child(newBuilding)
 	
 #this also handles movement for animals
@@ -146,15 +147,15 @@ func _attempt_to_place_queued_animal( building: StaticBody3D, animal: Animal3D) 
 		if building.add_animal(animal): ## this function returns false if building is full
 			_place_queued_animal(building, animal)
 		else:
-			get_tree().get_first_node_in_group("Alert").send_alert("This " + building.title + " is full.")
+			Alert.send_alert("This " + building.title + " is full.")
 			animal.play_basic_sound()
 	else:
 		animal.play_basic_sound()
-		get_tree().get_first_node_in_group("Alert").send_alert(building.title + "s don't take " + animal.resource.group_title)
+		Alert.send_alert(building.title + "s don't take " + animal.resource.group_title)
 
 
 func _place_queued_animal(building: StaticBody3D, animal: Animal3D) -> void:
-		get_tree().get_first_node_in_group("Alert").send_alert("You saved " + animal.myName + " the " + animal.resource.title)
+		Alert.send_alert("You saved " + animal.myName + " the " + animal.resource.title)
 		queued_buildable_object = null
 		match animal.resource.type:
 			Animal3D.Types.Fruit:
@@ -179,7 +180,7 @@ func _place_queued_building() -> void:
 			Player.farm_building_updates.emit()
 			queued_buildable_object = null
 		else:
-			get_tree().get_first_node_in_group("Alert").send_alert("Not Enough Wood.")
+			Alert.send_alert("Not Enough Wood.")
 
 
 	select_item_check()
@@ -235,3 +236,8 @@ func draw_grabbed_animal_connection():
 		if queued_buildable_object.has_method("is_animal"):
 			if queued_buildable_object.isGrabbed:
 				DebugDraw3D.draw_line(global_position, queued_buildable_object.global_position, Color(1, 1, 0))
+
+func draw_grabbed_building_connection():
+	if is_instance_valid(queued_buildable_object):
+		if queued_buildable_object.has_method("is_building"):
+			DebugDraw3D.draw_line(global_position, queued_buildable_object.global_position, Color(1, 1, 0))

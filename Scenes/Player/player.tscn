@@ -1,7 +1,6 @@
-[gd_scene load_steps=36 format=3 uid="uid://dt7qj4rvpib2x"]
+[gd_scene load_steps=35 format=3 uid="uid://dt7qj4rvpib2x"]
 
 [ext_resource type="Script" path="res://Scenes/Player/player.gd" id="1_3uef2"]
-[ext_resource type="Script" path="res://resource/player_item/r_player_item.gd" id="2_3y3k3"]
 [ext_resource type="PackedScene" uid="uid://csckx1dqx0ycd" path="res://ui/Player/canvas_ui.tscn" id="2_a8erp"]
 [ext_resource type="PackedScene" uid="uid://cxhk4dhtfnyd2" path="res://Scenes/building/s_building_kennel.tscn" id="2_h7s7r"]
 [ext_resource type="PackedScene" uid="uid://bevpsyqkjk42j" path="res://Scenes/building/s_building_barn.tscn" id="3_is48d"]
@@ -89,7 +88,7 @@ _data = {
 collision_layer = 21
 script = ExtResource("1_3uef2")
 wood_buildings = Array[PackedScene]([ExtResource("2_h7s7r"), ExtResource("3_is48d"), ExtResource("4_fw0ig")])
-player_item_options = Array[ExtResource("2_3y3k3")]([ExtResource("4_kuysq"), ExtResource("3_o6bft"), ExtResource("5_rhuhf"), ExtResource("6_tk1vk"), ExtResource("7_lwm4m"), ExtResource("11_ybfx4")])
+player_item_options = [ExtResource("4_kuysq"), ExtResource("3_o6bft"), ExtResource("5_rhuhf"), ExtResource("6_tk1vk"), ExtResource("7_lwm4m"), ExtResource("11_ybfx4")]
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -0.00156459)
