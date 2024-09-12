@@ -61,6 +61,7 @@ Instruction=""
 UpgradeSound=""
 Button=""
 UI_TimeBonus=""
+UI_StarBonus=""
 
 [gui]
 

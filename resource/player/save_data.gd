@@ -12,6 +12,10 @@ class_name SaveData extends Resource
 	"Hay_Gathered":1,			#added
 	"Meat_Gathered":1,			#added
 	"Full_Building_Bonus":1,
+	"Sprint_Speed":1,
+	"Jump_Height":1,
+	"Grab_Distance":1,
+	"Hold_Distance":1,
 }
 
 @export var stars := 25

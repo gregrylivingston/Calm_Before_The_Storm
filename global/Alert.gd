@@ -10,5 +10,5 @@ func send_instruction(text: String) -> void:
 func send_time_bonus(stars: int) -> void:
 	get_tree().get_first_node_in_group("UI_TimeBonus").send_time_bonus(stars)
 	
-func send_bonus_stars(stars: int) -> void:
-	pass
+func send_star_bonus(stars: int) -> void:
+	get_tree().get_first_node_in_group("UI_StarBonus").send_star_bonus(stars)

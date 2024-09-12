@@ -2,10 +2,12 @@ extends HBoxContainer
 
 var title: String
 var cost: int
+var flavor
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
 	$Label_Name.text = title.replace("_"," ")
+	tooltip_text = flavor.tooltip
 	call_deferred("_update_values")
 	Player.player_stat_upgraded.connect(_update_values)
 

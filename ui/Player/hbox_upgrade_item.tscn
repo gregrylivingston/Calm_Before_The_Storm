@@ -20,6 +20,13 @@ corner_radius_bottom_right = 10
 corner_radius_bottom_left = 10
 
 [node name="Hbox_Upgrade_Items2" type="HBoxContainer"]
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -305.5
+offset_right = 305.5
+offset_bottom = 57.0
+grow_horizontal = 2
 script = ExtResource("1_74lir")
 
 [node name="Label_Name" type="Label" parent="."]

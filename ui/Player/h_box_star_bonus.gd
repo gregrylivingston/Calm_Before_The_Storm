@@ -8,7 +8,6 @@ func _process(delta: float) -> void:
 		modulate.a -= delta
 
 
-func send_time_bonus(amount: int) -> void:
-	$AudioStreamPlayer2D.play()
+func send_star_bonus(amount: int) -> void:
 	modulate.a = 4
 	$Label.text = "+ " + str(amount)

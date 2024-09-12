@@ -3,8 +3,8 @@ extends CharacterBody3D
 var gravity = ProjectSettings.get_setting("physics/3d/default_gravity")
 var speed = 4.0
 var defaultSpeed = 4.0
-var sprintSpeed = 15.0
-var jump_speed = 11.0
+var sprintSpeed = 8.0 + Player.data.upgrade.Sprint_Speed
+var jump_speed = 5.0 + Player.data.upgrade.Jump_Height
 var mouse_sensitivity = 0.002
 var actionPressed := false
 var rightClickPressed := false
@@ -133,7 +133,7 @@ func _select_next_wood_building() -> void:
 #this also handles movement for animals
 func move_queued_building() -> void:
 	if is_instance_valid(queued_buildable_object):
-		%RayCast3D.target_position.z = -25
+		%RayCast3D.target_position.z = -12 - Player.data.upgrade.Hold_Distance * 2
 		if raycast.is_colliding():
 			var collider = raycast.get_collider()
 			if collider is StaticBody3D:

@@ -1,9 +1,11 @@
 [gd_scene load_steps=5 format=3 uid="uid://bb4w34s3e3lul"]
 
 [ext_resource type="Script" path="res://ui/menu/upgrades_menu.gd" id="1_0l5oh"]
-[ext_resource type="Script" path="res://ui/menu/upgrades_list.gd" id="1_2hfrc"]
 [ext_resource type="PackedScene" uid="uid://dhec1bvcalqur" path="res://ui/Player/panel_stars.tscn" id="2_r37xw"]
 [ext_resource type="AudioStream" uid="uid://dk1jcxm70obup" path="res://sound/interface/sound_interface_success.mp3" id="4_4hgsn"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_dnbvi"]
+bg_color = Color(0.6, 0.6, 0.6, 0)
 
 [node name="UpgradesMenu" type="Control"]
 layout_mode = 3
@@ -23,61 +25,226 @@ anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 
-[node name="VBoxContainer" type="VBoxContainer" parent="Panel"]
+[node name="TabContainer" type="TabContainer" parent="Panel"]
 layout_mode = 1
-anchors_preset = 13
-anchor_left = 0.5
-anchor_right = 0.5
+anchors_preset = 15
+anchor_right = 1.0
 anchor_bottom = 1.0
-offset_left = -338.0
-offset_top = 72.0
-offset_right = 338.0
-offset_bottom = -84.0
+offset_left = 245.0
+offset_top = 52.0
+offset_right = -292.0
+offset_bottom = -67.0
 grow_horizontal = 2
 grow_vertical = 2
+current_tab = 0
 
-[node name="Hbox_Upgrade_Items" type="HBoxContainer" parent="Panel/VBoxContainer"]
+[node name="Character" type="VBoxContainer" parent="Panel/TabContainer"]
+layout_mode = 2
+metadata/_tab_index = 0
+
+[node name="Hbox_Upgrade_Items" type="HBoxContainer" parent="Panel/TabContainer/Character"]
 layout_mode = 2
 
-[node name="Label" type="Label" parent="Panel/VBoxContainer/Hbox_Upgrade_Items"]
+[node name="Label" type="Label" parent="Panel/TabContainer/Character/Hbox_Upgrade_Items"]
 layout_mode = 2
 theme_override_font_sizes/font_size = 32
 text = "Upgrade"
 
-[node name="Label2" type="Label" parent="Panel/VBoxContainer/Hbox_Upgrade_Items"]
+[node name="Label2" type="Label" parent="Panel/TabContainer/Character/Hbox_Upgrade_Items"]
 layout_mode = 2
 size_flags_horizontal = 10
 theme_override_font_sizes/font_size = 32
 text = "Upgrades"
 
-[node name="Label3" type="Label" parent="Panel/VBoxContainer/Hbox_Upgrade_Items"]
+[node name="Label3" type="Label" parent="Panel/TabContainer/Character/Hbox_Upgrade_Items"]
 custom_minimum_size = Vector2(120, 0)
 layout_mode = 2
 size_flags_horizontal = 10
 theme_override_font_sizes/font_size = 32
 text = "Cost"
 
-[node name="VSeparator" type="VSeparator" parent="Panel/VBoxContainer/Hbox_Upgrade_Items"]
+[node name="VSeparator" type="VSeparator" parent="Panel/TabContainer/Character/Hbox_Upgrade_Items"]
 modulate = Color(1, 1, 1, 0)
 custom_minimum_size = Vector2(25, 0)
 layout_mode = 2
 
-[node name="HSeparator" type="HSeparator" parent="Panel/VBoxContainer"]
+[node name="HSeparator" type="HSeparator" parent="Panel/TabContainer/Character"]
 self_modulate = Color(1, 1, 1, 0)
 custom_minimum_size = Vector2(0, 15.215)
 layout_mode = 2
 
-[node name="ScrollContainer" type="ScrollContainer" parent="Panel/VBoxContainer"]
+[node name="ScrollContainer" type="ScrollContainer" parent="Panel/TabContainer/Character"]
 layout_mode = 2
 size_flags_vertical = 3
 horizontal_scroll_mode = 0
-vertical_scroll_mode = 2
 
-[node name="UpgradesList" type="VBoxContainer" parent="Panel/VBoxContainer/ScrollContainer"]
+[node name="Character" type="VBoxContainer" parent="Panel/TabContainer/Character/ScrollContainer"]
+unique_name_in_owner = true
 layout_mode = 2
 size_flags_horizontal = 3
 theme_override_constants/separation = 10
-script = ExtResource("1_2hfrc")
+
+[node name="Tools" type="VBoxContainer" parent="Panel/TabContainer"]
+visible = false
+layout_mode = 2
+metadata/_tab_index = 1
+
+[node name="Hbox_Upgrade_Items" type="HBoxContainer" parent="Panel/TabContainer/Tools"]
+layout_mode = 2
+
+[node name="Label" type="Label" parent="Panel/TabContainer/Tools/Hbox_Upgrade_Items"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 32
+text = "Upgrade"
+
+[node name="Label2" type="Label" parent="Panel/TabContainer/Tools/Hbox_Upgrade_Items"]
+layout_mode = 2
+size_flags_horizontal = 10
+theme_override_font_sizes/font_size = 32
+text = "Upgrades"
+
+[node name="Label3" type="Label" parent="Panel/TabContainer/Tools/Hbox_Upgrade_Items"]
+custom_minimum_size = Vector2(120, 0)
+layout_mode = 2
+size_flags_horizontal = 10
+theme_override_font_sizes/font_size = 32
+text = "Cost"
+
+[node name="VSeparator" type="VSeparator" parent="Panel/TabContainer/Tools/Hbox_Upgrade_Items"]
+modulate = Color(1, 1, 1, 0)
+custom_minimum_size = Vector2(25, 0)
+layout_mode = 2
+
+[node name="HSeparator" type="HSeparator" parent="Panel/TabContainer/Tools"]
+self_modulate = Color(1, 1, 1, 0)
+custom_minimum_size = Vector2(0, 15.215)
+layout_mode = 2
+
+[node name="ScrollContainer" type="ScrollContainer" parent="Panel/TabContainer/Tools"]
+layout_mode = 2
+size_flags_vertical = 3
+horizontal_scroll_mode = 0
+
+[node name="Tools" type="VBoxContainer" parent="Panel/TabContainer/Tools/ScrollContainer"]
+unique_name_in_owner = true
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_constants/separation = 10
+
+[node name="Gathering" type="VBoxContainer" parent="Panel/TabContainer"]
+visible = false
+layout_mode = 2
+metadata/_tab_index = 2
+
+[node name="Hbox_Upgrade_Items" type="HBoxContainer" parent="Panel/TabContainer/Gathering"]
+layout_mode = 2
+
+[node name="Label" type="Label" parent="Panel/TabContainer/Gathering/Hbox_Upgrade_Items"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 32
+text = "Upgrade"
+
+[node name="Label2" type="Label" parent="Panel/TabContainer/Gathering/Hbox_Upgrade_Items"]
+layout_mode = 2
+size_flags_horizontal = 10
+theme_override_font_sizes/font_size = 32
+text = "Upgrades"
+
+[node name="Label3" type="Label" parent="Panel/TabContainer/Gathering/Hbox_Upgrade_Items"]
+custom_minimum_size = Vector2(120, 0)
+layout_mode = 2
+size_flags_horizontal = 10
+theme_override_font_sizes/font_size = 32
+text = "Cost"
+
+[node name="VSeparator" type="VSeparator" parent="Panel/TabContainer/Gathering/Hbox_Upgrade_Items"]
+modulate = Color(1, 1, 1, 0)
+custom_minimum_size = Vector2(25, 0)
+layout_mode = 2
+
+[node name="HSeparator" type="HSeparator" parent="Panel/TabContainer/Gathering"]
+self_modulate = Color(1, 1, 1, 0)
+custom_minimum_size = Vector2(0, 15.215)
+layout_mode = 2
+
+[node name="ScrollContainer" type="ScrollContainer" parent="Panel/TabContainer/Gathering"]
+layout_mode = 2
+size_flags_vertical = 3
+horizontal_scroll_mode = 0
+
+[node name="Gathering" type="VBoxContainer" parent="Panel/TabContainer/Gathering/ScrollContainer"]
+unique_name_in_owner = true
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_constants/separation = 10
+
+[node name="Gameplay" type="VBoxContainer" parent="Panel/TabContainer"]
+visible = false
+layout_mode = 2
+metadata/_tab_index = 3
+
+[node name="Hbox_Upgrade_Items" type="HBoxContainer" parent="Panel/TabContainer/Gameplay"]
+layout_mode = 2
+
+[node name="Label" type="Label" parent="Panel/TabContainer/Gameplay/Hbox_Upgrade_Items"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 32
+text = "Upgrade"
+
+[node name="Label2" type="Label" parent="Panel/TabContainer/Gameplay/Hbox_Upgrade_Items"]
+layout_mode = 2
+size_flags_horizontal = 10
+theme_override_font_sizes/font_size = 32
+text = "Upgrades"
+
+[node name="Label3" type="Label" parent="Panel/TabContainer/Gameplay/Hbox_Upgrade_Items"]
+custom_minimum_size = Vector2(120, 0)
+layout_mode = 2
+size_flags_horizontal = 10
+theme_override_font_sizes/font_size = 32
+text = "Cost"
+
+[node name="VSeparator" type="VSeparator" parent="Panel/TabContainer/Gameplay/Hbox_Upgrade_Items"]
+modulate = Color(1, 1, 1, 0)
+custom_minimum_size = Vector2(25, 0)
+layout_mode = 2
+
+[node name="HSeparator" type="HSeparator" parent="Panel/TabContainer/Gameplay"]
+self_modulate = Color(1, 1, 1, 0)
+custom_minimum_size = Vector2(0, 15.215)
+layout_mode = 2
+
+[node name="ScrollContainer" type="ScrollContainer" parent="Panel/TabContainer/Gameplay"]
+layout_mode = 2
+size_flags_vertical = 3
+horizontal_scroll_mode = 0
+
+[node name="Gameplay" type="VBoxContainer" parent="Panel/TabContainer/Gameplay/ScrollContainer"]
+unique_name_in_owner = true
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_constants/separation = 10
+
+[node name="Reset" type="Panel" parent="Panel/TabContainer"]
+visible = false
+layout_mode = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_dnbvi")
+metadata/_tab_index = 4
+
+[node name="Button_Clear" type="Button" parent="Panel/TabContainer/Reset" groups=["Button"]]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -61.5
+offset_top = -19.0
+offset_right = 61.5
+offset_bottom = 19.0
+grow_horizontal = 2
+grow_vertical = 2
+text = "Clear Save"
 
 [node name="Panel_Stars" parent="." instance=ExtResource("2_r37xw")]
 layout_mode = 0
@@ -86,17 +253,18 @@ offset_top = 71.0
 offset_right = 1186.0
 offset_bottom = 136.0
 
-[node name="Button_Clear" type="Button" parent="." groups=["Button"]]
-layout_mode = 0
-offset_left = 66.0
-offset_top = 68.0
-offset_right = 189.0
-offset_bottom = 106.0
-text = "Clear Save"
-
 [node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="." groups=["UpgradeSound"]]
 stream = ExtResource("4_4hgsn")
 
-[connection signal="pressed" from="Button_Clear" to="." method="_on_button_clear_pressed"]
+[node name="Label" type="Label" parent="."]
+layout_mode = 0
+offset_left = 48.0
+offset_top = 208.0
+offset_right = 207.0
+offset_bottom = 258.0
+rotation = -0.663901
+text = "Hover for Details"
+
+[connection signal="pressed" from="Panel/TabContainer/Reset/Button_Clear" to="." method="_on_button_clear_pressed"]
 
 [editable path="Panel_Stars"]
