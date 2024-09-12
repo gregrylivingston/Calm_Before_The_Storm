@@ -17,12 +17,17 @@ type = 1
 [sub_resource type="BoxShape3D" id="BoxShape3D_gxy1f"]
 size = Vector3(1.71527, 4.94974, 8.36029)
 
-[node name="SAnimal" instance=ExtResource("1_5r6bb")]
+[node name="SAnimal" node_paths=PackedStringArray("AnimalMeshInstance", "AnimalAnimationPlayer") instance=ExtResource("1_5r6bb")]
 transform = Transform3D(0.6, 0, 0, 0, 0.6, 0, 0, 0, 0.6, 0, 0, 0)
 resource = SubResource("Resource_4kjyo")
+AnimalMeshInstance = NodePath("Cow/AnimalArmature/Skeleton3D/Cow")
+AnimalAnimationPlayer = NodePath("Cow/AnimationPlayer")
 
-[node name="CollisionShape3D" type="CollisionShape3D" parent="." index="1"]
+[node name="Cow" parent="." index="0" instance=ExtResource("3_a3ece")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0)
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="." index="2"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.0120544, 2.10429, 0.872467)
 shape = SubResource("BoxShape3D_gxy1f")
 
-[node name="Cow" parent="." index="2" instance=ExtResource("3_a3ece")]
+[editable path="Cow"]

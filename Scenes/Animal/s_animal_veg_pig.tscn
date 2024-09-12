@@ -19,9 +19,11 @@ type = 0
 [sub_resource type="BoxShape3D" id="BoxShape3D_h8pf8"]
 size = Vector3(3, 5, 9)
 
-[node name="SAnimal" instance=ExtResource("1_ngev6")]
+[node name="SAnimal" node_paths=PackedStringArray("AnimalMeshInstance", "AnimalAnimationPlayer") instance=ExtResource("1_ngev6")]
 transform = Transform3D(0.3, 0, 0, 0, 0.3, 0, 0, 0, 0.3, 0, 0, 0)
 resource = SubResource("Resource_6afxf")
+AnimalMeshInstance = NodePath("Pig/Armature/Skeleton3D/Pig")
+AnimalAnimationPlayer = NodePath("Pig/AnimationPlayer")
 
 [node name="Pig" parent="." index="0" instance=ExtResource("2_vy5oj")]
 

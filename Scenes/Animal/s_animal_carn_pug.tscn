@@ -17,10 +17,12 @@ type = 2
 [sub_resource type="BoxShape3D" id="BoxShape3D_jc4jg"]
 size = Vector3(1.36768, 2.56744, 3.21198)
 
-[node name="SAnimal" instance=ExtResource("1_kwo66")]
+[node name="SAnimal" node_paths=PackedStringArray("AnimalMeshInstance", "AnimalAnimationPlayer") instance=ExtResource("1_kwo66")]
 transform = Transform3D(0.6, 0, 0, 0, 0.6, 0, 0, 0, 0.6, 0, 0, 0)
 resource = SubResource("Resource_un67u")
 meat_to_award = 0
+AnimalMeshInstance = NodePath("Pug/Armature/Skeleton3D/Pug")
+AnimalAnimationPlayer = NodePath("Pug/AnimationPlayer")
 
 [node name="Pug" parent="." index="0" instance=ExtResource("6_x3ako")]
 

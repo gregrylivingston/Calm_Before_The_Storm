@@ -97,7 +97,7 @@ func grab_animal(type: Animal3D.Types) -> void:
 	if Input.is_action_just_pressed("alt_action"):
 		queued_buildable_object = %ObjectSelector.grab_animal(type)
 		if is_instance_valid(queued_buildable_object):
-			queued_buildable_object.play_basic_sound()
+			queued_buildable_object.grabbed()
 			get_tree().get_first_node_in_group("Alert").send_alert("You grabbed " + queued_buildable_object.myName + " the " + queued_buildable_object.resource.title)
 			match type:
 				Animal3D.Types.Fruit:
@@ -168,6 +168,7 @@ func _place_queued_animal(building: StaticBody3D, animal: Animal3D) -> void:
 
 func _place_queued_building() -> void:
 	if queued_buildable_object.has_method("is_animal"):
+		queued_buildable_object.drop_animal()
 		queued_buildable_object = null
 	elif queued_buildable_object.has_method("is_building"):
 		if queued_buildable_object.wood_cost <= Inventory.wood:

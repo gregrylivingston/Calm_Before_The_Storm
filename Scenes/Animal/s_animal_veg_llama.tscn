@@ -19,9 +19,11 @@ type = 0
 [sub_resource type="BoxShape3D" id="BoxShape3D_xxeea"]
 size = Vector3(1, 5.36957, 4.94067)
 
-[node name="SAnimal" instance=ExtResource("1_5i5dv")]
+[node name="SAnimal" node_paths=PackedStringArray("AnimalMeshInstance", "AnimalAnimationPlayer") instance=ExtResource("1_5i5dv")]
 transform = Transform3D(0.4, 0, 0, 0, 0.4, 0, 0, 0, 0.4, 0, 0, 0)
 resource = SubResource("Resource_pfr4l")
+AnimalMeshInstance = NodePath("Llama/Armature/Skeleton3D/Llama")
+AnimalAnimationPlayer = NodePath("Llama/AnimationPlayer")
 
 [node name="Llama" parent="." index="0" instance=ExtResource("2_gcwed")]
 

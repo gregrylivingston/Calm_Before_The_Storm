@@ -1,4 +1,4 @@
-[gd_scene load_steps=9 format=3 uid="uid://ccg18rjngx8f4"]
+[gd_scene load_steps=10 format=3 uid="uid://ccg18rjngx8f4"]
 
 [ext_resource type="PackedScene" uid="uid://dun7e40alhqw5" path="res://Scenes/Animal/s_animal_carn.tscn" id="1_3mx7b"]
 [ext_resource type="Script" path="res://resource/animal/r_animal.gd" id="2_xqxti"]
@@ -6,6 +6,7 @@
 [ext_resource type="AudioStream" uid="uid://b8tcoru7drxqj" path="res://sound/fx/animal/animalsounds_husky_sad.mp3" id="3_4kvl1"]
 [ext_resource type="AudioStream" uid="uid://cgf3lsses5vqs" path="res://sound/fx/animal/animalsounds_husky_basic.mp3" id="3_oiui5"]
 [ext_resource type="AudioStream" uid="uid://bn3qw3v1o5kr3" path="res://sound/fx/animal/animalsounds_husky_happy.mp3" id="3_qpy1q"]
+[ext_resource type="Material" uid="uid://c67v51yr4xgnl" path="res://material/material_animal3dshine.tres" id="7_qwk8q"]
 
 [sub_resource type="Resource" id="Resource_h6d72"]
 script = ExtResource("2_xqxti")
@@ -19,10 +20,12 @@ type = 2
 [sub_resource type="BoxShape3D" id="BoxShape3D_lswkd"]
 size = Vector3(1, 2.71704, 4.08301)
 
-[node name="SAnimal" instance=ExtResource("1_3mx7b")]
+[node name="SAnimal" node_paths=PackedStringArray("AnimalMeshInstance", "AnimalAnimationPlayer") instance=ExtResource("1_3mx7b")]
 transform = Transform3D(0.5, 0, 0, 0, 0.5, 0, 0, 0, 0.5, 0, 0, 0)
 resource = SubResource("Resource_h6d72")
 meat_to_award = 0
+AnimalMeshInstance = NodePath("Husky/AnimalArmature/Skeleton3D/Cube")
+AnimalAnimationPlayer = NodePath("Husky/AnimationPlayer")
 
 [node name="Husky" parent="." index="0" instance=ExtResource("2_yst21")]
 
@@ -75,6 +78,9 @@ bones/59/rotation = Quaternion(0.929138, -1.64551e-07, 4.13514e-07, -0.369734)
 bones/60/rotation = Quaternion(6.07139e-07, 0.929138, -0.369734, -5.28228e-07)
 bones/62/rotation = Quaternion(0.905064, -1.89269e-07, 4.02799e-07, -0.425274)
 bones/63/rotation = Quaternion(6.36213e-07, 0.937708, -0.347425, -8.03734e-07)
+
+[node name="Cube" parent="Husky/AnimalArmature/Skeleton3D" index="0"]
+material_overlay = ExtResource("7_qwk8q")
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="." index="2"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.35388, 0.387207)

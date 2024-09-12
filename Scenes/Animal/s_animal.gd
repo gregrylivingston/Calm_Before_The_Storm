@@ -4,11 +4,12 @@ enum Types { Fruit, Hay, Meat}
 @export var resource: AnimalResource
 @export var health := 100
 @export var max_health := 100
-@onready var animationPlayer = get_child(0).get_child(1) as AnimationPlayer
 @export var meat_to_award := 1
 var isDead := false
 var isPlacedInBuilding:= false
 var myName : String = NameGenerator.get_random_name()
+@export var AnimalMeshInstance: MeshInstance3D
+@export var AnimalAnimationPlayer: AnimationPlayer
 
 func is_animal() -> bool:return true
 
@@ -32,9 +33,9 @@ func _die() -> void:
 		Inventory.update_inventory.emit()
 	$AudioStreamPlayer3D.stream = resource.sound_sad
 	$AudioStreamPlayer3D.play()
-	if is_instance_valid(animationPlayer):
-		animationPlayer.current_animation = "AnimalArmature|Death"
-		animationPlayer.play()
+	if is_instance_valid(AnimalAnimationPlayer):
+		AnimalAnimationPlayer.current_animation = "AnimalArmature|Death"
+		AnimalAnimationPlayer.play()
 	$AudioStreamPlayer3D.finished.connect(_destroy_animal_scene)
 		
 func _destroy_animal_scene() -> void:
@@ -45,11 +46,14 @@ func play_basic_sound() -> void:
 	$AudioStreamPlayer3D.play(0)
 	
 func place_in_building() -> void:
+	AnimalMeshInstance.set_material_override(null)
 	isPlacedInBuilding = true
 	$AudioStreamPlayer3D.stream = resource.sound_happy
 	$AudioStreamPlayer3D.play(0)
 	
 func grabbed():
+	play_basic_sound()
+	AnimalMeshInstance.material_overlay = load("res://material/material_animal3dshine.tres")
 	set_collision_layer_value(1,0)
 	set_collision_layer_value(4,0)
 	set_collision_mask_value(4,0)
@@ -62,5 +66,12 @@ func place_building() -> void:
 	set_collision_mask_value(4,1)
 	set_collision_mask_value(1,1)
 
+func drop_animal() -> void:
+	if AnimalMeshInstance.material_overlay != null:
+		AnimalMeshInstance.material_overlay = null
+	set_collision_layer_value(1,1)
+	set_collision_layer_value(4,1)
+	set_collision_mask_value(4,1)
+	set_collision_mask_value(1,1)
 
 	

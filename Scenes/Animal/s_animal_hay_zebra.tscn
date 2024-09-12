@@ -17,9 +17,11 @@ type = 1
 [sub_resource type="BoxShape3D" id="BoxShape3D_db22y"]
 size = Vector3(1.54564, 4.94974, 5.61084)
 
-[node name="SAnimal" instance=ExtResource("1_uxkcj")]
+[node name="SAnimal" node_paths=PackedStringArray("AnimalMeshInstance", "AnimalAnimationPlayer") instance=ExtResource("1_uxkcj")]
 transform = Transform3D(0.7, 0, 0, 0, 0.7, 0, 0, 0, 0.7, 0, 0, 0)
 resource = SubResource("Resource_82kmf")
+AnimalMeshInstance = NodePath("Zebra/Armature/Skeleton3D/Zebra")
+AnimalAnimationPlayer = NodePath("Zebra/AnimationPlayer")
 
 [node name="Zebra" parent="." index="0" instance=ExtResource("3_usmgh")]
 transform = Transform3D(0.7, 0, 0, 0, 0.7, 0, 0, 0, 0.7, 0, 0, 0)
@@ -27,3 +29,5 @@ transform = Transform3D(0.7, 0, 0, 0, 0.7, 0, 0, 0, 0.7, 0, 0, 0)
 [node name="CollisionShape3D" type="CollisionShape3D" parent="." index="2"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.00978844, 2.10429, 0.268256)
 shape = SubResource("BoxShape3D_db22y")
+
+[editable path="Zebra"]

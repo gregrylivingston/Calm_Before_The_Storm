@@ -19,9 +19,11 @@ type = 0
 [sub_resource type="BoxShape3D" id="BoxShape3D_pvhcl"]
 size = Vector3(1, 3.80554, 4)
 
-[node name="SAnimal" instance=ExtResource("1_1724m")]
+[node name="SAnimal" node_paths=PackedStringArray("AnimalMeshInstance", "AnimalAnimationPlayer") instance=ExtResource("1_1724m")]
 transform = Transform3D(0.7, 0, 0, 0, 0.7, 0, 0, 0, 0.7, 0, 0, 0)
 resource = SubResource("Resource_358ig")
+AnimalMeshInstance = NodePath("Deer/AnimalArmature/Skeleton3D/Deer")
+AnimalAnimationPlayer = NodePath("Deer/AnimationPlayer")
 
 [node name="Deer" parent="." index="0" instance=ExtResource("2_qin4q")]
 

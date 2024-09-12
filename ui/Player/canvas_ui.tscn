@@ -46,6 +46,7 @@ mouse_filter = 2
 theme = ExtResource("1_soa6u")
 
 [node name="ProgressBar_WeatherState" type="ProgressBar" parent="VBoxContainer"]
+clip_contents = true
 custom_minimum_size = Vector2(60, 0)
 layout_mode = 2
 size_flags_horizontal = 0
