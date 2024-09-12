@@ -1,8 +1,12 @@
-[gd_scene load_steps=5 format=3 uid="uid://bb4w34s3e3lul"]
+[gd_scene load_steps=9 format=3 uid="uid://bb4w34s3e3lul"]
 
 [ext_resource type="Script" path="res://ui/menu/upgrades_menu.gd" id="1_0l5oh"]
+[ext_resource type="Theme" uid="uid://dbmay2mk5b3eg" path="res://theme/theme_base.tres" id="2_ia2yv"]
 [ext_resource type="PackedScene" uid="uid://dhec1bvcalqur" path="res://ui/Player/panel_stars.tscn" id="2_r37xw"]
 [ext_resource type="AudioStream" uid="uid://dk1jcxm70obup" path="res://sound/interface/sound_interface_success.mp3" id="4_4hgsn"]
+[ext_resource type="Script" path="res://ui/menu/tab_container.gd" id="4_wfrrq"]
+[ext_resource type="AudioStream" uid="uid://kslqdqxvm0x8" path="res://sound/interface/sound_interface_click.mp3" id="5_067ku"]
+[ext_resource type="AudioStream" uid="uid://boof35sxvmw8m" path="res://sound/interface/sound_interface_hover.mp3" id="6_wquki"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_dnbvi"]
 bg_color = Color(0.6, 0.6, 0.6, 0)
@@ -36,7 +40,9 @@ offset_right = -292.0
 offset_bottom = -67.0
 grow_horizontal = 2
 grow_vertical = 2
+theme = ExtResource("2_ia2yv")
 current_tab = 0
+script = ExtResource("4_wfrrq")
 
 [node name="Character" type="VBoxContainer" parent="Panel/TabContainer"]
 layout_mode = 2
@@ -246,6 +252,14 @@ grow_horizontal = 2
 grow_vertical = 2
 text = "Clear Save"
 
+[node name="AudioStreamPlayer_TabButtonHover" type="AudioStreamPlayer" parent="Panel/TabContainer"]
+unique_name_in_owner = true
+stream = ExtResource("6_wquki")
+
+[node name="AudioStreamPlayer_TabButtonClick" type="AudioStreamPlayer" parent="Panel/TabContainer"]
+unique_name_in_owner = true
+stream = ExtResource("5_067ku")
+
 [node name="Panel_Stars" parent="." instance=ExtResource("2_r37xw")]
 layout_mode = 0
 offset_left = 1089.0
@@ -253,7 +267,7 @@ offset_top = 71.0
 offset_right = 1186.0
 offset_bottom = 136.0
 
-[node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="." groups=["UpgradeSound"]]
+[node name="AudioStreamPlayer2D" type="AudioStreamPlayer" parent="." groups=["UpgradeSound"]]
 stream = ExtResource("4_4hgsn")
 
 [node name="Label" type="Label" parent="."]
@@ -265,6 +279,8 @@ offset_bottom = 258.0
 rotation = -0.663901
 text = "Hover for Details"
 
+[connection signal="tab_clicked" from="Panel/TabContainer" to="Panel/TabContainer" method="_on_tab_clicked"]
+[connection signal="tab_hovered" from="Panel/TabContainer" to="Panel/TabContainer" method="_on_tab_hovered"]
 [connection signal="pressed" from="Panel/TabContainer/Reset/Button_Clear" to="." method="_on_button_clear_pressed"]
 
 [editable path="Panel_Stars"]

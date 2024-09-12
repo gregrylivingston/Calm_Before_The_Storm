@@ -1,4 +1,4 @@
-[gd_resource type="Theme" load_steps=9 format=3 uid="uid://dbmay2mk5b3eg"]
+[gd_resource type="Theme" load_steps=10 format=3 uid="uid://dbmay2mk5b3eg"]
 
 [ext_resource type="StyleBox" uid="uid://bcnu5qfk30vns" path="res://theme/panel_standard.tres" id="1_jw17a"]
 [ext_resource type="FontFile" uid="uid://dyhx5x3l2fik5" path="res://theme/font/Chewy-Regular.ttf" id="1_up0jm"]
@@ -21,6 +21,26 @@ corner_radius_bottom_left = 10
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_qbdxb"]
 bg_color = Color(0.6, 0.6, 0.6, 0)
 
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_7g1vs"]
+content_margin_left = 15.0
+content_margin_top = 5.0
+content_margin_right = 15.0
+content_margin_bottom = 5.0
+bg_color = Color(0.956863, 0.635294, 0.380392, 1)
+border_width_left = 8
+border_width_top = 8
+border_width_right = 8
+border_width_bottom = 8
+border_color = Color(0.94902, 0.952941, 0.188235, 1)
+corner_radius_top_left = 10
+corner_radius_top_right = 10
+corner_radius_bottom_right = 10
+corner_radius_bottom_left = 10
+expand_margin_left = 4.0
+expand_margin_top = 4.0
+expand_margin_right = 4.0
+expand_margin_bottom = 4.0
+
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_ghugi"]
 bg_color = Color(0.6, 0.6, 0.6, 0)
 
@@ -35,6 +55,7 @@ ProgressBar/styles/fill = ExtResource("3_xik8c")
 TabBar/styles/tab_unselected = ExtResource("2_tjtke")
 TabContainer/font_sizes/font_size = 24
 TabContainer/styles/panel = SubResource("StyleBoxFlat_qbdxb")
+TabContainer/styles/tab_hovered = SubResource("StyleBoxFlat_7g1vs")
 TabContainer/styles/tab_selected = ExtResource("1_jw17a")
 TabContainer/styles/tab_unselected = ExtResource("4_l5lbe")
 TabContainer/styles/tabbar_background = SubResource("StyleBoxFlat_ghugi")
