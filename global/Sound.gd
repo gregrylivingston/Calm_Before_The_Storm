@@ -1,7 +1,7 @@
 extends Node
 
-@onready var button_click_sound : AudioStreamPlayer2D = AudioStreamPlayer2D.new()
-@onready var button_hover_sound : AudioStreamPlayer2D = AudioStreamPlayer2D.new()
+@onready var button_click_sound : AudioStreamPlayer = AudioStreamPlayer.new()
+@onready var button_hover_sound : AudioStreamPlayer = AudioStreamPlayer.new()
 
 func _ready()->void:
 	call_deferred("_finish_setup")

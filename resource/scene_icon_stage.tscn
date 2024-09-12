@@ -1,19 +1,20 @@
 [gd_scene load_steps=2 format=3 uid="uid://bueqfd7lkpn17"]
 
-[ext_resource type="PackedScene" uid="uid://35wk3omwvyub" path="res://mesh/nature/Farm_FBX/Apple_Crop.fbx" id="1_f7wou"]
+[ext_resource type="PackedScene" uid="uid://dt0w715dqgnvk" path="res://mesh/nature/Farm_FBX/Wheat_Crop.fbx" id="1_hfltf"]
 
 [node name="Node3D" type="Node3D"]
 
-[node name="Apple_Crop" parent="." instance=ExtResource("1_f7wou")]
+[node name="Wheat_Crop" parent="." instance=ExtResource("1_hfltf")]
+transform = Transform3D(-0.811907, 0.292616, -0.505156, 0.574213, 0.244219, -0.781432, -0.105291, -0.924518, -0.366307, 0, 0, -0.708302)
 
 [node name="OmniLight3D" type="OmniLight3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0.641037)
-omni_range = 183.033
+omni_range = 182.998
 
 [node name="OmniLight3D2" type="OmniLight3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.182199, 0, 0.641037)
-omni_range = 183.033
+omni_range = 182.998
 
 [node name="OmniLight3D3" type="OmniLight3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.288965, 0, 0.641037)
-omni_range = 183.033
+omni_range = 182.998

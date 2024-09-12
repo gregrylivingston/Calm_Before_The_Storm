@@ -533,13 +533,13 @@ layout_mode = 2
 [node name="backgroundmap" parent="." index="12" instance=ExtResource("3_cjjc3")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.0273995, 0, 0)
 
-[node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="." index="13"]
+[node name="AudioStreamPlayer2D" type="AudioStreamPlayer" parent="." index="13"]
 stream = ExtResource("7_am03m")
 volume_db = -4.0
 autoplay = true
 bus = &"Music"
 
-[node name="AudioStreamPlayer_rain" type="AudioStreamPlayer2D" parent="." index="14"]
+[node name="AudioStreamPlayer_rain" type="AudioStreamPlayer" parent="." index="14"]
 stream = ExtResource("8_7bl2j")
 volume_db = -4.0
 autoplay = true
