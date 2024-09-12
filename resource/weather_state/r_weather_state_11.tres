@@ -1,0 +1,13 @@
+[gd_resource type="Resource" script_class="WeatherState" load_steps=4 format=3 uid="uid://c4ynuy6rxyyqv"]
+
+[ext_resource type="AudioStream" uid="uid://ciapusgxxi03d" path="res://sound/fx/rain/heavyRain.mp3" id="1_tiwc3"]
+[ext_resource type="Script" path="res://resource/weather_state/r_weather_state.gd" id="2_4bdyj"]
+[ext_resource type="AudioStream" uid="uid://s88c6gfc1phf" path="res://sound/music/song_7Heavy Concept A Bass Master.wav" id="3_ttnm5"]
+
+[resource]
+script = ExtResource("2_4bdyj")
+title = "Catastrophic Flood"
+water_height = 75.0
+cloud_level = -100.0
+rain_sound = ExtResource("1_tiwc3")
+state_sound_track = ExtResource("3_ttnm5")

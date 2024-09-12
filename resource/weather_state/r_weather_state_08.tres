@@ -2,12 +2,12 @@
 
 [ext_resource type="Script" path="res://resource/weather_state/r_weather_state.gd" id="1_2woim"]
 [ext_resource type="AudioStream" uid="uid://ciapusgxxi03d" path="res://sound/fx/rain/heavyRain.mp3" id="1_dy14o"]
-[ext_resource type="AudioStream" uid="uid://s88c6gfc1phf" path="res://sound/music/song_7Heavy Concept A Bass Master.wav" id="3_ftw1k"]
+[ext_resource type="AudioStream" uid="uid://deu2mx6itkr0n" path="res://sound/music/song_5_trance.mp3" id="3_1610k"]
 
 [resource]
 script = ExtResource("1_2woim")
-title = "Massive Flood"
-water_height = 50.0
+title = "Major Flood"
+water_height = 40.0
 cloud_level = -1.0
 rain_sound = ExtResource("1_dy14o")
-state_sound_track = ExtResource("3_ftw1k")
+state_sound_track = ExtResource("3_1610k")

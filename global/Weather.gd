@@ -31,11 +31,11 @@ var weather_states: Array[WeatherState] = [
 
 signal new_round
 func start_new_round():
+	weather_state_int = -1
+	increase_weather_state()
 	game_time = 0.0
 	state_timer = 0.0
-	weather_state_int = -1
-	state_timer_max = 20.0 + Player.data.upgrade.Weather_Alert_Delay * 2
-
+	state_timer_max = 22.0 + Player.data.upgrade.Weather_Alert_Delay * 2
 	new_round.emit()
 
 # Called when the node enters the scene tree for the first time.

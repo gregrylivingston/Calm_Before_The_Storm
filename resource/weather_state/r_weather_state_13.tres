@@ -1,0 +1,13 @@
+[gd_resource type="Resource" script_class="WeatherState" load_steps=4 format=3 uid="uid://7i1hoct14x6m"]
+
+[ext_resource type="AudioStream" uid="uid://ciapusgxxi03d" path="res://sound/fx/rain/heavyRain.mp3" id="1_e5ioj"]
+[ext_resource type="Script" path="res://resource/weather_state/r_weather_state.gd" id="2_sevqs"]
+[ext_resource type="AudioStream" uid="uid://cb64mixn5x5ue" path="res://sound/music/song_11battleThemeA.mp3" id="3_x1trx"]
+
+[resource]
+script = ExtResource("2_sevqs")
+title = "Universal Flood"
+water_height = 1000.0
+cloud_level = -100.0
+rain_sound = ExtResource("1_e5ioj")
+state_sound_track = ExtResource("3_x1trx")

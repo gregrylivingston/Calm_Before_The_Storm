@@ -11,4 +11,5 @@ func send_time_bonus(stars: int) -> void:
 	get_tree().get_first_node_in_group("UI_TimeBonus").send_time_bonus(stars)
 	
 func send_star_bonus(stars: int) -> void:
-	get_tree().get_first_node_in_group("UI_StarBonus").send_star_bonus(stars)
+	if stars > 0:
+		get_tree().get_first_node_in_group("UI_StarBonus").send_star_bonus(stars)

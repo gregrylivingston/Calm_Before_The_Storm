@@ -2,12 +2,12 @@
 
 [ext_resource type="Script" path="res://resource/weather_state/r_weather_state.gd" id="1_i5774"]
 [ext_resource type="AudioStream" uid="uid://r6ixi4q4fgj4" path="res://sound/fx/rain/medium-rain.mp3" id="1_jm0rj"]
-[ext_resource type="AudioStream" uid="uid://3wbfbaokpqe2" path="res://sound/music/song_6_Sinister Boss Appears.wav" id="3_7iwxy"]
+[ext_resource type="AudioStream" uid="uid://bbjtjluhbhcxd" path="res://sound/music/song_5_AugustUltraAmbience.wav" id="3_bk2up"]
 
 [resource]
 script = ExtResource("1_i5774")
-title = "Major Flood"
+title = "Flash Flood"
 water_height = 32.0
 cloud_level = 0.0
 rain_sound = ExtResource("1_jm0rj")
-state_sound_track = ExtResource("3_7iwxy")
+state_sound_track = ExtResource("3_bk2up")

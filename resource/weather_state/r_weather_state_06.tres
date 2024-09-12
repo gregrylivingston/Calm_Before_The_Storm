@@ -2,12 +2,12 @@
 
 [ext_resource type="AudioStream" uid="uid://r6ixi4q4fgj4" path="res://sound/fx/rain/medium-rain.mp3" id="1_3aw5i"]
 [ext_resource type="Script" path="res://resource/weather_state/r_weather_state.gd" id="1_onm0d"]
-[ext_resource type="AudioStream" uid="uid://deu2mx6itkr0n" path="res://sound/music/song_5_trance.mp3" id="3_cqk47"]
+[ext_resource type="AudioStream" uid="uid://cp6vw5wopfyog" path="res://sound/music/song_4_GameMusic_ForestTheme_24.mp3" id="3_yh7iu"]
 
 [resource]
 script = ExtResource("1_onm0d")
-title = "Flash Floods"
+title = "Minor Flood"
 water_height = 14.0
 cloud_level = 0.01
 rain_sound = ExtResource("1_3aw5i")
-state_sound_track = ExtResource("3_cqk47")
+state_sound_track = ExtResource("3_yh7iu")
