@@ -24,6 +24,7 @@ transform = Transform3D(0.4, 0, 0, 0, 0.4, 0, 0, 0, 0.4, 0, 0, 0)
 resource = SubResource("Resource_1gdvp")
 AnimalMeshInstance = NodePath("Stag/AnimalArmature/Skeleton3D/Stag_Horns/Stag_Horns")
 AnimalAnimationPlayer = NodePath("Stag/AnimationPlayer")
+food_demand = 2
 
 [node name="Stag" parent="." index="0" instance=ExtResource("2_d5ksk")]
 

@@ -32,3 +32,11 @@ func new_round() -> void:
 	hay = 0
 	meat = 0
 	stars = 0
+
+func get_inventory_by_food_type(type: Animal3D.Types) -> int:
+	match type:
+		Animal3D.Types.Fruit:return fruit
+		Animal3D.Types.Hay:return hay
+		Animal3D.Types.Meat:return meat
+
+	return 0

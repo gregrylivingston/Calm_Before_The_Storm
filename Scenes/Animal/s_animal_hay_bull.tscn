@@ -22,6 +22,7 @@ transform = Transform3D(0.4, 0, 0, 0, 0.4, 0, 0, 0, 0.4, 0, 0, 0)
 resource = SubResource("Resource_4kjyo")
 AnimalMeshInstance = NodePath("Bull/AnimalArmature/Skeleton3D/Cow")
 AnimalAnimationPlayer = NodePath("Bull/AnimationPlayer")
+food_demand = 5
 
 [node name="Bull" parent="." index="0" instance=ExtResource("2_0ty2w")]
 

@@ -97,17 +97,18 @@ var queued_buildable_object: Node3D = null
 
 func grab_animal(type: Animal3D.Types) -> void:
 	if Input.is_action_just_pressed("alt_action"):
+		
 		queued_buildable_object = %ObjectSelector.grab_animal(type)
 		if is_instance_valid(queued_buildable_object):
 			queued_buildable_object.grabbed()
 			Alert.send_alert("You grabbed " + queued_buildable_object.myName + " the " + queued_buildable_object.resource.title)
 			match type:
 				Animal3D.Types.Fruit:
-					Inventory.fruit -= 1
+					Inventory.fruit -= queued_buildable_object.food_demand
 				Animal3D.Types.Hay:
-					Inventory.hay -= 1
+					Inventory.hay -= queued_buildable_object.food_demand
 				Animal3D.Types.Meat:
-					Inventory.meat -= 1
+					Inventory.meat -= queued_buildable_object.food_demand
 			Inventory.update_inventory.emit()
 			Ui.set_left_mouse_action_text("Release")
 			Ui.set_right_mouse_action_text("")

@@ -23,6 +23,7 @@ resource = SubResource("Resource_4m37i")
 meat_to_award = 0
 AnimalMeshInstance = NodePath("Fox/AnimalArmature/Skeleton3D/Fox")
 AnimalAnimationPlayer = NodePath("Fox/AnimationPlayer")
+food_demand = 3
 
 [node name="Fox" parent="." index="0" instance=ExtResource("6_kn8rj")]
 

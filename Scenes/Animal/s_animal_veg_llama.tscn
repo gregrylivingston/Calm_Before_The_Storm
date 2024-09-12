@@ -24,6 +24,7 @@ transform = Transform3D(0.4, 0, 0, 0, 0.4, 0, 0, 0, 0.4, 0, 0, 0)
 resource = SubResource("Resource_pfr4l")
 AnimalMeshInstance = NodePath("Llama/Armature/Skeleton3D/Llama")
 AnimalAnimationPlayer = NodePath("Llama/AnimationPlayer")
+food_demand = 3
 
 [node name="Llama" parent="." index="0" instance=ExtResource("2_gcwed")]
 

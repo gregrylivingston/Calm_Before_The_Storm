@@ -23,6 +23,7 @@ resource = SubResource("Resource_e5btx")
 meat_to_award = 0
 AnimalMeshInstance = NodePath("ShibaInu/AnimalArmature/Skeleton3D/ShibaInu")
 AnimalAnimationPlayer = NodePath("ShibaInu/AnimationPlayer")
+food_demand = 2
 
 [node name="ShibaInu" parent="." index="0" instance=ExtResource("6_7171m")]
 

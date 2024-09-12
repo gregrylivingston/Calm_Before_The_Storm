@@ -1,0 +1,19 @@
+[gd_scene load_steps=2 format=3 uid="uid://bueqfd7lkpn17"]
+
+[ext_resource type="PackedScene" uid="uid://35wk3omwvyub" path="res://mesh/nature/Farm_FBX/Apple_Crop.fbx" id="1_f7wou"]
+
+[node name="Node3D" type="Node3D"]
+
+[node name="Apple_Crop" parent="." instance=ExtResource("1_f7wou")]
+
+[node name="OmniLight3D" type="OmniLight3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0.641037)
+omni_range = 183.033
+
+[node name="OmniLight3D2" type="OmniLight3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.182199, 0, 0.641037)
+omni_range = 183.033
+
+[node name="OmniLight3D3" type="OmniLight3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.288965, 0, 0.641037)
+omni_range = 183.033

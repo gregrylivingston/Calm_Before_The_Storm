@@ -10,6 +10,7 @@ var isPlacedInBuilding:= false
 var myName : String = NameGenerator.get_random_name()
 @export var AnimalMeshInstance: MeshInstance3D
 @export var AnimalAnimationPlayer: AnimationPlayer
+@export var food_demand: int = 1
 
 func is_animal() -> bool:return true
 
