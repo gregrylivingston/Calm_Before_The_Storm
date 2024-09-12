@@ -3,13 +3,13 @@
 importer="scene"
 importer_version=1
 type="PackedScene"
-uid="uid://30mo8rg65nbn"
-path="res://.godot/imported/Trex.fbx-9e04cd3045cfe222a2d793412101c27f.scn"
+uid="uid://cbcysdj3cxqqk"
+path="res://.godot/imported/Rock_Moss_1.fbx-1071a423a021665e118ba80fca4fd5d6.scn"
 
 [deps]
 
-source_file="res://mesh/dino/FBX/Trex.fbx"
-dest_files=["res://.godot/imported/Trex.fbx-9e04cd3045cfe222a2d793412101c27f.scn"]
+source_file="res://mesh/nature/FBX_RawNature/Rock_Moss_1.fbx"
+dest_files=["res://.godot/imported/Rock_Moss_1.fbx-1071a423a021665e118ba80fca4fd5d6.scn"]
 
 [params]
 

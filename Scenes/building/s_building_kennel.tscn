@@ -1,7 +1,8 @@
-[gd_scene load_steps=4 format=3 uid="uid://cxhk4dhtfnyd2"]
+[gd_scene load_steps=5 format=3 uid="uid://cxhk4dhtfnyd2"]
 
 [ext_resource type="PackedScene" uid="uid://ijr4dslcai7c" path="res://Scenes/building/s_building.tscn" id="1_57n2j"]
 [ext_resource type="PackedScene" uid="uid://7p0t2tnqk131" path="res://mesh/Building_FBX/SmallBarn.fbx" id="2_5trid"]
+[ext_resource type="Texture2D" uid="uid://c1fp4x7anenty" path="res://resource/player_item_icon/icon_meat.png" id="2_a6dux"]
 
 [sub_resource type="ConvexPolygonShape3D" id="ConvexPolygonShape3D_5idma"]
 points = PackedVector3Array(-0.0309099, -0.0316182, 0.0232629, -0.0279884, -0.027737, 1.61886e-06, -0.0296128, -0.0316182, 0.021369, -0.0244301, -0.0316182, 0.0300567, -0.0309099, 0.0311145, 0.0232629, 0.0279792, -0.027737, 1.61886e-06, -0.0279884, 0.0273008, 1.61886e-06, 0.0286932, -0.0316182, 0.0229861, -0.0186525, -0.0316182, 0.0350635, -0.0244301, 0.0311145, 0.0300567, 0.00416055, 0.0311206, 0.0425955, -0.0296128, 0.0311145, 0.021369, 0.0298713, -0.0316182, 0.0249529, 0.0279792, 0.0273008, 1.61886e-06, -0.0128332, -0.0316182, 0.0396672, -0.0186525, 0.0311145, 0.0350635, -0.00607378, 0.0311145, 0.0436784, 0.00402965, 0.0311145, 0.0496127, 0.00617767, 0.0311206, 0.0436104, 0.00457111, 0.0311206, 0.0422021, -0.0128332, 0.0311145, 0.0396672, 0.0286932, 0.0311145, 0.0229861, 0.00402965, -0.0316182, 0.0496127, 0.0298713, 0.0311145, 0.0249529, -0.00607378, -0.0316182, 0.0436784, 0.00617767, 0.0311206, 0.0427509)
@@ -9,19 +10,30 @@ points = PackedVector3Array(-0.0309099, -0.0316182, 0.0232629, -0.0279884, -0.02
 [node name="SBuilding" groups=["Kennel"] instance=ExtResource("1_57n2j")]
 type = 2
 wood_cost = 10
+icon = ExtResource("2_a6dux")
 instructions = "Kennels require 10 wood and hold 4 meat eaters."
 title = "Kennel"
 
 [node name="SmallBarn" parent="." index="0" instance=ExtResource("2_5trid")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.195305, 0)
+
+[node name="Small_Barn_Door" parent="SmallBarn" index="1"]
+transform = Transform3D(100, 0, 0, 0, -1.19209e-05, 100, 0, -100, -1.19209e-05, -1.91052, 1.0488, 2.66565)
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="." index="1"]
 transform = Transform3D(100, 0, 0, 0, -1.19209e-05, 100, 0, -100, -1.19209e-05, 0, 0, 0)
 shape = SubResource("ConvexPolygonShape3D_5idma")
 
 [node name="Node3D_AnimalPosition" parent="." index="2"]
-transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, 1.78385, 0.896127, -1.14813)
+transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, 1.21618, 0, -1.14813)
 
 [node name="Node3D_AnimalPosition2" parent="." index="3"]
-transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, 1.78385, 0.896127, 1.17954)
+transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, 1.78385, 0, 1.17954)
+
+[node name="Node3D_AnimalPosition3" parent="." index="4"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.126799, 0, 0)
+
+[node name="Node3D_AnimalPosition4" parent="." index="5"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2.10319, 0, 0)
 
 [editable path="SmallBarn"]

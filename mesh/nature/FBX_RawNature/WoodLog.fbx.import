@@ -3,13 +3,13 @@
 importer="scene"
 importer_version=1
 type="PackedScene"
-uid="uid://dbxi2o57iy10p"
-path="res://.godot/imported/Parasaurolophus.fbx-f90066acb01c1883edd50141dfa84170.scn"
+uid="uid://daag7qa3bqpi0"
+path="res://.godot/imported/WoodLog.fbx-e58960ec0acb8c77b3413a3cdf04f5af.scn"
 
 [deps]
 
-source_file="res://mesh/dino/FBX/Parasaurolophus.fbx"
-dest_files=["res://.godot/imported/Parasaurolophus.fbx-f90066acb01c1883edd50141dfa84170.scn"]
+source_file="res://mesh/nature/FBX_RawNature/WoodLog.fbx"
+dest_files=["res://.godot/imported/WoodLog.fbx-e58960ec0acb8c77b3413a3cdf04f5af.scn"]
 
 [params]
 

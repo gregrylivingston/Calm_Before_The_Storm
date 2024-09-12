@@ -3,13 +3,13 @@
 importer="scene"
 importer_version=1
 type="PackedScene"
-uid="uid://bdi6to7qaqo5j"
-path="res://.godot/imported/Velociraptor.fbx-a7697fda6d3f23ab64cdc3900e79e149.scn"
+uid="uid://cu3litmh3grh8"
+path="res://.godot/imported/Rock_5.fbx-cb5d3493edd21c735cdb01c6c6334963.scn"
 
 [deps]
 
-source_file="res://mesh/dino/FBX/Velociraptor.fbx"
-dest_files=["res://.godot/imported/Velociraptor.fbx-a7697fda6d3f23ab64cdc3900e79e149.scn"]
+source_file="res://mesh/nature/FBX_RawNature/Rock_5.fbx"
+dest_files=["res://.godot/imported/Rock_5.fbx-cb5d3493edd21c735cdb01c6c6334963.scn"]
 
 [params]
 

@@ -18,6 +18,7 @@ type = 1
 size = Vector3(1.34233, 4.94974, 3.75204)
 
 [node name="SAnimal" instance=ExtResource("1_hf52v")]
+transform = Transform3D(0.5, 0, 0, 0, 0.5, 0, 0, 0, 0.5, 0, 0, 0)
 resource = SubResource("Resource_mmjp1")
 
 [node name="Alpaca" parent="." index="0" instance=ExtResource("3_ehu5b")]

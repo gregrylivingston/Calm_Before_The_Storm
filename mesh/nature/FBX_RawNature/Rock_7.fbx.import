@@ -3,13 +3,13 @@
 importer="scene"
 importer_version=1
 type="PackedScene"
-uid="uid://bigrcnvjfjrkr"
-path="res://.godot/imported/Stegosaurus.fbx-a6c8bea378b462acb5e0d67bd168a7e9.scn"
+uid="uid://chq1d8fohyf5d"
+path="res://.godot/imported/Rock_7.fbx-bb10efe76b0fe064bf15f5da93f944b8.scn"
 
 [deps]
 
-source_file="res://mesh/dino/FBX/Stegosaurus.fbx"
-dest_files=["res://.godot/imported/Stegosaurus.fbx-a6c8bea378b462acb5e0d67bd168a7e9.scn"]
+source_file="res://mesh/nature/FBX_RawNature/Rock_7.fbx"
+dest_files=["res://.godot/imported/Rock_7.fbx-bb10efe76b0fe064bf15f5da93f944b8.scn"]
 
 [params]
 

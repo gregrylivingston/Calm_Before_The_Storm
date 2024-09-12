@@ -1,3 +1,7 @@
-[gd_scene format=3 uid="uid://cy1sjff45n3on"]
+[gd_scene load_steps=2 format=3 uid="uid://cy1sjff45n3on"]
+
+[ext_resource type="Script" path="res://Scenes/Rock/s_rock.gd" id="1_eeb2h"]
 
 [node name="SRock" type="StaticBody3D"]
+collision_layer = 33
+script = ExtResource("1_eeb2h")

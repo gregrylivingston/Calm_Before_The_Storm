@@ -3,13 +3,13 @@
 importer="scene"
 importer_version=1
 type="PackedScene"
-uid="uid://1tvbiarhexq7"
-path="res://.godot/imported/Apatosaurus.fbx-6a6f02b8acf91f61bdccfa7467b638bf.scn"
+uid="uid://dbxi2o57iy10p"
+path="res://.godot/imported/Parasaurolophus.fbx-e9c88038eaa2f10fa3a3f129c78c70c3.scn"
 
 [deps]
 
-source_file="res://mesh/dino/FBX/Apatosaurus.fbx"
-dest_files=["res://.godot/imported/Apatosaurus.fbx-6a6f02b8acf91f61bdccfa7467b638bf.scn"]
+source_file="res://mesh/animal/dino/FBX/Parasaurolophus.fbx"
+dest_files=["res://.godot/imported/Parasaurolophus.fbx-e9c88038eaa2f10fa3a3f129c78c70c3.scn"]
 
 [params]
 
