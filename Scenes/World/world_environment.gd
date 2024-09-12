@@ -12,4 +12,8 @@ func new_weather_state(weather_state: WeatherState) -> void:
 	last_cloud_level = weather_state.cloud_level
 	
 func _set_cloud_level(cloudLevel: float) -> void:
-	environment.sky.sky_material.set_shader_parameter("clouds_cutoff", cloudLevel)
+	environment.sky.sky_material.set_shader_parameter("clouds_cutoff", cloudLevel) #goes from 1 -> 0 (or low)
+	var horizon_calculator = ( 1.0 - cloudLevel ) / 10.0 
+	environment.sky.sky_material.set_shader_parameter("horizon_color", Color(0,.68 - horizon_calculator,.8 - horizon_calculator,1))
+	var sun_rotation = -90 + ( 1 - cloudLevel ) * 45
+	$"../DirectionalLight3D".rotation_degrees.x = sun_rotation

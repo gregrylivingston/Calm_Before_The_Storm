@@ -8,6 +8,7 @@ var flavor
 func _ready() -> void:
 	$Label_Name.text = title.replace("_"," ")
 	tooltip_text = flavor.tooltip
+	$TextureRect.texture =load( flavor.icon)
 	call_deferred("_update_values")
 	Player.player_stat_upgraded.connect(_update_values)
 

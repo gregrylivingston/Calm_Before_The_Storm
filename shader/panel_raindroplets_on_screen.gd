@@ -11,7 +11,7 @@ func reset():
 
 var previous_value := 4.0
 func update_weather_state(new_weather_state: WeatherState) -> void:
-	var target_value = 4.0 - new_weather_state.water_height/4.0
+	var target_value = 4.0 - new_weather_state.water_height/6.0
 	get_tree().create_tween().tween_method(update_raindrop_amount,previous_value,target_value,Weather.weather_animation_time)
 	previous_value = target_value
 	

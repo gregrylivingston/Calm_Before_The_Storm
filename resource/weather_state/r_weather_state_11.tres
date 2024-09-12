@@ -8,6 +8,6 @@
 script = ExtResource("2_4bdyj")
 title = "Catastrophic Flood"
 water_height = 75.0
-cloud_level = -100.0
+cloud_level = -2.0
 rain_sound = ExtResource("1_tiwc3")
 state_sound_track = ExtResource("3_ttnm5")

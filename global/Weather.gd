@@ -26,7 +26,10 @@ var weather_states: Array[WeatherState] = [
 	load("res://resource/weather_state/r_weather_state_07.tres"),
 	load("res://resource/weather_state/r_weather_state_08.tres"),
 	load("res://resource/weather_state/r_weather_state_09.tres"),
-	load("res://resource/weather_state/r_weather_state_10.tres")
+	load("res://resource/weather_state/r_weather_state_10.tres"),
+	load("res://resource/weather_state/r_weather_state_11.tres"),
+	load("res://resource/weather_state/r_weather_state_12.tres"),
+	load("res://resource/weather_state/r_weather_state_13.tres"),
 ]
 
 signal new_round

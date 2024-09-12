@@ -12,6 +12,9 @@ var myName : String = NameGenerator.get_random_name()
 @export var AnimalAnimationPlayer: AnimationPlayer
 @export var food_demand: int = 1
 
+func _ready() -> void:
+	$AudioStreamPlayer3D.pitch_scale = randf_range(0.95,1.05)
+
 func is_animal() -> bool:return true
 
 #this is what happens if you attack / kill the animal...

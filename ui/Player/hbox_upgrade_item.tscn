@@ -1,7 +1,8 @@
-[gd_scene load_steps=4 format=3 uid="uid://b54r7nva3h5eq"]
+[gd_scene load_steps=5 format=3 uid="uid://b54r7nva3h5eq"]
 
 [ext_resource type="Script" path="res://ui/Player/hbox_upgrade_item.gd" id="1_74lir"]
 [ext_resource type="Texture2D" uid="uid://bqfrdf4prxo2s" path="res://resource/player_item_icon/icon_star.png" id="1_m8h2k"]
+[ext_resource type="Texture2D" uid="uid://c0m11l24tcxvl" path="res://resource/player_item_icon/icon_apple.png" id="2_41rxf"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_obx4i"]
 content_margin_left = 25.0
@@ -28,6 +29,13 @@ offset_right = 305.5
 offset_bottom = 57.0
 grow_horizontal = 2
 script = ExtResource("1_74lir")
+
+[node name="TextureRect" type="TextureRect" parent="."]
+custom_minimum_size = Vector2(32, 32)
+layout_mode = 2
+texture = ExtResource("2_41rxf")
+expand_mode = 1
+stretch_mode = 5
 
 [node name="Label_Name" type="Label" parent="."]
 custom_minimum_size = Vector2(350, 0)

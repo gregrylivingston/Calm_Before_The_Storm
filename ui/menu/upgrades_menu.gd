@@ -2,21 +2,21 @@ extends Control
 
 enum UpgradeTypes {Tools, Gathering, Character, Gamerules}
 var upgradeFlavor: Dictionary = {
-	"Weather_Alert_Delay":{"tooltip":"Extends the base time between weather alerts and flood events.","icon":"","group":UpgradeTypes.Gamerules},  	#added
-	"Dig_Strength":{"tooltip":"Dig faster.","icon":"","group":UpgradeTypes.Tools},		  	#added
-	"Dirt_Gathered":{"tooltip":"Increases dirt gathered from digging.","icon":"","group":UpgradeTypes.Gathering},		  	#added
-	"Chop_Strength":{"tooltip":"Chop faster with your axe.","icon":"","group":UpgradeTypes.Tools},	      	#added
-	"Wood_Gathered":{"tooltip":"Increases dirt gathered from chopping trees.","icon":"","group":UpgradeTypes.Gathering},		  	#added
-	"Pick_Strength":{"tooltip":"Pick stone faster with your pickaxe.","icon":"","group":UpgradeTypes.Tools},			#added
-	"Stone_Gathered":{"tooltip":"Increases stone gathered from picking rocks.","icon":"","group":UpgradeTypes.Gathering},			#added
-	"Fruit_Gathered":{"tooltip":"Increases fruit gathered from plants.","icon":"","group":UpgradeTypes.Gathering},			#added
-	"Hay_Gathered":{"tooltip":"Increases hay gathered from grasses.","icon":"","group":UpgradeTypes.Gathering},			#added
-	"Meat_Gathered":{"tooltip":"Increases meat gathered from prey.","icon":"","group":UpgradeTypes.Gathering},			#added
-	"Full_Building_Bonus":{"tooltip":"Increases the weather alert delay bonus for filling a building.","icon":"","group":UpgradeTypes.Gamerules},
-	"Sprint_Speed":{"tooltip":"Increases sprinting speed.","icon":"","group":UpgradeTypes.Character},
-	"Jump_Height":{"tooltip":"Increases jump height.","icon":"","group":UpgradeTypes.Character},
-	"Grab_Distance":{"tooltip":"Increases animal grab distance.","icon":"","group":UpgradeTypes.Character},
-	"Hold_Distance":{"tooltip":"Increases the max placement distance for animals and buildings.","icon":"","group":UpgradeTypes.Character},
+	"Weather_Alert_Delay":{"tooltip":"Extends the base time between weather alerts and flood events.","icon":"res://resource/texture/t_icon_time.png","group":UpgradeTypes.Gamerules},  	#added
+	"Dig_Strength":{"tooltip":"Dig faster.","icon":"res://resource/player_item_icon/icon_shovel.png","group":UpgradeTypes.Tools},		  	#added
+	"Dirt_Gathered":{"tooltip":"Increases dirt gathered from digging.","icon":"res://resource/player_item_icon/icon_shovel.png","group":UpgradeTypes.Gathering},		  	#added
+	"Chop_Strength":{"tooltip":"Chop faster with your axe.","icon":"res://resource/player_item_icon/icon_axe.png","group":UpgradeTypes.Tools},	      	#added
+	"Wood_Gathered":{"tooltip":"Increases wood gathered from chopping trees.","icon":"res://resource/player_item_icon/icon_axe.png","group":UpgradeTypes.Gathering},		  	#added
+	"Pick_Strength":{"tooltip":"Pick stone faster with your pickaxe.","icon":"res://resource/player_item_icon/icon_pickaxe.png","group":UpgradeTypes.Tools},			#added
+	"Stone_Gathered":{"tooltip":"Increases stone gathered from picking rocks.","icon":"res://resource/player_item_icon/icon_pickaxe.png","group":UpgradeTypes.Gathering},			#added
+	"Fruit_Gathered":{"tooltip":"Increases fruit gathered from plants.","icon":"res://resource/player_item_icon/icon_apple.png","group":UpgradeTypes.Gathering},			#added
+	"Hay_Gathered":{"tooltip":"Increases hay gathered from grasses.","icon":"res://resource/player_item_icon/icon_hay.png","group":UpgradeTypes.Gathering},			#added
+	"Meat_Gathered":{"tooltip":"Increases meat gathered from prey.","icon":"res://resource/player_item_icon/icon_meat.png","group":UpgradeTypes.Gathering},			#added
+	"Full_Building_Bonus":{"tooltip":"Increases the weather alert delay bonus for filling a building.","icon":"res://resource/texture/t_icon_time.png","group":UpgradeTypes.Gamerules},
+	"Sprint_Speed":{"tooltip":"Increases sprinting speed.","icon":"res://resource/texture/t_arrow.png","group":UpgradeTypes.Character},
+	"Jump_Height":{"tooltip":"Increases jump height.","icon":"res://resource/texture/t_arrow.png","group":UpgradeTypes.Character},
+	"Grab_Distance":{"tooltip":"Increases animal grab distance.","icon":"res://resource/texture/t_arrow.png","group":UpgradeTypes.Character},
+	"Hold_Distance":{"tooltip":"Increases the max placement distance for animals and buildings.","icon":"res://resource/texture/t_arrow.png","group":UpgradeTypes.Character},
 }
 
 @onready var listByType : Dictionary = {
