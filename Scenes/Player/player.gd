@@ -33,6 +33,7 @@ func _physics_process(delta):
 	get_input()
 	move_and_slide()
 	move_queued_building()
+	draw_grabbed_animal_connection()
 
 func _unhandled_input(event):
 	if event.is_action_pressed("action"):
@@ -228,3 +229,9 @@ func select_new_item(ItemInt: int) -> void:
 	newItemScene.rotation_degrees.y = -90
 	newItemScene.rotation_degrees.z = 3.7
 	newItemScene.position = Vector3(0.56,.23,-.8) 
+	
+func draw_grabbed_animal_connection():
+	if is_instance_valid(queued_buildable_object):
+		if queued_buildable_object.has_method("is_animal"):
+			if queued_buildable_object.isGrabbed:
+				DebugDraw3D.draw_line(global_position, queued_buildable_object.global_position, Color(1, 1, 0))

@@ -28,6 +28,7 @@ func chop_tree():
 		
 func _die() -> void:
 	isDead = true
+	
 	if meat_to_award > 0:
 		Inventory.meat += meat_to_award * Player.data.upgrade.Meat_Gathered
 		Inventory.update_inventory.emit()
@@ -46,11 +47,13 @@ func play_basic_sound() -> void:
 	$AudioStreamPlayer3D.play(0)
 	
 func place_in_building() -> void:
+	isGrabbed = false
 	AnimalMeshInstance.set_material_override(null)
 	isPlacedInBuilding = true
 	$AudioStreamPlayer3D.stream = resource.sound_happy
 	$AudioStreamPlayer3D.play(0)
 	
+var isGrabbed := false
 func grabbed():
 	play_basic_sound()
 	AnimalMeshInstance.material_overlay = load("res://material/material_animal3dshine.tres")
@@ -58,6 +61,7 @@ func grabbed():
 	set_collision_layer_value(4,0)
 	set_collision_mask_value(4,0)
 	set_collision_mask_value(1,0)
+	isGrabbed = true
 	
 ## Fired when the animal has been picked up but needs to be dropped.
 func place_building() -> void: 
@@ -73,5 +77,10 @@ func drop_animal() -> void:
 	set_collision_layer_value(4,1)
 	set_collision_mask_value(4,1)
 	set_collision_mask_value(1,1)
+	isGrabbed = false
+	
+
+
+	
 
 	
