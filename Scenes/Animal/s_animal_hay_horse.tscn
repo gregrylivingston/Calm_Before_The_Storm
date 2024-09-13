@@ -18,7 +18,7 @@ type = 1
 size = Vector3(1.18236, 4.94974, 4.85461)
 
 [node name="SAnimal" node_paths=PackedStringArray("AnimalMeshInstance", "AnimalAnimationPlayer") instance=ExtResource("1_1fstj")]
-transform = Transform3D(0.56, 0, 0, 0, 0.56, 0, 0, 0, 0.56, 0, 0, 0)
+transform = Transform3D(0.45, 0, 0, 0, 0.45, 0, 0, 0, 0.45, 0, 0, 0)
 resource = SubResource("Resource_gnt00")
 AnimalMeshInstance = NodePath("Horse/AnimalArmature/Skeleton3D/Horse")
 AnimalAnimationPlayer = NodePath("Horse/AnimationPlayer")

@@ -49,7 +49,7 @@ func _building_is_filled() -> void:
 	call_deferred("_delayed_alert")
 	
 func _delayed_alert() -> void:
-	Alert.send_alert("Building Full, Storm Delayed")
+	Alert.send_alert("Building Filled, Storm Delayed")
 
 		
 func _physics_process(delta: float) -> void:

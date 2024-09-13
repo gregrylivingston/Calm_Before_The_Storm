@@ -134,7 +134,7 @@ func _select_next_wood_building() -> void:
 #this also handles movement for animals
 func move_queued_building() -> void:
 	if is_instance_valid(queued_buildable_object):
-		%RayCast3D.target_position.z = -12 - Player.data.upgrade.Hold_Distance * 2
+		%RayCast3D.target_position.z = -6 - Player.data.upgrade.Hold_Distance * 2
 		if raycast.is_colliding():
 			var collider = raycast.get_collider()
 			if collider is StaticBody3D:
@@ -142,6 +142,9 @@ func move_queued_building() -> void:
 				
 				if collider.has_method("is_building") && queued_buildable_object.has_method("is_animal"):
 					_attempt_to_place_queued_animal(collider , queued_buildable_object)
+		else:
+			var target_global_position = raycast.to_global(raycast.target_position)
+			queued_buildable_object.position = target_global_position
 
 func _attempt_to_place_queued_animal( building: StaticBody3D, animal: Animal3D) -> void:
 	if building.type == animal.resource.type:
@@ -219,7 +222,11 @@ func select_item_check() -> void:
 		if Inventory.meat > 0: select_new_item(5)
 
 func select_new_item(ItemInt: int) -> void:
-	if is_instance_valid(queued_buildable_object):queued_buildable_object.queue_free()
+	if is_instance_valid(queued_buildable_object):
+		if queued_buildable_object.has_method("drop_animal"):
+			queued_buildable_object.drop_animal()
+			queued_buildable_object = null
+		else: queued_buildable_object.queue_free() #cancels building
 	selected_item_int = ItemInt
 	for i in %Gear.get_children(): i.queue_free()
 	var newItemResource = player_item_options[ItemInt]

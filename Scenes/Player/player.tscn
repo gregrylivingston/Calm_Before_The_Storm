@@ -208,13 +208,14 @@ libraries = {
 
 [node name="AudioStreamPlayer2D" type="AudioStreamPlayer" parent="."]
 stream = ExtResource("22_g8mg5")
+volume_db = -5.0
 autoplay = true
 bus = &"Music"
 script = ExtResource("22_0hdt2")
 
 [node name="AudioStreamPlayer_rain" type="AudioStreamPlayer" parent="."]
 stream = ExtResource("24_ot148")
-volume_db = -4.0
+volume_db = -7.0
 autoplay = true
 bus = &"Environment"
 script = ExtResource("24_6tn8h")

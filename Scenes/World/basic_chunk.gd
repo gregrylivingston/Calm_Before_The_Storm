@@ -50,7 +50,7 @@ func _deferred_add_nature(heights: Array, nature_noise) -> void:
 			var noiseInt: int = int(noiseValue * nature_list.size())
 			## normalize noise value to the size of the nature list array....
 			
-			if randf() < ( 0.04 + elevation_spawn_bias ) / 8.0: ## include the 4x divisor for web export
+			if randf() < ( 0.04 + elevation_spawn_bias ) :#/ 8.0: ## include the 4x divisor for web export
 				
 				
 				#print(height) # 40 / 1000: 0.04
