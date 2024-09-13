@@ -4,7 +4,7 @@ extends Control
 
 signal end_reached
 
-@export_file("*.md") var attribution_file_path: String = "res://ATTRIBUTION.md"
+@export_file("*.md") var attribution_file_path: String = "res://Menus/ATTRIBUTION.md"
 @export var h1_font_size: int
 @export var h2_font_size: int
 @export var h3_font_size: int

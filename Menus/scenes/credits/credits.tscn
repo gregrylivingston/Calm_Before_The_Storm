@@ -7,25 +7,84 @@
 script = ExtResource("2_ipo8d")
 attribution_file_path = "res://Menus/ATTRIBUTION.md"
 
-[node name="HeaderSpace" parent="ScrollContainer/VBoxContainer" index="0"]
-custom_minimum_size = Vector2(0, 675)
-
 [node name="CreditsLabel" parent="ScrollContainer/VBoxContainer" index="1"]
-custom_minimum_size = Vector2(1200, 0)
-text = "[center][font_size=48]Collaborators[/font_size]
+text = "[center][font_size=48]Created By[/font_size]
 
-[font_size=32]Role[/font_size]
-Person 1  
-Person 2  
-[url=]Person w/ Link[/url]  
+[font_size=32]Gregry Livingston[/font_size]
+livingsgb@gmail.com
+[url=https://gregry.itch.io/]Itch[/url] 
+[url=https://discord.gg/tMAvEcKutQ]Discord[/url]
 
 
-[font_size=48]Sourced / Unaffiliated[/font_size]
-[font_size=32]Asset Type[/font_size]
-[font_size=24]Use Case[/font_size]
-Author: [url=]Name[/url]  
-Source: [url=]Domain : webpage.html[/url]  
-License: [url=]License[/url]
+[font_size=48]Sourced Assets [/font_size]
+[url=https://creativecommons.org/publicdomain/zero/1.0/]CC0 license[/url]
+
+[font_size=32]Music By Cynicmusic[/font_size]
+Author: [url=cynicmusic.com]Cynicmusic[/url]  
+
+[font_size=32]3d Models by Quaternius[/font_size]
+Author: [url=https://quaternius.com/]Quaternius[/url]  
+
+[font_size=48]Shaders[/font_size]
+
+[font_size=32]Water surface shader adapted from[/font_size]
+Author: [url=https://godotshaders.com/shader/toon-style-3d-water-shader-no-textures-needed/]Megalithium[/url]  
+
+[font_size=32]Underwater Camera[/font_size]
+Author: [url=https://godotshaders.com/shader/underwater-camera-effect/]Hylocereus[/url]  
+
+[font_size=32]Raindrops On Screen[/font_size]
+Author: [url=https://godotshaders.com/shader/rain-drops-on-screen-notexture/]RayL019[/url]  
+
+[font_size=32]Falling Raindrops Shader[/font_size]
+Author: [url=https://godotshaders.com/shader/simple-rain-snow-shader/]mo32167[/url]  
+
+[font_size=48]Textures[/font_size]
+
+[font_size=32]UI Icons[/font_size]
+Author: [url=https://kenney.nl/assets/input-prompts]Kenney[/url]  
+
+[font_size=32]Star Icon[/font_size]
+Author: [url=https://opengameart.org/content/star-4]JeremyWoods[/url]  
+
+[font_size=48]Sound Effects[/font_size]
+
+[font_size=32]Author: Pixabay[/font_size]
+[url=https://pixabay.com/sound-effects/?utm_source=link-attribution&utm_medium=referral&utm_campaign=music&utm_content=54629]Axe[/url]
+[url=https://pixabay.com/sound-effects/?utm_source=link-attribution&utm_medium=referral&utm_campaign=music&utm_content=63069]Shovel[/url]
+[url=https://pixabay.com/?utm_source=link-attribution&utm_medium=referral&utm_campaign=music&utm_content=29590]Pickaxe[/url]
+[url=https://pixabay.com/sound-effects/?utm_source=link-attribution&utm_medium=referral&utm_campaign=music&utm_content=98384]Deer[/url]
+[url=https://pixabay.com/?utm_source=link-attribution&utm_medium=referral&utm_campaign=music&utm_content=106396]Llama[/url]
+[url=https://pixabay.com/?utm_source=link-attribution&utm_medium=referral&utm_campaign=music&utm_content=62412]Husky[/url]
+[url=https://pixabay.com/?utm_source=link-attribution&utm_medium=referral&utm_campaign=music&utm_content=33368]Alpaca[/url]
+[url=https://pixabay.com/sound-effects/?utm_source=link-attribution&utm_medium=referral&utm_campaign=music&utm_content=47778]Fox[/url]
+[url=https://pixabay.com/?utm_source=link-attribution&utm_medium=referral&utm_campaign=music&utm_content=36757]Donkey[/url]
+[url=https://pixabay.com/?utm_source=link-attribution&utm_medium=referral&utm_campaign=music&utm_content=78278>Pixabay]Pug[/url]
+
+
+[font_size=32]Author: David McKee (ViRiX)[/font_size]
+[url=soundcloud.com/virix]Upgrade Sound[/url]
+
+[font_size=32]Author: Universfield[/font_size]
+[url=https://pixabay.com/users/universfield-28281460/?utm_source=link-attribution&utm_medium=referral&utm_campaign=music&utm_content=151920\">UNIVERSFIELD</a> from <a href=\"https://pixabay.com/sound-effects//?utm_source=link-attribution&utm_medium=referral&utm_campaign=music&utm_content=151920]Alarm Sound[/url]
+[url=https://pixabay.com/users/universfield-28281460/?utm_source=link-attribution&utm_medium=referral&utm_campaign=music&utm_content=123780]Horse[/url]
+
+[font_size=32]Author: Alex[/font_size]
+[url=https://pixabay.com/users/oxidvideos-37598254/?utm_source=link-attribution&utm_medium=referral&utm_campaign=music&utm_content=217410]Chirping Birds[/url]
+
+[font_size=32]Author: jimbrunt[/font_size]
+[url=https://pixabay.com/users/jimbrunt-44931576/?utm_source=link-attribution&utm_medium=referral&utm_campaign=music&utm_content=224472]Pig[/url]
+
+[font_size=32]Author: Otto[/font_size]
+[url=https://pixabay.com/users/voicebosch-30143949/?utm_source=link-attribution&utm_medium=referral&utm_campaign=music&utm_content=172823]Wolf[/url]
+
+[font_size=32]Author: Lazy Chill Zone[/font_size]
+[url=https://pixabay.com/users/lazychillzone-40482846/?utm_source=link-attribution&utm_medium=referral&utm_campaign=music&utm_content=223546]Cow[/url]
+
+[font_size=32]Author: Maria Malm[/font_size]
+[url=https://pixabay.com/users/teoglas-43857789/?utm_source=link-attribution&utm_medium=referral&utm_campaign=music&utm_content=223324]Sheep[/url]
+
+
 
 
 [font_size=48]Tools[/font_size]
@@ -43,7 +102,12 @@ License: [url=https://opensource.org/licenses/GPL-2.0]GNU General Public License
 Author: [url=https://github.com/Maaack/Godot-Menus-Template/graphs/contributors]Marek Belski[/url]  
 Source: [url=https://github.com/Maaack/Godot-Menus-Template]github: Godot-Menus-Template[/url]  
 License: [url=LICENSE.txt]MIT License[/url]  
-[/center]"
 
-[node name="FooterSpace" parent="ScrollContainer/VBoxContainer" index="2"]
-custom_minimum_size = Vector2(0, 675)
+[font_size=32]Detructible Terrain Addon for Godot[/font_size]
+Author: [url=https://godotengine.org/asset-library/asset/2813]50kush[/url]  
+License: [url=]MIT License[/url]
+
+[font_size=32]Edit Resources as Table 2 Addon for Godot[/font_size]
+Author: [url=https://godotengine.org/asset-library/asset/1479]don-tnowe[/url]  
+License: [url=]MIT License[/url]
+[/center]"
