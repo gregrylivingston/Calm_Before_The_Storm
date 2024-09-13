@@ -14,6 +14,8 @@ var myName : String = NameGenerator.get_random_name()
 
 func _ready() -> void:
 	$AudioStreamPlayer3D.pitch_scale = randf_range(0.95,1.05)
+	if is_instance_valid(AnimalMeshInstance) && OS.get_name() == "Web":
+		AnimalMeshInstance.cast_shadow = GeometryInstance3D.SHADOW_CASTING_SETTING_OFF
 
 func is_animal() -> bool:return true
 

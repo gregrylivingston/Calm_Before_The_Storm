@@ -12,9 +12,12 @@ class_name Building3D extends StaticBody3D
 @export var placement_position: Array[Node3D]
 @export var instructions: String
 @export var title: String
+@export var BuildingMeshInstances: Array[MeshInstance3D]
 
 func _ready() -> void:
-	$BuildingIndicator/Sprite3D.texture = icon
+	for i in $BuildingIndicator.get_children():i.texture = icon
+	if is_instance_valid(BuildingMeshInstances) && OS.get_name() == "Web":
+		for i in BuildingMeshInstances:i.cast_shadow = i.SHADOW_CASTING_SETTING_OFF
 
 func drown() -> void:
 	remove_from_group(title)  #prevents star awards and building-count detection

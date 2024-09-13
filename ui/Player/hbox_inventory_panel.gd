@@ -1,7 +1,5 @@
 extends HBoxContainer
 
-
-# Called when the node enters the scene tree for the first time.
 func _ready() -> void:
 	call_deferred("add_panel_items")
 	Inventory.update_inventory.connect(_update_inventory)
@@ -26,7 +24,3 @@ func _update_inventory() -> void:
 	get_child(5).update_inventory(Inventory.hay)
 	get_child(6).update_inventory(Inventory.meat)
 		
-
-# Called every frame. 'delta' is the elapsed time since the previous frame.
-func _process(delta: float) -> void:
-	pass

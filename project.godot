@@ -21,6 +21,7 @@ resources_spreadsheet_view/context_menu_on_leftclick=false
 [application]
 
 config/name="Save The Animals"
+config/version="0.0.2"
 run/main_scene="res://Menus/scenes/menus/main_menu/main_menu_with_animations.tscn"
 config/features=PackedStringArray("4.3", "Forward Plus")
 config/icon="res://icon.svg"
@@ -37,7 +38,7 @@ Ui="*res://global/UI.gd"
 Player="*res://global/Player.gd"
 Sound="*res://global/Sound.gd"
 NameGenerator="*res://global/NameGenerator.gd"
-SceneLoader="*res://addons/maaacks_menus_template/base/scenes/autoloads/scene_loader.gd"
+SceneLoader="*res://addons/maaacks_menus_template/base/scenes/autoloads/scene_loader.tscn"
 Alert="*res://global/Alert.gd"
 
 [display]

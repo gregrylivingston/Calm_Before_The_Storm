@@ -299,8 +299,6 @@ offset_bottom = 258.0
 rotation = -0.663901
 text = "Hover for Details"
 
-[connection signal="tab_clicked" from="Panel/TabContainer" to="Panel/TabContainer" method="_on_tab_clicked"]
-[connection signal="tab_hovered" from="Panel/TabContainer" to="Panel/TabContainer" method="_on_tab_hovered"]
 [connection signal="pressed" from="Panel/TabContainer/Reset/Button_Clear" to="." method="_on_button_clear_pressed"]
 
 [editable path="Panel_Stars"]

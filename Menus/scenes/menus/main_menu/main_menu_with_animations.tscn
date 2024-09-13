@@ -404,11 +404,11 @@ offset_top = 50.0
 theme = ExtResource("2_ari44")
 
 [node name="HBoxContainer_top" type="HBoxContainer" parent="MenuContainer/VBoxContainer" index="0"]
+self_modulate = Color(1, 1, 1, 0)
 layout_mode = 2
 
 [node name="OptionsButton2" type="Button" parent="MenuContainer/VBoxContainer/HBoxContainer_top" index="0" groups=["Button"]]
 unique_name_in_owner = true
-modulate = Color(1, 1, 1, 0)
 custom_minimum_size = Vector2(64, 20)
 layout_mode = 2
 size_flags_horizontal = 0
@@ -424,7 +424,6 @@ alignment = 0
 
 [node name="CreditsButton2" type="Button" parent="MenuContainer/VBoxContainer/HBoxContainer_top" index="1" groups=["Button"]]
 unique_name_in_owner = true
-modulate = Color(1, 1, 1, 0)
 custom_minimum_size = Vector2(64, 20)
 layout_mode = 2
 size_flags_horizontal = 0
@@ -477,8 +476,6 @@ unique_name_in_owner = true
 custom_minimum_size = Vector2(175, 40)
 layout_mode = 2
 size_flags_horizontal = 0
-focus_neighbor_top = NodePath("../PlayButton")
-focus_neighbor_bottom = NodePath("../HelpButton")
 theme_override_font_sizes/font_size = 30
 text = "  Upgrades"
 alignment = 0

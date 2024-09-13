@@ -23,6 +23,8 @@ func start_round():
 func _process(_delta):
 	generate_player_chunks()
 	unload_distant_chunks()
+	if digRequestAmount > 0:
+		completeDig(dig_target_position,digRequestAmount,isDig)
 
 func setup_noise():
 	noise.noise_type = FastNoiseLite.TYPE_SIMPLEX
@@ -124,9 +126,7 @@ var digRequestAmount := 0.0
 var dig_target_position: Vector3
 var isDig: bool
 
-func _physics_process(delta: float) -> void:
-	if digRequestAmount > 0:
-		completeDig(dig_target_position,digRequestAmount,isDig)
+
 	
 func dig(dig_position: Vector3, amount: float, isDigging: bool = true):
 	dig_target_position = dig_position

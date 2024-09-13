@@ -1,9 +1,7 @@
-[gd_scene load_steps=4 format=3 uid="uid://ijr4dslcai7c"]
+[gd_scene load_steps=3 format=3 uid="uid://ijr4dslcai7c"]
 
 [ext_resource type="Script" path="res://Scenes/building/s_building.gd" id="1_nixwd"]
 [ext_resource type="Texture2D" uid="uid://c0m11l24tcxvl" path="res://resource/player_item_icon/icon_apple.png" id="2_us3ng"]
-
-[sub_resource type="BoxMesh" id="BoxMesh_syr0x"]
 
 [node name="SBuilding" type="StaticBody3D" node_paths=PackedStringArray("placement_position")]
 collision_layer = 0
@@ -22,21 +20,21 @@ placement_position = [NodePath("Node3D_AnimalPosition"), NodePath("Node3D_Animal
 [node name="BuildingIndicator" type="Node3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 5.60839, 0)
 
-[node name="MeshInstance3D" type="MeshInstance3D" parent="BuildingIndicator"]
-transform = Transform3D(0.5, 0, 0, 0, 0.5, 0, 0, 0, 0.5, 1.86036, 0, 0)
-mesh = SubResource("BoxMesh_syr0x")
+[node name="Sprite3D2" type="Sprite3D" parent="BuildingIndicator"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.86036, 0, 0)
+texture = ExtResource("2_us3ng")
 
-[node name="MeshInstance3D2" type="MeshInstance3D" parent="BuildingIndicator"]
-transform = Transform3D(0.5, 0, 0, 0, 0.5, 0, 0, 0, 0.5, 1.86036, 2.57709, 0)
-mesh = SubResource("BoxMesh_syr0x")
+[node name="Sprite3D4" type="Sprite3D" parent="BuildingIndicator"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.86036, 2.57709, 0)
+texture = ExtResource("2_us3ng")
 
-[node name="MeshInstance3D3" type="MeshInstance3D" parent="BuildingIndicator"]
-transform = Transform3D(0.5, 0, 0, 0, 0.5, 0, 0, 0, 0.5, -1.706, 0, 0)
-mesh = SubResource("BoxMesh_syr0x")
+[node name="Sprite3D5" type="Sprite3D" parent="BuildingIndicator"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.706, 0, 0)
+texture = ExtResource("2_us3ng")
 
-[node name="MeshInstance3D4" type="MeshInstance3D" parent="BuildingIndicator"]
-transform = Transform3D(0.5, 0, 0, 0, 0.5, 0, 0, 0, 0.5, -1.706, 2.57709, 0)
-mesh = SubResource("BoxMesh_syr0x")
+[node name="Sprite3D3" type="Sprite3D" parent="BuildingIndicator"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.73003, 2.42018, 0)
+texture = ExtResource("2_us3ng")
 
 [node name="Sprite3D" type="Sprite3D" parent="BuildingIndicator"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.23613, 0)

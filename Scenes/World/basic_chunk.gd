@@ -34,23 +34,26 @@ func _deferred_add_nature(heights: Array, nature_noise) -> void:
 		for x in 64:
 			var height = heights[z][x]
 			var nature_list: Array[PackedScene]
-			var elevation_spawn_bias: float = 0.0
+			var spawn_bias: float = 0.0
 			if height < 25: 
 				nature_list = low_elevation_plants
-				elevation_spawn_bias = 0
+				spawn_bias = 0.03
 			elif height < 45: 
 				nature_list = medium_elevation_plants
-				elevation_spawn_bias = -0.02
+				spawn_bias = 0.02
 			else: 
 				nature_list = high_elevation_plants
-				elevation_spawn_bias = -0.03
+				spawn_bias = 0.01
 
+			if OS.get_name() == "Web":
+				spawn_bias = spawn_bias / 8.0
 			
 			var noiseValue = nature_noise.get_noise_2d(x + chunk_pos.x, z + chunk_pos.z)
 			var noiseInt: int = int(noiseValue * nature_list.size())
 			## normalize noise value to the size of the nature list array....
 			
-			if randf() < ( 0.04 + elevation_spawn_bias ) :#/ 8.0: ## include the 4x divisor for web export
+			
+			if randf() < ( spawn_bias ): ## include the 4x divisor for web export
 				
 				
 				#print(height) # 40 / 1000: 0.04
