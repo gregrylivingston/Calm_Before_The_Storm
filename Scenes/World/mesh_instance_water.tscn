@@ -1,7 +1,8 @@
-[gd_scene load_steps=5 format=3 uid="uid://vx0neicvbncr"]
+[gd_scene load_steps=7 format=3 uid="uid://vx0neicvbncr"]
 
 [ext_resource type="Material" uid="uid://xrc24p30ybp1" path="res://material/material_water_highquality.tres" id="1_p7kdf"]
 [ext_resource type="Script" path="res://Scenes/World/mesh_instance_water.gd" id="2_k6jud"]
+[ext_resource type="Texture2D" uid="uid://b1pfkbeur4mu7" path="res://resource/texture/t_seamless_water.png" id="2_ugg6q"]
 
 [sub_resource type="QuadMesh" id="QuadMesh_wmuo0"]
 material = ExtResource("1_p7kdf")
@@ -10,12 +11,16 @@ subdivide_width = 32
 subdivide_depth = 32
 orientation = 1
 
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_ot7f3"]
+albedo_texture = ExtResource("2_ugg6q")
+
 [sub_resource type="BoxShape3D" id="BoxShape3D_0fn87"]
 size = Vector3(64, 4, 64)
 
 [node name="MeshInstance_Water" type="MeshInstance3D"]
 cast_shadow = 0
 mesh = SubResource("QuadMesh_wmuo0")
+surface_material_override/0 = SubResource("StandardMaterial3D_ot7f3")
 script = ExtResource("2_k6jud")
 
 [node name="Area3D" type="Area3D" parent="."]

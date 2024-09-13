@@ -8,6 +8,7 @@ var chunk_size = Vector3(64, 32, 64)
 var unload_distance := 4
 var load_distance := 2
 
+
 @export var chunkScene := preload("res://Scenes/World/basic_chunk.tscn")
 @onready var player := get_tree().get_first_node_in_group("player")
 

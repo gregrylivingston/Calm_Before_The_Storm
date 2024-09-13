@@ -18,7 +18,7 @@ class_name SaveData extends Resource
 	"Hold_Distance":1,
 }
 
-@export var stars := 25
+@export var stars := 0
 
 
 func add_upgrade(title: String) -> void:

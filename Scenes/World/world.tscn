@@ -46,10 +46,10 @@ tonemap_mode = 1
 fog_enabled = true
 fog_sky_affect = 0.168
 volumetric_fog_enabled = true
-volumetric_fog_density = 0.0131
+volumetric_fog_density = 0.005
 volumetric_fog_emission = Color(0.721569, 0.721569, 0.721569, 1)
 volumetric_fog_anisotropy = 0.61
-volumetric_fog_length = 85.56
+volumetric_fog_length = 36.01
 volumetric_fog_detail_spread = 1.86607
 volumetric_fog_sky_affect = 0.106
 

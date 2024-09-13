@@ -6,6 +6,8 @@ func _ready() -> void:
 	position.y = -100
 	Water.height_change.connect(height_change)
 	Weather.new_round.connect(newround)
+	if OS.get_name() != "Web":
+		set_surface_override_material(0, null)
 
 func newround() -> void:
 	height_change(-100)

@@ -16,6 +16,12 @@ https://github.com/DmitriySalnikov/godot_debug_draw_3d
 possibly use particle rope -> https://godotshaders.com/shader/particle-rope/
 
 
+lightning - https://godotshaders.com/shader/lightnight-arc/
+3d outline shader - https://godotshaders.com/shader/the-simplest-outline-shader-via-material/
+3d cutout - https://www.youtube.com/watch?v=mYwmhZ6_HtM
+
+
+
 other tools - 
 audacity
 photopea

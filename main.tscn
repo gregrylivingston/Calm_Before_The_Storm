@@ -1,12 +1,46 @@
-[gd_scene load_steps=3 format=3 uid="uid://s4k4g3vbjaba"]
+[gd_scene load_steps=7 format=3 uid="uid://s4k4g3vbjaba"]
 
 [ext_resource type="PackedScene" uid="uid://dg5wyhc4ykoef" path="res://Scenes/World/world.tscn" id="1_6gs1o"]
+[ext_resource type="PackedScene" uid="uid://c5jbqh6ifno6r" path="res://Scenes/World/mesh_instance_water_world.tscn" id="2_cerph"]
 [ext_resource type="PackedScene" uid="uid://dt7qj4rvpib2x" path="res://Scenes/Player/player.tscn" id="3_2rw73"]
+[ext_resource type="Shader" path="res://shader/sh_water.gdshader" id="3_qel3e"]
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_qj5yu"]
+render_priority = 0
+shader = ExtResource("3_qel3e")
+shader_parameter/WATER_COL = Color(0.04, 0.38, 0.88, 1)
+shader_parameter/WATER2_COL = Color(0.04, 0.35, 0.78, 1)
+shader_parameter/FOAM_COL = Color(0.8125, 0.9609, 0.9648, 1)
+shader_parameter/distortion_speed = 2.0
+shader_parameter/tile = Vector2(6400, 6400)
+shader_parameter/wave_speed = 2.0
+shader_parameter/wave_amplitude = 0.01
+shader_parameter/wave_frequency = 1.5
+shader_parameter/time_offset = 0.0
+shader_parameter/water_size = Vector2(128, 128)
+shader_parameter/water_transparency = 0.8
+shader_parameter/water_depth_factor = 0.5
+shader_parameter/foam_width = 2.0
+shader_parameter/foam_edge_softness = 0.05
+shader_parameter/foam_smoothness = 0.03
+shader_parameter/foam_distortion_speed = 0.5
+shader_parameter/foam_distortion_amount = 0.1
+
+[sub_resource type="QuadMesh" id="QuadMesh_f0a1i"]
+material = SubResource("ShaderMaterial_qj5yu")
+size = Vector2(64, 64)
+subdivide_width = 32
+subdivide_depth = 32
+orientation = 1
 
 [node name="main" type="Node3D"]
 
 [node name="map" parent="." instance=ExtResource("1_6gs1o")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.0446424, -0.0223503, -0.00300026)
+
+[node name="MeshInstance_Water" parent="map" instance=ExtResource("2_cerph")]
+transform = Transform3D(100, 0, 0, 0, 100, 0, 0, 0, 100, 0, 0, 0)
+mesh = SubResource("QuadMesh_f0a1i")
 
 [node name="player" parent="." instance=ExtResource("3_2rw73")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 22.708, 100, 21.117)
