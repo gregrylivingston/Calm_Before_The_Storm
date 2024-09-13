@@ -1,17 +1,35 @@
-[gd_scene load_steps=13 format=3 uid="uid://dem220dayub7a"]
+[gd_scene load_steps=31 format=3 uid="uid://dem220dayub7a"]
 
 [ext_resource type="Script" path="res://ui/Player/help_menu.gd" id="1_iu46f"]
 [ext_resource type="Script" path="res://ui/menu/tab_container.gd" id="2_1w0xw"]
 [ext_resource type="Texture2D" uid="uid://c0m11l24tcxvl" path="res://resource/player_item_icon/icon_apple.png" id="2_jbwkg"]
 [ext_resource type="Texture2D" uid="uid://dexu3jx3j06yx" path="res://resource/construction/icon_building_den.png" id="3_7dbrn"]
 [ext_resource type="Texture2D" uid="uid://b3ly2tealjgc3" path="res://resource/player_item_icon/icon_pig.png" id="3_tkf27"]
+[ext_resource type="Texture2D" uid="uid://drp5pnlmdm8pa" path="res://ui/texture/keyboard_1_outline.png" id="3_u8epq"]
 [ext_resource type="Texture2D" uid="uid://bj3pyy11tly22" path="res://resource/player_item_icon/icon_axe.png" id="4_wypxn"]
 [ext_resource type="Texture2D" uid="uid://c7baewnmphi8g" path="res://resource/player_item_icon/icon_tree.png" id="5_bre4i"]
+[ext_resource type="Texture2D" uid="uid://nsjxfu352qrd" path="res://ui/texture/keyboard_2_outline.png" id="5_dq7tw"]
+[ext_resource type="Texture2D" uid="uid://cgos885q5ixlu" path="res://ui/texture/mouse_right_outline.png" id="5_m0t4e"]
 [ext_resource type="Texture2D" uid="uid://bqfrdf4prxo2s" path="res://resource/player_item_icon/icon_star.png" id="5_r03b1"]
+[ext_resource type="Texture2D" uid="uid://b32kjjorkg1qr" path="res://ui/texture/mouse_left_outline.png" id="5_v28wm"]
+[ext_resource type="Texture2D" uid="uid://clnkxwnwpbw2a" path="res://resource/player_item_icon/icon_shovel.png" id="6_gb727"]
+[ext_resource type="Texture2D" uid="uid://b15jhh6fr5fnq" path="res://ui/texture/keyboard_3_outline.png" id="7_2sj4q"]
 [ext_resource type="Texture2D" uid="uid://bd57f5x4dkpo2" path="res://resource/texture/t_arrow.png" id="8_c5d5g"]
+[ext_resource type="Texture2D" uid="uid://cn1kn84ff5fg1" path="res://resource/player_item_icon/icon_pickaxe.png" id="8_ns346"]
 [ext_resource type="AudioStream" uid="uid://boof35sxvmw8m" path="res://sound/interface/sound_interface_hover.mp3" id="9_bfscg"]
 [ext_resource type="Texture2D" uid="uid://oqkpmw5i4ykd" path="res://ui/how-to/t_howtoplaystep1.png" id="10_2a1e2"]
 [ext_resource type="AudioStream" uid="uid://kslqdqxvm0x8" path="res://sound/interface/sound_interface_click.mp3" id="10_3ubsv"]
+[ext_resource type="Texture2D" uid="uid://bke5abt0crbr5" path="res://ui/texture/keyboard_4_outline.png" id="11_6kkro"]
+[ext_resource type="Texture2D" uid="uid://dghuc307rloqk" path="res://ui/texture/keyboard_5_outline.png" id="13_3ut3b"]
+[ext_resource type="Texture2D" uid="uid://cva1amw7kv8ue" path="res://resource/player_item_icon/icon_hay.png" id="14_c3akl"]
+[ext_resource type="Texture2D" uid="uid://bv42voortys2c" path="res://ui/texture/keyboard_6_outline.png" id="15_nftib"]
+[ext_resource type="Texture2D" uid="uid://c1fp4x7anenty" path="res://resource/player_item_icon/icon_meat.png" id="16_ioy6l"]
+[ext_resource type="Texture2D" uid="uid://dvme13bxcybir" path="res://ui/texture/keyboard_shift_outline.png" id="17_fa4pf"]
+[ext_resource type="Texture2D" uid="uid://cye4r1d4eju13" path="res://ui/texture/keyboard_space_outline.png" id="18_sjpey"]
+[ext_resource type="Texture2D" uid="uid://c2nptgj4evx30" path="res://ui/texture/keyboard_w_outline.png" id="19_fo5fc"]
+[ext_resource type="Texture2D" uid="uid://h6h08gb3umvy" path="res://ui/texture/keyboard_a_outline.png" id="20_56sqm"]
+[ext_resource type="Texture2D" uid="uid://bpyar3ffghv0n" path="res://ui/texture/keyboard_s_outline.png" id="21_qm1v5"]
+[ext_resource type="Texture2D" uid="uid://cy8dosga03dh" path="res://ui/texture/keyboard_d_outline.png" id="22_0gi8b"]
 
 [node name="HelpMenu" type="Control"]
 layout_mode = 3
@@ -42,13 +60,386 @@ offset_right = -113.0
 offset_bottom = -102.0
 grow_horizontal = 2
 grow_vertical = 2
-current_tab = 3
+current_tab = 0
 script = ExtResource("2_1w0xw")
 
 [node name="Controls" type="Panel" parent="Panel/TabContainer"]
-visible = false
 layout_mode = 2
 metadata/_tab_index = 0
+
+[node name="HBoxContainer" type="HBoxContainer" parent="Panel/TabContainer/Controls"]
+layout_mode = 0
+offset_left = 80.0
+offset_top = 56.0
+offset_right = 640.0
+offset_bottom = 451.0
+theme_override_constants/separation = 60
+
+[node name="VBoxContainer" type="VBoxContainer" parent="Panel/TabContainer/Controls/HBoxContainer"]
+layout_mode = 2
+
+[node name="Label" type="Label" parent="Panel/TabContainer/Controls/HBoxContainer/VBoxContainer"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 40
+text = "Tools"
+
+[node name="HBoxContainer" type="HBoxContainer" parent="Panel/TabContainer/Controls/HBoxContainer/VBoxContainer"]
+layout_mode = 2
+
+[node name="TextureRect2" type="TextureRect" parent="Panel/TabContainer/Controls/HBoxContainer/VBoxContainer/HBoxContainer"]
+custom_minimum_size = Vector2(45, 45)
+layout_mode = 2
+size_flags_vertical = 4
+texture = ExtResource("3_u8epq")
+expand_mode = 1
+stretch_mode = 4
+
+[node name="Label_Name" type="Label" parent="Panel/TabContainer/Controls/HBoxContainer/VBoxContainer/HBoxContainer"]
+custom_minimum_size = Vector2(120, 0)
+layout_mode = 2
+theme_override_font_sizes/font_size = 40
+text = "Axe"
+
+[node name="TextureRect" type="TextureRect" parent="Panel/TabContainer/Controls/HBoxContainer/VBoxContainer/HBoxContainer"]
+custom_minimum_size = Vector2(45, 45)
+layout_mode = 2
+size_flags_vertical = 4
+texture = ExtResource("4_wypxn")
+expand_mode = 1
+stretch_mode = 4
+
+[node name="TextureRect3" type="TextureRect" parent="Panel/TabContainer/Controls/HBoxContainer/VBoxContainer/HBoxContainer"]
+custom_minimum_size = Vector2(45, 45)
+layout_mode = 2
+size_flags_vertical = 4
+texture = ExtResource("5_v28wm")
+expand_mode = 1
+stretch_mode = 4
+
+[node name="Label4" type="Label" parent="Panel/TabContainer/Controls/HBoxContainer/VBoxContainer/HBoxContainer"]
+custom_minimum_size = Vector2(80, 0)
+layout_mode = 2
+theme_override_font_sizes/font_size = 40
+text = "Chop"
+
+[node name="TextureRect4" type="TextureRect" parent="Panel/TabContainer/Controls/HBoxContainer/VBoxContainer/HBoxContainer"]
+custom_minimum_size = Vector2(45, 45)
+layout_mode = 2
+size_flags_vertical = 4
+texture = ExtResource("5_m0t4e")
+expand_mode = 1
+stretch_mode = 4
+
+[node name="Label5" type="Label" parent="Panel/TabContainer/Controls/HBoxContainer/VBoxContainer/HBoxContainer"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 40
+text = "Build"
+
+[node name="HBoxContainer2" type="HBoxContainer" parent="Panel/TabContainer/Controls/HBoxContainer/VBoxContainer"]
+layout_mode = 2
+
+[node name="TextureRect2" type="TextureRect" parent="Panel/TabContainer/Controls/HBoxContainer/VBoxContainer/HBoxContainer2"]
+custom_minimum_size = Vector2(45, 45)
+layout_mode = 2
+size_flags_vertical = 4
+texture = ExtResource("5_dq7tw")
+expand_mode = 1
+stretch_mode = 4
+
+[node name="Label_Name" type="Label" parent="Panel/TabContainer/Controls/HBoxContainer/VBoxContainer/HBoxContainer2"]
+custom_minimum_size = Vector2(120, 0)
+layout_mode = 2
+theme_override_font_sizes/font_size = 40
+text = "Shovel"
+
+[node name="TextureRect" type="TextureRect" parent="Panel/TabContainer/Controls/HBoxContainer/VBoxContainer/HBoxContainer2"]
+custom_minimum_size = Vector2(45, 45)
+layout_mode = 2
+size_flags_vertical = 4
+texture = ExtResource("6_gb727")
+expand_mode = 1
+stretch_mode = 4
+
+[node name="TextureRect3" type="TextureRect" parent="Panel/TabContainer/Controls/HBoxContainer/VBoxContainer/HBoxContainer2"]
+custom_minimum_size = Vector2(45, 45)
+layout_mode = 2
+size_flags_vertical = 4
+texture = ExtResource("5_v28wm")
+expand_mode = 1
+stretch_mode = 4
+
+[node name="Label4" type="Label" parent="Panel/TabContainer/Controls/HBoxContainer/VBoxContainer/HBoxContainer2"]
+custom_minimum_size = Vector2(80, 0)
+layout_mode = 2
+theme_override_font_sizes/font_size = 40
+text = "Dig"
+
+[node name="TextureRect4" type="TextureRect" parent="Panel/TabContainer/Controls/HBoxContainer/VBoxContainer/HBoxContainer2"]
+custom_minimum_size = Vector2(45, 45)
+layout_mode = 2
+size_flags_vertical = 4
+texture = ExtResource("5_m0t4e")
+expand_mode = 1
+stretch_mode = 4
+
+[node name="Label5" type="Label" parent="Panel/TabContainer/Controls/HBoxContainer/VBoxContainer/HBoxContainer2"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 40
+text = "Place Dirt"
+
+[node name="HBoxContainer3" type="HBoxContainer" parent="Panel/TabContainer/Controls/HBoxContainer/VBoxContainer"]
+layout_mode = 2
+
+[node name="TextureRect2" type="TextureRect" parent="Panel/TabContainer/Controls/HBoxContainer/VBoxContainer/HBoxContainer3"]
+custom_minimum_size = Vector2(45, 45)
+layout_mode = 2
+size_flags_vertical = 4
+texture = ExtResource("7_2sj4q")
+expand_mode = 1
+stretch_mode = 4
+
+[node name="Label_Name" type="Label" parent="Panel/TabContainer/Controls/HBoxContainer/VBoxContainer/HBoxContainer3"]
+custom_minimum_size = Vector2(120, 0)
+layout_mode = 2
+theme_override_font_sizes/font_size = 40
+text = "Pickaxe"
+
+[node name="TextureRect" type="TextureRect" parent="Panel/TabContainer/Controls/HBoxContainer/VBoxContainer/HBoxContainer3"]
+custom_minimum_size = Vector2(45, 45)
+layout_mode = 2
+size_flags_vertical = 4
+texture = ExtResource("8_ns346")
+expand_mode = 1
+stretch_mode = 4
+
+[node name="TextureRect3" type="TextureRect" parent="Panel/TabContainer/Controls/HBoxContainer/VBoxContainer/HBoxContainer3"]
+custom_minimum_size = Vector2(45, 45)
+layout_mode = 2
+size_flags_vertical = 4
+texture = ExtResource("5_v28wm")
+expand_mode = 1
+stretch_mode = 4
+
+[node name="Label4" type="Label" parent="Panel/TabContainer/Controls/HBoxContainer/VBoxContainer/HBoxContainer3"]
+custom_minimum_size = Vector2(80, 0)
+layout_mode = 2
+theme_override_font_sizes/font_size = 40
+text = "Pick"
+
+[node name="TextureRect4" type="TextureRect" parent="Panel/TabContainer/Controls/HBoxContainer/VBoxContainer/HBoxContainer3"]
+custom_minimum_size = Vector2(45, 45)
+layout_mode = 2
+size_flags_vertical = 4
+texture = ExtResource("5_m0t4e")
+expand_mode = 1
+stretch_mode = 4
+
+[node name="Label5" type="Label" parent="Panel/TabContainer/Controls/HBoxContainer/VBoxContainer/HBoxContainer3"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 40
+text = "Build"
+
+[node name="HBoxContainer4" type="HBoxContainer" parent="Panel/TabContainer/Controls/HBoxContainer/VBoxContainer"]
+layout_mode = 2
+
+[node name="TextureRect2" type="TextureRect" parent="Panel/TabContainer/Controls/HBoxContainer/VBoxContainer/HBoxContainer4"]
+custom_minimum_size = Vector2(45, 45)
+layout_mode = 2
+size_flags_vertical = 4
+texture = ExtResource("11_6kkro")
+expand_mode = 1
+stretch_mode = 4
+
+[node name="Label_Name" type="Label" parent="Panel/TabContainer/Controls/HBoxContainer/VBoxContainer/HBoxContainer4"]
+custom_minimum_size = Vector2(120, 0)
+layout_mode = 2
+theme_override_font_sizes/font_size = 40
+text = "Fruit"
+
+[node name="TextureRect" type="TextureRect" parent="Panel/TabContainer/Controls/HBoxContainer/VBoxContainer/HBoxContainer4"]
+custom_minimum_size = Vector2(45, 45)
+layout_mode = 2
+size_flags_vertical = 4
+texture = ExtResource("2_jbwkg")
+expand_mode = 1
+stretch_mode = 4
+
+[node name="TextureRect4" type="TextureRect" parent="Panel/TabContainer/Controls/HBoxContainer/VBoxContainer/HBoxContainer4"]
+custom_minimum_size = Vector2(45, 45)
+layout_mode = 2
+size_flags_vertical = 4
+texture = ExtResource("5_m0t4e")
+expand_mode = 1
+stretch_mode = 4
+
+[node name="Label5" type="Label" parent="Panel/TabContainer/Controls/HBoxContainer/VBoxContainer/HBoxContainer4"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 40
+text = "Grab fruit eater"
+
+[node name="HBoxContainer5" type="HBoxContainer" parent="Panel/TabContainer/Controls/HBoxContainer/VBoxContainer"]
+layout_mode = 2
+
+[node name="TextureRect2" type="TextureRect" parent="Panel/TabContainer/Controls/HBoxContainer/VBoxContainer/HBoxContainer5"]
+custom_minimum_size = Vector2(45, 45)
+layout_mode = 2
+size_flags_vertical = 4
+texture = ExtResource("13_3ut3b")
+expand_mode = 1
+stretch_mode = 4
+
+[node name="Label_Name" type="Label" parent="Panel/TabContainer/Controls/HBoxContainer/VBoxContainer/HBoxContainer5"]
+custom_minimum_size = Vector2(120, 0)
+layout_mode = 2
+theme_override_font_sizes/font_size = 40
+text = "Hay"
+
+[node name="TextureRect" type="TextureRect" parent="Panel/TabContainer/Controls/HBoxContainer/VBoxContainer/HBoxContainer5"]
+custom_minimum_size = Vector2(45, 45)
+layout_mode = 2
+size_flags_vertical = 4
+texture = ExtResource("14_c3akl")
+expand_mode = 1
+stretch_mode = 4
+
+[node name="TextureRect4" type="TextureRect" parent="Panel/TabContainer/Controls/HBoxContainer/VBoxContainer/HBoxContainer5"]
+custom_minimum_size = Vector2(45, 45)
+layout_mode = 2
+size_flags_vertical = 4
+texture = ExtResource("5_m0t4e")
+expand_mode = 1
+stretch_mode = 4
+
+[node name="Label5" type="Label" parent="Panel/TabContainer/Controls/HBoxContainer/VBoxContainer/HBoxContainer5"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 40
+text = "Grab hay eater"
+
+[node name="HBoxContainer6" type="HBoxContainer" parent="Panel/TabContainer/Controls/HBoxContainer/VBoxContainer"]
+layout_mode = 2
+
+[node name="TextureRect2" type="TextureRect" parent="Panel/TabContainer/Controls/HBoxContainer/VBoxContainer/HBoxContainer6"]
+custom_minimum_size = Vector2(45, 45)
+layout_mode = 2
+size_flags_vertical = 4
+texture = ExtResource("15_nftib")
+expand_mode = 1
+stretch_mode = 4
+
+[node name="Label_Name" type="Label" parent="Panel/TabContainer/Controls/HBoxContainer/VBoxContainer/HBoxContainer6"]
+custom_minimum_size = Vector2(120, 0)
+layout_mode = 2
+theme_override_font_sizes/font_size = 40
+text = "Meat"
+
+[node name="TextureRect" type="TextureRect" parent="Panel/TabContainer/Controls/HBoxContainer/VBoxContainer/HBoxContainer6"]
+custom_minimum_size = Vector2(45, 45)
+layout_mode = 2
+size_flags_vertical = 4
+texture = ExtResource("16_ioy6l")
+expand_mode = 1
+stretch_mode = 4
+
+[node name="TextureRect4" type="TextureRect" parent="Panel/TabContainer/Controls/HBoxContainer/VBoxContainer/HBoxContainer6"]
+custom_minimum_size = Vector2(45, 45)
+layout_mode = 2
+size_flags_vertical = 4
+texture = ExtResource("5_m0t4e")
+expand_mode = 1
+stretch_mode = 4
+
+[node name="Label5" type="Label" parent="Panel/TabContainer/Controls/HBoxContainer/VBoxContainer/HBoxContainer6"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 40
+text = "Grab meat eater"
+
+[node name="VBoxContainer2" type="VBoxContainer" parent="Panel/TabContainer/Controls/HBoxContainer"]
+layout_mode = 2
+
+[node name="HBoxContainer" type="HBoxContainer" parent="Panel/TabContainer/Controls/HBoxContainer/VBoxContainer2"]
+layout_mode = 2
+
+[node name="TextureRect2" type="TextureRect" parent="Panel/TabContainer/Controls/HBoxContainer/VBoxContainer2/HBoxContainer"]
+custom_minimum_size = Vector2(48.73, 45)
+layout_mode = 2
+size_flags_vertical = 4
+texture = ExtResource("17_fa4pf")
+expand_mode = 1
+stretch_mode = 5
+
+[node name="Label_Name" type="Label" parent="Panel/TabContainer/Controls/HBoxContainer/VBoxContainer2/HBoxContainer"]
+custom_minimum_size = Vector2(120, 0)
+layout_mode = 2
+theme_override_font_sizes/font_size = 40
+text = "Jump"
+
+[node name="HBoxContainer2" type="HBoxContainer" parent="Panel/TabContainer/Controls/HBoxContainer/VBoxContainer2"]
+layout_mode = 2
+
+[node name="TextureRect2" type="TextureRect" parent="Panel/TabContainer/Controls/HBoxContainer/VBoxContainer2/HBoxContainer2"]
+custom_minimum_size = Vector2(48.73, 45)
+layout_mode = 2
+size_flags_vertical = 4
+texture = ExtResource("18_sjpey")
+expand_mode = 1
+stretch_mode = 5
+
+[node name="Label_Name" type="Label" parent="Panel/TabContainer/Controls/HBoxContainer/VBoxContainer2/HBoxContainer2"]
+custom_minimum_size = Vector2(120, 0)
+layout_mode = 2
+theme_override_font_sizes/font_size = 40
+text = "Sprint"
+
+[node name="HBoxContainer3" type="HBoxContainer" parent="Panel/TabContainer/Controls/HBoxContainer/VBoxContainer2"]
+layout_mode = 2
+theme_override_constants/separation = -10
+
+[node name="TextureRect2" type="TextureRect" parent="Panel/TabContainer/Controls/HBoxContainer/VBoxContainer2/HBoxContainer3"]
+custom_minimum_size = Vector2(48.73, 45)
+layout_mode = 2
+size_flags_vertical = 4
+texture = ExtResource("19_fo5fc")
+expand_mode = 1
+stretch_mode = 5
+
+[node name="TextureRect3" type="TextureRect" parent="Panel/TabContainer/Controls/HBoxContainer/VBoxContainer2/HBoxContainer3"]
+custom_minimum_size = Vector2(48.73, 45)
+layout_mode = 2
+size_flags_vertical = 4
+texture = ExtResource("20_56sqm")
+expand_mode = 1
+stretch_mode = 5
+
+[node name="TextureRect4" type="TextureRect" parent="Panel/TabContainer/Controls/HBoxContainer/VBoxContainer2/HBoxContainer3"]
+custom_minimum_size = Vector2(48.73, 45)
+layout_mode = 2
+size_flags_vertical = 4
+texture = ExtResource("21_qm1v5")
+expand_mode = 1
+stretch_mode = 5
+
+[node name="TextureRect5" type="TextureRect" parent="Panel/TabContainer/Controls/HBoxContainer/VBoxContainer2/HBoxContainer3"]
+custom_minimum_size = Vector2(48.73, 45)
+layout_mode = 2
+size_flags_vertical = 4
+texture = ExtResource("22_0gi8b")
+expand_mode = 1
+stretch_mode = 5
+
+[node name="Label_Name" type="Label" parent="Panel/TabContainer/Controls/HBoxContainer/VBoxContainer2/HBoxContainer3"]
+custom_minimum_size = Vector2(120, 0)
+layout_mode = 2
+theme_override_font_sizes/font_size = 40
+text = "  Move"
+
+[node name="HBoxContainer4" type="HBoxContainer" parent="Panel/TabContainer/Controls/HBoxContainer/VBoxContainer2"]
+layout_mode = 2
+
+[node name="Label_Name" type="Label" parent="Panel/TabContainer/Controls/HBoxContainer/VBoxContainer2/HBoxContainer4"]
+custom_minimum_size = Vector2(120, 0)
+layout_mode = 2
+theme_override_font_sizes/font_size = 40
+text = "Look With Mouse"
 
 [node name="Gameplay - Basics" type="Panel" parent="Panel/TabContainer"]
 visible = false
@@ -268,6 +659,7 @@ expand_mode = 1
 stretch_mode = 4
 
 [node name="Gameplay - Advanced" type="Panel" parent="Panel/TabContainer"]
+visible = false
 layout_mode = 2
 metadata/_tab_index = 3
 

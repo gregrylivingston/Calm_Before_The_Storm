@@ -51,8 +51,22 @@ func _unhandled_input(event):
 		rotate_y(-event.relative.x * mouse_sensitivity)
 		%Camera3D.rotate_x(-event.relative.y * mouse_sensitivity)
 		%Camera3D.rotation.x = clampf(%Camera3D.rotation.x, -deg_to_rad(70), deg_to_rad(70))
+	handle_controller_right_stick_input(event)
 	if event.is_action_pressed("jump") and is_on_floor():
 		velocity.y = jump_speed
+
+func handle_controller_right_stick_input(event) -> void:
+	# Horizontal rotation (Y-axis)
+	var right_stick_x = Input.get_action_strength("look_left") - Input.get_action_strength("look_right")
+	rotate_y(right_stick_x * .05 )
+
+	# Vertical rotation (X-axis)
+	var right_stick_y = Input.get_action_strength("look_down") - Input.get_action_strength("look_up")
+	%Camera3D.rotate_x(-right_stick_y * .1)
+
+	# Clamp the vertical rotation to avoid over-rotation (up/down look limit)
+	%Camera3D.rotation.x = clamp(%Camera3D.rotation.x, -deg_to_rad(70), deg_to_rad(70))
+
 
 #returns true if able to break earth
 func digEarth(isDigging: bool = true) -> bool:
