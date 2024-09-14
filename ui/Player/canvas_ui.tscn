@@ -368,7 +368,7 @@ mouse_filter = 2
 theme_override_styles/panel = SubResource("StyleBoxFlat_eth0m")
 script = ExtResource("11_xo5xq")
 
-[node name="Control_Alert" type="Control" parent="." groups=["Alert"]]
+[node name="Control_Alert" type="Control" parent="." node_paths=PackedStringArray("label") groups=["Alert"]]
 modulate = Color(1, 1, 1, 0)
 layout_mode = 3
 anchors_preset = 8
@@ -384,6 +384,7 @@ grow_horizontal = 2
 grow_vertical = 2
 mouse_filter = 2
 script = ExtResource("13_ex4d2")
+label = NodePath("Label")
 
 [node name="Label" type="Label" parent="Control_Alert"]
 layout_mode = 1

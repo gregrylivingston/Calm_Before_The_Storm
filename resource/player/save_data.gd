@@ -18,12 +18,16 @@ class_name SaveData extends Resource
 	"Hold_Distance":1,
 }
 
-@export var stars := 100
-
+@export var stars := 0
 @export var isLowGraphicsMode := false
+@export var newWebPlayer := true
 
 func _ready() -> void:
-	if OS.get_name() == "Web":isLowGraphicsMode = true
+	if OS.get_name() == "Web":
+		isLowGraphicsMode = true
+	else:
+		newWebPlayer = false
+	
 		
 
 

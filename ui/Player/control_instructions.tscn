@@ -2,7 +2,7 @@
 
 [ext_resource type="Script" path="res://ui/Player/control_alert.gd" id="1_sgdmp"]
 
-[node name="Control_Instructions" type="Control" groups=["Instruction"]]
+[node name="Control_Instructions" type="Control" node_paths=PackedStringArray("label") groups=["Instruction"]]
 layout_mode = 3
 anchors_preset = 3
 anchor_left = 1.0
@@ -16,6 +16,7 @@ offset_bottom = -112.0
 grow_horizontal = 0
 grow_vertical = 0
 script = ExtResource("1_sgdmp")
+label = NodePath("Panel/Label")
 
 [node name="Panel" type="Panel" parent="."]
 layout_mode = 1

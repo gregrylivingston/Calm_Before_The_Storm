@@ -35,6 +35,9 @@ func _input(event):
 func _ready():
 	super._ready()
 	animation_state_machine = $MenuAnimationTree.get("parameters/playback")
+	if Player.data.newWebPlayer == true:
+		Player.data.newWebPlayer = false
+		
 
 
 func showUpgradeMenu():
