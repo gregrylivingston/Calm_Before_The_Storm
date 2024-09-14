@@ -18,8 +18,8 @@ func _finish_setup() -> void:
 func connect_buttons() -> void:
 	var buttons: Array = get_tree().get_nodes_in_group("Button")
 	for inst in buttons:
-		inst.connect("pressed", on_button_pressed)
-		inst.connect("mouse_entered", on_button_hover)
+		if not inst.is_connected("pressed", on_button_pressed):inst.connect("pressed", on_button_pressed)
+		if not inst.is_connected("mouse_entered", on_button_hover):inst.connect("mouse_entered", on_button_hover)
 		
 func on_button_pressed()->void:
 	button_click_sound.play()

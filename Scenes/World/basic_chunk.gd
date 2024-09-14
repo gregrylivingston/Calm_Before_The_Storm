@@ -63,8 +63,8 @@ func _deferred_add_nature(heights: Array, nature_noise) -> void:
 				newScene.scale = newScene.scale * randf_range(0.7,1.3)
 				get_parent().add_child(newScene)
 			if x % 32 == 0:
-				if is_instance_valid(get_tree()):
-					await get_tree().process_frame
+				if not is_instance_valid(get_tree()): break
+				else: await get_tree().process_frame
 
 				
 				 
