@@ -6,8 +6,9 @@
 [sub_resource type="BoxShape3D" id="BoxShape3D_knucq"]
 size = Vector3(0.628479, 2.83679, 0.585693)
 
-[node name="SHay" instance=ExtResource("1_0g8qn")]
+[node name="SHay" node_paths=PackedStringArray("meshes") instance=ExtResource("1_0g8qn")]
 hay_to_award = 0
+meshes = [NodePath("Tomato_4/Tomato_4")]
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="." index="0"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.0140076, 0.421824, 0.0140381)
@@ -15,3 +16,5 @@ shape = SubResource("BoxShape3D_knucq")
 
 [node name="Tomato_4" parent="." index="1" instance=ExtResource("2_e78yo")]
 transform = Transform3D(1, 0, 0, 0, 2, 0, 0, 0, 1, 0, -0.956349, 0)
+
+[editable path="Tomato_4"]

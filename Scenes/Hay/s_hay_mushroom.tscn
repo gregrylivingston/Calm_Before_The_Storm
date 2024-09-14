@@ -6,9 +6,10 @@
 [sub_resource type="BoxShape3D" id="BoxShape3D_q8i0f"]
 size = Vector3(0.628479, 0.537078, 0.585693)
 
-[node name="SHay" instance=ExtResource("1_y7d4x")]
+[node name="SHay" node_paths=PackedStringArray("meshes") instance=ExtResource("1_y7d4x")]
 transform = Transform3D(2, 0, 0, 0, 2, 0, 0, 0, 2, -0.000123262, -0.00451058, 0.00145149)
 hay_to_award = 0
+meshes = [NodePath("Mushroom_4/Mushroom_4")]
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="." index="0"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.0140076, 0.000873744, 0.0140381)
@@ -16,3 +17,5 @@ shape = SubResource("BoxShape3D_q8i0f")
 
 [node name="Mushroom_4" parent="." index="1" instance=ExtResource("2_7t0eu")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.171466, 0)
+
+[editable path="Mushroom_4"]

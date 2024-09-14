@@ -6,8 +6,9 @@
 [sub_resource type="BoxShape3D" id="BoxShape3D_knucq"]
 size = Vector3(0.628479, 2.83679, 0.585693)
 
-[node name="SHay" instance=ExtResource("1_m7w0k")]
+[node name="SHay" node_paths=PackedStringArray("meshes") instance=ExtResource("1_m7w0k")]
 fruit_to_award = 0
+meshes = [NodePath("Rice_4/Rice_4"), NodePath("Rice_5/Rice_4"), NodePath("Rice_6/Rice_4")]
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="." index="0"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.0140076, 0.421824, 0.0140381)
@@ -21,3 +22,7 @@ transform = Transform3D(0.920293, 0, 0.391229, 0, 2, 0, -0.391229, 0, 0.920293, 
 
 [node name="Rice_6" parent="." index="3" instance=ExtResource("2_yksen")]
 transform = Transform3D(0.391036, 0, 0.920375, 0, 2, 0, -0.920375, 0, 0.391036, -0.0836807, -0.510306, -0.235971)
+
+[editable path="Rice_4"]
+[editable path="Rice_5"]
+[editable path="Rice_6"]

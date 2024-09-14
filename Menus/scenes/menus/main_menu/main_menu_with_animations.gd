@@ -44,3 +44,7 @@ func showUpgradeMenu():
 func _on_help_button_pressed() -> void:
 	%HelpContainer.visible = true
 	animation_state_machine.travel("OpenSubMenu")
+
+
+func _on_check_button_low_graphics_pressed() -> void:
+	pass # Replace with function body.

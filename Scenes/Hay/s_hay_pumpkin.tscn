@@ -6,12 +6,15 @@
 [sub_resource type="BoxShape3D" id="BoxShape3D_q8i0f"]
 size = Vector3(0.628479, 0.537078, 0.585693)
 
-[node name="SHay" instance=ExtResource("1_4ewik")]
+[node name="SHay" node_paths=PackedStringArray("meshes") instance=ExtResource("1_4ewik")]
 transform = Transform3D(2, 0, 0, 0, 2, 0, 0, 0, 2, 0, 0, 0)
 hay_to_award = 0
+meshes = [NodePath("Pumpkin_4/Pumpkin_4")]
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="." index="0"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.0140076, 0.17234, 0.0140381)
 shape = SubResource("BoxShape3D_q8i0f")
 
 [node name="Pumpkin_4" parent="." index="1" instance=ExtResource("2_tfl7y")]
+
+[editable path="Pumpkin_4"]

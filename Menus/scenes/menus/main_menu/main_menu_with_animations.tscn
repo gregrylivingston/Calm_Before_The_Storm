@@ -1,9 +1,10 @@
-[gd_scene load_steps=23 format=3 uid="uid://3tan4jipfcjh"]
+[gd_scene load_steps=24 format=3 uid="uid://3tan4jipfcjh"]
 
 [ext_resource type="PackedScene" uid="uid://nrh54ueqxxix" path="res://Menus/scenes/menus/main_menu/main_menu.tscn" id="1_vbrqt"]
 [ext_resource type="Script" path="res://Menus/scenes/menus/main_menu/main_menu_with_animations.gd" id="2_24nl5"]
 [ext_resource type="Theme" uid="uid://dbmay2mk5b3eg" path="res://theme/theme_base.tres" id="2_ari44"]
 [ext_resource type="PackedScene" uid="uid://bdbkm48ptx2c4" path="res://background_map.tscn" id="3_cjjc3"]
+[ext_resource type="Script" path="res://Menus/scenes/menus/main_menu/check_button.gd" id="4_80ny7"]
 [ext_resource type="PackedScene" uid="uid://bb4w34s3e3lul" path="res://ui/menu/upgrades_menu.tscn" id="4_ngrjf"]
 [ext_resource type="PackedScene" uid="uid://dem220dayub7a" path="res://ui/Player/help_menu.tscn" id="5_qhroc"]
 [ext_resource type="AudioStream" uid="uid://bvfw85nxpaca3" path="res://sound/music/menu_AlexBouncyMaster.wav" id="7_am03m"]
@@ -423,7 +424,6 @@ text = "Options
 alignment = 0
 
 [node name="CreditsButton2" type="Button" parent="MenuContainer/VBoxContainer/HBoxContainer_top" index="1" groups=["Button"]]
-unique_name_in_owner = true
 custom_minimum_size = Vector2(64, 20)
 layout_mode = 2
 size_flags_horizontal = 0
@@ -432,6 +432,15 @@ theme_override_styles/hover = SubResource("StyleBoxFlat_7l3nb")
 theme_override_styles/normal = SubResource("StyleBoxFlat_7l3nb")
 text = "Credits"
 alignment = 0
+
+[node name="CheckButton_LowGraphics" type="Button" parent="MenuContainer/VBoxContainer/HBoxContainer_top" index="2"]
+custom_minimum_size = Vector2(150, 0)
+layout_mode = 2
+toggle_mode = true
+action_mode = 0
+text = "Simple Graphics
+"
+script = ExtResource("4_80ny7")
 
 [node name="TitlesContainer" parent="MenuContainer/VBoxContainer/TitlesMargin" index="0"]
 theme_override_constants/separation = -25
@@ -560,5 +569,6 @@ parameters/looping = true
 
 [connection signal="pressed" from="MenuContainer/VBoxContainer/HBoxContainer_top/OptionsButton2" to="." method="_on_options_button_pressed"]
 [connection signal="pressed" from="MenuContainer/VBoxContainer/HBoxContainer_top/CreditsButton2" to="." method="_on_credits_button_pressed"]
+[connection signal="pressed" from="MenuContainer/VBoxContainer/HBoxContainer_top/CheckButton_LowGraphics" to="MenuContainer/VBoxContainer/HBoxContainer_top/CheckButton_LowGraphics" method="_on_pressed"]
 [connection signal="pressed" from="MenuContainer/VBoxContainer/MenuMargin/MenuButtons/UpgradesButton" to="." method="showUpgradeMenu"]
 [connection signal="pressed" from="MenuContainer/VBoxContainer/MenuMargin/MenuButtons/HelpButton" to="." method="_on_help_button_pressed"]

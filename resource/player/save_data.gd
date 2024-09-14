@@ -20,6 +20,12 @@ class_name SaveData extends Resource
 
 @export var stars := 100
 
+@export var isLowGraphicsMode := false
+
+func _ready() -> void:
+	if OS.get_name() == "Web":isLowGraphicsMode = true
+		
+
 
 func add_upgrade(title: String) -> void:
 	upgrade[title] += 1

@@ -6,11 +6,14 @@
 [sub_resource type="BoxShape3D" id="BoxShape3D_e7pl3"]
 size = Vector3(0.553055, 0.833435, 0.532066)
 
-[node name="SRock" instance=ExtResource("1_tmcir")]
+[node name="SRock" node_paths=PackedStringArray("meshes") instance=ExtResource("1_tmcir")]
 transform = Transform3D(4, 0, 0, 0, 4, 0, 0, 0, 4, 0, 0, 0)
+meshes = [NodePath("Rock_1/Rock_1")]
 
 [node name="Rock_1" parent="." index="0" instance=ExtResource("2_upoob")]
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="." index="1"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.00493633, 0.384918, -0.0123405)
 shape = SubResource("BoxShape3D_e7pl3")
+
+[editable path="Rock_1"]

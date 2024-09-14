@@ -4,6 +4,19 @@ extends StaticBody3D
 @export var max_health := 300
 
 @export var stone_to_award := 1
+@export var meshes: Array[MeshInstance3D]
+
+func _ready() -> void:
+	for i in meshes:
+		if OS.get_name() == "Web": 
+			if Player.data.isLowGraphicsMode:
+				i.lod_bias = 0.05
+				i.visibility_range_end = 40
+			else: 
+				i.lod_bias = 0.2
+		else: #windows etc.
+			if Player.data.isLowGraphicsMode:
+				i.visibility_range_end = 40
 
 func break_rock():
 	if health < 0:

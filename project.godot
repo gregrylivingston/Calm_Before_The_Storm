@@ -40,7 +40,6 @@ Sound="*res://global/Sound.gd"
 NameGenerator="*res://global/NameGenerator.gd"
 SceneLoader="*res://addons/maaacks_menus_template/base/scenes/autoloads/scene_loader.tscn"
 Alert="*res://global/Alert.gd"
-PlantMultimeshFactory="*res://global/PlantMultimeshFactory.tscn"
 
 [display]
 

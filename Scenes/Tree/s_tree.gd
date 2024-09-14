@@ -7,7 +7,16 @@ extends StaticBody3D
 @export var fruit_to_award := 1
 
 func _ready() -> void:
-	if OS.get_name():get_child(0).get_child(0).lod_bias = 0.1
+	var mesh = get_child(0).get_child(0)
+	if OS.get_name() == "Web": 
+		if Player.data.isLowGraphicsMode:
+			mesh.lod_bias = 0.05
+			mesh.visibility_range_end = 40
+		else: 
+			mesh.lod_bias = 0.2
+	else: #windows etc.
+		if Player.data.isLowGraphicsMode:
+			mesh.visibility_range_end = 40
 
 func chop_tree():
 	if health < 0:

@@ -6,13 +6,15 @@
 [sub_resource type="BoxShape3D" id="BoxShape3D_knucq"]
 size = Vector3(0.628479, 2.83679, 0.585693)
 
-[node name="SHay" instance=ExtResource("1_237tx")]
+[node name="SHay" node_paths=PackedStringArray("meshes") instance=ExtResource("1_237tx")]
 fruit_to_award = 0
+meshes = [NodePath("Wheat_4/Wheat_4"), NodePath("Wheat_5/Wheat_4"), NodePath("Wheat_6/Wheat_4"), NodePath("Wheat_7/Wheat_4"), NodePath("Wheat_8/Wheat_4"), NodePath("Wheat_9/Wheat_4"), NodePath("Wheat_10/Wheat_4")]
 
 [node name="Wheat_4" parent="." index="0" instance=ExtResource("2_jd0g1")]
 transform = Transform3D(1, 0, 0, 0, 3, 0, 0, 0, 1, 0, -1.00707, 0)
 
 [node name="Wheat_5" parent="." index="1" instance=ExtResource("2_jd0g1")]
+unique_name_in_owner = true
 transform = Transform3D(-0.075118, 0, -0.997175, 0, 3, 0, 0.997175, 0, -0.075118, -0.0645838, -1.00707, 0.112904)
 
 [node name="Wheat_6" parent="." index="2" instance=ExtResource("2_jd0g1")]
@@ -33,3 +35,11 @@ transform = Transform3D(0.297805, 0.198001, 0.952343, -0.12182, 2.97624, -0.0306
 [node name="CollisionShape3D" type="CollisionShape3D" parent="." index="7"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.0140076, 0.421824, 0.0140381)
 shape = SubResource("BoxShape3D_knucq")
+
+[editable path="Wheat_4"]
+[editable path="Wheat_5"]
+[editable path="Wheat_6"]
+[editable path="Wheat_7"]
+[editable path="Wheat_8"]
+[editable path="Wheat_9"]
+[editable path="Wheat_10"]

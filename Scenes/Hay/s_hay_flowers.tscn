@@ -7,8 +7,9 @@
 [sub_resource type="BoxShape3D" id="BoxShape3D_knucq"]
 size = Vector3(0.628479, 2.83679, 0.585693)
 
-[node name="SHay" instance=ExtResource("1_110d7")]
+[node name="SHay" node_paths=PackedStringArray("meshes") instance=ExtResource("1_110d7")]
 fruit_to_award = 0
+meshes = [NodePath("CollisionShape3D/Flower_4/Flower_4"), NodePath("CollisionShape3D/Flower_5/Flower_4"), NodePath("CollisionShape3D/Flower_3/Flower_3"), NodePath("CollisionShape3D/Flower_6/Flower_3")]
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="." index="0"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.0140076, 0.421824, 0.0140381)
@@ -25,3 +26,8 @@ transform = Transform3D(1, 0, 0, 0, 3, 0, 0, 0, 1, -0.0623295, -1.09108, 0.29105
 
 [node name="Flower_6" parent="CollisionShape3D" index="3" instance=ExtResource("3_4g02m")]
 transform = Transform3D(1, 0, 0, 0, 3, 0, 0, 0, 1, -0.339704, -1.09108, 0.0537754)
+
+[editable path="CollisionShape3D/Flower_4"]
+[editable path="CollisionShape3D/Flower_5"]
+[editable path="CollisionShape3D/Flower_3"]
+[editable path="CollisionShape3D/Flower_6"]
