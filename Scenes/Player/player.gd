@@ -25,6 +25,14 @@ func get_input():
 		velocity.x = movement_dir.x * speed
 		velocity.z = movement_dir.z * speed
 
+func _process(delta: float) -> void:
+	_process_animation_audio()
+
+
+func _process_animation_audio() -> void:
+	if %Gear.rotation_degrees.x > 15 && $AudioStream_Axe.playing == false && selected_item_int == 0:
+		$AudioStream_Axe.play()
+
 func _physics_process(delta):
 	doAction()
 	rightClick()
@@ -230,10 +238,14 @@ func select_item_check() -> void:
 		select_new_item(2)
 	if Input.is_action_just_pressed("4"):
 		if Inventory.fruit > 0: select_new_item(3)
+		else: Alert.send_alert("No Fruit.")
 	if Input.is_action_just_pressed("5"):
 		if Inventory.hay > 0: select_new_item(4)
+		else: Alert.send_alert("No Hay.")
 	if Input.is_action_just_pressed("6"):
 		if Inventory.meat > 0: select_new_item(5)
+		else: Alert.send_alert("No Meat.")
+
 
 func select_new_item(ItemInt: int) -> void:
 	if is_instance_valid(queued_buildable_object):
