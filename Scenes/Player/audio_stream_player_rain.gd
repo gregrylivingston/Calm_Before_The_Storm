@@ -9,7 +9,3 @@ func newWeatherState(state: WeatherState) -> void:
 	if stream != state.rain_sound:
 		stream = state.rain_sound
 		play()
-
-# Called every frame. 'delta' is the elapsed time since the previous frame.
-func _process(delta: float) -> void:
-	pass

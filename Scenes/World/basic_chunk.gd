@@ -12,10 +12,6 @@ func _deferred_ready() -> void:
 	newWaterScene.position = Vector3(chunk_pos.x,-1,chunk_pos.z)  ## this results in later spawning water having a bad rando height
 	get_parent().add_child(newWaterScene)
 	
-# Called every frame. 'delta' is the elapsed time since the previous frame.
-func _process(delta: float) -> void:
-	pass
-	
 	
 var pinetreescene = load("res://Scenes/Tree/s_tree_appletree.tscn")
 

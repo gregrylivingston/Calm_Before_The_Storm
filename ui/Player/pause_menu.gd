@@ -27,10 +27,8 @@ func unpause() -> void:
 		if is_instance_valid(i):i.visible = true
 
 
-	
-# Called every frame. 'delta' is the elapsed time since the previous frame.
-func _process(delta: float) -> void:
-	if Input.is_action_just_pressed("Pause"):
+func _unhandled_input(event) -> void:
+	if event.is_action_pressed("Pause"):
 		if not get_tree().paused: pause()
 		else: 
 			unpause()

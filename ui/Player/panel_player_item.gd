@@ -21,8 +21,16 @@ func update_inventory(quant: int) -> void:
 
 		%LabelQuantity.text = "x" + str(quant)
 		previousQuantity = quant
+		process_mode = PROCESS_MODE_INHERIT
+
+		
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta: float) -> void:
+	_fade_out()
+		
+func _fade_out() -> void:
 	if %Label_ChangeInQuantity.modulate.a > 0:
 		%Label_ChangeInQuantity.modulate.a -= 0.05
+	else:
+		process_mode = PROCESS_MODE_DISABLED

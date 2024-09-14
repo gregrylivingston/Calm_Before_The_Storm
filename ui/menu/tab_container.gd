@@ -6,9 +6,6 @@ func _ready() -> void:
 	connect("tab_hovered",_on_tab_hovered)
 	connect("tab_clicked",_on_tab_clicked)
 
-# Called every frame. 'delta' is the elapsed time since the previous frame.
-func _process(delta: float) -> void:
-	pass
 
 
 func _on_tab_hovered(tab: int) -> void:

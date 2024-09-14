@@ -28,8 +28,3 @@ func weather_state_rewards() -> int:
 	rewards += update_building_count(%Label2_Barns, "Barn")
 	rewards += update_building_count( %Label2_Dens, "Den")
 	return rewards
-
-
-# Called every frame. 'delta' is the elapsed time since the previous frame.
-func _process(delta: float) -> void:
-	pass
