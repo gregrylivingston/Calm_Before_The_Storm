@@ -22,3 +22,5 @@ shape = SubResource("CylinderShape3D_tny3t")
 [node name="CollisionShape3D2" type="CollisionShape3D" parent="." index="2"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.224844, 1.64086, -0.216447)
 shape = SubResource("SphereShape3D_607ql")
+
+[editable path="Tree"]

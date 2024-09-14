@@ -6,6 +6,9 @@ extends StaticBody3D
 @export var wood_to_award := 1
 @export var fruit_to_award := 1
 
+func _ready() -> void:
+	if OS.get_name():get_child(0).get_child(0).lod_bias = 0.1
+
 func chop_tree():
 	if health < 0:
 		Inventory.wood += wood_to_award * Player.data.upgrade.Wood_Gathered

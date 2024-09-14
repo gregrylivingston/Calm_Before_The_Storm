@@ -13,6 +13,7 @@ var myName : String = NameGenerator.get_random_name()
 @export var food_demand: int = 1
 
 func _ready() -> void:
+	if OS.get_name() == "Web": AnimalMeshInstance.lod_bias = 0.1
 	$AudioStreamPlayer3D.pitch_scale = randf_range(0.95,1.05)
 	if is_instance_valid(AnimalMeshInstance) && OS.get_name() == "Web":
 		AnimalMeshInstance.cast_shadow = GeometryInstance3D.SHADOW_CASTING_SETTING_OFF
