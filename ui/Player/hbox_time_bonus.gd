@@ -11,7 +11,7 @@ func _fade_out(delta: float) -> void:
 		process_mode = PROCESS_MODE_DISABLED	
 
 func send_bonus(amount: int) -> void:
-	$AudioStreamPlayer2D.play()
+	#$AudioStreamPlayer2D.play()
 	modulate.a = 4
 	$Label.text = "+ " + str(amount)
 	process_mode = PROCESS_MODE_INHERIT

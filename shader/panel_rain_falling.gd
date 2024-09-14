@@ -2,6 +2,7 @@ extends Panel
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
+	if Player.data.isLowGraphicsMode:queue_free()
 	Weather.new_weather_state.connect(update_weather_state)
 	Weather.new_round.connect(reset)
 	
